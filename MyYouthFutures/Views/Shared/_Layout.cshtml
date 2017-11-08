@@ -1,0 +1,135 @@
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Youth Futures Template Page" />
+    <meta name="keywords" content="keywords" />
+    <meta name="author" content="Chris Ridl" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Youth_Futures_Shelter_Home</title>
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/secondaryStyles.css" />
+        <link rel="stylesheet" href="~/css/fonts.css" />
+        <link rel="stylesheet" href="~/css/main.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/secondaryStyles.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/fonts.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/main.min.css" asp-append-version="true" />
+    </environment>
+    @Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+<body>
+    <div id="main-body">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="~/images/yf_logo.svg" alt="Youth Futures Logo" /></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index" class="current">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programs</a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-area="" asp-controller="Home" asp-action="Index">Street Outreach</a></li> @*TODO: This needs linked to the Street Outreach Page*@
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Get Involved</a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-area="" asp-controller="Home" asp-action="Index">Donate</a></li>@*TODO: This needs linked to the Donate Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="Index">Events</a></li>@*TODO: This needs linked to the Events Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About">Donor Recognition</a></li>@*TODO: This needs linked to the Donor Recognition Section of the About Page*@
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-area="" asp-controller="Home" asp-action="About">History</a></li>@*TODO: This needs linked to the Histroy Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About">Staff</a></li>@*TODO: This needs linked to the Staff Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About">Board</a></li>@*TODO: This needs linked to the Board Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About">Media</a></li>@*TODO: This needs linked to the Media Section of the About Page*@
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-area="" asp-controller="Home" asp-action="About">Contact Info</a></li>@*TODO: This needs linked to the Contact Info Section of the About Page*@
+                            </ul>
+                        </li>
+                        <li class="donate"><a onclick="document.getElementById('loginScn').style.display = 'block'; w3_open()">Login</a></li>@*TODO: This needs linked to the action when the Login Page*@
+                        <li class="donate"><a asp-area="" asp-controller="Home" asp-action="About">Donate</a></li>@*TODO: This needs linked to the Media Section of the Donate Page*@
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+
+
+    <div class="container body-content">
+
+        <div id="loginScn" class="modal">
+            @{
+                Html.RenderPartial("_Login");
+            }
+        </div>
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2017 - Youth_Futures_Shelter_Home</p>
+        </footer>
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/secondaryScripts.js" asp-append-version="true"></script>
+        <script src="~/js/gen_validatorv31.js" asp-append-version="true"></script>
+        <script src="~/js/login.js" asp-append-version="true"></script>
+
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/secondaryScripts.min.js" asp-append-version="true"></script>
+        <script src="~/js/gen_validatorv31.min.js" asp-append-version="true"></script>
+        <script src="~/js/login.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
