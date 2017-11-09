@@ -65,6 +65,11 @@ namespace MyYouthFutures.Data
                 context.Services_Messages.Add(a);
             }
             context.SaveChanges();
+
+            var introArticle = new introArticle[]
+            {
+                new introArticle{ ArticleText ="Located in the heart of downtown Ogden, Youth Futures opened Utah's first homeless Residential Support Temporary Youth Shelter on February 20, 2015. Youth Futures provides shelter and drop-in services to all youth ages 12-17, and will not exclude any youth who falls within these age ranges, regardless of circumstance. We provide 14 temporary overnight shelter beds and day-time drop-in services to youth, as well as intensive case management to help youth become re-united with family or self-sufficiently contributing to our community. Weekly outreach efforts assist in building rapport with street youth, ensuring they receive food and other basic necessities and educating them about options to living in unsafe conditions. Youth are guided in a loving, supportive and productive way, encouraging their own personal path for a healthy future."}
+            };
         }
     }
 }
