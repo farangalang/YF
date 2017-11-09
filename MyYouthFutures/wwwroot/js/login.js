@@ -17,3 +17,17 @@ function w3_open() {
 function w3_close() {
     document.getElementById("sidebar").style.display = "none";
 }
+
+/*Staff Popup*/
+/*var stf = document.getElementById('staffPop');
+var btn2 = document.getElementById('cncl');
+
+btn2.onclick = function (event) {
+    stf.style.display = 'none'
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        stf.style.display = 'none';
+    }
+}*/
