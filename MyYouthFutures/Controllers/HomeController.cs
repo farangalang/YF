@@ -32,11 +32,11 @@ namespace MyYouthFutures.Controllers
         }
 
 
-        public IActionResult About()
+        public async Task<IActionResult> About()
         {
             ViewData["Message"] = "Your application description page.";
 
-            return View();
+            return View(await _context.Titles.ToListAsync());
         }
 
         public IActionResult Contact()
