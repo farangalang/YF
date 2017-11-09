@@ -3,6 +3,11 @@
     ViewData["Title"] = "Home Page Demo";
 }
 
+<!--<button onclick="document.getElementById('staffPop').style.display = 'block'">Show Staff</button>-->
+<button type="button" data-toggle="modal" data-target="#staffPop">Show Staff</button>
+<div id="staffPop" class="modal">
+    @{ Html.RenderPartial("../Popups/_AddStaff");}
+</div>
 
 <section class="container-fluid main-header">
     <div class="row">
