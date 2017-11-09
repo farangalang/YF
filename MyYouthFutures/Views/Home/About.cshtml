@@ -1,4 +1,5 @@
-﻿@{
+﻿@Model IEnumerable<MyYouthFutures.Models.introArticle>
+@{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
@@ -24,7 +25,11 @@
     <div class="container-fluid">
         <div class="row history_text">
             <section class="col-xs-12">
-                <p class="mont_regular_22_darkgray">Located in the heart of downtown Ogden, Youth Futures opened Utah's first homeless Residential Support Temporary Youth Shelter on February 20, 2015. Youth Futures provides shelter and drop-in services to all youth ages 12-17, and will not exclude any youth who falls within these age ranges, regardless of circumstance. We provide 14 temporary overnight shelter beds and day-time drop-in services to youth, as well as intensive case management to help youth become re-united with family or self-sufficiently contributing to our community. Weekly outreach efforts assist in building rapport with street youth, ensuring they receive food and other basic necessities and educating them about options to living in unsafe conditions. Youth are guided in a loving, supportive and productive way, encouraging their own personal path for a healthy future.</p>
+                @foreach (var item in Model)
+                {
+                    <p class="mont_regular_22_darkgray">@item.ArticleText</p>
+
+                }
             </section>
         </div>
     </div>
