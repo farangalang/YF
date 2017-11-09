@@ -710,3 +710,47 @@
     max-height: 350px;
     max-width: 150px;
 }
+
+/******************************
+    AddStaff Modal
+*******************************/
+#staff {
+    background-color: white;
+    border: double;
+    width: 500px;
+}
+
+#staff h3{
+    color: black;
+    text-align: center;
+    border: solid;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+#staff button, #staff label, #staff input{
+    margin: 5px 0px 5px 0px;
+}
+
+#staff label, #staff input {
+    margin: 5px 0px 5px 0px;
+    height: 30px;
+}
+
+#staff img{
+    width: 200px;
+    border: double;
+    margin: 5px 0px 5px 0px;
+}
+
+#add_img, #add_img div{
+    align-content:center;
+}
+
+#staff #staff_info{
+    //height: 235px;
+}
+
+#staff div{
+    //border: solid;
+}

@@ -2,31 +2,42 @@
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
-<div id="staff" class="row">
-    <h2>Staff Information</h2>
-    <div class="col-md-1">
-        <img class="staff_pic" src="~/images/ban_circle.png" title="Image does not exist" alt="Image does not exist" />
-        <button>Select Image</button>
+<div id="staff" >
+    <div class="row">
+        <h3>Staff Information</h3>
+        <div id="add_img" class="col-xs-6">
+                    <img class="staff_pic" src="~/images/ban_circle.png" title="Image does not exist" alt="Image does not exist" />
+                    <button class="col-xs-push-2 col-xs-8">Select Image</button>
+        </div>
+
+        <div id="staff_info" class="col-xs-6">
+            <label>Name: </label>
+            <input type="text" name="staff_name" required />
+
+            <br />
+
+            <label>Title: </label>
+            <input type="text" name="staff_title" required/>
+        
+            <br />
+
+            <label>Email: </label>
+            <input type="text" name="staff_email" required/>
+
+            <br />
+
+            <label>Current Staff Member?</label>
+            <br />
+            <label>Yes</label>
+            <input type="radio" name="current" value="yes"/>
+            <label>No</label>
+            <input type="radio" name="current" value="no"/>
+        </div>
     </div>
 
-    <div class="col-lg-2">
-        <label>Name: </label>
-        <input type="text" name="staff_name" required />
-
-        <br />
-
-        <label>Title: </label>
-        <input type="text" name="staff_title" required/>
-
-        <br />
-
-        <label>Email: </label>
-        <input type="text" name="staff_email" required/>
-
-        <br />
-
-        <label>Current Staff Member?</label>
-        <input type="radio" name="c_yes"/>
-        <input type="radio" name="c_no"/>
+    <!--<br />-->
+    <div class="row">
+        <button class="col-xs-push-1 col-xs-4 btn-lg btn-default">Cancel</button>
+        <button class="col-xs-push-3 col-xs-4 btn-lg btn-success">Submit</button>
     </div>
 </div>
