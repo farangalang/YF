@@ -2,14 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
-        .config(function (contentEditableProvider) {
-
-            contentEditableProvider.configure({
-                singleline: true, // single line for all elements
-                focusSelect: false
-        });
-        })
+        .module('app')})
         .controller('editController', editController, editFunction());
 
     editController.$inject = ['$location'];
