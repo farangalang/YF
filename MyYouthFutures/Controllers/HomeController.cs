@@ -36,7 +36,7 @@ namespace MyYouthFutures.Controllers
         {
             ViewData["Message"] = "Your application description page.";
 
-            return View(await _context.Titles.ToListAsync());
+            return View(await _context.introArticle.ToListAsync());
         }
 
         public IActionResult Contact()
