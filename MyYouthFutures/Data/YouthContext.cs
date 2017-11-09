@@ -17,6 +17,7 @@ namespace MyYouthFutures.Data
         public DbSet<Purpose> Purposes { get; set; }
         public DbSet<Services_Message> Services_Messages { get; set; }
         public DbSet<Title> Titles { get; set; }
+        public DbSet<introArticle> introArticle { get; set; } //this is the table that holds the introduction statment on the history page.
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +25,7 @@ namespace MyYouthFutures.Data
             modelBuilder.Entity<Purpose>().ToTable("Purpose");
             modelBuilder.Entity<Services_Message>().ToTable("Services_Message");
             modelBuilder.Entity<Title>().ToTable("Title");
+            modelBuilder.Entity<Title>().ToTable("introArticle");
         }
     }
 }
