@@ -10,9 +10,9 @@ angular.module('angular-content-editable')
     editableClass: 'editable',
     keyBindings: true, // default true for key shortcuts
     singleLine: false,
-    focusSelect: true, // default on focus select all text inside
+    focusSelect: false, // default on focus select all text inside
     renderHtml: false,
-    editCallback: false
+    editCallback: true
   }
 
   this.configure = function (options) {

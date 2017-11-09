@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-xs-12">
             <h4 class="services-heading">Services</h4>
-            <p class="mont-light-light-22 about-services">Our programming is divided into three main areas. Each program area has specific components to meet the needs of the youth in need.</p>
+            <p class="mont-light-light-22 about-services"  ng-model ="ServicesDescription" edit-callback="editFunction(text, elem)" content-editable>Our programming is divided into three main areas. Each program area has specific components to meet the needs of the youth in need.<button ng-show="showSave">Save</button></p>
         </div>
     </div>
 </section>
