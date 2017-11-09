@@ -566,15 +566,101 @@
     padding-bottom: 10%;
 }
 
+/***************************
+    General Modal look
+****************************/
+.modal {
+    font-family: "montserrat-regular";
+    margin-left: 30%;
+}
+
+    .modal h1, .modal h2, .modal h3, .modal h4, .modal h5, .modal h6 {
+        font-family: "montserrat-regular";
+        font-weight: bold;
+    }
+.container_modal1 {
+    padding: 2px;
+    margin: 10px;
+    background-color: white;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #583b13; /*#663300; /*brown*/
+    font-weight: bold;
+    color: #583b13;
+}
+
+.container_modal2 {
+    padding: 5px;
+    background-color: white;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    border-style: solid;
+    border-color: #86ad38; /*green*/
+}
+
+.btn-success {
+    color: white;
+    background-color: #9ec54d;
+    border-color: #5a7425;
+}
+
+    .btn-success:focus,
+    .btn-success.focus {
+        color: white;
+        background-color: #779a32;
+        border-color: #5a7425;
+    }
+
+    .btn-success:hover {
+        color: white;
+        background-color: #779a32;
+        border-color: #5a7425;
+    }
+
+.btn-default {
+    color: #404040;/*#5c5c3d;*/
+    background-color: #cccccc;/*#b8b894;*/
+    border-color: #595959;/*#999966;*/
+}
+
+    .btn-default:focus,
+    .btn-default.focus {
+        color: #333333;/*#3d3d29;*/
+        background-color: #999999;/*#999966;*/
+        border-color: #666666; /*#6b6b47;*/
+    }
+
+    .btn-default:hover {
+        color: #333333; /*#3d3d29;*/
+        background-color: #999999;/*#999966;*/
+        border-color: #666666;/*#6b6b47;*/
+    }
+
+.row{
+    margin: 5px 0px 5px 0px;
+}
+
+.modal input[type=text] {
+    width: 250px;
+    height: 35px;
+    margin-left: 15px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.modal label {
+    vertical-align: text-bottom;
+    margin: 5px 0 0 0;
+    padding: 0;
+    margin-left: 15px;
+}
+
 /***********************
     Login
 ************************/
-
-#loginScn {
-    font-family: "montserrat-regular";
-    background: rgba(234, 234, 234, 0.8);
-}
-
 #loginCase {
     max-width: 380px;
     height: 470px;
@@ -585,12 +671,6 @@
 
 .login form {
     height: 440px;
-    background-color: white;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    border-radius: 7px;
-    border-style: solid;
-    border-color: #86ad38; /*#71963a;*/
 }
 
 .login * {
@@ -621,35 +701,14 @@
     padding-top: 20px;
 }
 
-/*.login .rw3 button {*/
-.login button {
-    height: 50px;
-    width: 100px;
-    font-weight: bold;
-}
-
-.login .container {
-    margin-top: 20px;
-}
-
 .login #sbmt {
     margin-right: 20px;
-    background-color: #9ec54d;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    border-radius: 7px;
-    color: white;
     width: 300px;
     margin-left: 10px;
     margin-top: 20px;
 }
 
-    .login #sbmt:hover {
-        background-color: #86ad38;
-    }
-
 #cncl {
-    /*background-color: #cccccc;*/
     background: rgba(204, 204, 204, 0.0);
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
@@ -662,7 +721,6 @@
 }
 
     #cncl:hover {
-        /*background-color: #b3b3b3;*/
         background: rgba(179,179,179,0.6);
     }
 
@@ -685,16 +743,8 @@
 }
 
 #loginScn #loginCase #loginModal {
-    max-width: 360px;
+   /* max-width: 360px;*/
     max-height: 450px;
-    padding: 2px;
-    margin: 10px;
-    background-color: white;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border-style: solid;
-    border-color: #663300;
 }
 
 #sidebar {
@@ -710,35 +760,43 @@
     max-height: 350px;
     max-width: 150px;
 }
-
 /******************************
     AddStaff Modal
 *******************************/
 #staff {
     background-color: white;
-    border: double;
-    width: 500px;
+    /*border: double;*/
+    width: 700px;
 }
 
-#staff h3{
-    color: black;
+#staff2{
+    /*width: 480px;*/
+}
+
+#staff h3 {
+    /*color: black;*/
+    color: #583b13; /*#583b13; /*#663300;*/
     text-align: center;
-    border: solid;
+    /*border: solid;*/
+    border-bottom-style: solid;
+    border-bottom-color: #779a32; /*#86ad38;*/
     margin-top: 0px;
     padding-top: 0px;
 }
 
-#staff button, #staff label, #staff input{
+#staff button {
     margin: 5px 0px 5px 0px;
 }
 
-#staff label, #staff input {
-    margin: 5px 0px 5px 0px;
-    height: 30px;
+#staff #buttons{
+    //border-top-style: solid;
+    //border-top-color: #779a32;
+
+    //padding: 10px;
 }
 
-#staff img{
-    width: 200px;
+#staff #add_img img{
+    width: 250px;
     border: double;
     margin: 5px 0px 5px 0px;
 }
@@ -747,8 +805,31 @@
     align-content:center;
 }
 
-#staff #staff_info{
+#staff_info div{
+    margin: 15px 0px 15px 0px;
+    justify-content: center;
+    font-size: large;
+}
+
+#staff_info .fixed_width label{
+    width: 50px;
+}
+
+#staff #radio {
+   // margin-left: 50px;
+}
+
+#staff .col-xs-5, #staff .col-xs-7{
+    margin: 5px 0px 5px 0px;
+}
+
+#addTitle {
+    
+}
+
+#staff #staff_info, #staff #add_img{
     //height: 235px;
+    //border: solid;
 }
 
 #staff div{
