@@ -1,0 +1,32 @@
+{
+  "name": "angular-content-editable",
+  "description": "modify in real time any html tag you want",
+  "main": "dist/angular-content-editable.js",
+  "authors": [
+    "codekraft-studio"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "directive"
+  ],
+  "homepage": "https://github.com/codekraft-studio/angular-content-editable",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "1.2.1",
+  "_release": "1.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.2.1",
+    "commit": "9c678021342695b50a7b04009ca10ba27fe208f7"
+  },
+  "_source": "https://github.com/codekraft-studio/angular-content-editable.git",
+  "_target": "v1.2.1",
+  "_originalSource": "angular-content-editable",
+  "_direct": true
+}
