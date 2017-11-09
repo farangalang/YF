@@ -1,0 +1,26 @@
+﻿.editable:hover {
+    background-color: #eee;
+}
+
+.editable-custom {
+    /*font-size: 1.5rem;*/
+}
+
+    .editable-custom:hover {
+        background-color: #28e7fb;
+        color: white;
+    }
+
+.editable {
+    outline: none;
+    border: 0;
+    transition: all ease-in 150ms;
+}
+
+    .editable.active {
+        border-left: 2px solid #355869;
+    }
+
+    .editable::selection {
+        background: rgba(75, 158, 172, 0.3);
+    }
