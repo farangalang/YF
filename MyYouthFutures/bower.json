@@ -6,6 +6,7 @@
     "jquery": "2.2.0",
     "jquery-validation": "1.14.0",
     "jquery-validation-unobtrusive": "3.2.6",
-    "angular-content-editable": "v1.2.1"
+    "angular-content-editable": "v1.2.1",
+    "angular": "v1.6.7-build.5496+sha.181ac0b"
   }
 }
