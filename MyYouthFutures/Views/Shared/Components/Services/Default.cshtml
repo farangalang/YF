@@ -20,8 +20,11 @@
                         <img src="@item.MessageImage" alt="House" class="panel-img" />
                     </section>
                     <section ng-model ="ServicesHeader[@item.ID]" edit-callback="editMade(text, @item.ID)" content-editable>
-                        <p class="quicksand-light-32 panel-heading" >@item.MessageHeader</p>
+                        <p class="quicksand-light-32 panel-heading" >@item.MessageHeader</p>  
                     </section>
+                    <input value="Save" class="btn btn-default"/>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+
                     <section ng-model ="ServicesDescription[@item.ID]" edit-callback="editMade(text, @item.ID)" content-editable>
                         <p class="mont-light-light-18 panel-summary">@item.Message</p>
                     </section>
@@ -29,8 +32,9 @@
                         <p class="quicksand-light-24-green"><a href="#">Learn more ></a></p>
                     </section>
                 </article>
-            @*<a asp-action="Edit" asp-route-id="@item.ID">Edit</a> 
-              <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+
+            @*<a asp-action="Edit" asp-route-id="@item.ID">Edit</a>*@ 
+              @*<a asp-action="Details" asp-route-id="@item.ID">Details</a> |
               <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>*@       
             }
     
