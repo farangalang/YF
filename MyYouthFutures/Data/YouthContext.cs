@@ -18,6 +18,7 @@ namespace MyYouthFutures.Data
         public DbSet<Services_Message> Services_Messages { get; set; }
         public DbSet<Title> Titles { get; set; }
         public DbSet<introArticle> introArticles { get; set; } //this is the table that holds the introduction statment on the history page.
+        public DbSet<Founder_Message> Founder_Message { get; set; }//this the table that holds the founder message panels
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,8 +27,8 @@ namespace MyYouthFutures.Data
             modelBuilder.Entity<Services_Message>().ToTable("Services_Message");
             modelBuilder.Entity<Title>().ToTable("Title");
             modelBuilder.Entity<introArticle>().ToTable("introArticle");
+            modelBuilder.Entity<Founder_Message>().ToTable("Founder_Message");
         }
 
-        public DbSet<MyYouthFutures.Models.Founder_Message> Founder_Message { get; set; }
     }
 }
