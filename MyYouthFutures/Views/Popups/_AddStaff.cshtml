@@ -3,7 +3,7 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 <div id="staff" class="container_modal1">
-    <div id="staff2" class="container_modal2">
+    <form id="staff2" class="container_modal2">
         <div class="row">
             <div class="image row">
                 <img class="header_img col-xs-push-3 col-xs-6" src="~/images/yf_logo.svg" />
@@ -38,9 +38,9 @@
                     <label>Current Staff Member?</label>
                     <!--<div id="radio">-->
                         <label>Yes</label>
-                        <input type="radio" name="current" value="yes" />
+                        <input type="radio" name="current" value="yes" required/>
                         <label>No</label>
-                        <input type="radio" name="current" value="no" />
+                        <input type="radio" name="current" value="no" required/>
                     <!--</div>-->
                 </div>
             </div>
@@ -49,9 +49,9 @@
         <br />
         <div id="buttons" class="row">
             <button class="col-xs-push-5 col-xs-3 btn-lg btn-default" data-toggle="modal" data-target="#staffPopup">Cancel</button>
-            <button class="col-xs-push-6 col-xs-3 btn-lg btn-success">Submit</button>
+            <button type="submit" class="col-xs-push-6 col-xs-3 btn-lg btn-success">Submit</button>
             
             
         </div>
-    </div>
+    </form>
 </div>
