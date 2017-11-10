@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace MyYouthFutures.Models
 {
-    public class Staff
+    public class BoardOfDirectors
     {
         public int ID { get; set; }
-        public string Image { get; set; }
         public string Name { get; set; }
         public string Title { get; set; }
         public string Subtitle { get; set; }

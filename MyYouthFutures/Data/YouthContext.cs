@@ -29,5 +29,7 @@ namespace MyYouthFutures.Data
         public DbSet<MyYouthFutures.Models.Donor> Donor { get; set; }
 
         public DbSet<MyYouthFutures.Models.Staff> Staff { get; set; }
+
+        public DbSet<MyYouthFutures.Models.BoardOfDirectors> BoardOfDirectors { get; set; }
     }
 }
