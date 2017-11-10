@@ -6,5 +6,5 @@
 
 
 
-+ Items to discuss
-  + Do we need _Service.cshtml ?
+
+Scott's Cell for Merge 435-850-2964
