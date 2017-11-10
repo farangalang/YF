@@ -43,5 +43,9 @@ namespace MyYouthFutures.Data
         public DbSet<MyYouthFutures.Models.Outreach> Outreach { get; set; }
 
         public DbSet<MyYouthFutures.Models.Stats> Stats { get; set; }
+
+        public DbSet<MyYouthFutures.Models.Services> Services { get; set; }
+
+        public DbSet<MyYouthFutures.Models.HomeTitle> HomeTitle { get; set; }
     }
 }
