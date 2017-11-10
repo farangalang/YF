@@ -649,10 +649,12 @@
     margin: 5px 0px 5px 0px;
 }
 
-.modal input[type=text], .modal input[type=password] {
+.modal input[type=text], .modal input[type=password], .modal select {
     height: 35px;
     margin: 2px 2px 15px 2px;
-    padding: 0px;
+    padding: 2px;
+    /*border: 1px solid #a77125;*/
+    font-size: medium;
 }
 
 .modal label {
@@ -660,6 +662,16 @@
     vertical-align: text-bottom;
     margin: 5px 0 0 0;
     padding: 0;
+}
+
+.modal .title {
+    color: #583b13; /*#583b13; /*#663300;*/
+    text-align: center;
+}
+
+.modal .titleBox{
+    border-bottom: 5px double #86ad38;
+    margin-bottom: 10px;
 }
 
 /***********************
@@ -746,7 +758,7 @@
     margin: 5px 0px 5px 0px;
 }
 
-#add_img, #add_img div{
+#staff #add_img, #staff #add_img div{
     align-content:center;
 }
 
@@ -763,3 +775,42 @@
 #staff .col-xs-5, #staff .col-xs-7{
     margin: 5px 0px 5px 0px;
 }
+
+/*****************************
+    Donor Modal
+******************************/
+#donor{
+    width: 475px;
+}
+
+#donor_info label{
+    text-align: right;
+}
+
+ #donor .fixed_width label{
+    width: 130px;
+}
+
+ #donor select, #donor input[type=text], #donor input[type=password]{
+    width: 250px;
+ }
+
+ #donor .radLbl {
+    margin-left: 10px;
+ }
+
+ #donor .rad {
+     margin-right: 10px;
+ }
+
+#donor img {
+    width: 130px;
+    padding: 0px;
+    margin: 0px;
+}
+
+ #donor header{
+     text-align: left;
+     padding: 0px;
+     margin: 0px;
+ }
