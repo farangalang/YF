@@ -3,18 +3,18 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 <div id="staff" class="container_modal1">
-    <div id="staff2" class="container_modal2">
+    <form id="staff2" class="container_modal2">
         <div class="">
             <div class="titleBox row">
                 <img class="header_img col-xs-push-1 col-xs-10" src="~/images/yf_house.png" />
                 <h4 class="title col-xs-push-2 col-xs-4">Staff Information</h4>
             </div>
 
-            <form class="row">
+            <div class="row">
                 <div class="col-xs-6">
                     <div id="add_img" class="row">
                         <img class="staff_pic col-xs-push-1 col-xs-10" src="~/images/ban_circle.png" title="Image does not exist" alt="Image does not exist" />
-                        <button class="col-xs-push-2 col-xs-8">Select Image</button>
+                        <button type="button" class="col-xs-push-2 col-xs-8">Select Image</button>
                     </div>
                 </div>
 
@@ -27,7 +27,7 @@
                         <div>
                             <label>Title:  </label>
                             <input type="text" name="staff_title" required />
-                            <button id="addTitle">+</button>
+                            <button id="addTitle" type="button">+</button>
                         </div>
                     </div>
                     <div class="fixed_width">
@@ -42,7 +42,7 @@
                         <input type="radio" name="current" value="no" required />
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
         <div id="buttons" class="row">
             <button class="col-xs-push-5 col-xs-3 btn-lg btn-default" data-toggle="modal" data-target="#staffPopup">Cancel</button>
@@ -50,5 +50,5 @@
             
             
         </div>
-    </div>
+    </form>
 </div>

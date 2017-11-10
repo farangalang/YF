@@ -752,7 +752,7 @@
 #staff #add_img .staff_pic{
     border: double;
     padding: 0px;
-   /* margin: 5px 0px 5px 0px;*/
+    margin: 1px;
 }
 
 #staff #add_img, #staff #add_img div{
