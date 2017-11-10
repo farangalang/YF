@@ -674,6 +674,12 @@
     margin-bottom: 10px;
 }
 
+.modal .header_img {
+    width: 130px;
+    padding: 0px;
+    margin: 0px;
+}
+
 /***********************
     Login
 ************************/
@@ -712,9 +718,9 @@
         margin: 3px 0px 0px 3px;
 }
 
-/*
+/*************************
     Sidebar
-*/
+**************************/
 #sidebar {
     background-color: #1100FF;
     float: left;
@@ -732,16 +738,7 @@
     AddStaff Modal
 *******************************/
 #staff {
-    width: 700px;
-}
-
-#staff h3 {
-    color: #583b13; /*#583b13; /*#663300;*/
-    text-align: center;
-    border-bottom-style: solid;
-    border-bottom-color: #779a32; /*#86ad38;*/
-    margin-top: 0px;
-    padding-top: 0px;
+    width: 600px;
 }
 
 #staff input{
@@ -752,10 +749,10 @@
     margin: 5px 0px 5px 0px;
 }
 
-#staff #add_img img{
-    width: 250px;
+#staff #add_img .staff_pic{
     border: double;
-    margin: 5px 0px 5px 0px;
+    padding: 0px;
+   /* margin: 5px 0px 5px 0px;*/
 }
 
 #staff #add_img, #staff #add_img div{
@@ -774,6 +771,16 @@
 
 #staff .col-xs-5, #staff .col-xs-7{
     margin: 5px 0px 5px 0px;
+}
+
+#staff header {
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+#staff div {
+    padding: 0px;
 }
 
 /*****************************
