@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Shared\Components\intro\" />
+    <Folder Include="Views\Shared\Components\Founder\" />
   </ItemGroup>
 
 </Project>

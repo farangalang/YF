@@ -77,6 +77,19 @@ namespace MyYouthFutures.Data
                 context.introArticles.Add(intr);
             }
             context.SaveChanges();
+
+            var founder_messages = new Founder_Message[]
+            {
+                new Founder_Message{founderImage="~/images/history_kristen_scott.jpg",founderSubTetxt="Kristen and Scott"},
+                new Founder_Message{founderImage="~/images/history_shelter.jpg",founderSubTetxt="The shelter home"},
+                new Founder_Message{founderImage="~/images/history_kristen.jpg",founderSubTetxt="Kristen"}
+            };
+            foreach (Founder_Message fndr in founder_messages)
+            {
+                context.Founder_Message.Add(fndr);
+            }
+            context.SaveChanges();
+
         }
     }
 }
