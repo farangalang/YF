@@ -27,5 +27,7 @@ namespace MyYouthFutures.Data
             modelBuilder.Entity<Title>().ToTable("Title");
             modelBuilder.Entity<introArticle>().ToTable("introArticle");
         }
+
+        public DbSet<MyYouthFutures.Models.Founder_Message> Founder_Message { get; set; }
     }
 }
