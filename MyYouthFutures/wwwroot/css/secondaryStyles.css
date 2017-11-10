@@ -571,13 +571,19 @@
 ****************************/
 .modal {
     font-family: "montserrat-regular";
-    margin-left: 30%;
+    padding: 5% 10% 5% 30%;
 }
 
     .modal h1, .modal h2, .modal h3, .modal h4, .modal h5, .modal h6 {
         font-family: "montserrat-regular";
         font-weight: bold;
     }
+
+#loginCase{
+    float: none;
+    margin: 0 auto;
+}
+
 .container_modal1 {
     padding: 2px;
     margin: 10px;
@@ -643,69 +649,35 @@
     margin: 5px 0px 5px 0px;
 }
 
-.modal input[type=text] {
-    width: 250px;
+.modal input[type=text], .modal input[type=password] {
     height: 35px;
-    margin-left: 15px;
-    margin: 0px;
+    margin: 2px 2px 15px 2px;
     padding: 0px;
 }
 
 .modal label {
+    font-size: large;
     vertical-align: text-bottom;
     margin: 5px 0 0 0;
     padding: 0;
-    margin-left: 15px;
 }
 
 /***********************
     Login
 ************************/
-#loginCase {
-    max-width: 380px;
-    height: 470px;
-    margin-top: 10%;
-    margin-left: 37%;
-    padding: 1px;
+#loginCase{
+    width: 380px;
 }
 
-.login form {
-    height: 440px;
+#loginModal p a{
+    font-size: small;
+    text-align: center;
+    margin: 1px;
+    padding: 0;
 }
 
-.login * {
-    opacity: 1;
-    max-width: 350px;
-    padding: 5px;
-    overflow: hidden;
-    font-size: large;
-}
-
-.login .image {
-    margin-top: 20px;
-}
-
-.login .rw4 {
-    width: 320px;
-}
-
-    .login .rw4 p, .login .rw4 p a {
-        font-size: small;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
-
-.login .rw3 {
-    margin-left: 10%;
-    padding-top: 20px;
-}
-
-.login #sbmt {
-    margin-right: 20px;
-    width: 300px;
-    margin-left: 10px;
-    margin-top: 20px;
+.login img {
+    margin: 20px 0px 20px 0px;
 }
 
 #cncl {
@@ -713,10 +685,9 @@
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
     border-radius: 7px;
-    position: absolute;
     height: 30px;
     width: 30px;
-    margin: 0px 0px 0px 348px;
+    margin: 0px 0px 0px 32px;
     padding: 0;
 }
 
@@ -727,26 +698,11 @@
     #cncl span.glyphicon {
         font-size: x-large;
         margin: 3px 0px 0px 3px;
-    }
-
-.login label {
-    vertical-align: text-bottom;
-    margin: 5px 0 0 0;
-    padding: 0;
-    color: #663300;
-    margin-left: 15px;
 }
 
-.login input {
-    width: 280px;
-    margin-left: 15px;
-}
-
-#loginScn #loginCase #loginModal {
-   /* max-width: 360px;*/
-    max-height: 450px;
-}
-
+/*
+    Sidebar
+*/
 #sidebar {
     background-color: #1100FF;
     float: left;
@@ -764,35 +720,24 @@
     AddStaff Modal
 *******************************/
 #staff {
-    background-color: white;
-    /*border: double;*/
     width: 700px;
 }
 
-#staff2{
-    /*width: 480px;*/
-}
-
 #staff h3 {
-    /*color: black;*/
     color: #583b13; /*#583b13; /*#663300;*/
     text-align: center;
-    /*border: solid;*/
     border-bottom-style: solid;
     border-bottom-color: #779a32; /*#86ad38;*/
     margin-top: 0px;
     padding-top: 0px;
 }
 
-#staff button {
-    margin: 5px 0px 5px 0px;
+#staff input{
+    margin: 2px;
 }
 
-#staff #buttons{
-    //border-top-style: solid;
-    //border-top-color: #779a32;
-
-    //padding: 10px;
+#staff button {
+    margin: 5px 0px 5px 0px;
 }
 
 #staff #add_img img{
@@ -815,23 +760,6 @@
     width: 50px;
 }
 
-#staff #radio {
-   // margin-left: 50px;
-}
-
 #staff .col-xs-5, #staff .col-xs-7{
     margin: 5px 0px 5px 0px;
-}
-
-#addTitle {
-    
-}
-
-#staff #staff_info, #staff #add_img{
-    //height: 235px;
-    //border: solid;
-}
-
-#staff div{
-    //border: solid;
 }

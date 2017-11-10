@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+    <div id="loginCase" class="row">
+        <label id="cncl" class="col-xs-push-10 col-xs-2" data-toggle="modal" data-target="#loginPopup"><span class="glyphicon glyphicon-remove"></span></label>
+
+        <div id="loginModal" class="container_modal1 login">
+
+            <div class="container_modal2">
+                <img class="col-xs-12" src="~/images/yf_logo.svg" />
+
+                <div class="row">
+                    <!--User Name-->
+                    <label class="col-xs-push-1 col-xs-10"><b>Username:</b></label>
+                    <input class="col-xs-push-1 col-xs-10" type="text" name="usrnm" required />
+
+                    <!--Password-->
+                    <label class="col-xs-push-1 col-xs-10"><b>Password:</b></label>
+                    <input class="col-xs-push-1 col-xs-10" type="password" name="pswrd" required />
+
+                    <!--Login Button-->
+                    <button id="sbmt" type="submit" class="btn-lg btn-success col-xs-push-1 col-xs-10">Login</button>
+
+                    <!--Links for forgotten password/username-->
+                    <p><a class="col-xs-push-2 col-xs-8">Forgot Your Password?</a></p>
+                    <p><a class="col-xs-push-2 col-xs-8">Forgot Your Username?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
