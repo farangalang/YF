@@ -22,7 +22,7 @@ namespace MyYouthFutures.Controllers
         // GET: introArticles
         public async Task<IActionResult> Index()
         {
-            return View(await _context.introArticle.ToListAsync());
+            return View(await _context.introArticles.ToListAsync());
         }
 
         // GET: introArticles/Details/5
@@ -33,7 +33,7 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var introArticle = await _context.introArticle
+            var introArticle = await _context.introArticles
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (introArticle == null)
             {
@@ -73,7 +73,7 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var introArticle = await _context.introArticle.SingleOrDefaultAsync(m => m.ID == id);
+            var introArticle = await _context.introArticles.SingleOrDefaultAsync(m => m.ID == id);
             if (introArticle == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var introArticle = await _context.introArticle
+            var introArticle = await _context.introArticles
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (introArticle == null)
             {
@@ -139,15 +139,15 @@ namespace MyYouthFutures.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var introArticle = await _context.introArticle.SingleOrDefaultAsync(m => m.ID == id);
-            _context.introArticle.Remove(introArticle);
+            var introArticle = await _context.introArticles.SingleOrDefaultAsync(m => m.ID == id);
+            _context.introArticles.Remove(introArticle);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool introArticleExists(int id)
         {
-            return _context.introArticle.Any(e => e.ID == id);
+            return _context.introArticles.Any(e => e.ID == id);
         }
     }
 }
