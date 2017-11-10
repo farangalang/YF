@@ -25,5 +25,9 @@ namespace MyYouthFutures.Data
             modelBuilder.Entity<Services_Message>().ToTable("Services_Message");
             modelBuilder.Entity<Title>().ToTable("Title");
         }
+
+        public DbSet<MyYouthFutures.Models.Donor> Donor { get; set; }
+
+        public DbSet<MyYouthFutures.Models.Staff> Staff { get; set; }
     }
 }
