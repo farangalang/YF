@@ -75,8 +75,8 @@
                                 <li><a asp-area="" asp-controller="Home" asp-action="About">Contact Info</a></li>@*TODO: This needs linked to the Contact Info Section of the About Page*@
                             </ul>
                         </li>
-                        <li class="donate"><a onclick="document.getElementById('loginScn').style.display = 'block'; w3_open()">Login</a></li>@*TODO: This needs linked to the action when the Login Page*@
-                        <!--<li class="donate"><a data-toggle="modal" data-target="#loginScn">Login</a></li>-->
+                        <!--<li class="donate"><a onclick="document.getElementById('loginScn').style.display = 'block'; w3_open()">Login</a></li>-->@*TODO: This needs linked to the action when the Login Page*@
+                        <li class="donate"><a data-toggle="modal" data-target="#loginPopup">Login</a></li>
                         <li class="donate"><a asp-area="" asp-controller="Home" asp-action="About">Donate</a></li>@*TODO: This needs linked to the Media Section of the Donate Page*@
 
                     </ul>
@@ -90,9 +90,9 @@
 
     <div class="container body-content">
 
-        <div id="loginScn" class="modal">
+        <div id="loginPopup" class="modal row container">
             @{
-                Html.RenderPartial("_Login");
+                Html.RenderPartial("../Popups/_Login");
             }
         </div>
 
