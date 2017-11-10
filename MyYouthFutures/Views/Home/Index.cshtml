@@ -5,8 +5,14 @@
 
 <!--<button onclick="document.getElementById('staffPop').style.display = 'block'">Show Staff</button>-->
 <button type="button" data-toggle="modal" data-target="#staffPopup">Show Staff</button>
+<button type="button" data-toggle="modal" data-target="#donorPopup">Show Donor</button>
+
 <div id="staffPopup" class="modal">
     @{ Html.RenderPartial("../Popups/_AddStaff");}
+</div>
+
+<div id="donorPopup" class="modal">
+    @{ Html.RenderPartial("../Popups/_AddDonor");}
 </div>
 
 <section class="container-fluid main-header">
