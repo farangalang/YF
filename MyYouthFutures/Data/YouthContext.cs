@@ -31,5 +31,17 @@ namespace MyYouthFutures.Data
         public DbSet<MyYouthFutures.Models.Staff> Staff { get; set; }
 
         public DbSet<MyYouthFutures.Models.BoardOfDirectors> BoardOfDirectors { get; set; }
+
+        public DbSet<MyYouthFutures.Models.Media> Media { get; set; }
+
+        public DbSet<MyYouthFutures.Models.Donate> Donate { get; set; }
+
+        public DbSet<MyYouthFutures.Models.Donate_Message> Donate_Message { get; set; }
+
+        public DbSet<MyYouthFutures.Models.Needs> Needs { get; set; }
+
+        public DbSet<MyYouthFutures.Models.Outreach> Outreach { get; set; }
+
+        public DbSet<MyYouthFutures.Models.Stats> Stats { get; set; }
     }
 }
