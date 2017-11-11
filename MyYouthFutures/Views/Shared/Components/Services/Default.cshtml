@@ -22,8 +22,7 @@
                     <section ng-model ="ServicesHeader[@item.ID]" edit-callback="editMade(text, @item.ID)" content-editable>
                         <p class="quicksand-light-32 panel-heading" >@item.MessageHeader</p>  
                     </section>
-                    <input value="Save" class="btn btn-default"/>
-                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                    
 
                     <section ng-model ="ServicesDescription[@item.ID]" edit-callback="editMade(text, @item.ID)" content-editable>
                             <p class="mont-light-light-18 panel-summary">@item.Message</p>
