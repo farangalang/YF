@@ -1,5 +1,4 @@
-﻿@model IEnumerable<MyYouthFutures.Models.Services_Message>
-@{
+﻿@{
     ViewData["Title"] = "Home Page Demo";
 }
 
@@ -38,49 +37,7 @@
     </div>
 </section>
 
-<section class="container-fluid services">
-    <div class="row">
-        <div class="col-xs-12">
-            <h4 class="services-heading">Services</h4>
-            <p class="mont-light-light-22 about-services">Our programming is divided into three main areas. Each program area has specific components to meet the needs of the youth in need.</p>
-        </div>
-    </div>
-</section>
-
-<section>
-<div class="row">
-<div class="boxes">
-
-@foreach (var item in Model)
-        {
-
-            
-            <article class="col-xs-3 panel">
-                <section class="panel-img-container">
-                    <img src="@Html.DisplayFor(modelItem => item.MessageImage)" alt="House" class="panel-img" />
-                </section>
-                <section>
-                    <p class="quicksand-light-32 panel-heading">@Html.DisplayFor(modelItem => item.MessageHeader)</p>
-                </section>
-                <section>
-                    <p class="mont-light-light-18 panel-summary">@Html.DisplayFor(modelItem => item.Message)</p>
-                </section>
-                <section class="panel-footer">
-                    <p class="quicksand-light-24-green"><a href="#">Learn more ></a></p>
-                </section>
-            </article>
-            @*<a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                                                                      <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                                                                      <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>*@
-                    
-        }
-    
-        </div>
-    </div>
-    
-</section>
-
-
+@await Component.InvokeAsync("Services")
 
 <article class="container-fluid purpose-box">
     <section class="row purpose col-xs-12">
