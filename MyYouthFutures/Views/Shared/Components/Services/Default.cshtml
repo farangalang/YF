@@ -20,10 +20,10 @@
                     <section class="panel-img-container">
                         <img src="@item.MessageImage" alt="House" class="panel-img" />
                     </section>
-                    <section ng-model="ServicesHeader[@item.ID]" edit-callback="editMade(text, @item.ID)" content-editable>
+                    <section ng-model="ServicesHeader[@item.ID]" >
                         <p class="quicksand-light-32 panel-heading">@item.MessageHeader</p>
                     </section>
-                    <section ng-model="ServicesDescription[@item.ID]" edit-callback="editMade(text, @item.ID)" content-editable>
+                    <section ng-model="ServicesDescription[@item.ID]">
                         <p class="mont-light-light-18 panel-summary">@item.Message</p>
                     </section>
                     <section class="panel-footer">
