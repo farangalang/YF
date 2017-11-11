@@ -80,13 +80,25 @@ namespace MyYouthFutures.Data
 
             var founder_messages = new Founder_Message[]
             {
-                new Founder_Message{founderImage="~/images/history_kristen_scott.jpg",founderSubTetxt="Kristen and Scott"},
-                new Founder_Message{founderImage="~/images/history_shelter.jpg",founderSubTetxt="The shelter home"},
-                new Founder_Message{founderImage="~/images/history_kristen.jpg",founderSubTetxt="Kristen"}
+                new Founder_Message{founderImage="/images/history_kristen_scott.jpg",founderSubTetxt="Kristen and Scott"},
+                new Founder_Message{founderImage="/images/history_shelter.jpg",founderSubTetxt="The shelter home"},
+                new Founder_Message{founderImage="/images/history_kristen.jpg",founderSubTetxt="Kristen"}
             };
             foreach (Founder_Message fndr in founder_messages)
             {
                 context.Founder_Message.Add(fndr);
+            }
+            context.SaveChanges();
+
+            var firstYear_Service_Messages = new FirstYear_Service_Messages[]
+            {
+                new FirstYear_Service_Messages{firstYearImage="/images/history_meal.svg",firstYearText="meals; 3 meals a day and 2 snacks for shelter and drop-in youth. Opened the resource room <span class="+"green"+">354</span> times with access to basic nec-essities including clothing, hygiene items, back packs, blankets, sleeping bags, basic medical supplies, etc."},
+                new FirstYear_Service_Messages{firstYearImage="/images/history_hand.svg",firstYearText="Conducted more than <span class="+"green"+">245</span> street outreach hours and provided items from the resource room to street youth."},
+                new FirstYear_Service_Messages{firstYearImage="/images/history_house.svg",firstYearText="Provided <span class="+"green"+">1,535</span> shelter night stays and <span class="+"green"+">511</span> drop in services including case management, connections to health care, mental health care and group therapy, facilitation with other youth service providers, computer access, showers, laundry facilities, etc."}
+            };
+            foreach (FirstYear_Service_Messages fym in firstYear_Service_Messages)
+            {
+                context.FirstYear_Service_Messages.Add(fym);
             }
             context.SaveChanges();
 
