@@ -36,7 +36,17 @@ namespace MyYouthFutures.Controllers
         {
             ViewData["Message"] = "Your application description page.";
 
-            return View(await _context.introArticles.ToListAsync());
+            var articles = await _context.introArticles.ToListAsync();
+            var founders = await _context.Founder_Message.ToListAsync();
+
+            var vm = new ItemViewModel
+            {
+                introArticles = articles,
+                Founder_Messages = founders
+
+            };
+
+            return View(vm);
         }
 
         public IActionResult Contact()
