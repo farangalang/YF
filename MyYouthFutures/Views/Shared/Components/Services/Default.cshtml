@@ -26,12 +26,12 @@
                     <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
 
                     <section ng-model ="ServicesDescription[@item.ID]" edit-callback="editMade(text, @item.ID)" content-editable>
-                        <p class="mont-light-light-18 panel-summary">@item.Message</p>
-                    </section>
-                    <section class="panel-footer">
-                        <p class="quicksand-light-24-green"><a href="#">Learn more ></a></p>
-                    </section>
-                </article>
+                            <p class="mont-light-light-18 panel-summary">@item.Message</p>
+                        </section>
+                        <section class="panel-footer">
+                            <p class="quicksand-light-24-green"><a href="#">Learn more ></a></p>
+                        </section>
+</article>
 
             @*<a asp-action="Edit" asp-route-id="@item.ID">Edit</a>*@ 
               @*<a asp-action="Details" asp-route-id="@item.ID">Details</a> |
