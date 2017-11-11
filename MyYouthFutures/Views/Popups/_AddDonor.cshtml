@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div id="donor" class="container_modal1">
+    <form id="donor2" class="container_modal2">
+        <div class="row">
+            <div class="titleBox row">
+                <img class="header_img col-xs-1" src="~/images/yf_house.png" />
+                <h4 class="title col-xs-push-1 col-xs-4">Donor Information</h4>
+            </div>
+
+            <div id="donor_info" class="col-xs-12">
+                <div class="fixed_width">
+                    <label>Name:</label>
+                    <input type="text" name="donor_name"  required />
+                </div>
+                <div class="fixed_width row">
+                    <div>
+                        <label>Type of Donor:</label>
+                        <select name="donorType" required >
+                            <option value="null">--Choose One--</option>
+                            <option value="platnum">Platnum</option>
+                            <option value="gold">Gold</option>
+                            <option value="silver">Silver</option>
+                            <option value="bronze">Bronze</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="fixed_width row">
+                    <label>Year:</label>
+                    <input type="text" name="donor_year" required />
+                </div>
+
+                <div>
+                    <label>Current Donor?</label>
+                    
+                    <input type="radio" name="current" value="yes" class="radLbl" required/>
+                    <label class="rad">Yes</label>
+                    
+                    <input type="radio" name="current" value="no" class="radLbl" required/>
+                    <label class="rad">No</label>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <div id="buttons" class="row">
+            <button class="col-xs-push-2 col-xs-3 btn-lg btn-default" data-toggle="modal" data-target="#donorPopup">Cancel</button>
+            <button class="col-xs-push-4 col-xs-4 btn-lg btn-success" type="submit">Submit</button>
+
+
+        </div>
+    </form>
+</div>

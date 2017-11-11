@@ -566,127 +566,25 @@
     padding-bottom: 10%;
 }
 
-/***********************
-    Login
-************************/
-
-#loginScn {
+/***************************
+    General Modal look
+****************************/
+.modal {
     font-family: "montserrat-regular";
-    background: rgba(234, 234, 234, 0.8);
+    padding: 5% 10% 5% 30%;
 }
 
-#loginCase {
-    max-width: 380px;
-    height: 470px;
-    margin-top: 10%;
-    margin-left: 37%;
-    padding: 1px;
-}
-
-.login form {
-    height: 440px;
-    background-color: white;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    border-radius: 7px;
-    border-style: solid;
-    border-color: #86ad38; /*#71963a;*/
-}
-
-.login * {
-    opacity: 1;
-    max-width: 350px;
-    padding: 5px;
-    overflow: hidden;
-    font-size: large;
-}
-
-.login .image {
-    margin-top: 20px;
-}
-
-.login .rw4 {
-    width: 320px;
-}
-
-    .login .rw4 p, .login .rw4 p a {
-        font-size: small;
-        text-align: center;
-        margin: 0;
-        padding: 0;
+    .modal h1, .modal h2, .modal h3, .modal h4, .modal h5, .modal h6 {
+        font-family: "montserrat-regular";
+        font-weight: bold;
     }
 
-.login .rw3 {
-    margin-left: 10%;
-    padding-top: 20px;
+#loginCase{
+    float: none;
+    margin: 0 auto;
 }
 
-/*.login .rw3 button {*/
-.login button {
-    height: 50px;
-    width: 100px;
-    font-weight: bold;
-}
-
-.login .container {
-    margin-top: 20px;
-}
-
-.login #sbmt {
-    margin-right: 20px;
-    background-color: #9ec54d;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    border-radius: 7px;
-    color: white;
-    width: 300px;
-    margin-left: 10px;
-    margin-top: 20px;
-}
-
-    .login #sbmt:hover {
-        background-color: #86ad38;
-    }
-
-#cncl {
-    /*background-color: #cccccc;*/
-    background: rgba(204, 204, 204, 0.0);
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    border-radius: 7px;
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    margin: 0px 0px 0px 348px;
-    padding: 0;
-}
-
-    #cncl:hover {
-        /*background-color: #b3b3b3;*/
-        background: rgba(179,179,179,0.6);
-    }
-
-    #cncl span.glyphicon {
-        font-size: x-large;
-        margin: 3px 0px 0px 3px;
-    }
-
-.login label {
-    vertical-align: text-bottom;
-    margin: 5px 0 0 0;
-    padding: 0;
-    color: #663300;
-    margin-left: 15px;
-}
-
-.login input {
-    width: 280px;
-    margin-left: 15px;
-}
-
-#loginScn #loginCase #loginModal {
-    max-width: 360px;
-    max-height: 450px;
+.container_modal1 {
     padding: 2px;
     margin: 10px;
     background-color: white;
@@ -694,9 +592,135 @@
     -webkit-border-radius: 10px;
     border-radius: 10px;
     border-style: solid;
-    border-color: #663300;
+    border-color: #583b13; /*#663300; /*brown*/
+    font-weight: bold;
+    color: #583b13;
 }
 
+.container_modal2 {
+    padding: 5px;
+    background-color: white;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    border-style: solid;
+    border-color: #86ad38; /*green*/
+}
+
+.btn-success {
+    color: white;
+    background-color: #9ec54d;
+    border-color: #5a7425;
+}
+
+    .btn-success:focus,
+    .btn-success.focus {
+        color: white;
+        background-color: #779a32;
+        border-color: #5a7425;
+    }
+
+    .btn-success:hover {
+        color: white;
+        background-color: #779a32;
+        border-color: #5a7425;
+    }
+
+.btn-default {
+    color: #404040;/*#5c5c3d;*/
+    background-color: #cccccc;/*#b8b894;*/
+    border-color: #595959;/*#999966;*/
+}
+
+    .btn-default:focus,
+    .btn-default.focus {
+        color: #333333;/*#3d3d29;*/
+        background-color: #999999;/*#999966;*/
+        border-color: #666666; /*#6b6b47;*/
+    }
+
+    .btn-default:hover {
+        color: #333333; /*#3d3d29;*/
+        background-color: #999999;/*#999966;*/
+        border-color: #666666;/*#6b6b47;*/
+    }
+
+.row{
+    margin: 5px 0px 5px 0px;
+}
+
+.modal input[type=text], .modal input[type=password], .modal select {
+    height: 35px;
+    margin: 2px 2px 15px 2px;
+    padding: 2px;
+    /*border: 1px solid #a77125;*/
+    font-size: medium;
+}
+
+.modal label {
+    font-size: large;
+    vertical-align: text-bottom;
+    margin: 5px 0 0 0;
+    padding: 0;
+}
+
+.modal .title {
+    color: #583b13; /*#583b13; /*#663300;*/
+    text-align: center;
+}
+
+.modal .titleBox{
+    border-bottom: 5px double #86ad38;
+    margin-bottom: 10px;
+}
+
+.modal .header_img {
+    width: 130px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/***********************
+    Login
+************************/
+#loginCase{
+    width: 380px;
+}
+
+#loginModal p a{
+    font-size: small;
+    text-align: center;
+    margin: 1px;
+    padding: 0;
+}
+
+.login img {
+    margin: 20px 0px 20px 0px;
+}
+
+#cncl {
+    background: rgba(204, 204, 204, 0.0);
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    height: 30px;
+    width: 30px;
+    margin: 0px 0px 0px 32px;
+    padding: 0;
+}
+
+    #cncl:hover {
+        background: rgba(179,179,179,0.6);
+    }
+
+    #cncl span.glyphicon {
+        font-size: x-large;
+        margin: 3px 0px 0px 3px;
+}
+
+/*************************
+    Sidebar
+**************************/
 #sidebar {
     background-color: #1100FF;
     float: left;
@@ -710,3 +734,90 @@
     max-height: 350px;
     max-width: 150px;
 }
+/******************************
+    AddStaff Modal
+*******************************/
+#staff {
+    width: 600px;
+}
+
+#staff input{
+    margin: 2px;
+}
+
+#staff button {
+    margin: 5px 0px 5px 0px;
+}
+
+#staff #add_img .staff_pic{
+    border: double;
+    padding: 0px;
+    margin: 1px;
+}
+
+#staff #add_img, #staff #add_img div{
+    align-content:center;
+}
+
+#staff_info div{
+    margin: 15px 0px 15px 0px;
+    justify-content: center;
+    font-size: large;
+}
+
+#staff_info .fixed_width label{
+    width: 50px;
+}
+
+#staff .col-xs-6{
+    margin: 5px 0px 5px 0px;
+}
+
+#staff header {
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+#staff div {
+    padding: 0px;
+}
+
+/*****************************
+    Donor Modal
+******************************/
+#donor{
+    width: 475px;
+}
+
+#donor_info label{
+    text-align: right;
+}
+
+ #donor .fixed_width label{
+    width: 130px;
+}
+
+ #donor select, #donor input[type=text], #donor input[type=password]{
+    width: 250px;
+ }
+
+ #donor .radLbl {
+    margin-left: 10px;
+ }
+
+ #donor .rad {
+     margin-right: 10px;
+ }
+
+#donor img {
+    width: 130px;
+    padding: 0px;
+    margin: 0px;
+}
+
+ #donor header{
+     text-align: left;
+     padding: 0px;
+     margin: 0px;
+ }
