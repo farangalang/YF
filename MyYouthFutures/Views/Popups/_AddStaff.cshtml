@@ -24,18 +24,18 @@
                 <div id="staff_info" class="col-xs-6">
                     <div class="fixed_width">
                         <label>Name:</label>
-                        <input type="text" name="staff_name" required />
+                        <input id="staffName"type="text" name="staff_name" required />
                     </div>
                     <div class="fixed_width row">
                         <div>
                             <label>Title:  </label>
-                            <input type="text" name="staff_title" required />
+                            <input id="staffTitle" type="text" name="staff_title" required />
                             <!--<button id="addTitle" type="button">+</button>--><!--Will add back once I figure out how to add new titles (if needed)-->
                         </div>
                     </div>
                     <div class="fixed_width">
                         <label>Email:</label>
-                        <input type="text" name="staff_email" required />
+                        <input id="staffEmail" type="text" name="staff_email" required />
                     </div>
                     <div>
                         <label>Current Staff Member?</label>
@@ -49,7 +49,7 @@
         </div>
         <div id="buttons" class="row">
             <button class="col-xs-push-5 col-xs-3 btn-lg btn-default" data-toggle="modal" data-target="#staffPopup">Cancel</button>
-            <button type="submit" class="col-xs-push-6 col-xs-3 btn-lg btn-success">Submit</button>
+            <button type="submit" onclick="formValidation()" class="col-xs-push-6 col-xs-3 btn-lg btn-success">Submit</button>
             
             
         </div>

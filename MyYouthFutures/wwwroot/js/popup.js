@@ -1,4 +1,20 @@
-﻿/*open file button click*/
+﻿/*Get Data from objects in staff modal*/
+function formValidation() {
+    return true;
+}
+function getInfo() {
+    if (formValidation()) {
+        var img = ('#staff_file').valueOf;
+        var name = ('#staffName').valueOf;
+        var title = ('#staffTitle').valueOf;
+        var email = ('#staffEmail').valueOf;
+        var current = ('input[name=staffCurrent]:checked').value(val);
+
+        alert("Image: {1}\nName: {2}\nTitle: {3}\nEmail: {4}\nCurrent: {5}", img, name, title, email, current);
+    }
+}
+
+/*open file button click*/
 //$('#staff_btn').click(function () { $('#staff_file').trigger('click');})
 
 /*document.getElementById("#staff_btn").click(function () {
@@ -23,16 +39,6 @@
         fr.readAsDataURL(files[0]);
     }
 }*/
-
-/*open file dialogue; credit: Samuel Liew, stackOverflow*/
-function performClick(elemId) {
-    var elem = document.getElementById(elemId);
-    if (elem && document.createEvent) {
-        var evt = document.createEvent("MouseEvents");
-        evt.initEvent("click", true, false);
-        elem.dispatchEvent(evt);
-    }
-}
 
 /*function w3_open() {
     document.getElementById("sidebar").style.display = "block";
