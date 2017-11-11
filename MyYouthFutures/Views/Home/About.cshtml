@@ -38,11 +38,18 @@
     <div class="container">
         <div class="row history_text_pics">
             @*@await Component.InvokeAsync("Founder")*@
+            @foreach (Founder_Message fm in Model.Founder_Messages)
+            {
+                <section class="col-xs-12  col-md-4 first_img ">
+                    <img src=@fm.founderImage class="img-responsive center-block" title="Kristen and Scott" alt="Kristen and Scott">
+                    <p class="mont_light_14_white hist_subtitle">@fm.founderSubTetxt</p>
+                </section>
+            }
             @*<section class="col-xs-12  col-md-4 first_img ">
                 <img src="~/images/history_kristen_scott.jpg" class="img-responsive center-block" title="Kristen and Scott" alt="Kristen and Scott">
                 <p class="mont_light_14_white hist_subtitle">Kristen and Scott</p>
-            </section>
-            <section class="col-xs-12 col-md-4 second_img">
+            </section>*@
+            @*<section class="col-xs-12 col-md-4 second_img">
                 <img src="~/images/history_shelter.jpg" class="img-responsive img-responsive center-block" title="Shelter" alt="Shelter">
                 <p class="mont_light_14_white hist_subtitle">The shelter home</p>
             </section>
