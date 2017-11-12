@@ -1,93 +1,82 @@
-﻿@Model ItemViewModel 
+﻿@Model ItemViewModel
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
-<article>
-    <div class="container-fluid">
-        <div class="row  questions">
-            <div class="col-sm-12 col-md-7 text">
-                <p>Have? Send us a text!</p>
-            </div>
-            <div class="col-sm-12 col-md-5 phone">
-                <p>(801) 528-1214</p>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid" id="historyBanner">
-        <div class="row hist_main_img">
-            <div class="col-xs-8 text">
-                <h2>Youth Futures</h2>
-                <h2 class="h2style1">History</h2>
+<div>
+    <article>
+        <div class="container-fluid">
+            <div class="row  questions">
+                <div class="col-sm-12 col-md-7 text">
+                    <p>Have? Send us a text!</p>
+                </div>
+                <div class="col-sm-12 col-md-5 phone">
+                    <p>(801) 528-1214</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row history_text">
-            <section class="col-xs-12">
-                @foreach (introArticle ia in Model.introArticles)
-                {
-                    if (ia.ID == 1)
-                    {
-                    <p class="mont_regular_22_darkgray">@ia.ArticleText</p>
+        <div class="container-fluid" id="historyBanner">
+            <div class="row hist_main_img">
+                <div class="col-xs-8 text">
+                    <h2>Youth Futures</h2>
+                    <h2 class="h2style1">History</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row history_text">
+                <section class="col-xs-12">
+                    @foreach (introArticle ia in Model.introArticles)
+                     {
+                        if (ia.ID == 1)
+                        {
+                            <p class="mont_regular_22_darkgray">@ia.ArticleText</p>
+                            <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+                        }
                     }
-                }
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
-<<<<<<< HEAD
+    </article>
 </div>
 @* ------ END Founders Message ------ *@
 @* ------ YF HISTORY ------ *@
+<div class="container">
+    <div class="row history_text_pics">
+        @*@await Component.InvokeAsync("Founder")*@
+        @foreach (Founder_Message fm in Model.Founder_Messages)
+            {
+            <section class="col-xs-12  col-md-4 first_img ">
+                <img src=@fm.founderImage class="img-responsive center-block" title="Kristen and Scott" alt="Kristen and Scott">
+                <p class="mont_light_14_white hist_subtitle">@fm.founderSubTetxt</p>
+            </section>
+        }
+    </div>
+</div>
 <div class="container-fluid">
     <div class="row history_text">
         <section class="col-xs-12">
             @foreach (introArticle ia in Model.introArticles)
-=======
-    <div class="container">
-        <div class="row history_text_pics">
-            @*@await Component.InvokeAsync("Founder")*@
-            @foreach (Founder_Message fm in Model.Founder_Messages)
->>>>>>> parent of 765487a... Added Edits to first three sections on about
             {
-                <section class="col-xs-12  col-md-4 first_img ">
-                    <img src=@fm.founderImage class="img-responsive center-block" title="Kristen and Scott" alt="Kristen and Scott">
-                    <p class="mont_light_14_white hist_subtitle">@fm.founderSubTetxt</p>
-                </section>
-            }
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row history_text">
-            <section class="col-xs-12">
-                @foreach (introArticle ia in Model.introArticles)
+                if (ia.ID == 2)
                 {
-                    if (ia.ID == 2)
-                    {
                     <p class="mont_regular_22_darkgray">@ia.ArticleText</p>
-<<<<<<< HEAD
+
                     <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID" data-target="#editModal" data-toggle="modal">Edit</a>
-
-=======
-                    }
->>>>>>> parent of 765487a... Added Edits to first three sections on about
                 }
-            </section>
-        </div>
+            }
+        </section>
     </div>
-<<<<<<< HEAD
 </div>
-@* ------ YF HISTORY ------ *@    
+@* ------ YF HISTORY ------ *@
 
-=======
->>>>>>> parent of 765487a... Added Edits to first three sections on about
-    <div class="container-fluid">
-        <div class="row hist_2nd_back_img">
-            <section class="col-xs-12 hist_2nd_back_img_text">
-                <h4>5,000 youth experience homelessness for at least one night a year in Utah</h4>
-            </section>
-        </div>
+<div class="container-fluid">
+    <div class="row hist_2nd_back_img">
+        <section class="col-xs-12 hist_2nd_back_img_text">
+            <h4>5,000 youth experience homelessness for at least one night a year in Utah</h4>
+        </section>
     </div>
+</div>
 <div class="container-fluid">
     <div class="row history_text">
         <section class="col-xs-12">
@@ -102,9 +91,9 @@
         </section>
     </div>
 </div>
-@* ------ END YF HISTORY ------ *@ 
+@* ------ END YF HISTORY ------ *@
 
-  
+
 <div class="container-fluid">
     <div class="row history_green_text">
         <section class="col-xs-12">
@@ -112,8 +101,8 @@
         </section>
     </div>
 </div>
-    
-@* ------ First Year of Service ------ *@ 
+
+@* ------ First Year of Service ------ *@
 <div class="container">
     <section class="row more">
         @foreach (FirstYear_Service_Messages fsm in Model.FirstYear_Service_Messages)
@@ -128,291 +117,291 @@
     </section>
 </div>
 @* ------ END First Year of Service ------ *@
-    <div class="container-fluid" id="outreachBanner">
-        <div class="row outreach_main_img">
-            <div class="col-xs-8 text">
-                <h2>Street</h2>
-                <h2 class="h2style1">Outreach</h2>
-            </div>
+<div class="container-fluid" id="outreachBanner">
+    <div class="row outreach_main_img">
+        <div class="col-xs-8 text">
+            <h2>Street</h2>
+            <h2 class="h2style1">Outreach</h2>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row outreach_text">
-            <section class="col-xs-12">
-                <p class="mont_regular_22_darkgray">Street Outreach is designed to meet the clients where they are on the street to build rapport and encourage youth to access drop-in and shelter services. This program offers, case management, hygiene items, food, sleeping bags, and other essential items as needed. Street Outreach currently take place once per week on Wednesdays. The team visits the same Ogden, Utah locations every week:</p>
-            </section>
-        </div>
+</div>
+<div class="container-fluid">
+    <div class="row outreach_text">
+        <section class="col-xs-12">
+            <p class="mont_regular_22_darkgray">Street Outreach is designed to meet the clients where they are on the street to build rapport and encourage youth to access drop-in and shelter services. This program offers, case management, hygiene items, food, sleeping bags, and other essential items as needed. Street Outreach currently take place once per week on Wednesdays. The team visits the same Ogden, Utah locations every week:</p>
+        </section>
     </div>
-    <div class="container-fluid">
-        <div class="row outreach_bullet">
-            <section class="col-xs-12 col-md-6">
-                <ul>
-                    @foreach (List_Item outli in Model.List_item)
-                    {
-                        if(outli.TypeOfList.Equals("outReach"))
-                        {
-                            <li>@outli.LiText</li>
-
-                        }
-
-                    }
-                </ul>
-            </section>
-            <section class="col-xs-12 col-md-6">
-                <ul>
-                    @foreach (List_Item outli1 in Model.List_item)
-                    {
-                        if(outli1.TypeOfList.Equals("outReach1"))
-                        {
-                            <li>@outli1.LiText</li>
-                        }
-
-                    }
-                </ul>
-            </section>
-        </div>
-    </div>
-    <div class="container-fluid" id="directorsMain">
-        <div class="row board_header">
-            <div class="col-xs-6 text">
-                <h2>Board of</h2>
-                <h2 class="h2style1">Directors</h2>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <!--Board of Directors-->
-        <div class="row board_members">
-            <section class="col-xs-12 col-md-4">
-                @foreach (Staff_Panel st in Model.Staff)
+</div>
+<div class="container-fluid">
+    <div class="row outreach_bullet">
+        <section class="col-xs-12 col-md-6">
+            <ul>
+                @foreach (List_Item outli in Model.List_item)
                 {
-                    if (st.Director.Equals("1"))
+                    if (outli.TypeOfList.Equals("outReach"))
                     {
-                        <p><span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span></p>
-                    }
-
-                }
-            </section>
-        </div>
-    </div>
-    <div class="container-fluid" id="staffMain">
-        <div class="row board_header">
-            <div class="col-xs-6 text">
-                <h2>Our</h2>
-                <h2 class="h2style1">Staff</h2>
-            </div>
-        </div>
-    </div>
-    
-        <!--Staff-->
-        
-                @foreach (Staff_Panel st in Model.Staff)
-                {
-
-                    if (st.Director.Equals("0"))
-                    {
-                        <div class="container">
-                            <div class="row board_members">
-                                <section class="col-xs-12 col-md-4">
-                                    <img src="@st.Staff_Image" class="img-responsive" title="Justine Murray" alt="Justine Murray">
-                                    <p><span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span></p>
-                                </section>
-                            </div>
-                        </div>
-                    }
-                }
-            
-    
-    <div class="container-fluid" id="mediaMain">
-        <div class="row media_header">
-            <div class="col-xs-6 text">
-                <h2 class="h2style1">Media</h2>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row media_subheader">
-            <div class="col-xs-12 ">
-                @foreach (Media med in Model.Media)
-                {
-                    if (med.Text_Type.Equals("title"))
-                    {
-                        <p class="title">@med.Content_Text</p>
+                        <li>@outli.LiText</li>
 
                     }
 
                 }
-                @*<p class="title">America First Provides an 'Assist' to Homeless Shelter</p>*@
-                @foreach (Media med in Model.Media)
+            </ul>
+        </section>
+        <section class="col-xs-12 col-md-6">
+            <ul>
+                @foreach (List_Item outli1 in Model.List_item)
                 {
-                    if (med.Text_Type.Equals("time"))
+                    if (outli1.TypeOfList.Equals("outReach1"))
                     {
-                        <p class="mont_regular_22_darkgray time">@med.Content_Text</p>
-
+                        <li>@outli1.LiText</li>
                     }
 
                 }
-                    <a class="link" href="#">inShare</a>
-            </div>
+            </ul>
+        </section>
+    </div>
+</div>
+<div class="container-fluid" id="directorsMain">
+    <div class="row board_header">
+        <div class="col-xs-6 text">
+            <h2>Board of</h2>
+            <h2 class="h2style1">Directors</h2>
         </div>
     </div>
-    <div class="container">
-        <div class="row media_pic">
-            <div class="col-xs-12 col-lg-7 pic">
-                @foreach (Media med in Model.Media)
+</div>
+<div class="container">
+    <!--Board of Directors-->
+    <div class="row board_members">
+        <section class="col-xs-12 col-md-4">
+            @foreach (Staff_Panel st in Model.Staff)
+            {
+                if (st.Director.Equals("1"))
                 {
-                    if (med.Text_Type.Equals("image"))
-                    {
-                        <img src="@med.Content_Text" class="img-responsive center-block" title="America First Check" alt="Check">
+                    <p><span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span></p>
+                }
 
-                    }
+            }
+        </section>
+    </div>
+</div>
+<div class="container-fluid" id="staffMain">
+    <div class="row board_header">
+        <div class="col-xs-6 text">
+            <h2>Our</h2>
+            <h2 class="h2style1">Staff</h2>
+        </div>
+    </div>
+</div>
+
+<!--Staff-->
+
+@foreach (Staff_Panel st in Model.Staff)
+{
+
+    if (st.Director.Equals("0"))
+    {
+        <div class="container">
+            <div class="row board_members">
+                <section class="col-xs-12 col-md-4">
+                    <img src="@st.Staff_Image" class="img-responsive" title="Justine Murray" alt="Justine Murray">
+                    <p><span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span></p>
+                </section>
+            </div>
+        </div>
+    }
+}
+
+
+<div class="container-fluid" id="mediaMain">
+    <div class="row media_header">
+        <div class="col-xs-6 text">
+            <h2 class="h2style1">Media</h2>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row media_subheader">
+        <div class="col-xs-12 ">
+            @foreach (Media med in Model.Media)
+            {
+                if (med.Text_Type.Equals("title"))
+                {
+                    <p class="title">@med.Content_Text</p>
 
                 }
-               
-            </div>
-            <div class="col-xs-12 col-lg-5 subtext">
-                @foreach (Media med in Model.Media)
-                {
-                    if (med.Text_Type.Equals("subTitle"))
-                    {
-                        <p class="subtitle">@med.Content_Text</p>
 
-                    }
+            }
+            @*<p class="title">America First Provides an 'Assist' to Homeless Shelter</p>*@
+            @foreach (Media med in Model.Media)
+            {
+                if (med.Text_Type.Equals("time"))
+                {
+                    <p class="mont_regular_22_darkgray time">@med.Content_Text</p>
 
                 }
-            </div>
+
+            }
+            <a class="link" href="#">inShare</a>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row media_text">
-            <section class="col-xs-12">
-                @foreach (Media med in Model.Media)
+</div>
+<div class="container">
+    <div class="row media_pic">
+        <div class="col-xs-12 col-lg-7 pic">
+            @foreach (Media med in Model.Media)
+            {
+                if (med.Text_Type.Equals("image"))
                 {
-                    if (med.Text_Type.Equals("para1"))
-                    {
-                        <p class="mont_regular_22_darkgray">@med.Content_Text</p>
-
-                    }
+                    <img src="@med.Content_Text" class="img-responsive center-block" title="America First Check" alt="Check">
 
                 }
-                @foreach (Media med in Model.Media)
-                {
-                    if (med.Text_Type.Equals("para2"))
-                    {
-                        <p class="mont_regular_22_darkgray">@med.Content_Text</p>
 
-                    }
+            }
+
+        </div>
+        <div class="col-xs-12 col-lg-5 subtext">
+            @foreach (Media med in Model.Media)
+            {
+                if (med.Text_Type.Equals("subTitle"))
+                {
+                    <p class="subtitle">@med.Content_Text</p>
 
                 }
-            </section>
+
+            }
         </div>
     </div>
-    <div class="container-fluid" id="donorsMain">
-        <div class="row donor_header">
-            <div class="col-xs-6 text">
-                <h2 class="h2style1">Donors</h2>
-            </div>
+</div>
+<div class="container-fluid">
+    <div class="row media_text">
+        <section class="col-xs-12">
+            @foreach (Media med in Model.Media)
+            {
+                if (med.Text_Type.Equals("para1"))
+                {
+                    <p class="mont_regular_22_darkgray">@med.Content_Text</p>
+
+                }
+
+            }
+            @foreach (Media med in Model.Media)
+            {
+                if (med.Text_Type.Equals("para2"))
+                {
+                    <p class="mont_regular_22_darkgray">@med.Content_Text</p>
+
+                }
+
+            }
+        </section>
+    </div>
+</div>
+<div class="container-fluid" id="donorsMain">
+    <div class="row donor_header">
+        <div class="col-xs-6 text">
+            <h2 class="h2style1">Donors</h2>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row donor_subheader">
-            <div class="col-xs-12 ">
-                <p class="title_plat">Plantinum Level Donors</p>
-            </div>
+</div>
+<div class="container-fluid">
+    <div class="row donor_subheader">
+        <div class="col-xs-12 ">
+            <p class="title_plat">Plantinum Level Donors</p>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row donor_list">
-            @foreach (Doners d in Model.Doners)
+</div>
+<div class="container-fluid">
+    <div class="row donor_list">
+        @foreach (Doners d in Model.Doners)
             {
                 if (d.Doner_Type.Equals("Plantinum"))
                 {
-                    <div class="col-xs-4 donor_box plat">
-                        <p class="donor_name">@d.Doner_Name</p>
-                        <p class="year">@d.Doner_year</p>
-                    </div>
-
-                }
+                <div class="col-xs-4 donor_box plat">
+                    <p class="donor_name">@d.Doner_Name</p>
+                    <p class="year">@d.Doner_year</p>
+                </div>
 
             }
-        </div>
+
+        }
     </div>
-    <div class="container-fluid">
-        <div class="row donor_list">
-            @foreach (Doners d in Model.Doners)
+</div>
+<div class="container-fluid">
+    <div class="row donor_list">
+        @foreach (Doners d in Model.Doners)
             {
                 if (d.Doner_Type.Equals("Plantinum"))
                 {
-                    <div class="col-xs-4 donor_box plat">
-                        <p class="donor_name">@d.Doner_Name</p>
-                        <p class="year">@d.Doner_year</p>
-                    </div>
-
-                }
+                <div class="col-xs-4 donor_box plat">
+                    <p class="donor_name">@d.Doner_Name</p>
+                    <p class="year">@d.Doner_year</p>
+                </div>
 
             }
+
+        }
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row donor_subheader">
+        <div class="col-xs-12 ">
+            <p class="title_gold">Gold Level Donors</p>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row donor_subheader">
-            <div class="col-xs-12 ">
-                <p class="title_gold">Gold Level Donors</p>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row donor_list">
-            @foreach (Doners d in Model.Doners)
+</div>
+<div class="container-fluid">
+    <div class="row donor_list">
+        @foreach (Doners d in Model.Doners)
             {
                 if (d.Doner_Type.Equals("Gold"))
                 {
-                    <div class="col-xs-4 donor_box gold">
-                        <p class="donor_name">@d.Doner_Name</p>
-                        <p class="year">@d.Doner_year</p>
-                    </div>
-
-                }
+                <div class="col-xs-4 donor_box gold">
+                    <p class="donor_name">@d.Doner_Name</p>
+                    <p class="year">@d.Doner_year</p>
+                </div>
 
             }
-        </div>
+
+        }
     </div>
-    <div class="container-fluid">
-        <div class="row donor_list">
-            @foreach (Doners d in Model.Doners)
+</div>
+<div class="container-fluid">
+    <div class="row donor_list">
+        @foreach (Doners d in Model.Doners)
             {
                 if (d.Doner_Type.Equals("Gold"))
                 {
-                    <div class="col-xs-4 donor_box gold">
-                        <p class="donor_name">@d.Doner_Name</p>
-                        <p class="year">@d.Doner_year</p>
-                    </div>
-
-                }
+                <div class="col-xs-4 donor_box gold">
+                    <p class="donor_name">@d.Doner_Name</p>
+                    <p class="year">@d.Doner_year</p>
+                </div>
 
             }
+
+        }
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row donor_subheader">
+        <div class="col-xs-12 ">
+            <p class="title_silver">Silver Level Donors</p>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row donor_subheader">
-            <div class="col-xs-12 ">
-                <p class="title_silver">Silver Level Donors</p>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row donor_list">
-            @foreach (Doners d in Model.Doners)
+</div>
+<div class="container-fluid">
+    <div class="row donor_list">
+        @foreach (Doners d in Model.Doners)
             {
                 if (d.Doner_Type.Equals("Silver"))
                 {
-                    <div class="col-xs-4 donor_box silver">
-                        <p class="donor_name">@d.Doner_Name</p>
-                        <p class="year">@d.Doner_year</p>
-                    </div>
-
-                }
+                <div class="col-xs-4 donor_box silver">
+                    <p class="donor_name">@d.Doner_Name</p>
+                    <p class="year">@d.Doner_year</p>
+                </div>
 
             }
+
+        }
     </div>
     <div class="container-fluid">
         <div class="row donor_list">
@@ -479,7 +468,7 @@
                 {
                     if (hp.Content_Type.Equals("title"))
                     {
-                    <p>@hp.Content_Text</p>
+                        <p>@hp.Content_Text</p>
                     }
                 }
             </div>
@@ -508,7 +497,7 @@
                         <p class="vol_p mont_light_18_darkgray">@hp.Content_Text</p>
                     }
                 }
-               </div>
+            </div>
             <div class="col-xs-12 col-lg-4 more_stories">
                 @foreach (Help_Panel hp in Model.Help_Panel)
                 {
@@ -552,21 +541,21 @@
                 <ul>
                     @foreach (List_Item outlINeeds in Model.List_item)
                     {
-                        if(outlINeeds.TypeOfList.Equals("mostImportantNeeds"))
+                        if (outlINeeds.TypeOfList.Equals("mostImportantNeeds"))
                         {
                             <li>@outlINeeds.LiText</li>
 
                         }
 
                     }
-                    </ul>
+                </ul>
             </div>
             <div class="col-xs-12 col-md-4 needs_list">
                 <p class="needs_subheader">MISC. NEEDS</p>
                 <ul>
                     @foreach (List_Item outLiMNeeds in Model.List_item)
                     {
-                        if(outLiMNeeds.TypeOfList.Equals("MISCNEEDS"))
+                        if (outLiMNeeds.TypeOfList.Equals("MISCNEEDS"))
                         {
                             <li>@outLiMNeeds.LiText</li>
 
@@ -578,7 +567,7 @@
                 <ul>
                     @foreach (List_Item outLiGCards in Model.List_item)
                     {
-                        if(outLiGCards.TypeOfList.Equals("GiftCardsForNeeds"))
+                        if (outLiGCards.TypeOfList.Equals("GiftCardsForNeeds"))
                         {
                             <li>@outLiGCards.LiText</li>
 
@@ -592,7 +581,7 @@
                 <ul>
                     @foreach (List_Item outLiHouse in Model.List_item)
                     {
-                        if(outLiHouse.TypeOfList.Equals("HouseholdFurnishingsNeeds"))
+                        if (outLiHouse.TypeOfList.Equals("HouseholdFurnishingsNeeds"))
                         {
                             <li>@outLiHouse.LiText</li>
 
@@ -604,7 +593,7 @@
                 <ul>
                     @foreach (List_Item outLiVol in Model.List_item)
                     {
-                        if(outLiVol.TypeOfList.Equals("Volunteers"))
+                        if (outLiVol.TypeOfList.Equals("Volunteers"))
                         {
                             <li>@outLiVol.LiText</li>
 
@@ -616,7 +605,7 @@
                 <ul>
                     @foreach (List_Item outLiRep in Model.List_item)
                     {
-                        if(outLiRep.TypeOfList.Equals("RepairNeeds"))
+                        if (outLiRep.TypeOfList.Equals("RepairNeeds"))
                         {
                             <li>@outLiRep.LiText</li>
 
@@ -670,39 +659,39 @@
         </div>
     </div>
 
-</article>
-<footer>
-    <div class="container-fluid foot_cont">
-        <div class="row foot">
-            <section class="col-sm-12 col-md-2 contact">
-                <p class="quick_bold_18_white">Contact</p>
-                <p class="mont_light_14_white">Email: info@yfut.org<br />Phone: 801-528-1214</p>
-            </section>
-            <section class="col-sm-12 col-md-2 mailing">
-                <p class="quick_bold_18_white">Mailing Address</p>
-                <p class="mont_light_14_white">Youth Futures</p>
-                <p class="mont_light_14_white">POB 160301</p>
-                <p class="mont_light_14_white">Clearfield, UT 84016</p>
-            </section>
-            <section class="col-sm-12 col-md-2 shelter">
-                <p class="quick_bold_18_white">Shelter Address</p>
-                <p class="mont_light_14_white">Youth Futures</p>
-                <p class="mont_light_14_white">2760 S. Adams Ave</p>
-                <p class="mont_light_14_white">Ogden, UT 84403</p>
-            </section>
-            <section class="col-sm-12 col-md-2 foot_logo">
-                <img src="~/images/page_1.png" title="house icon" alt="house icon">
-            </section>
-            <section class="col-sm-12 col-md-4 social">
-                <img src="~/images/social_instagram.png" title="house icon" alt="house icon">
-                <img src="~/images/social_twitter.png" title="house icon" alt="house icon">
-                <img src="~/images/social_tumblr.png" title="house icon" alt="house icon">
-                <img src="~/images/social_fb.png" title="house icon" alt="house icon">
-            </section>
+    </article>
+    <footer>
+        <div class="container-fluid foot_cont">
+            <div class="row foot">
+                <section class="col-sm-12 col-md-2 contact">
+                    <p class="quick_bold_18_white">Contact</p>
+                    <p class="mont_light_14_white">Email: info@yfut.org<br />Phone: 801-528-1214</p>
+                </section>
+                <section class="col-sm-12 col-md-2 mailing">
+                    <p class="quick_bold_18_white">Mailing Address</p>
+                    <p class="mont_light_14_white">Youth Futures</p>
+                    <p class="mont_light_14_white">POB 160301</p>
+                    <p class="mont_light_14_white">Clearfield, UT 84016</p>
+                </section>
+                <section class="col-sm-12 col-md-2 shelter">
+                    <p class="quick_bold_18_white">Shelter Address</p>
+                    <p class="mont_light_14_white">Youth Futures</p>
+                    <p class="mont_light_14_white">2760 S. Adams Ave</p>
+                    <p class="mont_light_14_white">Ogden, UT 84403</p>
+                </section>
+                <section class="col-sm-12 col-md-2 foot_logo">
+                    <img src="~/images/page_1.png" title="house icon" alt="house icon">
+                </section>
+                <section class="col-sm-12 col-md-4 social">
+                    <img src="~/images/social_instagram.png" title="house icon" alt="house icon">
+                    <img src="~/images/social_twitter.png" title="house icon" alt="house icon">
+                    <img src="~/images/social_tumblr.png" title="house icon" alt="house icon">
+                    <img src="~/images/social_fb.png" title="house icon" alt="house icon">
+                </section>
+            </div>
+            <div class="copyright mont_regular_16_lightgray">
+                <p>© Youth Futures, Inc.</p>
+            </div>
         </div>
-        <div class="copyright mont_regular_16_lightgray">
-            <p>© Youth Futures, Inc.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
