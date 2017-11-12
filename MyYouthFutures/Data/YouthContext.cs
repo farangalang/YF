@@ -24,6 +24,7 @@ namespace MyYouthFutures.Data
         public DbSet<List_Item> List_Item { get; set; }//this is the table that holds the list items for the about view
         public DbSet<Media> Media { get; set; }
         public DbSet<Doners> Doners { get; set; }
+        public DbSet<MyYouthFutures.Models.Help_Panel> Help_Panel { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,6 +39,7 @@ namespace MyYouthFutures.Data
             modelBuilder.Entity<List_Item>().ToTable("List_Item");
             modelBuilder.Entity<Media>().ToTable("Media");
             modelBuilder.Entity<Doners>().ToTable("Doners");
+            modelBuilder.Entity<Help_Panel>().ToTable("Help_Panel");
         }
     }
 }

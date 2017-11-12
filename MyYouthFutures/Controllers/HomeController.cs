@@ -43,6 +43,7 @@ namespace MyYouthFutures.Controllers
             var ListItem = await _context.List_Item.ToListAsync();
             var media = await _context.Media.ToListAsync();
             var doner = await _context.Doners.ToListAsync();
+            var helper = await _context.Help_Panel.ToListAsync();
 
             var vm = new ItemViewModel
             {
@@ -52,7 +53,8 @@ namespace MyYouthFutures.Controllers
                 Staff = staffPanel,
                 List_item = ListItem,
                 Media = media,
-                Doners = doner
+                Doners = doner,
+                Help_Panel = helper
             };
 
             return View(vm);

@@ -594,29 +594,76 @@
         </div>
         <div class="row donate_help">
             <div class="col-xs-12">
-                <p>HOW CAN YOU HELP?</p>
+                @foreach (Help_Panel hp in Model.Help_Panel)
+                {
+                    if (hp.Content_Type.Equals("title"))
+                    {
+                    <p>@hp.Content_Text</p>
+                    }
+                }
+                @*<p>HOW CAN YOU HELP?</p>*@
             </div>
         </div>
         <div class="row media_text">
             <div class="col-xs-12">
-                <p class="mont_regular_22_darkgray">	Your generosity helps keep the doors open and the lights on, providing a sanctuary for those in need. Please consider a donation. </p>
+                @foreach (Help_Panel hp in Model.Help_Panel)
+                {
+                    if (hp.Content_Type.Equals("subTitle"))
+                    {
+                        <p class="mont_regular_22_darkgray">@hp.Content_Text</p>
+                    }
+                }
+                @*<p class="mont_regular_22_darkgray">	Your generosity helps keep the doors open and the lights on, providing a sanctuary for those in need. Please consider a donation. </p>*@
             </div>
         </div>
         <section class="row more">
             <div class="col-xs-12 col-lg-4 more_volunteer">
-                <img src="~/images/donate_dollar.svg" title="Dollar" alt="Dollar">
-                <p class="vol_p mont_light_18_darkgray">Monetary donations are our biggest need right now. Recurring <span class="green"><a href="#">PayPal</a></span> donations can be scheduled from our website, even $10 makes a difference. </p>
+                @foreach (Help_Panel hp in Model.Help_Panel)
+                {
+                    if (hp.Content_Type.Equals("image1"))
+                    {
+                        <img src="@hp.Content_Text" title="Dollar" alt="Dollar">
+                    }
+                    if (hp.Content_Type.Equals("panelText1"))
+                    {
+                        <p class="vol_p mont_light_18_darkgray">@hp.Content_Text</p>
+                    }
+                }
+                @*<img src="~/images/donate_dollar.svg" title="Dollar" alt="Dollar">*@
+                @*<p class="vol_p mont_light_18_darkgray">Monetary donations are our biggest need right now. Recurring <span class="green"><a href="#">PayPal</a></span> donations can be scheduled from our website, even $10 makes a difference. </p>*@
             </div>
             <div class="col-xs-12 col-lg-4 more_stories">
-                <img src="~/images/donate_cart.svg" title="Cart" alt="Cart">
+                @foreach (Help_Panel hp in Model.Help_Panel)
+                {
+                    if (hp.Content_Type.Equals("image2"))
+                    {
+                        <img src="@hp.Content_Text" title="Dollar" alt="Dollar">
+                    }
+                    if (hp.Content_Type.Equals("panelText2"))
+                    {
+                        <p class="vol_p mont_light_18_darkgray">@hp.Content_Text</p>
+                    }
+                }
+                @*<img src="~/images/donate_cart.svg" title="Cart" alt="Cart">
                 <p class="youth_p mont_light_18_darkgray">
                     Donate through rewards programs: <span class="green"><a href="#">Amazon Smile,</a></span> <span class="green"><a href="#">Smiths Community Rewards,</a></span> or <span class="green"><a href="#">United Way,</a></span> <span class="green"><a href="#">Federal and State Employee contributions,</a></span>
                     <span class="green"><a href="#">LoveUTGiveUT</a></span>
-                </p>
+                </p>*@
             </div>
             <div class="col-xs-12 col-lg-4 more_events">
-                <img src="~/images/donate_hand.svg" title="Hand" alt="Hand">
-                <p class="events_p mont_light_18_darkgray">Donate your time as a volunteer to help with needs around the shelter! <span class="green"><a href="#">Sign up here.</a></span></p>
+                @foreach (Help_Panel hp in Model.Help_Panel)
+                {
+                    if (hp.Content_Type.Equals("image3"))
+                    {
+                        <img src="@hp.Content_Text" title="Dollar" alt="Dollar">
+                    }
+                    if (hp.Content_Type.Equals("panelText3"))
+                    {
+                        <p class="vol_p mont_light_18_darkgray">@hp.Content_Text</p>
+                    }
+                }
+                @*<img src="~/images/donate_hand.svg" title="Hand" alt="Hand">
+                <p class="events_p mont_light_18_darkgray">Donate your time as a volunteer to help with needs around the shelter! <span class="green"><a href="#">Sign up here.</a></span></p>*@
             </div>
         </section>
     </div>

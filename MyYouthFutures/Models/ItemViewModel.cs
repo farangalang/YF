@@ -19,7 +19,6 @@ namespace MyYouthFutures.Models
         public IEnumerable<List_Item> List_item { get; set; }
         public IEnumerable<Media> Media { get; set; }
         public IEnumerable<Doners> Doners { get; set; }
-
-
+        public IEnumerable<Help_Panel> Help_Panel { get; set; }
     }
 }

@@ -224,6 +224,23 @@ namespace MyYouthFutures.Data
             }
             context.SaveChanges();
 
+            var Helper_Messages = new Help_Panel[]
+            {
+                new Help_Panel{Content_Type="title",Content_Text="HOW CAN YOU HELP?"},
+                new Help_Panel{Content_Type="subTitle",Content_Text="Your generosity helps keep the doors open and the lights on, providing a sanctuary for those in need. Please consider a donation."},
+                new Help_Panel{Content_Type="image1",Content_Text="/images/donate_dollar.svg"},
+                new Help_Panel{Content_Type="panelText1",Content_Text="Monetary donations are our biggest need right now. Recurring PayPal donations can be scheduled from our website, even $10 makes a difference."},
+                new Help_Panel{Content_Type="image2",Content_Text="/images/donate_cart.svg"},
+                new Help_Panel{Content_Type="panelText2",Content_Text="Donate through rewards programs: Amazon Smile,Smiths Community Rewards, or United Way,Federal and State Employee contributions,LoveUTGiveUT"},
+                new Help_Panel{Content_Type="image3",Content_Text="/images/donate_hand.svg"},
+                new Help_Panel{Content_Type="panelText3",Content_Text="Donate your time as a volunteer to help with needs around the shelter! Sign up here."}
+            };
+            foreach (Help_Panel hlp in Helper_Messages)
+            {
+                context.Help_Panel.Add(hlp);
+            }
+            context.SaveChanges();
+
         }
     }
 }
