@@ -249,8 +249,26 @@
     <div class="container-fluid">
         <div class="row media_subheader">
             <div class="col-xs-12 ">
-                <p class="title">America First Provides an 'Assist' to Homeless Shelter</p>
-                <p class="mont_regular_22_darkgray time">03/18/2015 10:03 pm<p>
+                @foreach (Media med in Model.Media)
+                {
+                    if (med.Text_Type.Equals("title"))
+                    {
+                        <p class="title">@med.Content_Text</p>
+
+                    }
+
+                }
+                @*<p class="title">America First Provides an 'Assist' to Homeless Shelter</p>*@
+                @foreach (Media med in Model.Media)
+                {
+                    if (med.Text_Type.Equals("time"))
+                    {
+                        <p class="mont_regular_22_darkgray time">@med.Content_Text</p>
+
+                    }
+
+                }
+                @*<p class="mont_regular_22_darkgray time">03/18/2015 10:03 pm<p>*@
                     <a class="link" href="#">inShare</a>
             </div>
         </div>
@@ -258,18 +276,54 @@
     <div class="container">
         <div class="row media_pic">
             <div class="col-xs-12 col-lg-7 pic">
-                <img src="~/images/media_check.jpg" class="img-responsive center-block" title="America First Check" alt="Check">
+                @foreach (Media med in Model.Media)
+                {
+                    if (med.Text_Type.Equals("image"))
+                    {
+                        <img src="@med.Content_Text" class="img-responsive center-block" title="America First Check" alt="Check">
+
+                    }
+
+                }
+                @*<img src="~/images/media_check.jpg" class="img-responsive center-block" title="America First Check" alt="Check">*@
             </div>
             <div class="col-xs-12 col-lg-5 subtext">
-                <p class="subtitle">At right, from left to right: Kristen Mitchell, executive director of Youth Futures Utah and Scott Tuccio, president of the Board of Directorsof Youth Futures Utah, stand with Nicole Cypers, public relations and social media manager for America First Credit Union, at the Weber State basketball game for a check presentation in the amount of $3,400 on Saturday, March 7 at Weber State University. </p>
+                @foreach (Media med in Model.Media)
+                {
+                    if (med.Text_Type.Equals("subTitle"))
+                    {
+                        <p class="subtitle">@med.Content_Text</p>
+
+                    }
+
+                }
+                @*<p class="subtitle">At right, from left to right: Kristen Mitchell, executive director of Youth Futures Utah and Scott Tuccio, president of the Board of Directorsof Youth Futures Utah, stand with Nicole Cypers, public relations and social media manager for America First Credit Union, at the Weber State basketball game for a check presentation in the amount of $3,400 on Saturday, March 7 at Weber State University. </p>*@
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row media_text">
             <section class="col-xs-12">
-                <p class="mont_regular_22_darkgray">OGDEN, Utah--America First Credit Union awarded Youth Futures Utah, a homeless shelter for youth, with $3,400 during the Weber State University basketball game. America First paid the organization $10 for each assist the Weber State University basketball team completed throughout the 2014 – 2015 season. With 340 assists, the donation amounted to $3,400 in total for the newly-opened youth homeless organization, located in Ogden, Utah.</p>
-                <p class="mont_regular_22_darkgray">Youth Futures Utah is a 501(c)3 organization committed to the well-being of the youth of Utah. The mission of Youth Futures Utah is to provide shelter, support, resources and guidance to homeless, unaccompanied and runaway youth in Utah. Youth Futures connects each youth with food, housing and resources to build the skills needed to support a healthy future.</p>
+                @foreach (Media med in Model.Media)
+                {
+                    if (med.Text_Type.Equals("para1"))
+                    {
+                        <p class="mont_regular_22_darkgray">@med.Content_Text</p>
+
+                    }
+
+                }
+                @*<p class="mont_regular_22_darkgray">OGDEN, Utah--America First Credit Union awarded Youth Futures Utah, a homeless shelter for youth, with $3,400 during the Weber State University basketball game. America First paid the organization $10 for each assist the Weber State University basketball team completed throughout the 2014 – 2015 season. With 340 assists, the donation amounted to $3,400 in total for the newly-opened youth homeless organization, located in Ogden, Utah.</p>*@
+                @foreach (Media med in Model.Media)
+                {
+                    if (med.Text_Type.Equals("para2"))
+                    {
+                        <p class="mont_regular_22_darkgray">@med.Content_Text</p>
+
+                    }
+
+                }
+                @*<p class="mont_regular_22_darkgray">Youth Futures Utah is a 501(c)3 organization committed to the well-being of the youth of Utah. The mission of Youth Futures Utah is to provide shelter, support, resources and guidance to homeless, unaccompanied and runaway youth in Utah. Youth Futures connects each youth with food, housing and resources to build the skills needed to support a healthy future.</p>*@
             </section>
         </div>
     </div>
