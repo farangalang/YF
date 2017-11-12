@@ -20,7 +20,7 @@ namespace MyYouthFutures.Data
 
             var title = new Title[]
             {
-                new Title{Header="Hi", SubHeader="Hey there", Footer="Questions?"},
+                new Title{Header="Hi", SubHeader="14 WARM BEDS. YOUTH 12-17. YOUR TEMPORARY HOME :)", Footer="Have questions? Send us a text! (801) 528-1214", BackgroundImage=""},
 
             };
             foreach (Title s in title)
@@ -29,11 +29,22 @@ namespace MyYouthFutures.Data
             }
             context.SaveChanges();
 
+            var service = new Services[]
+            {
+                new Services{Title="Services", Header="Our programming is divided into three main areas. Each program area has specific components to meet the needs of the youth in need."}
+            };
+
+            foreach (Services s in service)
+            {
+                context.Services.Add(s);
+            }
+            context.SaveChanges();
+
             var links = new Link[]
             {
-                new Link{Image="Image placeholder 1", Title="Title 1", Message="Message 1"},
-                new Link{Image="Image placeholder 2", Title="Title 2", Message="Message 2"},
-                new Link{Image="Image placeholder 3", Title="Title 3", Message="Message 3"}
+                new Link{Image="Image placeholder 1", Title="Apply to Volunteer", Message="Make your mark where it matters. Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse.", Hyperlink="Volunteer Now >"},
+                new Link{Image="Image placeholder 2", Title="Youth Stories", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="Read the Stories >"},
+                new Link{Image="Image placeholder 3", Title="Events", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="View All Events"}
             };
 
             foreach (Link c in links)
@@ -44,7 +55,7 @@ namespace MyYouthFutures.Data
 
             var purposes = new Purpose[]
             {
-                new Purpose{Title="Our Purpose", Message="Message", Content="content"}
+                new Purpose{Title="Our Purpose", Message="To provide unaccompanied, runaway and homeless youth with a safe and nurturing environment where they can develop the needed skills to become active, healthy, successful members of our future world.", Content="7,085 MEALS SERVED. 511 DROP-IN SERVICES.245 STREET OUTREACH HOURS. 64 SHELTERED YOUTH."}
             };
             foreach (Purpose e in purposes)
             {
@@ -65,6 +76,11 @@ namespace MyYouthFutures.Data
                 context.Services_Messages.Add(a);
             }
             context.SaveChanges();
+
+            var media = new Media[]
+            {
+                new Media{Header="History", Body_1=""}
+            }
         }
     }
 }

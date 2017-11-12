@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 
 namespace MyYouthFutures.Models
 {
-    public class Link
+    public class Staff
     {
-        public int LinkID { get; set; }
+        public int ID { get; set; }
         public string Image { get; set; }
+        public string Name { get; set; }
         public string Title { get; set; }
-        public string Message { get; set; }
-        public string Hyperlink { get; set; }
+        public string Subtitle { get; set; }
+        public string Email { get; set; }
     }
 }

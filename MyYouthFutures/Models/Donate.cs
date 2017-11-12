@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 
 namespace MyYouthFutures.Models
 {
-    public class Services_Message
+    public class Donate
     {
         public int ID { get; set; }
-        public string MessageImage { get; set; }
-        public string MessageHeader { get; set; }
+        public string Title { get; set; }
+        public string Header { get; set; }
         public string Message { get; set; }
-        public string Link { get; set; }
     }
 }

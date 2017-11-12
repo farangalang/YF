@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 
 namespace MyYouthFutures.Models
 {
-    public class Purpose
+    public class Outreach
     {
-        public int PurposeID { get; set; }
-        public string Title { get; set; }
-        public string Message { get; set; }
-        public string Content { get; set; }
+        public string ID { get; set; }
+        public string Body { get; set; }
+        public string Bullets { get; set; }
         public string BackgroundImage { get; set; }
     }
 }
