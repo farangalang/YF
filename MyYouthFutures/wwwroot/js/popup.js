@@ -3,15 +3,18 @@ function formValidation() {
     return true;
 }
 function getInfo() {
-    if (formValidation()) {
+    //if (formValidation()) {
         var img = ('#staff_file').valueOf;
         var name = ('#staffName').valueOf;
         var title = ('#staffTitle').valueOf;
         var email = ('#staffEmail').valueOf;
         var current = ('input[name=staffCurrent]:checked').value(val);
 
-        alert("Image: {1}\nName: {2}\nTitle: {3}\nEmail: {4}\nCurrent: {5}", img, name, title, email, current);
-    }
+        //@ViewBag.name = "vbStaffInfo";
+        //@ViewBag.value = "Image: { 1 } \nName: { 2 } \nTitle: { 3 } \nEmail: { 4 } \nCurrent: { 5 }", img, name, title, email, current;
+        //alert(@ViewBag.name("vbStaffInfo").value);
+        //alert("Image: {1}\nName: {2}\nTitle: {3}\nEmail: {4}\nCurrent: {5}", img, name, title, email, current);
+    //}
 }
 
 /*open file button click*/

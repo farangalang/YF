@@ -13,11 +13,10 @@
             <div class="row">
                 <div class="col-xs-6">
                     <div id="add_img" class="row">
-                        <!--@{ var val2 = "?";}-->
                         <img id="staff_pic" class="col-xs-push-1 col-xs-10" src="~/images/ban_circle.png" title="Image does not exist" alt="Image does not exist" />
                         <input type="file" id="staff_file" class="col-xs-push-1 col-xs-10" required/><!--style="display:none"-->
                         <button id="staff_btn" type="button" onclick="$('#staff_btn').click(function () { $('#staff_file').trigger('click');})" class="col-xs-push-2 col-xs-8">Select Image</button>
-                        <!--<label id="lbl1">@val2</label>-->
+                        <!---->
                     </div>
                 </div>
 
@@ -28,7 +27,8 @@
                     </div>
                     <div class="fixed_width row">
                         <div>
-                            <label>Title:  </label>
+                            <!----> 
+                            <label>Title:</label>
                             <input id="staffTitle" type="text" name="staff_title" required />
                             <!--<button id="addTitle" type="button">+</button>--><!--Will add back once I figure out how to add new titles (if needed)-->
                         </div>
@@ -49,7 +49,7 @@
         </div>
         <div id="buttons" class="row">
             <button class="col-xs-push-5 col-xs-3 btn-lg btn-default" data-toggle="modal" data-target="#staffPopup">Cancel</button>
-            <button type="submit" onclick="formValidation()" class="col-xs-push-6 col-xs-3 btn-lg btn-success">Submit</button>
+            <button type="submit" onclick="getInfo()" class="col-xs-push-6 col-xs-3 btn-lg btn-success">Submit</button>
             
             
         </div>
