@@ -102,6 +102,21 @@ namespace MyYouthFutures.Data
             }
             context.SaveChanges();
 
+            var Staff = new Staff_Panel[]
+            {
+                new Staff_Panel{Staff_Image="NONE",Name="SCOTT CATUCCIO",Level="Board President",Postion="President, A3 Utah",email="scott.catuccio@gmail.com",Director="1"},
+                new Staff_Panel{Staff_Image="NONE",Name="KRISTEN MITCHELL",Level="Board Vice President",Postion="Executive Director, Youth Futures",email="kristen@yfut.org",Director="1"},
+                new Staff_Panel{Staff_Image="NONE",Name="ALYSON DEUSSEN",Level="Board Secretary",Postion="Ouelessebougou Utah Alliance",email="alysondeussen@gmail.com",Director="1"},
+                new Staff_Panel{Staff_Image="/images/staff_justine.jpg",Name="JUSTINE MURRAY",Level="Program Manager, Youth Futures",Postion="President, A3 Utah",email="jmurray@yfut.org",Director="0"},
+                new Staff_Panel{Staff_Image="/images/staff_susan.jpg",Name="SUSAN MCBRIDE",Level="Floor Staff Co-Lead, Youth Futures",Postion=">Executive Director, Youth Futures",email="kristen@yfut.org",Director="0"},
+                new Staff_Panel{Staff_Image="/images/staff_alyson.jpg",Name="ALYSON DEUSSEN",Level="Floor Staff Co-Lead, Youth Futures",Postion="Ouelessebougou Utah Alliance",email="aallred@yfut.org",Director="0"}
+            };
+            foreach (Staff_Panel staff in Staff)
+            {
+                context.Staff_Panel.Add(staff);
+            }
+            context.SaveChanges();
+
         }
     }
 }

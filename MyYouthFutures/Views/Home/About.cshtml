@@ -165,16 +165,24 @@
         </div>
     </div>
     <div class="container">
+        <!--Board of Directors-->
         <div class="row board_members">
             <section class="col-xs-12 col-md-4">
-                <p><span class="name">SCOTT CATUCCIO</span></br>Board President</br>President, A3 Utah</br> <span class="email">scott.catuccio@gmail.com</span></p>
+                @foreach (Staff_Panel st in Model.Staff)
+                {
+                    if (st.Director.Equals("1"))
+                    {
+                        <p><span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span></p>
+                    }
+
+                }
             </section>
-            <section class="col-xs-12 col-md-4">
+            @*<section class="col-xs-12 col-md-4">
                 <p><span class="name">KRISTEN MITCHELL</span></br>Board Vice President</br>Executive Director, Youth Futures</br><span class="email">kristen@yfut.org</span> </p>
             </section>
             <section class="col-xs-12 col-md-4">
                 <p><span class="name">ALYSON DEUSSEN</span></br>Board Secretary</br>Ouelessebougou Utah Alliance</br><span class="email">alysondeussen@gmail.com</span></p>
-            </section>
+            </section>*@
         </div>
     </div>
     <div class="container-fluid" id="staffMain">
@@ -186,8 +194,21 @@
         </div>
     </div>
     <div class="container">
+        <!--Staff-->
         <div class="row board_members">
             <section class="col-xs-12 col-md-4">
+                @foreach (Staff_Panel st in Model.Staff)
+                {
+
+                    if (st.Director.Equals("0"))
+                    {
+                        <img src="@st.Staff_Image" class="img-responsive" title="Justine Murray" alt="Justine Murray">
+                        <p><span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span></p>
+
+                    }
+                }
+            </section>
+                @*<section class="col-xs-12 col-md-4">
                 <img src="~/images/staff_justine.jpg" class="img-responsive" title="Justine Murray" alt="Justine Murray">
                 <p><span class="name">JUSTINE MURRAY</span></br>Program Manager, Youth Futures</br>President, A3 Utah</br> <span class="email">jmurray@yfut.org</span></p>
             </section>
@@ -198,8 +219,8 @@
             <section class="col-xs-12 col-md-4">
                 <img src="~/images/staff_alyson.jpg" class="img-responsive" title="Alyson Deussen" alt="Alyson Deussen">
                 <p><span class="name">ALYSON DEUSSEN</span></br>Floor Staff Co-Lead, Youth Futures</br>Ouelessebougou Utah Alliance</br><span class="email">aallred@yfut.org</span></p>
-            </section>
-        </div>
+            </section>*@
+          </div>
     </div>
     <div class="container-fluid" id="mediaMain">
         <div class="row media_header">
