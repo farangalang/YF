@@ -18,6 +18,7 @@ namespace MyYouthFutures.Models
         public IEnumerable<Staff_Panel> Staff { get; set; }
         public IEnumerable<List_Item> List_item { get; set; }
         public IEnumerable<Media> Media { get; set; }
+        public IEnumerable<Doners> Doners { get; set; }
 
 
     }

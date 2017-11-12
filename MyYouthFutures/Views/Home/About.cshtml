@@ -343,7 +343,19 @@
     </div>
     <div class="container-fluid">
         <div class="row donor_list">
-            <div class="col-xs-4 donor_box plat">
+            @foreach (Doners d in Model.Doners)
+            {
+                if (d.Doner_Type.Equals("Plantinum"))
+                {
+                    <div class="col-xs-4 donor_box plat">
+                        <p class="donor_name">@d.Doner_Name</p>
+                        <p class="year">@d.Doner_year</p>
+                    </div>
+
+                }
+
+            }
+            @*<div class="col-xs-4 donor_box plat">
                 <p class="donor_name">MILLER FAMILY FOUNDATION LARRY H. & GAIL</p>
                 <p class="year">2015 & 2016</p>
             </div>
@@ -354,12 +366,24 @@
             <div class="col-xs-4 donor_box plat">
                 <p class="donor_name">SORENSON LEGACY FOUNDATION</p>
                 <p class="year">2015</p>
-            </div>
+            </div>*@
         </div>
     </div>
     <div class="container-fluid">
         <div class="row donor_list">
-            <div class="col-xs-4 donor_box plat">
+            @foreach (Doners d in Model.Doners)
+            {
+                if (d.Doner_Type.Equals("Plantinum"))
+                {
+                    <div class="col-xs-4 donor_box plat">
+                        <p class="donor_name">@d.Doner_Name</p>
+                        <p class="year">@d.Doner_year</p>
+                    </div>
+
+                }
+
+            }
+            @*<div class="col-xs-4 donor_box plat">
                 <p class="donor_name">MILLER FAMILY FOUNDATION LARRY H. & GAIL</p>
                 <p class="year">2015 & 2016</p>
             </div>
@@ -370,7 +394,7 @@
             <div class="col-xs-4 donor_box plat">
                 <p class="donor_name">SORENSON LEGACY FOUNDATION</p>
                 <p class="year">2015</p>
-            </div>
+            </div>*@
         </div>
     </div>
     <div class="container-fluid">
@@ -382,7 +406,19 @@
     </div>
     <div class="container-fluid">
         <div class="row donor_list">
-            <div class="col-xs-4 donor_box gold">
+            @foreach (Doners d in Model.Doners)
+            {
+                if (d.Doner_Type.Equals("Gold"))
+                {
+                    <div class="col-xs-4 donor_box gold">
+                        <p class="donor_name">@d.Doner_Name</p>
+                        <p class="year">@d.Doner_year</p>
+                    </div>
+
+                }
+
+            }
+            @*<div class="col-xs-4 donor_box gold">
                 <p class="donor_name">MILLER FAMILY FOUNDATION LARRY H. & GAIL</p>
                 <p class="year">2015 & 2016</p>
             </div>
@@ -393,12 +429,24 @@
             <div class="col-xs-4 donor_box gold">
                 <p class="donor_name">SORENSON LEGACY FOUNDATION</p>
                 <p class="year">2015</p>
-            </div>
+            </div>*@
         </div>
     </div>
     <div class="container-fluid">
         <div class="row donor_list">
-            <div class="col-xs-4 donor_box gold">
+            @foreach (Doners d in Model.Doners)
+            {
+                if (d.Doner_Type.Equals("Gold"))
+                {
+                    <div class="col-xs-4 donor_box gold">
+                        <p class="donor_name">@d.Doner_Name</p>
+                        <p class="year">@d.Doner_year</p>
+                    </div>
+
+                }
+
+            }
+            @*<div class="col-xs-4 donor_box gold">
                 <p class="donor_name">MILLER FAMILY FOUNDATION LARRY H. & GAIL</p>
                 <p class="year">2015 & 2016</p>
             </div>
@@ -409,7 +457,7 @@
             <div class="col-xs-4 donor_box gold">
                 <p class="donor_name">SORENSON LEGACY FOUNDATION</p>
                 <p class="year">2015</p>
-            </div>
+            </div>*@
         </div>
     </div>
     <div class="container-fluid">
@@ -421,7 +469,19 @@
     </div>
     <div class="container-fluid">
         <div class="row donor_list">
-            <div class="col-xs-4 donor_box silver">
+            @foreach (Doners d in Model.Doners)
+            {
+                if (d.Doner_Type.Equals("Silver"))
+                {
+                    <div class="col-xs-4 donor_box silver">
+                        <p class="donor_name">@d.Doner_Name</p>
+                        <p class="year">@d.Doner_year</p>
+                    </div>
+
+                }
+
+            }
+            @*<div class="col-xs-4 donor_box silver">
                 <p class="donor_name">MILLER FAMILY FOUNDATION LARRY H. & GAIL</p>
                 <p class="year">2015 & 2016</p>
             </div>
@@ -433,11 +493,23 @@
                 <p class="donor_name">SORENSON LEGACY FOUNDATION</p>
                 <p class="year">2015</p>
             </div>
-        </div>
+        </div>*@
     </div>
     <div class="container-fluid">
         <div class="row donor_list">
-            <div class="col-xs-4 donor_box silver">
+            @foreach (Doners d in Model.Doners)
+            {
+                if (d.Doner_Type.Equals("Silver"))
+                {
+                    <div class="col-xs-4 donor_box silver">
+                        <p class="donor_name">@d.Doner_Name</p>
+                        <p class="year">@d.Doner_year</p>
+                    </div>
+
+                }
+
+            }
+            @*<div class="col-xs-4 donor_box silver">
                 <p class="donor_name">MILLER FAMILY FOUNDATION LARRY H. & GAIL</p>
                 <p class="year">2015 & 2016</p>
             </div>
@@ -448,7 +520,7 @@
             <div class="col-xs-4 donor_box silver">
                 <p class="donor_name">SORENSON LEGACY FOUNDATION</p>
                 <p class="year">2015</p>
-            </div>
+            </div>*@
         </div>
     </div>
     <div class="container-fluid">
@@ -460,7 +532,19 @@
     </div>
     <div class="container-fluid">
         <div class="row donor_list">
-            <div class="col-xs-4 donor_box bronze">
+            @foreach (Doners d in Model.Doners)
+            {
+                if (d.Doner_Type.Equals("Bronze"))
+                {
+                    <div class="col-xs-4 donor_box bronze">
+                        <p class="donor_name">@d.Doner_Name</p>
+                        <p class="year">@d.Doner_year</p>
+                    </div>
+
+                }
+
+            }
+            @*<div class="col-xs-4 donor_box bronze">
                 <p class="donor_name">MILLER FAMILY FOUNDATION LARRY H. & GAIL</p>
                 <p class="year">2015 & 2016</p>
             </div>
@@ -471,11 +555,23 @@
             <div class="col-xs-4 donor_box bronze">
                 <p class="donor_name">SORENSON LEGACY FOUNDATION</p>
                 <p class="year">2015</p>
-            </div>
+            </div>*@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row donor_list bronze">
+        @foreach (Doners d in Model.Doners)
+            {
+                if (d.Doner_Type.Equals("Bronze"))
+                {
+                <div class="col-xs-4 donor_box bronze">
+                    <p class="donor_name">@d.Doner_Name</p>
+                    <p class="year">@d.Doner_year</p>
+                </div>
+
+            }
+
+        }
+        @*<div class="row donor_list bronze">
             <div class="col-xs-4 donor_box bronze">
                 <p class="donor_name">MILLER FAMILY FOUNDATION LARRY H. & GAIL</p>
                 <p class="year">2015 & 2016</p>
@@ -488,7 +584,7 @@
                 <p class="donor_name">SORENSON LEGACY FOUNDATION</p>
                 <p class="year">2015</p>
             </div>
-        </div>
+        </div>*@
     </div>
     <div class="container-fluid" id="donateMain">
         <div class="row donor_header">

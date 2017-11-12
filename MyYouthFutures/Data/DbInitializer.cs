@@ -203,6 +203,27 @@ namespace MyYouthFutures.Data
             }
             context.SaveChanges();
 
+            var Doner_List = new Doners[]
+            {
+                new Doners{Doner_Type="Plantinum",Doner_Name="MILLER FAMILY FOUNDATION LARRY H. & GAIL",Doner_year="2015 & 2016"},
+                new Doners{Doner_Type="Plantinum",Doner_Name="IVY LANE PEDIATRICS",Doner_year="2016"},
+                new Doners{Doner_Type="Plantinum",Doner_Name="SORENSON LEGACY FOUNDATION",Doner_year="2015"},
+                new Doners{Doner_Type="Gold",Doner_Name="MILLER FAMILY FOUNDATION LARRY H. & GAIL",Doner_year="2015 & 2016"},
+                new Doners{Doner_Type="Gold",Doner_Name="IVY LANE PEDIATRICS",Doner_year="2016"},
+                new Doners{Doner_Type="Gold",Doner_Name="SORENSON LEGACY FOUNDATION",Doner_year="2015"},
+                new Doners{Doner_Type="Silver",Doner_Name="MILLER FAMILY FOUNDATION LARRY H. & GAIL",Doner_year="2015 & 2016"},
+                new Doners{Doner_Type="Silver",Doner_Name="IVY LANE PEDIATRICS",Doner_year="2016"},
+                new Doners{Doner_Type="Silver",Doner_Name="SORENSON LEGACY FOUNDATION",Doner_year="2015"},
+                new Doners{Doner_Type="Bronze",Doner_Name="MILLER FAMILY FOUNDATION LARRY H. & GAIL",Doner_year="2015 & 2016"},
+                new Doners{Doner_Type="Bronze",Doner_Name="IVY LANE PEDIATRICS",Doner_year="2016"},
+                new Doners{Doner_Type="Bronze",Doner_Name="SORENSON LEGACY FOUNDATION",Doner_year="2015"}
+            };
+            foreach (Doners dn in Doner_List)
+            {
+                context.Doners.Add(dn);
+            }
+            context.SaveChanges();
+
         }
     }
 }
