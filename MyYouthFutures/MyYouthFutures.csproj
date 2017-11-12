@@ -5,19 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Views\EditViews\Services_Message\Create.cshtml" />
-    <Content Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Views\EditViews\Services_Message\Delete.cshtml" />
-    <Content Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Views\EditViews\Services_Message\Details.cshtml" />
-    <Content Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Views\EditViews\Services_Message\Edit.cshtml" />
-    <Content Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Views\EditViews\Services_Message\Index.cshtml" />
-    <Content Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Views\Services_Message\Create.cshtml" />
-    <Content Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Views\Services_Message\Delete.cshtml" />
-    <Content Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Views\Services_Message\Details.cshtml" />
-    <Content Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Views\Services_Message\Edit.cshtml" />
-    <Content Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Views\Services_Message\Index.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
@@ -28,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\EditViews\" />
     <Folder Include="Views\Shared\Components\intro\" />
     <Folder Include="Views\Shared\Components\Founder\" />
   </ItemGroup>
