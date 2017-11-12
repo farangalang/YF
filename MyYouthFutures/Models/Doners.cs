@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 
 namespace MyYouthFutures.Models
 {
-    public class Media
+    public class Doners
     {
         public int ID { get; set; }
-        public string Text_Type { get; set; }
-        public string Content_Text { get; set; }
+        public string Doner_Type { get; set; }
+        public string Doner_Name { get; set; }
+        public string Doner_year { get; set; }
     }
 }

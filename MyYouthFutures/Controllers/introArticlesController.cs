@@ -10,22 +10,22 @@ using MyYouthFutures.Models;
 
 namespace MyYouthFutures.Controllers
 {
-    public class MediaController : Controller
+    public class introArticlesController : Controller
     {
         private readonly YouthContext _context;
 
-        public MediaController(YouthContext context)
+        public introArticlesController(YouthContext context)
         {
             _context = context;
         }
 
-        // GET: Media
+        // GET: introArticles
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Media.ToListAsync());
+            return View(await _context.introArticles.ToListAsync());
         }
 
-        // GET: Media/Details/5
+        // GET: introArticles/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media
+            var introArticle = await _context.introArticles
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            if (introArticle == null)
             {
                 return NotFound();
             }
 
-            return View(media);
+            return View(introArticle);
         }
 
-        // GET: Media/Create
+        // GET: introArticles/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Media/Create
+        // POST: introArticles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Text_Type,Content_Text")] Media media)
+        public async Task<IActionResult> Create([Bind("ID,ArticleText")] introArticle introArticle)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(media);
+                _context.Add(introArticle);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(media);
+            return View(introArticle);
         }
 
-        // GET: Media/Edit/5
+        // GET: introArticles/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media.SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            var introArticle = await _context.introArticles.SingleOrDefaultAsync(m => m.ID == id);
+            if (introArticle == null)
             {
                 return NotFound();
             }
-            return View(media);
+            return View(introArticle);
         }
 
-        // POST: Media/Edit/5
+        // POST: introArticles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Text_Type,Content_Text")] Media media)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,ArticleText")] introArticle introArticle)
         {
-            if (id != media.ID)
+            if (id != introArticle.ID)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace MyYouthFutures.Controllers
             {
                 try
                 {
-                    _context.Update(media);
+                    _context.Update(introArticle);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MediaExists(media.ID))
+                    if (!introArticleExists(introArticle.ID))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace MyYouthFutures.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(media);
+            return View(introArticle);
         }
 
-        // GET: Media/Delete/5
+        // GET: introArticles/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media
+            var introArticle = await _context.introArticles
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            if (introArticle == null)
             {
                 return NotFound();
             }
 
-            return View(media);
+            return View(introArticle);
         }
 
-        // POST: Media/Delete/5
+        // POST: introArticles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var media = await _context.Media.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Media.Remove(media);
+            var introArticle = await _context.introArticles.SingleOrDefaultAsync(m => m.ID == id);
+            _context.introArticles.Remove(introArticle);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MediaExists(int id)
+        private bool introArticleExists(int id)
         {
-            return _context.Media.Any(e => e.ID == id);
+            return _context.introArticles.Any(e => e.ID == id);
         }
     }
 }

@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace MyYouthFutures.Models
 {
-    public class Media
+    public class introArticle
     {
         public int ID { get; set; }
-        public string Text_Type { get; set; }
-        public string Content_Text { get; set; }
+        public string ArticleText { get; set; }
     }
 }

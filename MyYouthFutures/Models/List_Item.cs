@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace MyYouthFutures.Models
 {
-    public class Media
+    public class List_Item
     {
         public int ID { get; set; }
-        public string Text_Type { get; set; }
-        public string Content_Text { get; set; }
+        public string TypeOfList { get; set; }
+        public string LiText { get; set; }
     }
 }

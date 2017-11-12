@@ -8,24 +8,27 @@ using Microsoft.EntityFrameworkCore;
 using MyYouthFutures.Data;
 using MyYouthFutures.Models;
 
+/// <summary>
+/// this class holds all the list items broken up by type for the various lists in the about vie
+/// </summary>
 namespace MyYouthFutures.Controllers
 {
-    public class MediaController : Controller
+    public class List_ItemController : Controller
     {
         private readonly YouthContext _context;
 
-        public MediaController(YouthContext context)
+        public List_ItemController(YouthContext context)
         {
             _context = context;
         }
 
-        // GET: Media
+        // GET: List_Item
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Media.ToListAsync());
+            return View(await _context.List_Item.ToListAsync());
         }
 
-        // GET: Media/Details/5
+        // GET: List_Item/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +36,39 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media
+            var list_Item = await _context.List_Item
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            if (list_Item == null)
             {
                 return NotFound();
             }
 
-            return View(media);
+            return View(list_Item);
         }
 
-        // GET: Media/Create
+        // GET: List_Item/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Media/Create
+        // POST: List_Item/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Text_Type,Content_Text")] Media media)
+        public async Task<IActionResult> Create([Bind("ID,TypeOfList,LiTest")] List_Item list_Item)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(media);
+                _context.Add(list_Item);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(media);
+            return View(list_Item);
         }
 
-        // GET: Media/Edit/5
+        // GET: List_Item/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +76,22 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media.SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            var list_Item = await _context.List_Item.SingleOrDefaultAsync(m => m.ID == id);
+            if (list_Item == null)
             {
                 return NotFound();
             }
-            return View(media);
+            return View(list_Item);
         }
 
-        // POST: Media/Edit/5
+        // POST: List_Item/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Text_Type,Content_Text")] Media media)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,TypeOfList,LiTest")] List_Item list_Item)
         {
-            if (id != media.ID)
+            if (id != list_Item.ID)
             {
                 return NotFound();
             }
@@ -97,12 +100,12 @@ namespace MyYouthFutures.Controllers
             {
                 try
                 {
-                    _context.Update(media);
+                    _context.Update(list_Item);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MediaExists(media.ID))
+                    if (!List_ItemExists(list_Item.ID))
                     {
                         return NotFound();
                     }
@@ -113,10 +116,10 @@ namespace MyYouthFutures.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(media);
+            return View(list_Item);
         }
 
-        // GET: Media/Delete/5
+        // GET: List_Item/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +127,30 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media
+            var list_Item = await _context.List_Item
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            if (list_Item == null)
             {
                 return NotFound();
             }
 
-            return View(media);
+            return View(list_Item);
         }
 
-        // POST: Media/Delete/5
+        // POST: List_Item/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var media = await _context.Media.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Media.Remove(media);
+            var list_Item = await _context.List_Item.SingleOrDefaultAsync(m => m.ID == id);
+            _context.List_Item.Remove(list_Item);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MediaExists(int id)
+        private bool List_ItemExists(int id)
         {
-            return _context.Media.Any(e => e.ID == id);
+            return _context.List_Item.Any(e => e.ID == id);
         }
     }
 }

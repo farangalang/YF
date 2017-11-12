@@ -10,22 +10,22 @@ using MyYouthFutures.Models;
 
 namespace MyYouthFutures.Controllers
 {
-    public class MediaController : Controller
+    public class Help_PanelController : Controller
     {
         private readonly YouthContext _context;
 
-        public MediaController(YouthContext context)
+        public Help_PanelController(YouthContext context)
         {
             _context = context;
         }
 
-        // GET: Media
+        // GET: Help_Panel
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Media.ToListAsync());
+            return View(await _context.Help_Panel.ToListAsync());
         }
 
-        // GET: Media/Details/5
+        // GET: Help_Panel/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media
+            var help_Panel = await _context.Help_Panel
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            if (help_Panel == null)
             {
                 return NotFound();
             }
 
-            return View(media);
+            return View(help_Panel);
         }
 
-        // GET: Media/Create
+        // GET: Help_Panel/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Media/Create
+        // POST: Help_Panel/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Text_Type,Content_Text")] Media media)
+        public async Task<IActionResult> Create([Bind("ID,Content_Type,Content_Text")] Help_Panel help_Panel)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(media);
+                _context.Add(help_Panel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(media);
+            return View(help_Panel);
         }
 
-        // GET: Media/Edit/5
+        // GET: Help_Panel/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media.SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            var help_Panel = await _context.Help_Panel.SingleOrDefaultAsync(m => m.ID == id);
+            if (help_Panel == null)
             {
                 return NotFound();
             }
-            return View(media);
+            return View(help_Panel);
         }
 
-        // POST: Media/Edit/5
+        // POST: Help_Panel/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Text_Type,Content_Text")] Media media)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Content_Type,Content_Text")] Help_Panel help_Panel)
         {
-            if (id != media.ID)
+            if (id != help_Panel.ID)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace MyYouthFutures.Controllers
             {
                 try
                 {
-                    _context.Update(media);
+                    _context.Update(help_Panel);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MediaExists(media.ID))
+                    if (!Help_PanelExists(help_Panel.ID))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace MyYouthFutures.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(media);
+            return View(help_Panel);
         }
 
-        // GET: Media/Delete/5
+        // GET: Help_Panel/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media
+            var help_Panel = await _context.Help_Panel
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            if (help_Panel == null)
             {
                 return NotFound();
             }
 
-            return View(media);
+            return View(help_Panel);
         }
 
-        // POST: Media/Delete/5
+        // POST: Help_Panel/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var media = await _context.Media.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Media.Remove(media);
+            var help_Panel = await _context.Help_Panel.SingleOrDefaultAsync(m => m.ID == id);
+            _context.Help_Panel.Remove(help_Panel);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MediaExists(int id)
+        private bool Help_PanelExists(int id)
         {
-            return _context.Media.Any(e => e.ID == id);
+            return _context.Help_Panel.Any(e => e.ID == id);
         }
     }
 }
