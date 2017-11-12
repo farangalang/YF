@@ -1,10 +1,11 @@
-﻿@model IEnumerable<MyYouthFutures.Models.Services_Message>
+﻿
+@model IEnumerable<MyYouthFutures.Models.Services_Message>
 @* Title Section for Services *@
 <section class="container-fluid services">
     <div class="row">
         <div class="col-xs-12">
-            <h4 class="services-heading" ng-model ="ServicesTitle" edit-callback="editMade(text, elem)" content-editable>Services</h4>
-            <p class="mont-light-light-22 about-services"  ng-model ="ServicesSubtitle" edit-callback="editMade(text, elem)" content-editable ng-click ="ngShow=true">Our programming is divided into three main areas. Each program area has specific components to meet the needs of the youth in need.<button ng-show="showSave" class ="ng-hide">Save</button></p>
+            <h4 class="services-heading">Services</h4>
+            <p class="mont-light-light-22 about-services"</p>
         </div>
     </div>
 </section>
@@ -14,26 +15,24 @@
         <div class="boxes">
 
             @foreach (var item in Model)
-            { 
-                <article class="col-xs-3 panel" >
+            {
+                <article class="col-xs-3 panel">
                     <section class="panel-img-container">
                         <img src="@item.MessageImage" alt="House" class="panel-img" />
                     </section>
-                    <section ng-model ="ServicesHeader[@item.ID]" edit-callback="editMade(text, @item.ID)" content-editable>
-                        <p class="quicksand-light-32 panel-heading" >@item.MessageHeader</p>
+                    <section ng-model="ServicesHeader[@item.ID]" >
+                        <p class="quicksand-light-32 panel-heading">@item.MessageHeader</p>
                     </section>
-                    <section ng-model ="ServicesDescription[@item.ID]" edit-callback="editMade(text, @item.ID)" content-editable>
+                    <section ng-model="ServicesDescription[@item.ID]">
                         <p class="mont-light-light-18 panel-summary">@item.Message</p>
                     </section>
                     <section class="panel-footer">
                         <p class="quicksand-light-24-green"><a href="#">Learn more ></a></p>
                     </section>
-                </article>
-            @*<a asp-action="Edit" asp-route-id="@item.ID">Edit</a> 
-              <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-              <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>*@       
+                    <a asp-controller = "Services_Message" asp-action="Edit" asp-route-id="@item.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+                </article>   
             }
-    
+
         </div>
-    </div> 
+    </div>
 </section>

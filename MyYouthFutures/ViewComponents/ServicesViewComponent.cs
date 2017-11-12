@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace MyYouthFutures.ViewComponents
 {
     public class ServicesViewComponent : ViewComponent
-    { 
-        public async Task<IViewComponentResult> InvokeAsync()
+    {
+                public async Task<IViewComponentResult> InvokeAsync()
         {
             return View();
         }
 
-    }
+   }
 }
