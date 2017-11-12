@@ -29,16 +29,8 @@
                     <section class="panel-footer">
                         <p class="quicksand-light-24-green"><a href="#">Learn more ></a></p>
                     </section>
-                    <a asp-controller = "Services_Message" asp-action="Edit" asp-route-id="@item.ID" data-target="#modal-container" data-toggle="modal">Edit</a>
-                    <div id="modal-container" class="modal fade hidden-print" tabindex="-1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-
-                            </div>
-                        </div>
-                    </div>
-                
-                </article>
+                    <a asp-controller = "Services_Message" asp-action="Edit" asp-route-id="@item.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+                </article>   
             }
 
         </div>
