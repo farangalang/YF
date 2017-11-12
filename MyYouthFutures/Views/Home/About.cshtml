@@ -145,7 +145,7 @@
                         if (outli.TypeOfList.Equals("outReach"))
                         {
                             <li>@outli.LiText</li>
-
+                            <a asp-controller="List_Item" asp-action="Edit" asp-route-id="outl.ID" data-target="#editModal" data-toggle="modal">Edit</a>
                         }
 
                     }
@@ -158,6 +158,7 @@
                         if (outli1.TypeOfList.Equals("outReach1"))
                         {
                             <li>@outli1.LiText</li>
+                            <a asp-controller="List_Item" asp-action="Edit" asp-route-id="outl1.ID" data-target="#editModal" data-toggle="modal">Edit</a>
                         }
 
                     }
