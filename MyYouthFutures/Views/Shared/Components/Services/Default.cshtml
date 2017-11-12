@@ -4,8 +4,8 @@
 <section class="container-fluid services">
     <div class="row">
         <div class="col-xs-12">
-            <h4 class="services-heading" ng-model="ServicesTitle" edit-callback="editMade(text, elem)" content-editable>Services</h4>
-            <p class="mont-light-light-22 about-services" ng-model="ServicesSubtitle" edit-callback="editMade(text, elem)" content-editable ng-click="ngShow=true">Our programming is divided into three main areas. Each program area has specific components to meet the needs of the youth in need.<button ng-show="showSave" class="ng-hide">Save</button></p>
+            <h4 class="services-heading">Services</h4>
+            <p class="mont-light-light-22 about-services"</p>
         </div>
     </div>
 </section>
@@ -29,8 +29,8 @@
                     <section class="panel-footer">
                         <p class="quicksand-light-24-green"><a href="#">Learn more ></a></p>
                     </section>
-                    <a asp-controller = "Services_Message" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
-                </article>
+                    <a asp-controller = "Services_Message" asp-action="Edit" asp-route-id="@item.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+                </article>   
             }
 
         </div>
