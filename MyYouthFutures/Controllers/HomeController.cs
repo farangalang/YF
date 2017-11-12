@@ -27,8 +27,23 @@ namespace MyYouthFutures.Controllers
         // GET: Services_Message
         public async Task<IActionResult> Index()
         {
+            var services = await _context.Services_Messages.ToListAsync();
+            var titles = await _context.Titles.ToListAsync();
+            //var firstYear = await _context.FirstYear_Service_Messages.ToListAsync();
+            //var staffPanel = await _context.Staff_Panel.ToListAsync();
+            //var ListItem = await _context.List_Item.ToListAsync();
 
-            return View(await _context.Services_Messages.ToListAsync());
+            var vm = new ItemViewModel
+            {
+                services = services,
+                Founder_Messages = founders,
+                FirstYear_Service_Messages = firstYear,
+                Staff = staffPanel,
+                List_item = ListItem
+            };
+
+            return View(vm);
+            //return View(await _context.Services_Messages.ToListAsync());
         }
 
 
@@ -50,5 +65,9 @@ namespace MyYouthFutures.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+    }
+
+    public class ItemViewModel
+    {
     }
 }
