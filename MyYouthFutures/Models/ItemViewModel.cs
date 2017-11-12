@@ -16,6 +16,8 @@ namespace MyYouthFutures.Models
         public IEnumerable<Founder_Message> Founder_Messages { get; set; }
         public IEnumerable<FirstYear_Service_Messages> FirstYear_Service_Messages { get; set; }
         public IEnumerable<Staff_Panel> Staff { get; set; }
+        public IEnumerable<List_Item> List_item { get; set; }
+
 
     }
 }

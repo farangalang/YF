@@ -92,9 +92,9 @@ namespace MyYouthFutures.Data
 
             var firstYear_Service_Messages = new FirstYear_Service_Messages[]
             {
-                new FirstYear_Service_Messages{firstYearImage="/images/history_meal.svg",firstYearText="Served <span class="+"green"+">7,085</span> meals;meals; 3 meals a day and 2 snacks for shelter and drop-in youth. Opened the resource room <span class="+"green"+">354</span> times with access to basic nec-essities including clothing, hygiene items, back packs, blankets, sleeping bags, basic medical supplies, etc."},
-                new FirstYear_Service_Messages{firstYearImage="/images/history_hand.svg",firstYearText="Conducted more than <span class="+"green"+">245</span> street outreach hours and provided items from the resource room to street youth."},
-                new FirstYear_Service_Messages{firstYearImage="/images/history_house.svg",firstYearText="Provided <span class="+"green"+">1,535</span> shelter night stays and <span class="+"green"+">511</span> drop in services including case management, connections to health care, mental health care and group therapy, facilitation with other youth service providers, computer access, showers, laundry facilities, etc."}
+                new FirstYear_Service_Messages{firstYearImage="/images/history_meal.svg",firstYearText="Served7,085meals; 3 meals a day and 2 snacks for shelter and drop-in youth. Opened the resource room <span class="+"green"+">354</span> times with access to basic nec-essities including clothing, hygiene items, back packs, blankets, sleeping bags, basic medical supplies, etc."},
+                new FirstYear_Service_Messages{firstYearImage="/images/history_hand.svg",firstYearText="Conducted more than 245street outreach hours and provided items from the resource room to street youth."},
+                new FirstYear_Service_Messages{firstYearImage="/images/history_house.svg",firstYearText="Provided 1,535 shelter night stays and 511 drop in services including case management, connections to health care, mental health care and group therapy, facilitation with other youth service providers, computer access, showers, laundry facilities, etc."}
             };
             foreach (FirstYear_Service_Messages fym in firstYear_Service_Messages)
             {
@@ -114,6 +114,76 @@ namespace MyYouthFutures.Data
             foreach (Staff_Panel staff in Staff)
             {
                 context.Staff_Panel.Add(staff);
+            }
+            context.SaveChanges();
+
+            var List_Items = new List_Item[]
+            {
+                new List_Item{TypeOfList="outReach",LiText="Jefferson Park"},
+                new List_Item{TypeOfList="outReach",LiText="Marchall White Center Park"},
+                new List_Item{TypeOfList="outReach1",LiText="Lorin Farr Skate Park"},
+                new List_Item{TypeOfList="outReach1",LiText="Under the Ogden River Bridge (sporadic)"},
+                new List_Item{TypeOfList="outReach1",LiText="Lantern House Homeless Shelter"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Cash donations"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Printer Paper"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Canned meat & Jerky"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Scotch tape"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Bus tokens or passes"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Basketball Court at Bonneville Park"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Earbud Headphones"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Cinch bags"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Batteries"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Sweat Pants"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Pajama Bottoms"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Sports bras"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Trail mix individuals"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Toilet Paper"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Condoms"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Tampons"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Carabiners"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Paper plates and cups"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Men's and Women's Underwear"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Socks"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Kleenex individuals"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Undershirts, S M L XL"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Garbage bags 30 Gallon"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Garbage sacks small    bathroom"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Lip balm"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Ziploc bags, quart and gallon"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Energy Bars"},
+                new List_Item{TypeOfList="mostImportantNeeds",LiText="Heavy duty plastic storage bins that won't melt if heated in shed"},
+                new List_Item{TypeOfList="MISCNEEDS",LiText="Minivan"},
+                new List_Item{TypeOfList="MISCNEEDS",LiText="NEW Printer"},
+                new List_Item{TypeOfList="GiftCardsForNeeds",LiText="Walmart"},
+                new List_Item{TypeOfList="GiftCardsForNeeds",LiText="Fun things to do"},
+                new List_Item{TypeOfList="GiftCardsForNeeds",LiText="Grocery store"},
+                new List_Item{TypeOfList="GiftCardsForNeeds",LiText="Maverick"},
+                new List_Item{TypeOfList="GiftCardsForNeeds",LiText="Restaurants"},
+                new List_Item{TypeOfList="GiftCardsForNeeds",LiText="Movies"},
+                new List_Item{TypeOfList="GiftCardsForNeeds",LiText="Bus passes or tokens"},
+                new List_Item{TypeOfList="GiftCardsForNeeds",LiText="Phone minutes"},
+                new List_Item{TypeOfList="GiftCardsForNeeds",LiText="Beauty salons/haircuts"},
+                new List_Item{TypeOfList="GiftCardsForNeeds",LiText="For shoe stores"},
+                new List_Item{TypeOfList="GiftCardsForNeeds",LiText="Lagoon passes"},
+                new List_Item{TypeOfList="HouseholdFurnishingsNeeds",LiText="NEW pots and pans"},
+                new List_Item{TypeOfList="HouseholdFurnishingsNeeds",LiText="New Couches"},
+                new List_Item{TypeOfList="Volunteers",LiText="Mentors"},
+                new List_Item{TypeOfList="Volunteers",LiText="Educators"},
+                new List_Item{TypeOfList="Volunteers",LiText="Group activity facilitators"},
+                new List_Item{TypeOfList="Volunteers",LiText="Meal preparers/providers"},
+                new List_Item{TypeOfList="Volunteers",LiText="Tutors"},
+                new List_Item{TypeOfList="Volunteers",LiText="Life skills trainers"},
+                new List_Item{TypeOfList="Volunteers",LiText="Beauticians"},
+                new List_Item{TypeOfList="Volunteers",LiText="Street Outreach Workers"},
+                new List_Item{TypeOfList="Volunteers",LiText="Artists for classes"},
+                new List_Item{TypeOfList="Volunteers",LiText="Yard work"},
+                new List_Item{TypeOfList="Volunteers",LiText="Interior painters"},
+                new List_Item{TypeOfList="RepairNeeds",LiText="Concrete or pavers 1500 sq. feet"},
+                new List_Item{TypeOfList="RepairNeeds",LiText="Cement sidewalk repair& labor"}
+            };
+            foreach (List_Item lsti in List_Items)
+            {
+                context.List_Item.Add(lsti);
             }
             context.SaveChanges();
 

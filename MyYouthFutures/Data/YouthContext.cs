@@ -20,7 +20,8 @@ namespace MyYouthFutures.Data
         public DbSet<introArticle> introArticles { get; set; } //this is the table that holds the introduction statment on the history page.
         public DbSet<Founder_Message> Founder_Message { get; set; }//this the table that holds the founder message panels
         public DbSet<FirstYear_Service_Messages> FirstYear_Service_Messages { get; set; } //this is the table that holds the first year service message panels
-        public DbSet<MyYouthFutures.Models.Staff_Panel> Staff_Panel { get; set; }//this is the table that holds the stadd and board of directors on the history page
+        public DbSet<MyYouthFutures.Models.Staff_Panel> Staff_Panel { get; set; }//this is the table that holds the staff and board of directors on the history page
+        public DbSet<List_Item> List_Item { get; set; }//this is the table that holds the list items for the about view
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,9 +33,9 @@ namespace MyYouthFutures.Data
             modelBuilder.Entity<Founder_Message>().ToTable("Founder_Message");
             modelBuilder.Entity<FirstYear_Service_Messages>().ToTable("FirstYear_Service_Message");
             modelBuilder.Entity<Staff_Panel>().ToTable("Staff_Panel");
+            modelBuilder.Entity<List_Item>().ToTable("List_Item");
         }
 
-
-
+        public DbSet<MyYouthFutures.Models.Media> Media { get; set; }
     }
 }

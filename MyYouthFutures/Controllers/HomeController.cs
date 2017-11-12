@@ -39,14 +39,16 @@ namespace MyYouthFutures.Controllers
             var articles = await _context.introArticles.ToListAsync();
             var founders = await _context.Founder_Message.ToListAsync();
             var firstYear = await _context.FirstYear_Service_Messages.ToListAsync();
-            var staffPanel = await _context.Staff_Panel.ToListAsync(); 
+            var staffPanel = await _context.Staff_Panel.ToListAsync();
+            var ListItem = await _context.List_Item.ToListAsync();
 
             var vm = new ItemViewModel
             {
                 introArticles = articles,
                 Founder_Messages = founders,
                 FirstYear_Service_Messages = firstYear,
-                Staff = staffPanel
+                Staff = staffPanel,
+                List_item = ListItem
             };
 
             return View(vm);

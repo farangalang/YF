@@ -142,16 +142,33 @@
         <div class="row outreach_bullet">
             <section class="col-xs-12 col-md-6">
                 <ul>
-                    <li>Jefferson Park</li>
+                    @foreach (List_Item outli in Model.List_item)
+                    {
+                        if(outli.TypeOfList.Equals("outReach"))
+                        {
+                            <li>@outli.LiText</li>
+
+                        }
+
+                    }
+                    @*<li>Jefferson Park</li>
                     <li>Marchall White Center Park</li>
-                    <li>Lorin Farr Skate Park</li>
+                    <li>Lorin Farr Skate Park</li>*@
                 </ul>
             </section>
             <section class="col-xs-12 col-md-6">
                 <ul>
-                    <li>Basketball Court at Bonneville Park</li>
+                    @foreach (List_Item outli1 in Model.List_item)
+                    {
+                        if(outli1.TypeOfList.Equals("outReach1"))
+                        {
+                            <li>@outli1.LiText</li>
+                        }
+
+                    }
+                    @*<li>Basketball Court at Bonneville Park</li>
                     <li>Under the Ogden River Bridge (sporadic)</li>
-                    <li>Lantern House Homeless Shelter</li>
+                    <li>Lantern House Homeless Shelter</li>*@
                 </ul>
             </section>
         </div>
@@ -195,7 +212,7 @@
     </div>
     <div class="container">
         <!--Staff-->
-        <div class="row board_members">
+        <di v class="row board_members">
             <section class="col-xs-12 col-md-4">
                 @foreach (Staff_Panel st in Model.Staff)
                 {
@@ -466,7 +483,16 @@
                     (In order of priority)
                 </p>
                 <ul>
-                    <li>Cash donations</li>
+                    @foreach (List_Item outlINeeds in Model.List_item)
+                    {
+                        if(outlINeeds.TypeOfList.Equals("mostImportantNeeds"))
+                        {
+                            <li>@outlINeeds.LiText</li>
+
+                        }
+
+                    }
+                    @*<li>Cash donations</li>
                     <li>Printer Paper</li>
                     <li>Canned meat & Jerky</li>
                     <li>Scotch tape</li>
@@ -492,18 +518,36 @@
                     <li>Lip balm</li>
                     <li>Ziploc bags, quart and gallon</li>
                     <li>Energy Bars</li>
-                    <li>Heavy duty plastic storage bins that won't melt if heated in shed</li>
+                    <li>Heavy duty plastic storage bins that won't melt if heated in shed</li>*@
                 </ul>
             </div>
             <div class="col-xs-12 col-md-4 needs_list">
                 <p class="needs_subheader">MISC. NEEDS</p>
                 <ul>
-                    <li>Minivan</li>
-                    <li>NEW Printer</li>
+                    @foreach (List_Item outLiMNeeds in Model.List_item)
+                    {
+                        if(outLiMNeeds.TypeOfList.Equals("MISCNEEDS"))
+                        {
+                            <li>@outLiMNeeds.LiText</li>
+
+                        }
+
+                    }
+                    @*<li>Minivan</li>
+                    <li>NEW Printer</li>*@
                 </ul>
                 <p class="needs_subheader">GIFT CARDS FOR</p>
                 <ul>
-                    <li>Walmart</li>
+                    @foreach (List_Item outLiGCards in Model.List_item)
+                    {
+                        if(outLiGCards.TypeOfList.Equals("GiftCardsForNeeds"))
+                        {
+                            <li>@outLiGCards.LiText</li>
+
+                        }
+
+                    }
+                    @*<li>Walmart</li>
                     <li>Fun things to do</li>
                     <li>Grocery store</li>
                     <li>Maverick</li>
@@ -513,18 +557,36 @@
                     <li>Phone minutes </li>
                     <li>Beauty salons/haircuts</li>
                     <li>For shoe stores</li>
-                    <li>Lagoon passes</li>
+                    <li>Lagoon passes</li>*@
                 </ul>
             </div>
             <div class="col-xs-12 col-md-4 needs_list">
                 <p class="needs_subheader">HOUSEHOLD FURNISHINGS NEEDS</p>
                 <ul>
-                    <li>NEW pots and pans</li>
-                    <li>New Couches</li>
+                    @foreach (List_Item outLiHouse in Model.List_item)
+                    {
+                        if(outLiHouse.TypeOfList.Equals("HouseholdFurnishingsNeeds"))
+                        {
+                            <li>@outLiHouse.LiText</li>
+
+                        }
+
+                    }
+                    @*<li>NEW pots and pans</li>
+                    <li>New Couches</li>*@
                 </ul>
                 <p class="needs_subheader">VOLUNTEERS</p>
                 <ul>
-                    <li>Mentors</li>
+                    @foreach (List_Item outLiVol in Model.List_item)
+                    {
+                        if(outLiVol.TypeOfList.Equals("Volunteers"))
+                        {
+                            <li>@outLiVol.LiText</li>
+
+                        }
+
+                    }
+                    @*<li>Mentors</li>
                     <li>Educators</li>
                     <li>Group activity facilitators</li>
                     <li>Meal preparers/providers</li>
@@ -534,12 +596,21 @@
                     <li>Street Outreach Workers</li>
                     <li>Artists for classes</li>
                     <li>Yard work</li>
-                    <li>Interior painters</li>
+                    <li>Interior painters</li>*@
                 </ul>
                 <p class="needs_subheader">REPAIR NEEDS</p>
                 <ul>
-                    <li>Concrete or pavers 1500 sq. feet</li>
-                    <li>Cement sidewalk repair& labor</li>
+                    @foreach (List_Item outLiRep in Model.List_item)
+                    {
+                        if(outLiRep.TypeOfList.Equals("RepairNeeds"))
+                        {
+                            <li>@outLiRep.LiText</li>
+
+                        }
+
+                    }
+                    @*<li>Concrete or pavers 1500 sq. feet</li>
+                    <li>Cement sidewalk repair& labor</li>*@
                 </ul>
             </div>
         </div>
