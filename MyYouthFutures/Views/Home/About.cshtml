@@ -55,7 +55,7 @@
         }
     </div>
 </div>
-    @* ------ END Founders Message ------ *@
+@* ------ END Founders Message ------ *@
 @* ------ YF HISTORY ------ *@
 <div class="container-fluid">
     <div class="row history_text">
@@ -65,6 +65,8 @@
                 if (ia.ID == 2)
                 {
                     <p class="mont_regular_22_darkgray">@ia.ArticleText</p>
+                    <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+
                 }
             }
         </section>
@@ -72,40 +74,47 @@
 </div>
 @* ------ YF HISTORY ------ *@    
 
-<div class="container-fluid">
+    <div class="container-fluid">
         <div class="row hist_2nd_back_img">
             <section class="col-xs-12 hist_2nd_back_img_text">
                 <h4>5,000 youth experience homelessness for at least one night a year in Utah</h4>
             </section>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row history_text">
-            <section class="col-xs-12">
-                @foreach (introArticle ia in Model.introArticles)
+<div class="container-fluid">
+    <div class="row history_text">
+        <section class="col-xs-12">
+            @foreach (introArticle ia in Model.introArticles)
+            {
+                if (ia.ID == 3)
                 {
-                    if (ia.ID == 3)
-                    {
-                        <p class="mont_regular_22_darkgray">@ia.ArticleText</p>
-                    }
+                    <p class="mont_regular_22_darkgray">@ia.ArticleText</p>
+                    <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID" data-target="#editModal" data-toggle="modal">Edit</a>
                 }
-            </section>
-        </div>
+            }
+        </section>
     </div>
-    <div class="container-fluid">
-        <div class="row history_green_text">
-            <section class="col-xs-12">
-                <p class="mont_light_32_white">During the first full year of operations (February 20, 2015-March 31, 2016), our Residential Support Temporary Youth Shelter has:</p>
-            </section>
-        </div>
+</div>
+@* ------ END YF HISTORY ------ *@ 
+
+  
+<div class="container-fluid">
+    <div class="row history_green_text">
+        <section class="col-xs-12">
+            <p class="mont_light_32_white">During the first full year of operations (February 20, 2015-March 31, 2016), our Residential Support Temporary Youth Shelter has:</p>
+        </section>
     </div>
-    <div class="container">
+</div>
+    
+@* ------ First Year of Service ------ *@ 
+<div class="container">
         <section class="row more">
             @foreach (FirstYear_Service_Messages fsm in Model.FirstYear_Service_Messages)
             {
                 <div class="col-xs-12 col-md-4 more_volunteer">
                     <img src="@fsm.firstYearImage" title="Meal" alt="Meal">
                     <p class="vol_p mont_light_18_darkgray">@fsm.firstYearText</p>
+
                 </div>
 
             }
