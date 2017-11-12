@@ -20,7 +20,7 @@ namespace MyYouthFutures.Data
 
             var title = new Title[]
             {
-                new Title{Header="Hi", SubHeader="14 WARM BEDS. YOUTH 12-17. YOUR TEMPORARY HOME :)", Footer="Have questions? Send us a text! (801) 528-1214"},
+                new Title{Header="Hi", SubHeader="14 WARM BEDS. YOUTH 12-17. YOUR TEMPORARY HOME :)", Footer="Have questions? Send us a text! (801) 528-1214", BackgroundImage=""},
 
             };
             foreach (Title s in title)
