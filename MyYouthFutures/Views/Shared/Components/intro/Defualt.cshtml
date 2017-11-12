@@ -1,0 +1,9 @@
+﻿@*@model IEnumerable<MyYouthFutures.Models.introArticle>
+
+@foreach (var item in Model)
+{
+    if (item.ID == 1)
+    {
+        <p class="mont_regular_22_darkgray">@item.ArticleText</p>
+    }
+}*@

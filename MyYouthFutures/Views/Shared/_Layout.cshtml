@@ -31,7 +31,27 @@
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body ng-app="app" ng-controller ="editController">
-    <div id="main-body">
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            @*<div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>*@
+        </div>
+    </div>
+</div>
+
+<div id="main-body">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,7 +62,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="~/images/yf_logo.svg" alt="Youth Futures Logo" /></a>
+                    <a asp-controller="Home" asp-action="Index" class="navbar-brand"><img src="~/images/yf_logo.svg" alt="Youth Futures Logo" /></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -97,8 +117,12 @@
                 Html.RenderPartial("../Popups/_Login");
             }
         </div>
+        
+
+
 
         @RenderBody()
+        
         <hr />
         <footer>
             <p>&copy; 2017 - Youth_Futures_Shelter_Home</p>

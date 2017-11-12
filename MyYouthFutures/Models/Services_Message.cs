@@ -11,5 +11,6 @@ namespace MyYouthFutures.Models
         public string MessageImage { get; set; }
         public string MessageHeader { get; set; }
         public string Message { get; set; }
+        public string Link { get; set; }
     }
 }
