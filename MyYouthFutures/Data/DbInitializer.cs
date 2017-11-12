@@ -76,6 +76,11 @@ namespace MyYouthFutures.Data
                 context.Services_Messages.Add(a);
             }
             context.SaveChanges();
+
+            var media = new Media[]
+            {
+                new Media{Header="History", Body_1=""}
+            }
         }
     }
 }
