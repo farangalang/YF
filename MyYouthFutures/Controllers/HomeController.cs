@@ -27,8 +27,22 @@ namespace MyYouthFutures.Controllers
         // GET: Services_Message
         public async Task<IActionResult> Index()
         {
+            var homeTitle = await _context.HomeTitle.ToListAsync();
+            var services = await _context.Services.ToListAsync();
+            var services_message = await _context.Services_Messages.ToListAsync();
+            var purpose = await _context.Purposes.ToListAsync();
+            var links = await _context.Links.ToListAsync();
 
-            return View(await _context.Services_Messages.ToListAsync());
+            var im = new ItemViewModel
+            {
+                HomeTitle = homeTitle,
+                Services = services,
+                Services_Message = services_message,
+                Purpose = purpose,
+                Link = links
+            };
+
+            return View(im);
         }
 
 

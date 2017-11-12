@@ -1,4 +1,5 @@
-﻿@{
+﻿@Model ItemViewModel
+@{
     ViewData["Title"] = "Home Page Demo";
 }
 
@@ -18,10 +19,18 @@
     <div class="row">
         <div class="col-xs-12 header-box">
             <div class="row">
-                <p class="header-text-greeting col-xs-12">Hi</p>
+                @foreach (HomeTitle HT in Model.HomeTitle)
+                {
+                    <p class="header-text-greeting col-xs-12">@HT.Title</p>
+                }
+                
             </div>
             <div class="sub-text-box row">
-                <p class="sub-text col-xs-12">14 WARM BEDS. YOUTH 12-17. YOUR TEMPORARY HOME <span class="quicksand-dark-38-lightgreen">:) </span></p>
+                @foreach (HomeTitle HT in Model.HomeTitle)
+                {
+                    <p class="sub-text col-xs-12">@HT.Subtitle</p>
+                }
+                
             </div>
         </div>
     </div>
@@ -30,14 +39,54 @@
     <div class="row">
         <div class="col-xs-offset-1 col-xs-11">
             <p class="green-header">
-                <span class="mont-semibold-dark-36 have-questions-heading">Have questions? Send us a text!</span>
-                <span class="quicksand-dark-36-main"> (801) 528-1214</span>
+                @foreach (HomeTitle HT in Model.HomeTitle)
+                {
+                    <span class="mont-semibold-dark-36 have-questions-heading">@HT.SubheaderContent</span>
+                }
+                
             </p>
         </div>
     </div>
 </section>
+<section class="container-fluid services">
+    <div class="row">
+        <div class="col-xs-12">
+            @foreach (HomeTitle HT in Model.HomeTitle)
+            {
+                <h4 class="services-heading" ng-model="ServicesTitle">Services</h4>
+                <p class="mont-light-light-22 about-services" ng-model="ServicesSubtitle">Our programming is divided into three main areas. Each program area has specific components to meet the needs of the youth in need.</p>
+            }
 
-@await Component.InvokeAsync("Services")
+        </div>
+    </div>
+</section>
+@* Panels for Services Offered *@
+<section>
+    <div class="row">
+        <div class="boxes">
+
+            @foreach (Services_Message SM in Model.Services_Message)
+            {
+                <article class="col-xs-3 panel">
+                    <section class="panel-img-container">
+                        <img src="@SM.MessageImage" alt="House" class="panel-img" />
+                    </section>
+                    <section ng-model="ServicesHeader[@SM.ID]">
+                        <p class="quicksand-light-32 panel-heading">@SM.MessageHeader</p>
+                    </section>
+                    <section ng-model="ServicesDescription[@SM.ID]">
+                        <p class="mont-light-light-18 panel-summary">@SM.Message</p>
+                    </section>
+                    <section class="panel-footer">
+                        <p class="quicksand-light-24-green"><a href="#">Learn more ></a></p>
+                    </section>
+                    <a asp-controller="Services_Message" asp-action="Edit" asp-route-id="@SM.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+                </article>
+            }
+
+        </div>
+    </div>
+</section>
 
 <article class="container-fluid purpose-box">
     <section class="row purpose col-xs-12">

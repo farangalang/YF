@@ -18,14 +18,14 @@ namespace MyYouthFutures.Data
                 return;   // DB has been seeded
             }
 
-            var title = new Title[]
+            var hometitle = new HomeTitle[]
             {
-                new Title{Header="Hi", SubHeader="14 WARM BEDS. YOUTH 12-17. YOUR TEMPORARY HOME :)", Footer="Have questions? Send us a text! (801) 528-1214", BackgroundImage=""},
+                new HomeTitle{Title="Hi", Subtitle="14 WARM BEDS. YOUTH 12-17. YOUR TEMPORARY HOME :)", SubheaderContent="Have questions? Send us a text! (801) 528-1214", BackgroundImage=""},
 
             };
-            foreach (Title s in title)
+            foreach (HomeTitle s in hometitle)
             {
-                context.Titles.Add(s);
+                context.HomeTitle.Add(s);
             }
             context.SaveChanges();
 
