@@ -92,7 +92,7 @@ namespace MyYouthFutures.Data
 
             var firstYear_Service_Messages = new FirstYear_Service_Messages[]
             {
-                new FirstYear_Service_Messages{firstYearImage="/images/history_meal.svg",firstYearText="meals; 3 meals a day and 2 snacks for shelter and drop-in youth. Opened the resource room <span class="+"green"+">354</span> times with access to basic nec-essities including clothing, hygiene items, back packs, blankets, sleeping bags, basic medical supplies, etc."},
+                new FirstYear_Service_Messages{firstYearImage="/images/history_meal.svg",firstYearText="Served <span class="+"green"+">7,085</span> meals;meals; 3 meals a day and 2 snacks for shelter and drop-in youth. Opened the resource room <span class="+"green"+">354</span> times with access to basic nec-essities including clothing, hygiene items, back packs, blankets, sleeping bags, basic medical supplies, etc."},
                 new FirstYear_Service_Messages{firstYearImage="/images/history_hand.svg",firstYearText="Conducted more than <span class="+"green"+">245</span> street outreach hours and provided items from the resource room to street youth."},
                 new FirstYear_Service_Messages{firstYearImage="/images/history_house.svg",firstYearText="Provided <span class="+"green"+">1,535</span> shelter night stays and <span class="+"green"+">511</span> drop in services including case management, connections to health care, mental health care and group therapy, facilitation with other youth service providers, computer access, showers, laundry facilities, etc."}
             };
