@@ -2,31 +2,56 @@
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
-<div id="staff" class="row">
-    <h2>Staff Information</h2>
-    <div class="col-md-1">
-        <img class="staff_pic" src="~/images/ban_circle.png" title="Image does not exist" alt="Image does not exist" />
-        <button>Select Image</button>
-    </div>
+<div id="staff" class="container_modal1">
+    <form id="staff2" class="container_modal2">
+        <div class="">
+            <div class="titleBox row">
+                <img class="header_img col-xs-push-1 col-xs-10" src="~/images/yf_house.png" />
+                <h4 class="title col-xs-push-2 col-xs-4">Staff Information</h4>
+            </div>
 
-    <div class="col-lg-2">
-        <label>Name: </label>
-        <input type="text" name="staff_name" required />
+            <div class="row">
+                <div class="col-xs-6">
+                    <div id="add_img" class="row">
+                        <!--@{ var val2 = "?";}-->
+                        <img id="staff_pic" class="col-xs-push-1 col-xs-10" src="~/images/ban_circle.png" title="Image does not exist" alt="Image does not exist" />
+                        <input type="file" id="staff_file" class="col-xs-push-1 col-xs-10" required/><!--style="display:none"-->
+                        <button id="staff_btn" type="button" onclick="$('#staff_btn').click(function () { $('#staff_file').trigger('click');})" class="col-xs-push-2 col-xs-8">Select Image</button>
+                        <!--<label id="lbl1">@val2</label>-->
+                    </div>
+                </div>
 
-        <br />
-
-        <label>Title: </label>
-        <input type="text" name="staff_title" required/>
-
-        <br />
-
-        <label>Email: </label>
-        <input type="text" name="staff_email" required/>
-
-        <br />
-
-        <label>Current Staff Member?</label>
-        <input type="radio" name="c_yes"/>
-        <input type="radio" name="c_no"/>
-    </div>
+                <div id="staff_info" class="col-xs-6">
+                    <div class="fixed_width">
+                        <label>Name:</label>
+                        <input type="text" name="staff_name" required />
+                    </div>
+                    <div class="fixed_width row">
+                        <div>
+                            <label>Title:  </label>
+                            <input type="text" name="staff_title" required />
+                            <!--<button id="addTitle" type="button">+</button>--><!--Will add back once I figure out how to add new titles (if needed)-->
+                        </div>
+                    </div>
+                    <div class="fixed_width">
+                        <label>Email:</label>
+                        <input type="text" name="staff_email" required />
+                    </div>
+                    <div>
+                        <label>Current Staff Member?</label>
+                        <label>Yes</label>
+                        <input type="radio" name="current" value="yes" required />
+                        <label>No</label>
+                        <input type="radio" name="current" value="no" required />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="buttons" class="row">
+            <button class="col-xs-push-5 col-xs-3 btn-lg btn-default" data-toggle="modal" data-target="#staffPopup">Cancel</button>
+            <button type="submit" class="col-xs-push-6 col-xs-3 btn-lg btn-success">Submit</button>
+            
+            
+        </div>
+    </form>
 </div>
