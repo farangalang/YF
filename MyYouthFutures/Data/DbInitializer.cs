@@ -80,7 +80,7 @@ namespace MyYouthFutures.Data
             var media = new Media[]
             {
                 new Media{Header="History", Body_1=""}
-            }
+            };
         }
     }
 }
