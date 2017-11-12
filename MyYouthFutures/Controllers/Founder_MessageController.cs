@@ -10,22 +10,22 @@ using MyYouthFutures.Models;
 
 namespace MyYouthFutures.Controllers
 {
-    public class MediaController : Controller
+    public class Founder_MessageController : Controller
     {
         private readonly YouthContext _context;
 
-        public MediaController(YouthContext context)
+        public Founder_MessageController(YouthContext context)
         {
             _context = context;
         }
 
-        // GET: Media
+        // GET: Founder_Message
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Media.ToListAsync());
+            return View(await _context.Founder_Message.ToListAsync());
         }
 
-        // GET: Media/Details/5
+        // GET: Founder_Message/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media
+            var founder_Message = await _context.Founder_Message
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            if (founder_Message == null)
             {
                 return NotFound();
             }
 
-            return View(media);
+            return View(founder_Message);
         }
 
-        // GET: Media/Create
+        // GET: Founder_Message/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Media/Create
+        // POST: Founder_Message/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Text_Type,Content_Text")] Media media)
+        public async Task<IActionResult> Create([Bind("ID,founderImage,founderSubTetxt")] Founder_Message founder_Message)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(media);
+                _context.Add(founder_Message);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(media);
+            return View(founder_Message);
         }
 
-        // GET: Media/Edit/5
+        // GET: Founder_Message/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media.SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            var founder_Message = await _context.Founder_Message.SingleOrDefaultAsync(m => m.ID == id);
+            if (founder_Message == null)
             {
                 return NotFound();
             }
-            return View(media);
+            return View(founder_Message);
         }
 
-        // POST: Media/Edit/5
+        // POST: Founder_Message/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Text_Type,Content_Text")] Media media)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,founderImage,founderSubTetxt")] Founder_Message founder_Message)
         {
-            if (id != media.ID)
+            if (id != founder_Message.ID)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace MyYouthFutures.Controllers
             {
                 try
                 {
-                    _context.Update(media);
+                    _context.Update(founder_Message);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MediaExists(media.ID))
+                    if (!Founder_MessageExists(founder_Message.ID))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace MyYouthFutures.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(media);
+            return View(founder_Message);
         }
 
-        // GET: Media/Delete/5
+        // GET: Founder_Message/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media
+            var founder_Message = await _context.Founder_Message
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            if (founder_Message == null)
             {
                 return NotFound();
             }
 
-            return View(media);
+            return View(founder_Message);
         }
 
-        // POST: Media/Delete/5
+        // POST: Founder_Message/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var media = await _context.Media.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Media.Remove(media);
+            var founder_Message = await _context.Founder_Message.SingleOrDefaultAsync(m => m.ID == id);
+            _context.Founder_Message.Remove(founder_Message);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MediaExists(int id)
+        private bool Founder_MessageExists(int id)
         {
-            return _context.Media.Any(e => e.ID == id);
+            return _context.Founder_Message.Any(e => e.ID == id);
         }
     }
 }

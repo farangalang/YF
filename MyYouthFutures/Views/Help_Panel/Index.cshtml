@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MyYouthFutures.Models.Media>
+﻿@model IEnumerable<MyYouthFutures.Models.Help_Panel>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,8 +13,7 @@
     <thead>
         <tr>
                 <th>
-
-                    @Html.DisplayNameFor(model => model.Text_Type)
+                    @Html.DisplayNameFor(model => model.Content_Type)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Content_Text)
@@ -26,7 +25,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Text_Type)
+                @Html.DisplayFor(modelItem => item.Content_Type)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Content_Text)

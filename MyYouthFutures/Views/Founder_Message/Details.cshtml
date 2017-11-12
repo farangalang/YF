@@ -1,4 +1,4 @@
-﻿@model MyYouthFutures.Models.Media
+﻿@model MyYouthFutures.Models.Founder_Message
 
 @{
     ViewData["Title"] = "Details";
@@ -7,20 +7,20 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Media</h4>
+    <h4>Founder_Message</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Text_Type)
+            @Html.DisplayNameFor(model => model.founderImage)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Text_Type)
+            @Html.DisplayFor(model => model.founderImage)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Content_Text)
+            @Html.DisplayNameFor(model => model.founderSubTetxt)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Content_Text)
+            @Html.DisplayFor(model => model.founderSubTetxt)
         </dd>
     </dl>
 </div>

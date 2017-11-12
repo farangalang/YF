@@ -10,22 +10,22 @@ using MyYouthFutures.Models;
 
 namespace MyYouthFutures.Controllers
 {
-    public class MediaController : Controller
+    public class FirstYear_Service_MessagesController : Controller
     {
         private readonly YouthContext _context;
 
-        public MediaController(YouthContext context)
+        public FirstYear_Service_MessagesController(YouthContext context)
         {
             _context = context;
         }
 
-        // GET: Media
+        // GET: FirstYear_Service_Messages
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Media.ToListAsync());
+            return View(await _context.FirstYear_Service_Messages.ToListAsync());
         }
 
-        // GET: Media/Details/5
+        // GET: FirstYear_Service_Messages/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media
+            var firstYear_Service_Messages = await _context.FirstYear_Service_Messages
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            if (firstYear_Service_Messages == null)
             {
                 return NotFound();
             }
 
-            return View(media);
+            return View(firstYear_Service_Messages);
         }
 
-        // GET: Media/Create
+        // GET: FirstYear_Service_Messages/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Media/Create
+        // POST: FirstYear_Service_Messages/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Text_Type,Content_Text")] Media media)
+        public async Task<IActionResult> Create([Bind("ID,firstYearImage,firstYearText")] FirstYear_Service_Messages firstYear_Service_Messages)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(media);
+                _context.Add(firstYear_Service_Messages);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(media);
+            return View(firstYear_Service_Messages);
         }
 
-        // GET: Media/Edit/5
+        // GET: FirstYear_Service_Messages/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media.SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            var firstYear_Service_Messages = await _context.FirstYear_Service_Messages.SingleOrDefaultAsync(m => m.ID == id);
+            if (firstYear_Service_Messages == null)
             {
                 return NotFound();
             }
-            return View(media);
+            return View(firstYear_Service_Messages);
         }
 
-        // POST: Media/Edit/5
+        // POST: FirstYear_Service_Messages/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Text_Type,Content_Text")] Media media)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,firstYearImage,firstYearText")] FirstYear_Service_Messages firstYear_Service_Messages)
         {
-            if (id != media.ID)
+            if (id != firstYear_Service_Messages.ID)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace MyYouthFutures.Controllers
             {
                 try
                 {
-                    _context.Update(media);
+                    _context.Update(firstYear_Service_Messages);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MediaExists(media.ID))
+                    if (!FirstYear_Service_MessagesExists(firstYear_Service_Messages.ID))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace MyYouthFutures.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(media);
+            return View(firstYear_Service_Messages);
         }
 
-        // GET: Media/Delete/5
+        // GET: FirstYear_Service_Messages/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media
+            var firstYear_Service_Messages = await _context.FirstYear_Service_Messages
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            if (firstYear_Service_Messages == null)
             {
                 return NotFound();
             }
 
-            return View(media);
+            return View(firstYear_Service_Messages);
         }
 
-        // POST: Media/Delete/5
+        // POST: FirstYear_Service_Messages/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var media = await _context.Media.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Media.Remove(media);
+            var firstYear_Service_Messages = await _context.FirstYear_Service_Messages.SingleOrDefaultAsync(m => m.ID == id);
+            _context.FirstYear_Service_Messages.Remove(firstYear_Service_Messages);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MediaExists(int id)
+        private bool FirstYear_Service_MessagesExists(int id)
         {
-            return _context.Media.Any(e => e.ID == id);
+            return _context.FirstYear_Service_Messages.Any(e => e.ID == id);
         }
     }
 }
