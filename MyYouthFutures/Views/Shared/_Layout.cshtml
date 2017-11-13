@@ -49,7 +49,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="~/images/yf_logo.svg" alt="Youth Futures Logo" /></a>
+                    <a asp-controller="Home" asp-action="Index" class="navbar-brand"><img src="~/images/yf_logo.svg" alt="Youth Futures Logo" /></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -99,7 +99,7 @@
 
     <div class="container body-content">
 
-        <div id="loginPopup" class="modal row container">
+        <div id="loginPopup" class="modal container">
             @{
                 Html.RenderPartial("../Popups/_Login");
             }
