@@ -3,6 +3,15 @@
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
+
+<div id="donorPopup" class="modal">
+    @{ Html.RenderPartial("../Popups/_AddDonor");}
+</div>
+
+<div id="staffPopup" class="modal">
+    @{ Html.RenderPartial("../Popups/_AddStaff");}
+</div>
+
 <article>
     <div class="container-fluid">
         <div class="row  questions">
@@ -203,7 +212,8 @@
     </div>
 
     <!--Staff-->
-
+@*<button type="button" data-toggle="modal" data-target="#staffPopup">Add Staff</button>*@
+    <a asp-controller="Staff_Panel" asp-action="Create" >Add Staff</a>
     @foreach (Staff_Panel st in Model.Staff)
     {
 
@@ -221,6 +231,9 @@
             
         }
     }
+
+
+
 
     <div class="container-fluid" id="mediaMain">
         <div class="row media_header">
@@ -311,14 +324,20 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row donor_subheader">
-            <div class="col-xs-12 ">
-                <p class="title_plat">Plantinum Level Donors</p>
-            </div>
+<div class="container-fluid">
+    <div class="row donor_subheader">
+        <div class="col-xs-12 ">
+            <p class="title_plat">Plantinum Level Donors</p>
         </div>
     </div>
-    <div class="container-fluid">
+</div>
+    
+
+    <!--<button onclick="document.getElementById('staffPop').style.display = 'block'">Show Staff</button>-->
+    
+    @*<button type="button" data-toggle="modal" data-target="#donorPopup">Add Donor</button>*@
+    <a asp-controller="Doners" asp-action="Create">Add Donor</a>
+<div class="container-fluid">
         <div class="row donor_list">
             @foreach (Doners d in Model.Doners)
             {
