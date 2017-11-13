@@ -186,6 +186,7 @@
                     if (st.Director.Equals("1"))
                     {
                         <p><span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span></p>
+                        <a asp-controller="Staff_Panel" asp-action="Edit" asp-route-id="@st.ID">Edit</a>
                     }
 
                 }
