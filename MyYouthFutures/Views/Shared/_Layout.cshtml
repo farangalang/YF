@@ -30,13 +30,13 @@
     </environment>
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
-<body ng-app="app" ng-controller ="editController">
+<body> @*ng-app="app" ng-controller ="editController">
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         </div>
     </div>
-</div>
+</div>*@
 
 <div id="main-body">
         <nav class="navbar navbar-default">
@@ -105,9 +105,6 @@
             }
         </div>
         
-
-
-
         @RenderBody()
         
         <hr />

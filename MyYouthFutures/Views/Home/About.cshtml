@@ -32,7 +32,7 @@
                 if (ia.ID == 1)
                 {
                     <p class="mont_regular_22_darkgray">@ia.ArticleText</p>
-                    <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+                    <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID">Edit</a>
                 }
             }
         </section>
@@ -50,7 +50,7 @@
             <section class="col-xs-12  col-md-4 first_img ">
                 <img src=@fm.founderImage class="img-responsive center-block" title="Kristen and Scott" alt="Kristen and Scott">
                 <p class="mont_light_14_white hist_subtitle">@fm.founderSubTetxt</p>
-                <a asp-controller="Founder_Message" asp-action="Edit" asp-route-id="@fm.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+                <a asp-controller="Founder_Message" asp-action="Edit" asp-route-id="@fm.ID">Edit</a>
             </section>
         }
     </div>
@@ -65,8 +65,7 @@
                 if (ia.ID == 2)
                 {
                     <p class="mont_regular_22_darkgray">@ia.ArticleText</p>
-                    <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID" data-target="#editModal" data-toggle="modal">Edit</a>
-
+                    <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID">Edit</a>
                 }
             }
         </section>
@@ -89,7 +88,7 @@
                 if (ia.ID == 3)
                 {
                     <p class="mont_regular_22_darkgray">@ia.ArticleText</p>
-                    <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+                    <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID">Edit</a>
                 }
             }
         </section>
@@ -114,7 +113,7 @@
             <div class="col-xs-12 col-md-4 more_volunteer">
                 <img src="@fsm.firstYearImage" title="Meal" alt="Meal">
                 <p class="vol_p mont_light_18_darkgray">@fsm.firstYearText</p>
-                <a asp-controller="FirstYear_Service_Messages" asp-action="Edit" asp-route-id="@fsm.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+                <a asp-controller="FirstYear_Service_Messages" asp-action="Edit" asp-route-id="@fsm.ID">Edit</a>
             </div>
 
         }
@@ -129,43 +128,48 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row outreach_text">
-            <section class="col-xs-12">
-                <p class="mont_regular_22_darkgray">Street Outreach is designed to meet the clients where they are on the street to build rapport and encourage youth to access drop-in and shelter services. This program offers, case management, hygiene items, food, sleeping bags, and other essential items as needed. Street Outreach currently take place once per week on Wednesdays. The team visits the same Ogden, Utah locations every week:</p>
-            </section>
-        </div>
+<div class="container-fluid">
+    <div class="row outreach_text">
+        <section class="col-xs-12">
+            <p class="mont_regular_22_darkgray">Street Outreach is designed to meet the clients where they are on the street to build rapport and encourage youth to access drop-in and shelter services. This program offers, case management, hygiene items, food, sleeping bags, and other essential items as needed. Street Outreach currently take place once per week on Wednesdays. The team visits the same Ogden, Utah locations every week:</p>
+        </section>
     </div>
-    <div class="container-fluid">
-        <div class="row outreach_bullet">
-            <section class="col-xs-12 col-md-6">
-                <ul>
-                    @foreach (List_Item outli in Model.List_item)
+</div>
+    
+@* ------ STREET OUTREACH ------ *@
+<div class="container-fluid">
+    <div class="row outreach_bullet">
+        <section class="col-xs-12 col-md-6">
+            <ul>
+                @foreach (List_Item outli in Model.List_item)
+                {
+                    if (outli.TypeOfList.Equals("outReach"))
                     {
-                        if (outli.TypeOfList.Equals("outReach"))
-                        {
-                            <li>@outli.LiText</li>
-
-                        }
-
+                        <li>@outli.LiText</li>
+                        <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outli.ID">Edit</a>
                     }
-                </ul>
-            </section>
-            <section class="col-xs-12 col-md-6">
-                <ul>
-                    @foreach (List_Item outli1 in Model.List_item)
+
+                }
+            </ul>
+        </section>
+        <section class="col-xs-12 col-md-6">
+            <ul>
+                @foreach (List_Item outli1 in Model.List_item)
+                {
+                    if (outli1.TypeOfList.Equals("outReach1"))
                     {
-                        if (outli1.TypeOfList.Equals("outReach1"))
-                        {
-                            <li>@outli1.LiText</li>
-                        }
-
+                        <li>@outli1.LiText</li>
+                        <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outli1.ID">Edit</a>
                     }
-                </ul>
-            </section>
-        </div>
+
+                }
+            </ul>
+        </section>
     </div>
-    <div class="container-fluid" id="directorsMain">
+</div>
+    
+@* ------ END STREET OUTREACH ------ *@
+<div class="container-fluid" id="directorsMain">
         <div class="row board_header">
             <div class="col-xs-6 text">
                 <h2>Board of</h2>
@@ -182,6 +186,7 @@
                     if (st.Director.Equals("1"))
                     {
                         <p><span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span></p>
+                        <a asp-controller="Staff_Panel" asp-action="Edit" asp-route-id="@st.ID">Edit</a>
                     }
 
                 }
@@ -209,9 +214,11 @@
                     <section class="col-xs-12 col-md-4">
                         <img src="@st.Staff_Image" class="img-responsive" title="Justine Murray" alt="Justine Murray">
                         <p><span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span></p>
+                        <a asp-controller="Staff_Panel" asp-action="Edit" asp-route-id="@st.ID">Edit</a>
                     </section>
                 </div>
             </div>
+            
         }
     }
 
@@ -230,7 +237,7 @@
                     if (med.Text_Type.Equals("title"))
                     {
                         <p class="title">@med.Content_Text</p>
-
+                        <a asp-controller="Media" asp-action="Edit" asp-route-id="@med.ID">Edit</a>
                     }
 
                 }
@@ -240,7 +247,7 @@
                     if (med.Text_Type.Equals("time"))
                     {
                         <p class="mont_regular_22_darkgray time">@med.Content_Text</p>
-
+                        <a asp-controller="Media" asp-action="Edit" asp-route-id="@med.ID">Edit</a>
                     }
 
                 }
@@ -256,7 +263,7 @@
                     if (med.Text_Type.Equals("image"))
                     {
                         <img src="@med.Content_Text" class="img-responsive center-block" title="America First Check" alt="Check">
-
+                        <a asp-controller="Media" asp-action="Edit" asp-route-id="@med.ID">Edit</a>
                     }
 
                 }
@@ -268,9 +275,8 @@
                     if (med.Text_Type.Equals("subTitle"))
                     {
                         <p class="subtitle">@med.Content_Text</p>
-
+                        <a asp-controller="Media" asp-action="Edit" asp-route-id="@med.ID">Edit</a>
                     }
-
                 }
             </div>
         </div>
@@ -283,7 +289,7 @@
                     if (med.Text_Type.Equals("para1"))
                     {
                         <p class="mont_regular_22_darkgray">@med.Content_Text</p>
-
+                        <a asp-controller="Media" asp-action="Edit" asp-route-id="@med.ID">Edit</a>
                     }
 
                 }
@@ -292,9 +298,8 @@
                     if (med.Text_Type.Equals("para2"))
                     {
                         <p class="mont_regular_22_darkgray">@med.Content_Text</p>
-
+                        <a asp-controller="Media" asp-action="Edit" asp-route-id="@med.ID">Edit</a>
                     }
-
                 }
             </section>
         </div>
@@ -322,8 +327,9 @@
                     <div class="col-xs-4 donor_box plat">
                         <p class="donor_name">@d.Doner_Name</p>
                         <p class="year">@d.Doner_year</p>
+                        <a asp-controller="Doners" asp-action="Edit" asp-route-id="@d.ID">Edit</a>
                     </div>
-
+                    
                 }
 
             }
@@ -338,8 +344,9 @@
                     <div class="col-xs-4 donor_box plat">
                         <p class="donor_name">@d.Doner_Name</p>
                         <p class="year">@d.Doner_year</p>
+                        <a asp-controller="Doners" asp-action="Edit" asp-route-id="@d.ID">Edit</a>
                     </div>
-
+                    
                 }
 
             }
@@ -361,6 +368,7 @@
                     <div class="col-xs-4 donor_box gold">
                         <p class="donor_name">@d.Doner_Name</p>
                         <p class="year">@d.Doner_year</p>
+                        <a asp-controller="Doners" asp-action="Edit" asp-route-id="@d.ID">Edit</a>
                     </div>
 
                 }
@@ -377,6 +385,7 @@
                     <div class="col-xs-4 donor_box gold">
                         <p class="donor_name">@d.Doner_Name</p>
                         <p class="year">@d.Doner_year</p>
+                        <a asp-controller="Doners" asp-action="Edit" asp-route-id="@d.ID">Edit</a>
                     </div>
 
                 }
@@ -400,6 +409,7 @@
                     <div class="col-xs-4 donor_box silver">
                         <p class="donor_name">@d.Doner_Name</p>
                         <p class="year">@d.Doner_year</p>
+                        <a asp-controller="Doners" asp-action="Edit" asp-route-id="@d.ID">Edit</a>
                     </div>
 
                 }
@@ -415,6 +425,7 @@
                         <div class="col-xs-4 donor_box silver">
                             <p class="donor_name">@d.Doner_Name</p>
                             <p class="year">@d.Doner_year</p>
+                            <a asp-controller="Doners" asp-action="Edit" asp-route-id="@d.ID">Edit</a>
                         </div>
 
                     }
@@ -438,6 +449,7 @@
                         <div class="col-xs-4 donor_box bronze">
                             <p class="donor_name">@d.Doner_Name</p>
                             <p class="year">@d.Doner_year</p>
+                            <a asp-controller="Doners" asp-action="Edit" asp-route-id="@d.ID">Edit</a>
                         </div>
 
                     }
@@ -453,6 +465,7 @@
                     <div class="col-xs-4 donor_box bronze">
                         <p class="donor_name">@d.Doner_Name</p>
                         <p class="year">@d.Doner_year</p>
+                        <a asp-controller="Doners" asp-action="Edit" asp-route-id="@d.ID">Edit</a>
                     </div>
 
                 }
@@ -472,6 +485,7 @@
                         if (hp.Content_Type.Equals("title"))
                         {
                             <p>@hp.Content_Text</p>
+                            <a asp-controller="Help_Panel" asp-action="Edit" asp-route-id="@hp.ID">Edit</a>
                         }
                     }
                 </div>
@@ -483,6 +497,7 @@
                         if (hp.Content_Type.Equals("subTitle"))
                         {
                             <p class="mont_regular_22_darkgray">@hp.Content_Text</p>
+                            <a asp-controller="Help_Panel" asp-action="Edit" asp-route-id="@hp.ID">Edit</a>
                         }
                     }
                 </div>
@@ -494,10 +509,12 @@
                         if (hp.Content_Type.Equals("image1"))
                         {
                             <img src="@hp.Content_Text" title="Dollar" alt="Dollar">
+                            <a asp-controller="Help_Panel" asp-action="Edit" asp-route-id="@hp.ID">Edit</a>
                         }
                         if (hp.Content_Type.Equals("panelText1"))
                         {
                             <p class="vol_p mont_light_18_darkgray">@hp.Content_Text</p>
+                            <a asp-controller="Help_Panel" asp-action="Edit" asp-route-id="@hp.ID">Edit</a>
                         }
                     }
                 </div>
@@ -507,10 +524,12 @@
                         if (hp.Content_Type.Equals("image2"))
                         {
                             <img src="@hp.Content_Text" title="Dollar" alt="Dollar">
+                            <a asp-controller="Help_Panel" asp-action="Edit" asp-route-id="@hp.ID">Edit</a>
                         }
                         if (hp.Content_Type.Equals("panelText2"))
                         {
                             <p class="vol_p mont_light_18_darkgray">@hp.Content_Text</p>
+                            <a asp-controller="Help_Panel" asp-action="Edit" asp-route-id="@hp.ID">Edit</a>
                         }
                     }
                 </div>
@@ -520,10 +539,12 @@
                         if (hp.Content_Type.Equals("image3"))
                         {
                             <img src="@hp.Content_Text" title="Dollar" alt="Dollar">
+                            <a asp-controller="Help_Panel" asp-action="Edit" asp-route-id="@hp.ID">Edit</a>
                         }
                         if (hp.Content_Type.Equals("panelText3"))
                         {
                             <p class="vol_p mont_light_18_darkgray">@hp.Content_Text</p>
+                            <a asp-controller="Help_Panel" asp-action="Edit" asp-route-id="@hp.ID">Edit</a>
                         }
                     }
                 </div>
@@ -547,7 +568,7 @@
                             if (outlINeeds.TypeOfList.Equals("mostImportantNeeds"))
                             {
                                 <li>@outlINeeds.LiText</li>
-
+                                <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outlINeeds.ID">Edit</a>
                             }
 
                         }
@@ -561,7 +582,7 @@
                             if (outLiMNeeds.TypeOfList.Equals("MISCNEEDS"))
                             {
                                 <li>@outLiMNeeds.LiText</li>
-
+                                <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outLiMNeeds.ID">Edit</a>
                             }
 
                         }
@@ -573,7 +594,7 @@
                             if (outLiGCards.TypeOfList.Equals("GiftCardsForNeeds"))
                             {
                                 <li>@outLiGCards.LiText</li>
-
+                                <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outLiGCards.ID">Edit</a>
                             }
 
                         }
@@ -587,6 +608,7 @@
                             if (outLiHouse.TypeOfList.Equals("HouseholdFurnishingsNeeds"))
                             {
                                 <li>@outLiHouse.LiText</li>
+                                <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outLiHouse.ID">Edit</a>
 
                             }
 
@@ -599,7 +621,7 @@
                             if (outLiVol.TypeOfList.Equals("Volunteers"))
                             {
                                 <li>@outLiVol.LiText</li>
-
+                                <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outLiVol.ID">Edit</a>
                             }
 
                         }
@@ -611,6 +633,7 @@
                             if (outLiRep.TypeOfList.Equals("RepairNeeds"))
                             {
                                 <li>@outLiRep.LiText</li>
+                                <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outLiRep.ID">Edit</a>
 
                             }
 
