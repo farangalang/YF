@@ -94,11 +94,7 @@ namespace MyYouthFutures.Data
                 new Founder_Message{founderImage="/images/history_shelter.jpg",founderSubTetxt="The shelter home"},
                 new Founder_Message{founderImage="/images/history_kristen.jpg",founderSubTetxt="Kristen"}
             };
-            foreach (Founder_Message fndr in founder_messages)
-            {
-                context.Founder_Message.Add(fndr);
-            }
-            context.SaveChanges();
+
 
             var firstYear_Service_Messages = new FirstYear_Service_Messages[]
             {
