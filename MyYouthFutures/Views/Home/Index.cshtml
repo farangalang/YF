@@ -1,4 +1,5 @@
-﻿@{
+﻿@Model ItemViewModel
+@{
     ViewData["Title"] = "Home Page Demo";
 }
 
@@ -18,10 +19,18 @@
     <div class="row">
         <div class="col-xs-12 header-box">
             <div class="row">
-                <p class="header-text-greeting col-xs-12">Hi</p>
+                @foreach (HomeTitle HT in Model.HomeTitle)
+                {
+                    <p class="header-text-greeting col-xs-12">@HT.Title</p>
+                }
+                
             </div>
             <div class="sub-text-box row">
-                <p class="sub-text col-xs-12">14 WARM BEDS. YOUTH 12-17. YOUR TEMPORARY HOME <span class="quicksand-dark-38-lightgreen">:) </span></p>
+                @foreach (HomeTitle HT in Model.HomeTitle)
+                {
+                    <p class="sub-text col-xs-12">@HT.Subtitle</p>
+                }
+                
             </div>
         </div>
     </div>
@@ -30,30 +39,80 @@
     <div class="row">
         <div class="col-xs-offset-1 col-xs-11">
             <p class="green-header">
-                <span class="mont-semibold-dark-36 have-questions-heading">Have questions? Send us a text!</span>
-                <span class="quicksand-dark-36-main"> (801) 528-1214</span>
+                @foreach (HomeTitle HT in Model.HomeTitle)
+                {
+                    <span class="mont-semibold-dark-36 have-questions-heading">@HT.SubheaderContent</span>
+                }
+                
             </p>
         </div>
     </div>
 </section>
+<section class="container-fluid services">
+    <div class="row">
+        <div class="col-xs-12">
+            @foreach (Services SV in Model.Services)
+            {
+                <h4 class="services-heading" ng-model="ServicesTitle">@SV.Title</h4>
+                <p class="mont-light-light-22 about-services" ng-model="ServicesSubtitle">@SV.Header</p>
+            }
 
-@await Component.InvokeAsync("Services")
+        </div>
+    </div>
+</section>
+@* Panels for Services Offered *@
+<section>
+    <div class="row">
+        <div class="boxes">
+
+            @foreach (Services_Message SM in Model.Services_Message)
+            {
+                <article class="col-xs-3 panel">
+                    <section class="panel-img-container">
+                        <img src="@SM.MessageImage" alt="House" class="panel-img" />
+                    </section>
+                    <section ng-model="ServicesHeader[@SM.ID]">
+                        <p class="quicksand-light-32 panel-heading">@SM.MessageHeader</p>
+                    </section>
+                    <section ng-model="ServicesDescription[@SM.ID]">
+                        <p class="mont-light-light-18 panel-summary">@SM.Message</p>
+                    </section>
+                    <section class="panel-footer">
+                        <p class="quicksand-light-24-green"><a href="#">Learn more ></a></p>
+                    </section>
+                    <a asp-controller="Services_Message" asp-action="Edit" asp-route-id="@SM.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+                </article>
+            }
+
+        </div>
+    </div>
+</section>
 
 <article class="container-fluid purpose-box">
     <section class="row purpose col-xs-12">
         <div class="row purpose-title">
-            <h2 class="h2-white">OUR</h2>
-            <h2 class="h2-green">PURPOSE</h2>
+            @foreach (Purpose PS in Model.Purpose)
+            {
+                <h2 class="h2-white">@PS.Title</h2>
+            }
+
         </div>
         <div class="row purpose-detail">
             <div class="col-xs-12 no-padding">
-                <p class="montlight-dark-32">To provide unaccompanied, runaway and homeless youth with a safe and nurturing environment where they can develop the needed skills to become active, healthy, successful members of our future world.</p>
+                @foreach (Purpose PS in Model.Purpose)
+            {
+                 <p class="montlight-dark-32">@PS.Message</p>
+            }
+                
             </div>
         </div>
         <div class="row purpose-stats">
             <div class="col-xs-12">
-                <p><span class="alt-color">7,085</span> MEALS SERVED. <span class="alt-color">511</span> DROP-IN SERVICES.</p>
-                <p><span class="alt-color">245</span> STREET OUTREACH HOURS. <span class="alt-color">64</span> SHELTERED YOUTH.</p>
+                @foreach (Purpose PS in Model.Purpose)
+            {
+                 <p>@PS.Content</p>
+                }
+
             </div>
         </div>
     </section>
@@ -81,48 +140,23 @@
     <section class="row purpose-user">
         <!--<div class="purpose-boxes">-->
         <div class="boxes">
+            @foreach (Link Lk in Model.Link)
+            {
             <article class="col-xs-3 panel">
                 <section class="panel-img-container">
-                    <img src="~/images/heart_hand.svg" alt="Volunteer" class="panel-img" />
+                    <img src="@Lk.Image" alt="Volunteer" class="panel-img" />
                 </section>
                 <section>
-                    <p class="panel-heading">Apply to Volunteer</p>
+                    <p class="panel-heading">@Lk.Title</p>
                 </section>
                 <section>
-                    <p class="mont-light-light-22 panel-summary">Make your mark where it matters. Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse.</p>
+                    <p class="mont-light-light-22 panel-summary">@Lk.Message</p>
                 </section>
                 <section class="panel-footer">
-                    <p class="quicksand-light-24-green"><a href="#">Volunteer Now ></a></p>
+                    <p class="quicksand-light-24-green"><a href="#">@Lk.Hyperlink ></a></p>
                 </section>
             </article>
-            <article class="col-xs-3 panel">
-                <section class="panel-img-container">
-                    <img src="~/images/girl_icon.png" alt="Youth Stories" class="panel-img" />
-                </section>
-                <section>
-                    <p class="panel-heading">Youth Stories</p>
-                </section>
-                <section>
-                    <p class="mont-light-light-22 panel-summary">Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.</p>
-                </section>
-                <section class="panel-footer">
-                    <p class="quicksand-light-24-green"><a href="#">Read the Stories ></a></p>
-                </section>
-            </article>
-            <article class="col-xs-3 panel">
-                <section class="panel-img-container">
-                    <img src="~/images/calendar_icon.png" alt="Events" class="panel-img" />
-                </section>
-                <section>
-                    <p class="panel-heading">Events</p>
-                </section>
-                <section>
-                    <p class="mont-light-light-22 panel-summary">Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.</p>
-                </section>
-                <section class="panel-footer">
-                    <p class="quicksand-light-24-green"><a href="#">View All Events ></a></p>
-                </section>
-            </article>
+            }
         </div>
     </section>
 </article>
