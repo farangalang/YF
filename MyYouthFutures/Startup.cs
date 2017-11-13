@@ -49,6 +49,10 @@ namespace MyYouthFutures
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                /*routes.MapRoute(
+                    name: "myRoute",
+                    template: "{controller=Home}/{action=Index}/{anchor?}/{id?}");*/
             });
         }
     }

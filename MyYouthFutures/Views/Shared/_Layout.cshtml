@@ -58,13 +58,13 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programs</a>
                             <ul class="dropdown-menu">
-                                <li><a asp-area="" asp-controller="Home" asp-action="Index">Street Outreach</a></li> @*TODO: This needs linked to the Street Outreach Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About">Street Outreach</a></li> @*TODO: This needs linked to the - Outreach Page*@ <!--asp-route-anchor="#street_outreach" ??-->
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Get Involved</a>
                             <ul class="dropdown-menu">
-                                <li><a asp-area="" asp-controller="Home" asp-action="Index">Donate</a></li>@*TODO: This needs linked to the Donate Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About">Donate</a></li>@*TODO: This needs linked to the Donate Section of the About Page*@
                                 <li><a asp-area="" asp-controller="Home" asp-action="Index">Events</a></li>@*TODO: This needs linked to the Events Section of the About Page*@
                                 <li><a asp-area="" asp-controller="Home" asp-action="About">Donor Recognition</a></li>@*TODO: This needs linked to the Donor Recognition Section of the About Page*@
                             </ul>
@@ -84,7 +84,6 @@
                                 <li><a asp-area="" asp-controller="Home" asp-action="About">Contact Info</a></li>@*TODO: This needs linked to the Contact Info Section of the About Page*@
                             </ul>
                         </li>
-                        <!--<li class="donate"><a onclick="document.getElementById('loginScn').style.display = 'block'; w3_open()">Login</a></li>-->@*TODO: This needs linked to the action when the Login Page*@
                         <li class="donate"><a data-toggle="modal" data-target="#loginPopup">Login</a></li>
                         <li class="donate"><a asp-area="" asp-controller="Home" asp-action="About">Donate</a></li>@*TODO: This needs linked to the Media Section of the Donate Page*@
 
