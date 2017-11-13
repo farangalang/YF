@@ -65,8 +65,7 @@
                 if (ia.ID == 2)
                 {
                     <p class="mont_regular_22_darkgray">@ia.ArticleText</p>
-                    <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID" data-target="#editModal" data-toggle="modal">Edit</a>
-
+                    <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID">Edit</a>
                 }
             }
         </section>
@@ -89,7 +88,7 @@
                 if (ia.ID == 3)
                 {
                     <p class="mont_regular_22_darkgray">@ia.ArticleText</p>
-                    <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+                    <a asp-controller="introArticles" asp-action="Edit" asp-route-id="@ia.ID">Edit</a>
                 }
             }
         </section>
@@ -114,7 +113,7 @@
             <div class="col-xs-12 col-md-4 more_volunteer">
                 <img src="@fsm.firstYearImage" title="Meal" alt="Meal">
                 <p class="vol_p mont_light_18_darkgray">@fsm.firstYearText</p>
-                <a asp-controller="FirstYear_Service_Messages" asp-action="Edit" asp-route-id="@fsm.ID" data-target="#editModal" data-toggle="modal">Edit</a>
+                <a asp-controller="FirstYear_Service_Messages" asp-action="Edit" asp-route-id="@fsm.ID">Edit</a>
             </div>
 
         }
@@ -129,43 +128,48 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row outreach_text">
-            <section class="col-xs-12">
-                <p class="mont_regular_22_darkgray">Street Outreach is designed to meet the clients where they are on the street to build rapport and encourage youth to access drop-in and shelter services. This program offers, case management, hygiene items, food, sleeping bags, and other essential items as needed. Street Outreach currently take place once per week on Wednesdays. The team visits the same Ogden, Utah locations every week:</p>
-            </section>
-        </div>
+<div class="container-fluid">
+    <div class="row outreach_text">
+        <section class="col-xs-12">
+            <p class="mont_regular_22_darkgray">Street Outreach is designed to meet the clients where they are on the street to build rapport and encourage youth to access drop-in and shelter services. This program offers, case management, hygiene items, food, sleeping bags, and other essential items as needed. Street Outreach currently take place once per week on Wednesdays. The team visits the same Ogden, Utah locations every week:</p>
+        </section>
     </div>
-    <div class="container-fluid">
-        <div class="row outreach_bullet">
-            <section class="col-xs-12 col-md-6">
-                <ul>
-                    @foreach (List_Item outli in Model.List_item)
+</div>
+    
+@* ------ STREET OUTREACH ------ *@
+<div class="container-fluid">
+    <div class="row outreach_bullet">
+        <section class="col-xs-12 col-md-6">
+            <ul>
+                @foreach (List_Item outli in Model.List_item)
+                {
+                    if (outli.TypeOfList.Equals("outReach"))
                     {
-                        if (outli.TypeOfList.Equals("outReach"))
-                        {
-                            <li>@outli.LiText</li>
-
-                        }
-
+                        <li>@outli.LiText</li>
+                        <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outli.ID">Edit</a>
                     }
-                </ul>
-            </section>
-            <section class="col-xs-12 col-md-6">
-                <ul>
-                    @foreach (List_Item outli1 in Model.List_item)
+
+                }
+            </ul>
+        </section>
+        <section class="col-xs-12 col-md-6">
+            <ul>
+                @foreach (List_Item outli1 in Model.List_item)
+                {
+                    if (outli1.TypeOfList.Equals("outReach1"))
                     {
-                        if (outli1.TypeOfList.Equals("outReach1"))
-                        {
-                            <li>@outli1.LiText</li>
-                        }
-
+                        <li>@outli1.LiText</li>
+                        <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outli1.ID">Edit</a>
                     }
-                </ul>
-            </section>
-        </div>
+
+                }
+            </ul>
+        </section>
     </div>
-    <div class="container-fluid" id="directorsMain">
+</div>
+    
+@* ------ END STREET OUTREACH ------ *@
+<div class="container-fluid" id="directorsMain">
         <div class="row board_header">
             <div class="col-xs-6 text">
                 <h2>Board of</h2>
