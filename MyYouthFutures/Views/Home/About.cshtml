@@ -212,7 +212,8 @@
     </div>
 
     <!--Staff-->
-<button type="button" data-toggle="modal" data-target="#staffPopup">Add Staff</button>
+@*<button type="button" data-toggle="modal" data-target="#staffPopup">Add Staff</button>*@
+    <a asp-controller="Staff_Panel" asp-action="Create" >Add Staff</a>
     @foreach (Staff_Panel st in Model.Staff)
     {
 
@@ -334,7 +335,8 @@
 
     <!--<button onclick="document.getElementById('staffPop').style.display = 'block'">Show Staff</button>-->
     
-    <button type="button" data-toggle="modal" data-target="#donorPopup">Add Donor</button>
+    @*<button type="button" data-toggle="modal" data-target="#donorPopup">Add Donor</button>*@
+    <a asp-controller="Doners" asp-action="Create">Add Donor</a>
 <div class="container-fluid">
         <div class="row donor_list">
             @foreach (Doners d in Model.Doners)
