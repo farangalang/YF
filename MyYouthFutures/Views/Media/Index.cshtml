@@ -13,19 +13,11 @@
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Header)
+
+                    @Html.DisplayNameFor(model => model.Text_Type)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Image)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ImageHeader)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Body)
+                    @Html.DisplayNameFor(model => model.Content_Text)
                 </th>
             <th></th>
         </tr>
@@ -34,19 +26,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Header)
+                @Html.DisplayFor(modelItem => item.Text_Type)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageHeader)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Body)
+                @Html.DisplayFor(modelItem => item.Content_Text)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

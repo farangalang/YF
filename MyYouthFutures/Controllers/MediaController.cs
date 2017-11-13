@@ -54,7 +54,7 @@ namespace MyYouthFutures.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Header,Date,Image,ImageHeader,Body")] Media media)
+        public async Task<IActionResult> Create([Bind("ID,Text_Type,Content_Text")] Media media)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace MyYouthFutures.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Header,Date,Image,ImageHeader,Body")] Media media)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Text_Type,Content_Text")] Media media)
         {
             if (id != media.ID)
             {
