@@ -18,14 +18,14 @@ namespace MyYouthFutures.Data
                 return;   // DB has been seeded
             }
 
-            var title = new Title[]
+            var hometitle = new HomeTitle[]
             {
-                new Title{Header="Hi", SubHeader="14 WARM BEDS. YOUTH 12-17. YOUR TEMPORARY HOME :)", Footer="Have questions? Send us a text! (801) 528-1214", BackgroundImage=""},
+                new HomeTitle{Title="Hi", Subtitle="14 WARM BEDS. YOUTH 12-17. YOUR TEMPORARY HOME :)", SubheaderContent="Have questions? Send us a text! (801) 528-1214", BackgroundImage=""},
 
             };
-            foreach (Title s in title)
+            foreach (HomeTitle s in hometitle)
             {
-                context.Titles.Add(s);
+                context.HomeTitle.Add(s);
             }
             context.SaveChanges();
 
@@ -42,9 +42,9 @@ namespace MyYouthFutures.Data
 
             var links = new Link[]
             {
-                new Link{Image="Image placeholder 1", Title="Apply to Volunteer", Message="Make your mark where it matters. Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse.", Hyperlink="Volunteer Now >"},
-                new Link{Image="Image placeholder 2", Title="Youth Stories", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="Read the Stories >"},
-                new Link{Image="Image placeholder 3", Title="Events", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="View All Events"}
+                new Link{Image="/images/heart_hand.svg", Title="Apply to Volunteer", Message="Make your mark where it matters. Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse.", Hyperlink="Volunteer Now >"},
+                new Link{Image="/images/girl_icon.png", Title="Youth Stories", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="Read the Stories >"},
+                new Link{Image="/images/calendar_icon.png", Title="Events", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="View All Events >"}
             };
 
             foreach (Link c in links)
