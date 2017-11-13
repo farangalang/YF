@@ -1,13 +1,13 @@
 ﻿@model MyYouthFutures.Models.List_Item
 
 @{
-    ViewData["Title"] = "Edit";
+    Layout = null;
 }
 
-<h2>Edit</h2>
-
-<h4>List_Item</h4>
-<hr />
+<div class="modal-header">
+    <h4 class="modal-title" id="ServicesTitleLabel">Sites</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+</div>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -19,9 +19,9 @@
                 <span asp-validation-for="TypeOfList" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LiTest" class="control-label"></label>
-                <input asp-for="LiTest" class="form-control" />
-                <span asp-validation-for="LiTest" class="text-danger"></span>
+                <label asp-for="LiText" class="control-label"></label>
+                <input asp-for="LiText" class="form-control" />
+                <span asp-validation-for="LiText" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
