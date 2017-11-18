@@ -58,34 +58,36 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programs</a>
                             <ul class="dropdown-menu">
-                                <li><a asp-area="" asp-controller="Home" asp-action="About">Street Outreach</a></li> @*TODO: This needs linked to the - Outreach Page*@ <!--asp-route-anchor="#street_outreach" ??-->
+                                <li><a asp-area="" asp-controller="Home" asp-action="About" asp-fragment="StreetOutreach">Street Outreach</a></li>
+
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Get Involved</a>
                             <ul class="dropdown-menu">
-                                <li><a asp-area="" asp-controller="Home" asp-action="About">Donate</a></li>@*TODO: This needs linked to the Donate Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About" asp-fragment="Donate">Donate</a></li>
+
                                 <li><a asp-area="" asp-controller="Home" asp-action="Index">Events</a></li>@*TODO: This needs linked to the Events Section of the About Page*@
-                                <li><a asp-area="" asp-controller="Home" asp-action="About">Donor Recognition</a></li>@*TODO: This needs linked to the Donor Recognition Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About" asp-fragment="Donor">Donor Recognition</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
                             <ul class="dropdown-menu">
-                                <li><a asp-area="" asp-controller="Home" asp-action="About">History</a></li>@*TODO: This needs linked to the Histroy Section of the About Page*@
-                                <li><a asp-area="" asp-controller="Home" asp-action="About">Staff</a></li>@*TODO: This needs linked to the Staff Section of the About Page*@
-                                <li><a asp-area="" asp-controller="Home" asp-action="About">Board</a></li>@*TODO: This needs linked to the Board Section of the About Page*@
-                                <li><a asp-area="" asp-controller="Home" asp-action="About">Media</a></li>@*TODO: This needs linked to the Media Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About" asp-fragment="History">History</a></li>@*TODO: This needs linked to the Histroy Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About" asp-fragment="Staff">Staff</a></li>@*TODO: This needs linked to the Staff Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About" asp-fragment="Board">Board</a></li>@*TODO: This needs linked to the Board Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About" asp-fragment="Media">Media</a></li>@*TODO: This needs linked to the Media Section of the About Page*@
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
                             <ul class="dropdown-menu">
-                                <li><a asp-area="" asp-controller="Home" asp-action="About">Contact Info</a></li>@*TODO: This needs linked to the Contact Info Section of the About Page*@
+                                <li><a asp-area="" asp-controller="Home" asp-action="About" asp-fragment="Contact">Contact Info</a></li>@*TODO: This needs linked to the Contact Info Section of the About Page*@
                             </ul>
                         </li>
                         <li class="donate"><a data-toggle="modal" data-target="#loginPopup">Login</a></li>
-                        <li class="donate"><a asp-area="" asp-controller="Home" asp-action="About">Donate</a></li>@*TODO: This needs linked to the Media Section of the Donate Page*@
+                        <li class="donate"><a asp-area="" asp-controller="Home" asp-action="About" asp-fragment="Donate">Donate</a></li>@*TODO: This needs linked to the Media Section of the Donate Page*@
 
                     </ul>
                 </div>
