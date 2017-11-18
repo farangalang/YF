@@ -45,7 +45,7 @@ namespace MyYouthFutures.Controllers
             return View(im);
         }
 
-
+        
         public async Task<IActionResult> About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -71,7 +71,15 @@ namespace MyYouthFutures.Controllers
                 Help_Panel = helper
             };
 
-            return View(vm);
+            /*if(idTag != null)
+            {
+                return Redirect(Url.RouteUrl(new { Controller = "Home", Action = "Index" }) + idTag);
+            }
+            else
+            {*/
+                return View(vm);
+            //}
+            
         }
 
         public IActionResult Contact()
