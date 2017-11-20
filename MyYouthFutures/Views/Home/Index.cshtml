@@ -55,27 +55,34 @@
     </div>
 </section>
 @* Panels for Services Offered *@
+
 <section>
     <div class="row">
         <div class="boxes">
 
             @foreach (Services_Message SM in Model.Services_Message)
             {
-                <article class="col-xs-3 panel">
-                    <section class="panel-img-container">
-                        <img src="@SM.MessageImage" alt="House" class="panel-img" />
-                    </section>
-                    <section ng-model="ServicesHeader[@SM.ID]">
-                        <p class="quicksand-light-32 panel-heading">@SM.MessageHeader</p>
-                    </section>
-                    <section ng-model="ServicesDescription[@SM.ID]">
-                        <p class="mont-light-light-18 panel-summary">@SM.Message</p>
-                    </section>
-                    <section class="panel-footer">
-                        <p class="quicksand-light-24-green"><a href="#">Learn more ></a></p>
-                    </section>
-                    <a asp-controller="Services_Message" asp-action="Edit" asp-route-id="@SM.ID">Edit</a>
-                </article>
+                <div class="col-xs-3 panel ">
+                    <div class ="editOutsideContainer">
+                        <article class="editArea" >
+                            <section class="panel-img-container">
+                                <img src="@SM.MessageImage" alt="House" class="panel-img" />
+                            </section>
+                            <section ng-model="ServicesHeader[@SM.ID]">
+                                <p class="quicksand-light-32 panel-heading">@SM.MessageHeader</p>
+                            </section>
+                            <section ng-model="ServicesDescription[@SM.ID]">
+                                <p class="mont-light-light-18 panel-summary">@SM.Message</p>
+                            </section>
+                            <section class="panel-footer">
+                                <p class="quicksand-light-24-green"><a href="#">Learn more ></a></p>
+                            </section>
+                        </article>
+                        <div class="middleContainer">
+                            <a class="editText" asp-controller="Services_Message" asp-action="Edit" asp-route-id="@SM.ID">Edit</a>
+                        </div>
+                    </div>
+                </div>
             }
 
         </div>
