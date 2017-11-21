@@ -57,16 +57,21 @@
 @* Panels for Services Offered *@
 
 <section>
+    <div class="container">
+        <div clas="row">
+            <a class="editText" asp-controller="Services_Message" asp-action="Create">Add New Service</a>
+        </div>
+    </div>
     <div class="row">
-        <div class="boxes">
 
+        <div class="boxes">
             @foreach (Services_Message SM in Model.Services_Message)
             {
                 <div class="col-xs-3 panel ">
-                    <div class ="editOutsideContainer">
-                        <article class="editArea" >
+                    <edit-container>
+                        <article class="editArea">
                             <section class="panel-img-container">
-                                <img src="@SM.MessageImage" alt="House" class="panel-img" />
+                                <img src="@SM.MessageImage" alt="House" class="panel-img"/>
                             </section>
                             <section ng-model="ServicesHeader[@SM.ID]">
                                 <p class="quicksand-light-32 panel-heading">@SM.MessageHeader</p>
@@ -75,17 +80,20 @@
                                 <p class="mont-light-light-18 panel-summary">@SM.Message</p>
                             </section>
                             <section class="panel-footer">
-                                <p class="quicksand-light-24-green"><a href="#">Learn more ></a></p>
+                                <p class="quicksand-light-24-green"><a href="#">Learn more ></a>
+                                </p>
                             </section>
                         </article>
-                        <div class="middleContainer">
+                        <edit-link>
                             <a class="editText" asp-controller="Services_Message" asp-action="Edit" asp-route-id="@SM.ID">Edit</a>
-                        </div>
-                    </div>
+
+                        </edit-link>
+                    </edit-container>
                 </div>
             }
 
         </div>
+
     </div>
 </section>
 
@@ -201,3 +209,4 @@
         <p class="mont-regular-dark-16-grey">© Youth Futures, Inc.</p>
     </div>
 </footer>
+
