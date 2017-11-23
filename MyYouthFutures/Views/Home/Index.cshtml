@@ -22,7 +22,6 @@
                     @foreach (HomeTitle HT in Model.HomeTitle)
                     {
                         <p class="sub-text col-xs-12">@HT.Subtitle</p>
-
                     }
                 </div>
             </div>
@@ -44,10 +43,6 @@
     </section>
 </edit-container>
 
-
-
-
-
 @* END HOME TITLE MESSAGE *@
 @* SERVICES TITLE *@
 <section class="container-fluid services">
@@ -56,8 +51,10 @@
             @foreach (Services SV in Model.Services)
             {
                 <edit-container>
-                    <h4 class="services-heading editArea" ng-model="ServicesTitle">@SV.Title</h4>
-                    <p class="mont-light-light-22 about-services" ng-model="ServicesSubtitle">@SV.Header</p>
+                    <div class="editArea">
+                        <h4 class="services-heading" ng-model="ServicesTitle">@SV.Title</h4>
+                        <p class="mont-light-light-22 about-services" ng-model="ServicesSubtitle">@SV.Header</p>
+                    </div>
                     <edit-link>
                         <edit-a controller="Services" route-id="@SV.ID"></edit-a>
                     </edit-link>
@@ -116,7 +113,7 @@
 
                 @foreach (Purpose PS in Model.Purpose)
                 {
-                    <h2 class="h2-white  editArea">@PS.Title</h2>
+                    <h2 class="h2-white editArea">@PS.Title</h2>
                     <edit-link>
                         <edit-a controller="Purposes" route-id="@PS.PurposeID"></edit-a>
                     </edit-link>
@@ -146,7 +143,6 @@
                             <edit-a controller="Purposes" route-id="@PS.PurposeID"></edit-a>
                         </edit-link>
                     }
-
                 </div>
             </div>
         </edit-container>
