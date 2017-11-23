@@ -46,9 +46,13 @@
         <div class="col-xs-12">
             @foreach (Services SV in Model.Services)
             {
-                <h4 class="services-heading" ng-model="ServicesTitle">@SV.Title</h4>
-                <p class="mont-light-light-22 about-services" ng-model="ServicesSubtitle">@SV.Header</p>
-                <a asp-controller="Services" asp-action="Edit" asp-route-id="@SV.ID">Edit</a>
+                <edit-container>
+                    <h4 class="services-heading editArea" ng-model="ServicesTitle">@SV.Title</h4>
+                    <p class="mont-light-light-22 about-services" ng-model="ServicesSubtitle">@SV.Header</p>
+                    <edit-link>
+                        <edit-a controller="Services" route-id="@SV.ID"></edit-a>
+                    </edit-link>
+                </edit-container>
             }
 
         </div>
@@ -57,19 +61,16 @@
 @* Panels for Services Offered *@
 
 <section>
-    <div class="container">
-        <div clas="row">
+    <div class="container text-center row">
             <a class="editText" asp-controller="Services_Message" asp-action="Create">Add New Service</a>
-        </div>
     </div>
     <div class="row">
-
         <div class="boxes">
             @foreach (Services_Message SM in Model.Services_Message)
             {
                 <div class="col-xs-3 panel ">
                     <edit-container>
-                        <article class="editArea">
+                        <article class ="editArea">
                             <section class="panel-img-container">
                                 <img src="@SM.MessageImage" alt="House" class="panel-img"/>
                             </section>
@@ -84,9 +85,8 @@
                                 </p>
                             </section>
                         </article>
-                        <edit-link>
-                            <a class="editText" asp-controller="Services_Message" asp-action="Edit" asp-route-id="@SM.ID">Edit</a>
-
+                        <edit-link >
+                            <edit-a controller="Services_Message" route-id="@SM.ID" class="editText"></edit-a>
                         </edit-link>
                     </edit-container>
                 </div>
