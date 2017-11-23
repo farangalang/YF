@@ -1,110 +1,13 @@
 ﻿@using MyYouthFutures.Controllers
-@Model ItemViewModel
+@model ItemViewModel
 @{
     ViewData["Title"] = "Home Page Demo";
 }
-@* HOME TITLE MAIN*@
-<edit-container>
-    <section class="container-fluid main-header">
-        <div class="row">
-            <div class="col-xs-6 header-box">
-                <div class="row">
 
-                    @foreach (HomeTitle HT in Model.HomeTitle)
-                    {
-                        <p class="header-text-greeting editArea">@HT.Title</p>
-                        <edit-link>
-                            <edit-a controller="HomeTitles" route-id="@HT.ID"></edit-a>
-                        </edit-link>
-                    }
-                </div>
-                <div class="sub-text-box row editArea">
-                    @foreach (HomeTitle HT in Model.HomeTitle)
-                    {
-                        <p class="sub-text col-xs-12">@HT.Subtitle</p>
-                    }
-                </div>
-            </div>
-        </div>
-    </section>
-    @* END HOME TITLE MAIN*@
-    @* HOME TITLE MESSAGE *@
-    <section id="header" class="container-fluid">
-        <div class="row">
-            <div class="col-xs-offset-1 col-xs-11">
-                <p class="green-header">
-                    @foreach (HomeTitle HT in Model.HomeTitle)
-                    {
-                        <span class="mont-semibold-dark-36 have-questions-heading editArea">@HT.SubheaderContent</span>
-                    }
-                </p>
-            </div>
-        </div>
-    </section>
-</edit-container>
+@Html.Partial("PartialViews/_HomeTitle")
 
-@* END HOME TITLE MESSAGE *@
-@* SERVICES TITLE *@
-<section class="container-fluid services">
-    <div class="row">
-        <div class="col-xs-12">
-            @foreach (Services SV in Model.Services)
-            {
-                <edit-container>
-                    <div class="editArea">
-                        <h4 class="services-heading" ng-model="ServicesTitle">@SV.Title</h4>
-                        <p class="mont-light-light-22 about-services" ng-model="ServicesSubtitle">@SV.Header</p>
-                    </div>
-                    <edit-link>
-                        <edit-a controller="Services" route-id="@SV.ID"></edit-a>
-                    </edit-link>
-                </edit-container>
-            }
+@Html.Partial("PartialViews/_Services")
 
-        </div>
-    </div>
-</section>
-@* END SERVICES TITLE *@
-@* Panels for Services Offered *@
-
-<section>
-    <div class="container text-center row">
-        <a class="editText" asp-controller="Services_Message" asp-action="Create">Add New Service</a>
-    </div>
-    <div class="row">
-        <div class="boxes">
-            @foreach (Services_Message SM in Model.Services_Message)
-            {
-                <div class="col-xs-3 panel ">
-                    <edit-container>
-                        <article class="editArea">
-                            <section class="panel-img-container">
-                                <img src="@SM.MessageImage" alt="House" class="panel-img" />
-                            </section>
-                            <section ng-model="ServicesHeader[@SM.ID]">
-                                <p class="quicksand-light-32 panel-heading">@SM.MessageHeader</p>
-                            </section>
-                            <section ng-model="ServicesDescription[@SM.ID]">
-                                <p class="mont-light-light-18 panel-summary">@SM.Message</p>
-                            </section>
-                            <section class="panel-footer">
-                                <p class="quicksand-light-24-green">
-                                    <a href="#">Learn more ></a>
-                                </p>
-                            </section>
-                        </article>
-                        <edit-link>
-                            <edit-a controller="Services_Message" route-id="@SM.ID" class="editText"></edit-a>
-                        </edit-link>
-                    </edit-container>
-                </div>
-            }
-
-        </div>
-
-    </div>
-</section>
-@* END Panels for Services Offered *@
 
 <article class="container-fluid purpose-box">
     <section class="row purpose col-xs-12">
