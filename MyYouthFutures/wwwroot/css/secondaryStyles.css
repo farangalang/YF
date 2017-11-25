@@ -540,25 +540,45 @@
 }
 
 
+/**********************
+    Basic Redirect Page
+***********************/
+.redirect {
+    background-color: white;
+    padding: 120px 0px 120px 0px;
+
+    border-color: #9ec54d;
+    border-width: 20px 0px 0px 0px;
+    border-style: solid none none none;
+}
+
+.redirect .text span{
+    text-align: center;
+    margin: 0px;
+    color: #ababab;
+    text-transform: uppercase;
+}
+
  /*********************
      Coming Soon
  **********************/
-
- #comingSoon{
-     background-color: white;
-     margin: 0px;
-     padding-bottom: 10px;
-     //height: 400px;
- }
-
-    #comingSoon h2 {
-        text-align: center;
-        padding: 100px 0px 100px 0px;
-        color: #ababab;
-        background: white;
-        text-transform: uppercase;
-    }
-
     #comingSoon .h2style1 {
         color: #8ebc3d;
+    }
+
+/****************************
+    Page Not Found (No Page)
+*****************************/
+#noPage {
+    border-color: #cc4400;
+    border-width: 20px 0px 20px 0px;
+    border-style: solid none solid none;
+}
+
+    #noPage .h2style1 {
+        color: #cc4400;
+    }
+
+    #noPage h4 {
+        padding: 0px 80px 0px 80px;
     }
