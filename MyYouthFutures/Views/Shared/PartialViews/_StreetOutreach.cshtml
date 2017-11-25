@@ -1,0 +1,51 @@
+﻿
+
+<div class="container-fluid" id="outreachBanner">
+    <div class="row outreach_main_img">
+        <div class="col-xs-8 text" id="StreetOutreach">
+            <h2>Street</h2>
+            <h2 class="h2style1">Outreach</h2>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row outreach_text">
+        <section class="col-xs-12">
+            <p class="mont_regular_22_darkgray">Street Outreach is designed to meet the clients where they are on the street to build rapport and encourage youth to access drop-in and shelter services. This program offers, case management, hygiene items, food, sleeping bags, and other essential items as needed. Street Outreach currently take place once per week on Wednesdays. The team visits the same Ogden, Utah locations every week:</p>
+        </section>
+    </div>
+</div>
+
+@* ------ STREET OUTREACH ------ *@
+<div id="street_outreach" class="container-fluid">
+    <div class="row outreach_bullet">
+        <section class="col-xs-12 col-md-6">
+            <ul>
+                @foreach (List_Item outli in Model.List_item)
+                {
+                    if (outli.TypeOfList.Equals("outReach"))
+                    {
+                        <li>@outli.LiText</li>
+                        <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outli.ID">Edit</a>
+                    }
+
+                }
+            </ul>
+        </section>
+        <section class="col-xs-12 col-md-6">
+            <ul>
+                @foreach (List_Item outli1 in Model.List_item)
+                {
+                    if (outli1.TypeOfList.Equals("outReach1"))
+                    {
+                        <li>@outli1.LiText</li>
+                        <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outli1.ID">Edit</a>
+                    }
+
+                }
+            </ul>
+        </section>
+    </div>
+</div>
+
+@* ------ END STREET OUTREACH ------ *@

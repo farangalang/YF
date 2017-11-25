@@ -1,0 +1,24 @@
+﻿
+<div class="container-fluid">
+    <div class="row history_green_text">
+        <section class="col-xs-12">
+            <p class="mont_light_32_white">During the first full year of operations (February 20, 2015-March 31, 2016), our Residential Support Temporary Youth Shelter has:</p>
+        </section>
+    </div>
+</div>
+
+@* ------ First Year of Service ------ *@
+<div class="container">
+    <section class="row more">
+        @foreach (FirstYear_Service_Messages fsm in Model.FirstYear_Service_Messages)
+        {
+            <div class="col-xs-12 col-md-4 more_volunteer">
+                <img src="@fsm.firstYearImage" title="Meal" alt="Meal">
+                <p class="vol_p mont_light_18_darkgray">@fsm.firstYearText</p>
+                <a asp-controller="FirstYear_Service_Messages" asp-action="Edit" asp-route-id="@fsm.ID">Edit</a>
+            </div>
+
+        }
+    </section>
+</div>
+@* ------ END First Year of Service ------ *@
