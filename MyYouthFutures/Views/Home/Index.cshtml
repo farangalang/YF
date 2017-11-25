@@ -6,6 +6,7 @@
 <!--<button onclick="document.getElementById('staffPop').style.display = 'block'">Show Staff</button>-->
 <button type="button" data-toggle="modal" data-target="#staffPopup">Show Staff</button>
 <button type="button" data-toggle="modal" data-target="#donorPopup">Show Donor</button>
+<a asp-controller="Home" asp-action="NoPage">Redirect</a>
 
 <div id="staffPopup" class="modal">
     @{ Html.RenderPartial("../Popups/_AddStaff");}
