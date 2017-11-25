@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MyYouthFutures.Models
 {
-    public class Youth_Stories
+    public class Youth_Story
     {
         public int id { get; set; }
         public DateTime date { get; set; }
