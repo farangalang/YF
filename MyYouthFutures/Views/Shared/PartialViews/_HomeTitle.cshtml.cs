@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MyYouthFutures.Views.Shared.Components.intro
+namespace MyYouthFutures.Views.Shared.PartialViews
 {
-    public class DefualtModel : PageModel
+    public class _HomeTitleModel : PageModel
     {
         public void OnGet()
         {
