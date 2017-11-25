@@ -23,6 +23,7 @@ namespace MyYouthFutures.Data
         public DbSet<MyYouthFutures.Models.Staff_Panel> Staff_Panel { get; set; }//this is the table that holds the staff and board of directors on the history page
         public DbSet<List_Item> List_Item { get; set; }//this is the table that holds the list items for the about view
         //public DbSet<Media> Media { get; set; }
+        //public DbSet<Youth_Story> YouthStories { get; set; }
         public DbSet<Doners> Doners { get; set; }
         public DbSet<MyYouthFutures.Models.Help_Panel> Help_Panel { get; set; }
 
@@ -38,6 +39,7 @@ namespace MyYouthFutures.Data
             modelBuilder.Entity<Staff_Panel>().ToTable("Staff_Panel");
             modelBuilder.Entity<List_Item>().ToTable("List_Item");
             modelBuilder.Entity<Media>().ToTable("Media");
+            //modelBuilder.Entity<Youth_Story>().ToTable("YouthStories");
             modelBuilder.Entity<Doners>().ToTable("Doners");
             modelBuilder.Entity<Help_Panel>().ToTable("Help_Panel");
         }
@@ -64,6 +66,6 @@ namespace MyYouthFutures.Data
 
         public DbSet<MyYouthFutures.Models.HomeTitle> HomeTitle { get; set; }
 
-        public DbSet<MyYouthFutures.Models.Youth_Stories> Youth_Stories { get; set; }
+        //public DbSet<MyYouthFutures.Models.Youth_Story> Youth_Stories { get; set; }
     }
 }
