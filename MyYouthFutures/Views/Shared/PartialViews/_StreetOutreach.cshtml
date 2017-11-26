@@ -19,32 +19,40 @@
 @* ------ STREET OUTREACH ------ *@
 <div id="street_outreach" class="container-fluid">
     <div class="row outreach_bullet">
-        <section class="col-xs-12 col-md-6">
-            <ul>
-                @foreach (List_Item outli in Model.List_item)
-                {
-                    if (outli.TypeOfList.Equals("outReach"))
+        <edit-container>
+            <section class="col-xs-12 col-md-6 editArea">
+                <ul>
+                    @foreach (List_Item outli in Model.List_item)
                     {
-                        <li>@outli.LiText</li>
-                        <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outli.ID">Edit</a>
-                    }
+                        if (outli.TypeOfList.Equals("outReach"))
+                        {
+                            <li>@outli.LiText</li>
+                            <edit-link>
+                                <edit-a controller="List_Item" route-id="@outli.ID"></edit-a>
+                            </edit-link>
+                        }
 
-                }
-            </ul>
-        </section>
-        <section class="col-xs-12 col-md-6">
-            <ul>
-                @foreach (List_Item outli1 in Model.List_item)
-                {
-                    if (outli1.TypeOfList.Equals("outReach1"))
+                    }
+                </ul>
+            </section>
+        </edit-container>
+        <edit-container>
+            <section class="col-xs-12 col-md-6 editArea">
+                <ul>
+                    @foreach (List_Item outli1 in Model.List_item)
                     {
-                        <li>@outli1.LiText</li>
-                        <a asp-controller="List_Item" asp-action="Edit" asp-route-id="@outli1.ID">Edit</a>
-                    }
+                        if (outli1.TypeOfList.Equals("outReach1"))
+                        {
+                            <li>@outli1.LiText</li>
+                            <edit-link>
+                                <edit-a controller="List_Item" route-id="@outli1.ID"></edit-a>
+                            </edit-link>
+                        }
 
-                }
-            </ul>
-        </section>
+                    }
+                </ul>
+            </section>
+        </edit-container>
     </div>
 </div>
 
