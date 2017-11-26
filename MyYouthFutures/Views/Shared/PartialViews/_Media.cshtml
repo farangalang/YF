@@ -12,20 +12,30 @@
             {
                 if (med.Text_Type.Equals("title"))
                 {
-                    <p class="title">@med.Content_Text</p>
-                        <a asp-controller="Media" asp-action="Edit" asp-route-id="@med.ID">Edit</a>
+                    <edit-container>
+                        <div class="editArea">
+                            <p class="title">@med.Content_Text</p>
+                        </div>
+                        <edit-link>
+                            <edit-a controller="Media" route-id="@med.ID"></edit-a>
+                        </edit-link>
+                    </edit-container>
                 }
 
             }
-            @*<p class="title">America First Provides an 'Assist' to Homeless Shelter</p>*@
             @foreach (Media med in Model.Media)
             {
                 if (med.Text_Type.Equals("time"))
                 {
-                    <p class="mont_regular_22_darkgray time">@med.Content_Text</p>
-                        <a asp-controller="Media" asp-action="Edit" asp-route-id="@med.ID">Edit</a>
+                    <edit-container>
+                        <div class=" editArea">
+                            <p class="mont_regular_22_darkgray time">@med.Content_Text</p>
+                        </div>
+                        <edit-link>
+                            <edit-a controller="Media" route-id="@med.ID"></edit-a>
+                        </edit-link>
+                    </edit-container>
                 }
-
             }
             <a class="link" href="#">inShare</a>
         </div>
@@ -38,8 +48,14 @@
             {
                 if (med.Text_Type.Equals("image"))
                 {
-                    <img src="@med.Content_Text" class="img-responsive center-block" title="America First Check" alt="Check">
-                    <a asp-controller="Media" asp-action="Edit" asp-route-id="@med.ID">Edit</a>
+                    <edit-container>
+                        <div class=" editArea">
+                            <img src="@med.Content_Text" class="img-responsive center-block" title="America First Check" alt="Check">
+                        </div>
+                        <edit-link>
+                            <edit-a controller="Media" route-id="@med.ID"></edit-a>
+                        </edit-link>
+                    </edit-container>
                 }
 
             }
@@ -50,8 +66,14 @@
             {
                 if (med.Text_Type.Equals("subTitle"))
                 {
-                    <p class="subtitle">@med.Content_Text</p>
-                        <a asp-controller="Media" asp-action="Edit" asp-route-id="@med.ID">Edit</a>
+                    <edit-container>
+                        <div class="editArea">
+                            <p class="subtitle">@med.Content_Text</p>
+                        </div>
+                        <edit-link>
+                            <edit-a controller="Media" route-id="@med.ID"></edit-a>
+                        </edit-link>
+                    </edit-container>
                 }
             }
         </div>
@@ -64,8 +86,14 @@
             {
                 if (med.Text_Type.Equals("para1"))
                 {
-                    <p class="mont_regular_22_darkgray">@med.Content_Text</p>
-                        <a asp-controller="Media" asp-action="Edit" asp-route-id="@med.ID">Edit</a>
+                    <edit-container>
+                        <div class="editArea">
+                            <p class="mont_regular_22_darkgray">@med.Content_Text</p>
+                        </div>
+                        <edit-link>
+                        <edit-a controller="Media" route-id="@med.ID"></edit-a>
+                        </edit-link>
+                    </edit-container>
                 }
 
             }
@@ -73,17 +101,16 @@
             {
                 if (med.Text_Type.Equals("para2"))
                 {
-                    <p class="mont_regular_22_darkgray">@med.Content_Text</p>
-                        <a asp-controller="Media" asp-action="Edit" asp-route-id="@med.ID">Edit</a>
+                    <edit-container>
+                        <div class="editArea">
+                            <p class="mont_regular_22_darkgray">@med.Content_Text</p>
+                        </div>
+                        <edit-link>
+                        <edit-a controller="Media" route-id="@med.ID"></edit-a>
+                        </edit-link>
+                    </edit-container>
                 }
             }
         </section>
-    </div>
-</div>
-<div class="container-fluid" id="donorsMain">
-    <div class="row donor_header">
-        <div class="col-xs-6 text" id="Donor">
-            <h2 class="h2style1">Donors</h2>
-        </div>
     </div>
 </div>
