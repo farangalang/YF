@@ -1,6 +1,4 @@
-﻿
-
-<div class="container-fluid" id="directorsMain">
+﻿<div class="container-fluid" id="directorsMain">
     <div class="row board_header">
         <div class="col-xs-6 text" id="Board">
             <h2>Board of</h2>
@@ -8,27 +6,31 @@
         </div>
     </div>
 </div>
+
 <div class="container">
     <!--Board of Directors-->
-    <div class="row board_members">
-        <section class="col-xs-12 col-md-4">
-            @foreach (Staff_Panel st in Model.Staff)
+    <div class="row board_members ">
+
+        @foreach (Staff_Panel st in Model.Staff)
             {
                 if (st.Director.Equals("1"))
                 {
-                    <p><span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span></p>
-                    <a asp-controller="Staff_Panel" asp-action="Edit" asp-route-id="@st.ID">Edit</a>
-                }
+                <edit-container>
+                    <div class=" col-md-4 ">
+                        <div class="editArea">
+                            <span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span>
+                        </div>
 
+                        <edit-link>
+                            <edit-a controller="Staff_Panel" route-id="@st.ID"></edit-a>
+                        </edit-link>
+                    </div>
+                </edit-container>
             }
-        </section>
+
+        }
+
+
     </div>
-</div>
-<div class="container-fluid" id="staffMain">
-    <div class="row board_header">
-        <div class="col-xs-6 text" id="Staff">
-            <h2>Our</h2>
-            <h2 class="h2style1">Staff</h2>
-        </div>
-    </div>
+
 </div>
