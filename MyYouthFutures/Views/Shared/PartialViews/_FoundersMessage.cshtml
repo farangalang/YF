@@ -1,0 +1,20 @@
+﻿@* ------ Founders Message ------ *@
+
+<div class="container">
+    <div class="row history_text_pics">
+        @foreach (Founder_Message fm in Model.Founder_Messages)
+        {
+            <section class="col-xs-12  col-md-4 first_img">
+                <div class="editArea">
+                    <img src=@fm.founderImage class="img-responsive center-block" title="Kristen and Scott" alt="Kristen and Scott">
+                    <p class="mont_light_14_white hist_subtitle">@fm.founderSubTetxt</p>
+                </div>
+                <edit-link>
+                    <edit-a controller="Founder_Message" route-id="@fm.ID"></edit-a>
+                </edit-link>
+
+            </section>
+        }
+    </div>
+</div>
+@* ------ END Founders Message ------ *@

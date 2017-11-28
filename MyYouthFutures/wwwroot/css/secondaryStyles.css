@@ -424,6 +424,7 @@
     font-size: 20px;
     line-height: 30px;
     color: #474747;
+    font-weight: bold;
 }
 
 .needs ul {
@@ -571,7 +572,7 @@
 ****************************/
 .modal {
     font-family: "montserrat-regular";
-    padding: 5% 10% 5% 30%;
+    padding-top: 100px;
 }
 
     .modal h1, .modal h2, .modal h3, .modal h4, .modal h5, .modal h6 {
@@ -579,20 +580,19 @@
         font-weight: bold;
     }
 
-#loginCase{
+.centered, #loginCase{
     float: none;
     margin: 0 auto;
 }
 
 .container_modal1 {
     padding: 2px;
-    margin: 10px;
     background-color: white;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
     border-style: solid;
-    border-color: #583b13; /*#663300; /*brown*/
+    border-color: #583b13; /*brown*/
     font-weight: bold;
     color: #583b13;
 }
@@ -627,22 +627,22 @@
     }
 
 .btn-default {
-    color: #404040;/*#5c5c3d;*/
-    background-color: #cccccc;/*#b8b894;*/
-    border-color: #595959;/*#999966;*/
+    color: #404040;
+    background-color: #cccccc;
+    border-color: #595959;
 }
 
     .btn-default:focus,
     .btn-default.focus {
-        color: #333333;/*#3d3d29;*/
-        background-color: #999999;/*#999966;*/
-        border-color: #666666; /*#6b6b47;*/
+        color: #333333;
+        background-color: #999999;
+        border-color: #666666;
     }
 
     .btn-default:hover {
-        color: #333333; /*#3d3d29;*/
-        background-color: #999999;/*#999966;*/
-        border-color: #666666;/*#6b6b47;*/
+        color: #333333; 
+        background-color: #999999;
+        border-color: #666666;
     }
 
 .row{
@@ -653,7 +653,6 @@
     height: 35px;
     margin: 2px 2px 15px 2px;
     padding: 2px;
-    /*border: 1px solid #a77125;*/
     font-size: medium;
 }
 
@@ -665,7 +664,7 @@
 }
 
 .modal .title {
-    color: #583b13; /*#583b13; /*#663300;*/
+    color: #583b13;
     text-align: center;
 }
 
@@ -687,6 +686,10 @@
     width: 380px;
 }
 
+#loginModal{
+    margin: 10px;
+}
+
 #loginModal p a{
     font-size: small;
     text-align: center;
@@ -694,7 +697,7 @@
     padding: 0;
 }
 
-.login img {
+#loginModal img {
     margin: 20px 0px 20px 0px;
 }
 
@@ -706,7 +709,7 @@
     height: 30px;
     width: 30px;
     margin: 0px 0px 0px 32px;
-    padding: 0;
+    padding: 0px 0px 0px 0px;
 }
 
     #cncl:hover {
@@ -716,7 +719,7 @@
     #cncl span.glyphicon {
         font-size: x-large;
         margin: 3px 0px 0px 3px;
-}
+    }
 
 /*************************
     Sidebar

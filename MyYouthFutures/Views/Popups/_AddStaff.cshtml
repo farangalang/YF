@@ -1,9 +1,8 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+﻿@model MyYouthFutures.Models.Staff_Panel
+ @*  For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
-<div id="staff" class="container_modal1">
-    <form id="staff2" class="container_modal2">
+<div id="staff" class="container_modal1 centered">
+    <form asp-action="Create" id="staff2" class="container_modal2">
         <div class="">
             <div class="titleBox row">
                 <img class="header_img col-xs-push-1 col-xs-10" src="~/images/yf_house.png" />
@@ -12,46 +11,52 @@
 
             <div class="row">
                 <div class="col-xs-6">
-                    <div id="add_img" class="row">
-                        <!--@{ var val2 = "?";}-->
+                    <div id="add_img" class="row"> @* TODO Wire up file upload *@
                         <img id="staff_pic" class="col-xs-push-1 col-xs-10" src="~/images/ban_circle.png" title="Image does not exist" alt="Image does not exist" />
-                        <input type="file" id="staff_file" class="col-xs-push-1 col-xs-10" required/><!--style="display:none"-->
-                        <button id="staff_btn" type="button" onclick="$('#staff_btn').click(function () { $('#staff_file').trigger('click');})" class="col-xs-push-2 col-xs-8">Select Image</button>
-                        <!--<label id="lbl1">@val2</label>-->
+                        <input type="file" id="staff_file" class="col-xs-push-1 col-xs-10"/> <!---required --style="display:none"-->
+                        <button id="staff_btn" type="button" onclick="$('#staff_btn').click(function() { $('#staff_file').trigger('click'); })" class="col-xs-push-2 col-xs-8">Select Image</button>
                     </div>
                 </div>
 
-                <div id="staff_info" class="col-xs-6">
+                <div id="staff_info" class="col-xs-6 form-group">
                     <div class="fixed_width">
                         <label>Name:</label>
-                        <input type="text" name="staff_name" required />
+                        <input asp-for="Name" id="staffName" type="text" name="staff_name" required />
                     </div>
-                    <div class="fixed_width row">
-                        <div>
-                            <label>Title:  </label>
-                            <input type="text" name="staff_title" required />
-                            <!--<button id="addTitle" type="button">+</button>--><!--Will add back once I figure out how to add new titles (if needed)-->
-                        </div>
-                    </div>
-                    <div class="fixed_width">
-                        <label>Email:</label>
-                        <input type="text" name="staff_email" required />
-                    </div>
+                </div>
+
+                <div class="fixed_width row">
                     <div>
-                        <label>Current Staff Member?</label>
-                        <label>Yes</label>
-                        <input type="radio" name="current" value="yes" required />
-                        <label>No</label>
-                        <input type="radio" name="current" value="no" required />
+                        
+                        <label>Title:</label>
+                        <input id="staffTitle" type="text" name="staff_title" required />
+                        <!--<button id="addTitle" type="button">+</button>--><!--Will add back once I figure out how to add new titles (if needed)-->
                     </div>
+                </div>
+                <div class="fixed_width">
+                    <label>Email:</label>
+                    <input id="staffEmail" type="text" name="staff_email" required />
+                </div>
+                <div>
+                    <label>Current Staff Member?</label>
+                    <label>Yes</label>
+                    <input type="radio" name="current" value="yes" required />
+                    <label>No</label>
+                    <input type="radio" name="current" value="no" required />
                 </div>
             </div>
         </div>
-        <div id="buttons" class="row">
-            <button class="col-xs-push-5 col-xs-3 btn-lg btn-default" data-toggle="modal" data-target="#staffPopup">Cancel</button>
-            <button type="submit" class="col-xs-push-6 col-xs-3 btn-lg btn-success">Submit</button>
-            
-            
-        </div>
+</div>
+<div id="buttons" class="row">
+    <button class="col-xs-push-5 col-xs-3 btn-lg btn-default" data-toggle="modal" data-target="#staffPopup">Cancel</button>
+
+    <div class=" form-group">
+        <button type="submit" value="Create"   class="col-xs-push-6 col-xs-3 btn-lg btn-success">Submit</button>
+        @*<button type="submit" onclick="getInfo()" class="col-xs-push-6 col-xs-3 btn-lg btn-success">Submit</button>*@
+    </div>
+    
+
+
+</div>
     </form>
 </div>

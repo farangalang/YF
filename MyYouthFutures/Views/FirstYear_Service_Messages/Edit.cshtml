@@ -1,13 +1,11 @@
 ﻿@model MyYouthFutures.Models.FirstYear_Service_Messages
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Details";
 }
 
-<h2>Edit</h2>
+<h2>First Year Message</h2>
 
-<h4>FirstYear_Service_Messages</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -20,7 +18,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="firstYearText" class="control-label"></label>
-                <input asp-for="firstYearText" class="form-control" />
+                <textarea asp-for="firstYearText" class="form-control"  rows="15" cols="60" ></textarea>
                 <span asp-validation-for="firstYearText" class="text-danger"></span>
             </div>
             <div class="form-group">
