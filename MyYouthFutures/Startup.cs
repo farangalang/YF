@@ -35,6 +35,7 @@ namespace MyYouthFutures
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                //app.UseStatusCodePagesWithRedirects("/");
                 app.UseBrowserLink();
             }
             else
@@ -50,9 +51,11 @@ namespace MyYouthFutures
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
 
-                /*routes.MapRoute(
-                    name: "myRoute",
-                    template: "{controller=Home}/{action=Index}/{anchor?}/{id?}");*/
+                routes.MapRoute(
+                    name: "NotFound",
+                    template: "{*.}",
+                    defaults: new { controller = "Home", action = "PageNotFound" } 
+                );
             });
         }
     }
