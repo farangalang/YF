@@ -51,6 +51,7 @@ namespace MyYouthFutures
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
 
+                // *. = catch all
                 routes.MapRoute(
                     name: "NotFound",
                     template: "{*.}",
