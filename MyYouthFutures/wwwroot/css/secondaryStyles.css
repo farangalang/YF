@@ -570,9 +570,15 @@
     Page Not Found (No Page)
 *****************************/
 #noPage {
-    border-color: #cc4400;
+    border-color: #1c5788;
+    //#c5e4f6;
+    //#99b3ff;
+    //#1c5788;
+    //#cc4400;
     border-width: 20px 0px 20px 0px;
     border-style: solid none solid none;
+    //background-color: #1c5788;
+    //#1c5788;
 }
 
     #noPage .h2style1 {
