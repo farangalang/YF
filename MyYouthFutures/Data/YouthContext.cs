@@ -60,7 +60,7 @@ namespace MyYouthFutures.Data
 
         public DbSet<MyYouthFutures.Models.Stats> Stats { get; set; }
 
-        public DbSet<MyYouthFutures.Models.Services> Services { get; set; }
+        public DbSet<MyYouthFutures.Models.Services_Title> Services { get; set; }
 
         public DbSet<MyYouthFutures.Models.HomeTitle> HomeTitle { get; set; }
     }

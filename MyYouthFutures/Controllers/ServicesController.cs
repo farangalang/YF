@@ -54,7 +54,7 @@ namespace MyYouthFutures.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,Header")] Services services)
+        public async Task<IActionResult> Create([Bind("ID,Title,Header")] Services_Title services)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace MyYouthFutures.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Header")] Services services)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Header")] Services_Title services)
         {
             if (id != services.ID)
             {
