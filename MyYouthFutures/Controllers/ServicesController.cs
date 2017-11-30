@@ -22,7 +22,7 @@ namespace MyYouthFutures.Controllers
         // GET: Services
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Services.ToListAsync());
+            return View(await _context.Services_Title.ToListAsync());
         }
 
         // GET: Services/Details/5
@@ -33,7 +33,7 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var services = await _context.Services
+            var services = await _context.Services_Title
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (services == null)
             {
@@ -73,7 +73,7 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var services = await _context.Services.SingleOrDefaultAsync(m => m.ID == id);
+            var services = await _context.Services_Title.SingleOrDefaultAsync(m => m.ID == id);
             if (services == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var services = await _context.Services
+            var services = await _context.Services_Title
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (services == null)
             {
@@ -139,15 +139,15 @@ namespace MyYouthFutures.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var services = await _context.Services.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Services.Remove(services);
+            var services = await _context.Services_Title.SingleOrDefaultAsync(m => m.ID == id);
+            _context.Services_Title.Remove(services);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ServicesExists(int id)
         {
-            return _context.Services.Any(e => e.ID == id);
+            return _context.Services_Title.Any(e => e.ID == id);
         }
     }
 }

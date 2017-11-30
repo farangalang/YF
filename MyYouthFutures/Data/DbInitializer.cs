@@ -36,7 +36,7 @@ namespace MyYouthFutures.Data
 
             foreach (Services_Title s in service)
             {
-                context.Services.Add(s);
+                context.Services_Title.Add(s);
             }
             context.SaveChanges();
 

@@ -20,7 +20,7 @@ namespace MyYouthFutures.Models
         public IEnumerable<Media> Media { get; set; }
         public IEnumerable<Doners> Doners { get; set; }
         public IEnumerable<Help_Panel> Help_Panel { get; set; }
-        public IEnumerable<Services_Title> Services { get; set; }
+        public IEnumerable<Services_Title> Services_Title { get; set; }
         public IEnumerable<Services_Message> Services_Message { get; set; }
         public IEnumerable<Purpose> Purpose { get; set; }
         public IEnumerable<HomeTitle> HomeTitle { get; set; }
