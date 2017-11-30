@@ -1,0 +1,122 @@
+﻿<div class="container-fluid" id="donorsMain">
+    <div class="row donor_header">
+        <div class="col-xs-6 text" id="Donor">
+            <h2 class="h2style1">Donors</h2>
+        </div>
+        <a class="editText" asp-controller="Doners" asp-action="Create">Add Donor</a>
+    </div>
+
+</div>
+<div class="container-fluid">
+    <div class="row donor_subheader">
+        <div class="col-xs-12 ">
+            <p class="title_plat">Plantinum Level Donors</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row donor_list">
+        @foreach (Doners d in Model.Doners)
+            {
+                if (d.Doner_Type.Equals("Plantinum"))
+                {
+                <edit-container>
+                    <div class="col-xs-4 donor_box plat">
+                        <div class="editArea">
+                            <p class="donor_name">@d.Doner_Name</p>
+                            <p class="year">@d.Doner_year</p>
+                        </div>
+                        <edit-link>
+                            <edit-a controller="Doners" route-id="@d.ID"></edit-a>
+                        </edit-link>
+                    </div>
+                </edit-container>
+            }
+        }
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row donor_subheader">
+        <div class="col-xs-12 ">
+            <p class="title_gold">Gold Level Donors</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row donor_list">
+        @foreach (Doners d in Model.Doners)
+            {
+                if (d.Doner_Type.Equals("Gold"))
+                {
+                <edit-container>
+                    <div class="col-xs-4 donor_box gold">
+                        <div class="editArea">
+                            <p class="donor_name">@d.Doner_Name</p>
+                            <p class="year">@d.Doner_year</p>
+                        </div>
+                        <edit-link>
+                            <edit-a controller="Doners" route-id="@d.ID"></edit-a>
+                        </edit-link>
+                    </div>
+                </edit-container>
+            }
+
+        }
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row donor_subheader">
+        <div class="col-xs-12 ">
+            <p class="title_silver">Silver Level Donors</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row donor_list">
+        @foreach (Doners d in Model.Doners)
+            {
+                if (d.Doner_Type.Equals("Silver"))
+                {
+                <edit-container>
+                    <div class="col-xs-4 donor_box silver">
+                        <div class="editArea">
+                            <p class="donor_name">@d.Doner_Name</p>
+                            <p class="year">@d.Doner_year</p>
+                        </div>
+                        <edit-link>
+                            <edit-a controller="Doners" route-id="@d.ID"></edit-a>
+                        </edit-link>
+                    </div>
+                </edit-container>
+            }
+        }
+    </div>
+    <div class="container-fluid">
+        <div class="row donor_subheader">
+            <div class="col-xs-12 ">
+                <p class="title_bronze">Bronze Level Donors</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row donor_list">
+            @foreach (Doners d in Model.Doners)
+            {
+                if (d.Doner_Type.Equals("Bronze"))
+                {
+                    <edit-container>
+                        <div class="col-xs-4 donor_box bronze">
+                            <div class="editArea">
+                                <p class="donor_name">@d.Doner_Name</p>
+                                <p class="year">@d.Doner_year</p>
+                            </div>
+                            <edit-link>
+                                <edit-a controller="Doners" route-id="@d.ID"></edit-a>
+                            </edit-link>
+                        </div>
+                    </edit-container>
+                }
+            }
+        </div>
+    </div>
+</div>

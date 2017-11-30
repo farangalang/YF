@@ -1,0 +1,120 @@
+﻿<div class="container-fluid needs">
+    <div class="row donate_help">
+        <div class="col-xs-12">
+            <p>LIST OF NEEDS</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-4 needs_list first">
+            <p class="needs_subheader">
+                MOST IMPORTANT NEEDS
+                (In order of priority)
+            </p>
+            <ul>
+                <edit-container>
+                    <div class=" editArea">
+                        @foreach (List_Item outlINeeds in Model.List_item)
+                        {
+                            if (outlINeeds.TypeOfList.Equals("mostImportantNeeds"))
+                            {
+                                <li>@outlINeeds.LiText</li>
+                            }
+                        }
+                    </div>
+                    <edit-link>
+                        <a class="editText" asp-controller="List_Item" asp-action="Index">Edit</a>
+                    </edit-link>
+                </edit-container>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-md-4 needs_list">
+            <p class="needs_subheader">MISC. NEEDS</p>
+            <ul>
+                <edit-container>
+                    <div class="editArea">
+                        @foreach (List_Item outLiMNeeds in Model.List_item)
+                        {
+                            if (outLiMNeeds.TypeOfList.Equals("MISCNEEDS"))
+                            {
+                                <li>@outLiMNeeds.LiText</li>
+                            }
+                        }
+                    </div>
+                    <edit-link>
+                        <a class="editText" asp-controller="List_Item" asp-action="Index">Edit</a>
+                    </edit-link>
+                </edit-container>
+            </ul>
+            <p class="needs_subheader">GIFT CARDS FOR</p>
+            <ul>
+                <edit-container>
+                    <div class="editArea">
+                        @foreach (List_Item outLiGCards in Model.List_item)
+                        {
+                            if (outLiGCards.TypeOfList.Equals("GiftCardsForNeeds"))
+                            {
+                                <li>@outLiGCards.LiText</li>
+                            }
+                        }
+                    </div>
+                    <edit-link>
+                        <a class="editText" asp-controller="List_Item" asp-action="Index">Edit</a>
+                    </edit-link>
+                </edit-container>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-md-4 needs_list">
+            <p class="needs_subheader">HOUSEHOLD FURNISHINGS NEEDS</p>
+            <ul>
+                <edit-container>
+                    <div class="editArea">
+                        @foreach (List_Item outLiHouse in Model.List_item)
+                        {
+                            if (outLiHouse.TypeOfList.Equals("HouseholdFurnishingsNeeds"))
+                            {
+                                <li>@outLiHouse.LiText</li>
+                            }
+                        }
+                    </div>
+                    <edit-link>
+                        <a class="editText" asp-controller="List_Item" asp-action="Index">Edit</a>
+                    </edit-link>
+                </edit-container>
+            </ul>
+            <p class="needs_subheader">VOLUNTEERS</p>
+            <ul>
+                <edit-container>
+                    <div class="editArea">
+                        @foreach (List_Item outLiVol in Model.List_item)
+                        {
+                            if (outLiVol.TypeOfList.Equals("Volunteers"))
+                            {
+                                <li>@outLiVol.LiText</li>
+                            }
+                        }
+                    </div>
+                    <edit-link>
+                        <a class="editText" asp-controller="List_Item" asp-action="Index">Edit</a>
+                    </edit-link>
+                </edit-container>
+            </ul>
+            <p class="needs_subheader">REPAIR NEEDS</p>
+            <ul>
+                <edit-container>
+                    <div class="editArea">
+                        @foreach (List_Item outLiRep in Model.List_item)
+                        {
+                            if (outLiRep.TypeOfList.Equals("RepairNeeds"))
+                            {
+                                <li>@outLiRep.LiText</li>
+                            }
+                        }
+                    </div>
+                    <edit-link>
+                        <a class="editText" asp-controller="List_Item" asp-action="Index">Edit</a>
+                    </edit-link>
+                </edit-container>
+            </ul>
+        </div>
+    </div>
+</div>

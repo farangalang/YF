@@ -13,7 +13,7 @@ namespace MyYouthFutures.Data
             context.Database.EnsureCreated();
 
             // Look for any students.
-            if (context.Titles.Any())
+            if (context.HomeTitle.Any())
             {
                 return;   // DB has been seeded
             }

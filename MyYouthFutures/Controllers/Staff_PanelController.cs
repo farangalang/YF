@@ -54,7 +54,7 @@ namespace MyYouthFutures.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Staff_Image,Name,Level,Postion,email,isDirector")] Staff_Panel staff_Panel)
+        public async Task<IActionResult> Create([Bind("ID,Staff_Image,Name,Level,Postion,email,Director")] Staff_Panel staff_Panel)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace MyYouthFutures.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Staff_Image,Name,Level,Postion,email,isDirector")] Staff_Panel staff_Panel)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Staff_Image,Name,Level,Postion,email,Director")] Staff_Panel staff_Panel)
         {
             if (id != staff_Panel.ID)
             {

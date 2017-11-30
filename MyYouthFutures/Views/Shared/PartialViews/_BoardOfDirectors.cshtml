@@ -1,0 +1,36 @@
+﻿<div class="container-fluid" id="directorsMain">
+    <div class="row board_header">
+        <div class="col-xs-6 text" id="Board">
+            <h2>Board of</h2>
+            <h2 class="h2style1">Directors</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!--Board of Directors-->
+    <div class="row board_members ">
+
+        @foreach (Staff_Panel st in Model.Staff)
+            {
+                if (st.Director.Equals("1"))
+                {
+                <edit-container>
+                    <div class=" col-md-4 ">
+                        <div class="editArea">
+                            <span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span>
+                        </div>
+
+                        <edit-link>
+                            <edit-a controller="Staff_Panel" route-id="@st.ID"></edit-a>
+                        </edit-link>
+                    </div>
+                </edit-container>
+            }
+
+        }
+
+
+    </div>
+
+</div>
