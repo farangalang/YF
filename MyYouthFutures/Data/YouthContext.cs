@@ -28,18 +28,7 @@ namespace MyYouthFutures.Data
         public DbSet<HomeTitle> HomeTitle { get; set; }
         public DbSet<Services> Services { get; set; }
 
-        //public DbSet<Title> Titles { get; set; }
-        //public DbSet<Donor> Donor { get; set; }
-        //public DbSet<Staff> Staff { get; set; }
-        //public DbSet<BoardOfDirectors> BoardOfDirectors { get; set; }
-        ////public DbSet<Donate> Donate { get; set; }
-        //public DbSet<Donate_Message> Donate_Message { get; set; } 
-        ////public DbSet<Needs> Needs { get; set; }
-        ////public DbSet<Outreach> Outreach { get; set; }
-        ////public DbSet<Stats> Stats { get; set; }
-
-
-
+      
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Link>().ToTable("Link");
