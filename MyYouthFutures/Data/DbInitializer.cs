@@ -40,7 +40,11 @@ namespace MyYouthFutures.Data
 
             var service = new Services[]
             {
-                new Services{Title="Services", Header="Our programming is divided into three main areas. Each program area has specific components to meet the needs of the youth in need."}
+                new Services
+                {
+                    Title="Services",
+                    Header ="Our programming is divided into three main areas. Each program area has specific components to meet the needs of the youth in need."
+                }
             };
             _ctx.Services.AddRange(service);
 
@@ -54,7 +58,12 @@ namespace MyYouthFutures.Data
 
             var purposes = new Purpose[]
             {
-                new Purpose{Title="Our Purpose", Message="To provide unaccompanied, runaway and homeless youth with a safe and nurturing environment where they can develop the needed skills to become active, healthy, successful members of our future world.", Content="7,085 MEALS SERVED. 511 DROP-IN SERVICES.245 STREET OUTREACH HOURS. 64 SHELTERED YOUTH."}
+                new Purpose
+                {
+                    Title="Our Purpose",
+                    Message ="To provide unaccompanied, runaway and homeless youth with a safe and nurturing environment where they can develop the needed skills to become active, healthy, successful members of our future world.",
+                    Content ="7,085 MEALS SERVED. 511 DROP-IN SERVICES.245 STREET OUTREACH HOURS. 64 SHELTERED YOUTH."
+                }
             };
             _ctx.Purposes.AddRange(purposes);
 

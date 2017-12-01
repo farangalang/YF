@@ -27,6 +27,7 @@ namespace MyYouthFutures
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<DbInitializer>();
+            services.AddScoped<IYouthRepository, YouthRepository>();
 
             services.AddMvc();
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using MyYouthFutures.Models.Entities;
 
 namespace MyYouthFutures.Models
 {
@@ -18,5 +19,6 @@ namespace MyYouthFutures.Models
         public string Message { get; set; }
         [Display(Name = "Link to Page")]
         public string Link { get; set; }
+        public StoreUser User { get; set; }
     }
 }
