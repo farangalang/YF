@@ -56,6 +56,7 @@ namespace MyYouthFutures.Controllers
             var staffPanel = await _context.Staff_Panel.ToListAsync();
             var ListItem = await _context.List_Item.ToListAsync();
             var media = await _context.Media.ToListAsync();
+            //var youthStories = await _context.Youth_Stories.ToListAsync();
             var doner = await _context.Doners.ToListAsync();
             var helper = await _context.Help_Panel.ToListAsync();
 
@@ -68,6 +69,7 @@ namespace MyYouthFutures.Controllers
                 List_item = ListItem,
                 Media = media,
                 Doners = doner,
+                //Youth_Stories = youthStories,
                 Help_Panel = helper
             };
 
@@ -89,9 +91,24 @@ namespace MyYouthFutures.Controllers
             return View();
         }
 
+        public IActionResult ComingSoon()
+        {
+            return View();
+        }
+
+        public IActionResult PageNotFound()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+       /* public ActionResult Http404(string url)
+        {
+
+        }*/
     }
 }
