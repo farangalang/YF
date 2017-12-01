@@ -45,7 +45,7 @@ namespace MyYouthFutures.Controllers
             return View(im);
         }
 
-        
+
         public async Task<IActionResult> About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -56,7 +56,6 @@ namespace MyYouthFutures.Controllers
             var staffPanel = await _context.Staff_Panel.ToListAsync();
             var ListItem = await _context.List_Item.ToListAsync();
             var media = await _context.Media.ToListAsync();
-            //var youthStories = await _context.Youth_Stories.ToListAsync();
             var doner = await _context.Doners.ToListAsync();
             var helper = await _context.Help_Panel.ToListAsync();
 
@@ -69,19 +68,10 @@ namespace MyYouthFutures.Controllers
                 List_item = ListItem,
                 Media = media,
                 Doners = doner,
-                //Youth_Stories = youthStories,
                 Help_Panel = helper
             };
+            return View(vm);
 
-            /*if(idTag != null)
-            {
-                return Redirect(Url.RouteUrl(new { Controller = "Home", Action = "Index" }) + idTag);
-            }
-            else
-            {*/
-                return View(vm);
-            //}
-            
         }
 
         public IActionResult Contact()
@@ -106,9 +96,9 @@ namespace MyYouthFutures.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-       /* public ActionResult Http404(string url)
-        {
+        /* public ActionResult Http404(string url)
+         {
 
-        }*/
+         }*/
     }
 }
