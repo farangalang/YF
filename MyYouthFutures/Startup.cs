@@ -8,9 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyYouthFutures.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using MyYouthFutures.Models;
-using MyYouthFutures.Services;
 
 namespace MyYouthFutures
 {
@@ -29,14 +26,6 @@ namespace MyYouthFutures
             services.AddDbContext<YouthContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
-
-            // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
-
-
             services.AddMvc();
         }
 
@@ -48,7 +37,6 @@ namespace MyYouthFutures
                 app.UseDeveloperExceptionPage();
                 //app.UseStatusCodePagesWithRedirects("/");
                 app.UseBrowserLink();
-                app.UseDatabaseErrorPage();
             }
             else
             {
@@ -56,8 +44,6 @@ namespace MyYouthFutures
             }
 
             app.UseStaticFiles();
-
-            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

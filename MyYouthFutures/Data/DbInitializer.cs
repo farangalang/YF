@@ -29,14 +29,14 @@ namespace MyYouthFutures.Data
             }
             context.SaveChanges();
 
-            var service = new Services_Title[]
+            var service = new Services[]
             {
-                new Services_Title{Title="Services", Header="Our programming is divided into three main areas. Each program area has specific components to meet the needs of the youth in need."}
+                new Services{Title="Services", Header="Our programming is divided into three main areas. Each program area has specific components to meet the needs of the youth in need."}
             };
 
-            foreach (Services_Title s in service)
+            foreach (Services s in service)
             {
-                context.Services_Title.Add(s);
+                context.Services.Add(s);
             }
             context.SaveChanges();
 

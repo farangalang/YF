@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MyYouthFutures.Models
 {
-    public class Services_Title
+    public class Services
     {
         public int ID { get; set; }
         public string Title { get; set; }
