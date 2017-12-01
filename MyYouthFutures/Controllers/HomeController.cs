@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using MyYouthFutures.Models;
 using MyYouthFutures.Data;
 using Microsoft.EntityFrameworkCore;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace MyYouthFutures.Controllers
 {
@@ -45,7 +47,7 @@ namespace MyYouthFutures.Controllers
             return View(im);
         }
 
-        
+
         public async Task<IActionResult> About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -79,12 +81,14 @@ namespace MyYouthFutures.Controllers
             {*/
                 return View(vm);
             //}
-            
+
         }
 
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
+
+            // Add code to send email
 
             return View();
         }
