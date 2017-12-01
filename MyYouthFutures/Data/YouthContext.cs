@@ -20,12 +20,10 @@ namespace MyYouthFutures.Data
         public DbSet<introArticle> introArticles { get; set; } //this is the table that holds the introduction statment on the history page.
         public DbSet<Founder_Message> Founder_Message { get; set; }//this the table that holds the founder message panels
         public DbSet<FirstYear_Service_Messages> FirstYear_Service_Messages { get; set; } //this is the table that holds the first year service message panels
-        public DbSet<MyYouthFutures.Models.Staff_Panel> Staff_Panel { get; set; }//this is the table that holds the staff and board of directors on the history page
+        public DbSet<Staff_Panel> Staff_Panel { get; set; }//this is the table that holds the staff and board of directors on the history page
         public DbSet<List_Item> List_Item { get; set; }//this is the table that holds the list items for the about view
-        //public DbSet<Media> Media { get; set; }
-        //public DbSet<Youth_Story> YouthStories { get; set; }
         public DbSet<Doners> Doners { get; set; }
-        public DbSet<MyYouthFutures.Models.Help_Panel> Help_Panel { get; set; }
+        public DbSet<Help_Panel> Help_Panel { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -39,33 +37,30 @@ namespace MyYouthFutures.Data
             modelBuilder.Entity<Staff_Panel>().ToTable("Staff_Panel");
             modelBuilder.Entity<List_Item>().ToTable("List_Item");
             modelBuilder.Entity<Media>().ToTable("Media");
-            //modelBuilder.Entity<Youth_Story>().ToTable("YouthStories");
             modelBuilder.Entity<Doners>().ToTable("Doners");
             modelBuilder.Entity<Help_Panel>().ToTable("Help_Panel");
         }
 
-        public DbSet<MyYouthFutures.Models.Donor> Donor { get; set; }
+        public DbSet<Donor> Donor { get; set; }
 
-        public DbSet<MyYouthFutures.Models.Staff> Staff { get; set; }
+        public DbSet<Staff> Staff { get; set; }
 
-        public DbSet<MyYouthFutures.Models.BoardOfDirectors> BoardOfDirectors { get; set; }
+        public DbSet<BoardOfDirectors> BoardOfDirectors { get; set; }
 
-        public DbSet<MyYouthFutures.Models.Media> Media { get; set; }
+        public DbSet<Media> Media { get; set; }
 
-        public DbSet<MyYouthFutures.Models.Donate> Donate { get; set; }
+        public DbSet<Donate> Donate { get; set; }
 
-        public DbSet<MyYouthFutures.Models.Donate_Message> Donate_Message { get; set; }
+        public DbSet<Donate_Message> Donate_Message { get; set; }
 
-        public DbSet<MyYouthFutures.Models.Needs> Needs { get; set; }
+        public DbSet<Needs> Needs { get; set; }
 
-        public DbSet<MyYouthFutures.Models.Outreach> Outreach { get; set; }
+        public DbSet<Outreach> Outreach { get; set; }
 
-        public DbSet<MyYouthFutures.Models.Stats> Stats { get; set; }
+        public DbSet<Stats> Stats { get; set; }
 
-        public DbSet<MyYouthFutures.Models.Services> Services { get; set; }
+        public DbSet<Services> Services { get; set; }
 
-        public DbSet<MyYouthFutures.Models.HomeTitle> HomeTitle { get; set; }
-
-        //public DbSet<MyYouthFutures.Models.Youth_Story> Youth_Stories { get; set; }
+        public DbSet<HomeTitle> HomeTitle { get; set; }
     }
 }
