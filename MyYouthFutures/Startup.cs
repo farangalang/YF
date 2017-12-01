@@ -26,6 +26,8 @@ namespace MyYouthFutures
             services.AddDbContext<YouthContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddTransient<DbInitializer>();
+
             services.AddMvc();
         }
 
@@ -58,6 +60,19 @@ namespace MyYouthFutures
                     defaults: new { controller = "Home", action = "PageNotFound" } 
                 );
             });
+
+            if (env.IsDevelopment())
+            {
+                //Seed the Database
+                using (var scope = app.ApplicationServices.CreateScope())
+                {
+                    var seeder = scope.ServiceProvider.GetService<DbInitializer>();
+                    seeder.Seed();
+                }
+                    
+            }
+
+
         }
     }
 }
