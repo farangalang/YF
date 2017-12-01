@@ -84,11 +84,22 @@ namespace MyYouthFutures.Controllers
 
         }
 
-        public IActionResult Contact()
+        public async Task<IActionResult> ContactAsync()
         {
             ViewData["Message"] = "Your contact page.";
 
             // Add code to send email
+            // Hardcode values to test
+            // TODO change values from Contact Us form
+            var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
+            var client = new SendGridClient(apiKey);
+            var from = new EmailAddress("jeffreygarcia@mail.weber.edu", "Jeffrey Garcia");
+            var subject = "Sent from SendGrid";
+            var to = new EmailAddress("jeffreygarcia@mail.weber.edu", "Jeffrey Garcia");
+            var plainTextContent = "Sending with SendGrid is fun and easy to do anywhere, even with C#.";
+            var htmlContent = "<strong>Sending with SendGrid is fun and easy to do anywhere, even with C#.<strong>";
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            var response = await client.SendEmailAsync(msg);
 
             return View();
         }
