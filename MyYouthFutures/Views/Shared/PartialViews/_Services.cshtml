@@ -2,7 +2,7 @@
 <section class="container-fluid services">
     <div class="row">
         <div class="col-xs-12">
-            @foreach (Services SV in Model.Services)
+            @foreach (Services_Title SV in Model.Services_Title)
             {
                 <edit-container>
                     <div class="editArea">
@@ -10,7 +10,7 @@
                         <p class="mont-light-light-22 about-services" ng-model="ServicesSubtitle">@SV.Header</p>
                     </div>
                     <edit-link>
-                        <edit-a controller="Services" route-id="@SV.ID"></edit-a>
+                        <edit-a controller="Services_Title" route-id="@SV.ID"></edit-a>
                     </edit-link>
                 </edit-container>
             }

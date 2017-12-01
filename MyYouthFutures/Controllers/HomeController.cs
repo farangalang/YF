@@ -28,7 +28,7 @@ namespace MyYouthFutures.Controllers
         public async Task<IActionResult> Index()
         {
             var homeTitle = await _context.HomeTitle.ToListAsync();
-            var services = await _context.Services.ToListAsync();
+            var services = await _context.Services_Title.ToListAsync();
             var services_message = await _context.Services_Messages.ToListAsync();
             var purpose = await _context.Purposes.ToListAsync();
             var links = await _context.Links.ToListAsync();
@@ -36,7 +36,7 @@ namespace MyYouthFutures.Controllers
             var im = new ItemViewModel
             {
                 HomeTitle = homeTitle,
-                Services = services,
+                Services_Title = services,
                 Services_Message = services_message,
                 Purpose = purpose,
                 Link = links
