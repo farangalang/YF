@@ -1,26 +1,32 @@
-﻿<div id="loginCase" class="row">
+﻿@model MyYouthFutures.ViewModel.LoginViewModel
+<div id="loginCase" class="row">
     <label id="cncl" class="col-xs-push-10 col-xs-2" data-toggle="modal" data-target="#loginPopup"><span class="glyphicon glyphicon-remove"></span></label>
 
     <div id="loginModal" class="container_modal1">
 
-        <form class="container_modal2">
-            <img class="col-xs-12" src="~/images/yf_logo.svg" />
+        <form class="container_modal2" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+            <img class="col-xs-12" src="~/images/yf_logo.svg"/>
 
             <div class="row">
                 <!--User Name-->
-                <label class="col-xs-push-1 col-xs-10"><b>Username:</b></label>
-                <input class="col-xs-push-1 col-xs-10" type="text" name="usrnm" required />
+                <label class="col-xs-push-1 col-xs-10" asp-for="UserName"><b>Username:</b></label>
+                <input class="col-xs-push-1 col-xs-10" type="text" name="usrnm" required asp-for="UserName"/>
+                
 
                 <!--Password-->
-                <label class="col-xs-push-1 col-xs-10"><b>Password:</b></label>
-                <input class="col-xs-push-1 col-xs-10" type="password" name="pswrd" required />
+                <label class="col-xs-push-1 col-xs-10" asp-for="Password"><b>Password:</b></label>
+                <input class="col-xs-push-1 col-xs-10" type="password" name="pswrd" required asp-for="Password"/>
+                
 
                 <!--Login Button-->
                 <button id="sbmt" type="submit" class="btn-lg btn-success col-xs-push-1 col-xs-10">Login</button>
 
                 <!--Links for forgotten password/username-->
-                <p><a class="col-xs-push-2 col-xs-8">Forgot Your Password?</a></p>
-                <p><a class="col-xs-push-2 col-xs-8">Forgot Your Username?</a></p>
+                <p><a class="col-xs-push-2 col-xs-8">Forgot Your Password?</a>
+                </p>
+                <p><a class="col-xs-push-2 col-xs-8">Forgot Your Username?</a>
+                </p>
             </div>
         </form>
     </div>
