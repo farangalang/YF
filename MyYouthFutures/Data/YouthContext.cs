@@ -31,20 +31,20 @@ namespace MyYouthFutures.Data
         public DbSet<Services> Services { get; set; }
 
       
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Link>().ToTable("Link");
-            modelBuilder.Entity<Purpose>().ToTable("Purpose");
-            modelBuilder.Entity<Services_Message>().ToTable("Services_Message");
-            modelBuilder.Entity<introArticle>().ToTable("introArticle");
-            modelBuilder.Entity<Founder_Message>().ToTable("Founder_Message");
-            modelBuilder.Entity<FirstYear_Service_Messages>().ToTable("FirstYear_Service_Message");
-            modelBuilder.Entity<Staff_Panel>().ToTable("Staff_Panel");
-            modelBuilder.Entity<List_Item>().ToTable("List_Item");
-            modelBuilder.Entity<Media>().ToTable("Media");
-            modelBuilder.Entity<Doners>().ToTable("Doners");
-            modelBuilder.Entity<Help_Panel>().ToTable("Help_Panel");
-        }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Link>().ToTable("Link");
+        //    modelBuilder.Entity<Purpose>().ToTable("Purpose");
+        //    modelBuilder.Entity<Services_Message>().ToTable("Services_Message");
+        //    modelBuilder.Entity<introArticle>().ToTable("introArticle");
+        //    modelBuilder.Entity<Founder_Message>().ToTable("Founder_Message");
+        //    modelBuilder.Entity<FirstYear_Service_Messages>().ToTable("FirstYear_Service_Message");
+        //    modelBuilder.Entity<Staff_Panel>().ToTable("Staff_Panel");
+        //    modelBuilder.Entity<List_Item>().ToTable("List_Item");
+        //    modelBuilder.Entity<Media>().ToTable("Media");
+        //    modelBuilder.Entity<Doners>().ToTable("Doners");
+        //    modelBuilder.Entity<Help_Panel>().ToTable("Help_Panel");
+        //}
 
         
     }

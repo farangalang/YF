@@ -2,22 +2,48 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Server.Kestrel.Internal.System.Collections.Sequences;
 using MyYouthFutures.Models;
+using MyYouthFutures.Models.Entities;
 
 namespace MyYouthFutures.Data
 {
     public class DbInitializer
     {
         private readonly YouthContext _ctx;
+        private readonly UserManager<StoreUser> _userManager;
 
-        public DbInitializer(YouthContext ctx)
+        public DbInitializer(YouthContext ctx, UserManager<StoreUser> userManager)
         {
             _ctx = ctx;
+            _userManager = userManager;
         }
 
-        public void Seed()
+        public async Task Seed()
         {
             _ctx.Database.EnsureCreated();
+
+            var user = await _userManager.FindByEmailAsync("test@email.com");
+
+
+            //Check for user
+            if (user == null)
+            {
+                user = new StoreUser()
+                {
+                    FirstName = "John",
+                    LastName = "Doe",
+                    UserName = "test@email.com",
+                    Email = "test@email.com"
+
+                };
+                var result = await _userManager.CreateAsync(user, "P@ssw0rd!");
+                if (result != IdentityResult.Success)
+                {
+                    throw new InvalidOperationException("Failed to create user");
+                }
+            }
 
             // Look for db
             if (_ctx.Services_Messages.Any())
