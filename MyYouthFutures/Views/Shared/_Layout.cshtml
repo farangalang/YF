@@ -81,7 +81,8 @@
                                 <li><a asp-area="" asp-controller="Home" asp-action="About" asp-fragment="Contact">Contact Info</a></li>
                             </ul>
                         </li>
-                        <li class="donate"><a data-toggle="modal" data-target="#loginPopup">Login</a></li>
+                        @*<li class="donate"><a data-toggle="modal" data-target="#loginPopup">Login</a></li>*@
+                        <li class ="donate"><a asp-controller="Account" asp-action="Login"></a>Login</li>
                         <li class="donate"><a asp-area="" asp-controller="Home" asp-action="About" asp-fragment="Donate">Donate</a></li>@*TODO: This needs linked to the Media Section of the Donate Page*@
 
                     </ul>
