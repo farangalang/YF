@@ -15,12 +15,14 @@ namespace MyYouthFutures
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
+
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -32,7 +34,7 @@ namespace MyYouthFutures
                 .AddEntityFrameworkStores<YouthContext>();
 
             services.AddDbContext<YouthContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<DbInitializer>();
             services.AddScoped<IYouthRepository, YouthRepository>();

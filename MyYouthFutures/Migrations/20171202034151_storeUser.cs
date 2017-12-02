@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MyYouthFutures.Migrations
 {
-    public partial class Identity : Migration
+    public partial class storeUser : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
