@@ -5,12 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Data\Migrations\20171201234726_InitialDB.cs" />
-    <Compile Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Data\Migrations\20171201234726_InitialDB.Designer.cs" />
-    <Compile Include="..\..\..\..\CS %2528scotthadzik%2540weber.edu%2529\CS 3750\YF\MyYouthFutures\Data\Migrations\YouthContextModelSnapshot.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
