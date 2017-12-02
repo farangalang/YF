@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using MyYouthFutures.Models;
 using Microsoft.EntityFrameworkCore;
+using MyYouthFutures.Models.Entities;
 
 namespace MyYouthFutures.Data
 {
-    public class YouthContext : DbContext
+    public class YouthContext : IdentityDbContext<StoreUser>
     {
         public YouthContext(DbContextOptions<YouthContext> options) : base(options)
         {
