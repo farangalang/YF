@@ -42,7 +42,6 @@ namespace MyYouthFutures.Controllers
             return View(im);
         }
 
-
         public async Task<IActionResult> About()
         {
             var articles = _repository.GetAllIntroArticles();

@@ -1,32 +1,21 @@
 ﻿@model MyYouthFutures.ViewModel.LoginViewModel
-<div id="loginCase" class="row">
-    <label id="cncl" class="col-xs-push-10 col-xs-2" data-toggle="modal" data-target="#loginPopup"><span class="glyphicon glyphicon-remove"></span></label>
 
-    <div id="loginModal" class="container_modal1">
-
-        <form class="container_modal2" method="post">
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <form method="post">
             <div asp-validation-summary="ModelOnly"></div>
-            <img class="col-xs-12" src="~/images/yf_logo.svg"/>
-
-            <div class="row">
-                <!--User Name-->
-                <label class="col-xs-push-1 col-xs-10" asp-for="UserName"><b>Username</b></label>
-                <input class="col-xs-push-1 col-xs-10" type="text" name="usrnm" required asp-for="UserName"/>
-                
-
-                <!--Password-->
-                <label class="col-xs-push-1 col-xs-10" asp-for="Password"><b>Password</b></label>
-                <input class="col-xs-push-1 col-xs-10" style="margin-bottom: 20px" type="password" name="pswrd" required asp-for="Password"/>
-                
-
-                <!--Login Button-->
-                <button id="sbmt" type="submit" class="btn-lg btn-success col-xs-push-1 col-xs-10">Login</button>
-
-                <!--Links for forgotten password/username-->
-                @*<p><a class="col-xs-push-2 col-xs-8">Forgot Your Password?</a>
-                </p>
-                <p><a class="col-xs-push-2 col-xs-8">Forgot Your Username?</a>
-                </p>*@
+            <div class="form-group">
+                <label asp-for="Username">Username</label>
+                <input asp-for="Username"/>
+                <span asp-validation-for="Username"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password"/>
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-success"/>
             </div>
         </form>
     </div>
