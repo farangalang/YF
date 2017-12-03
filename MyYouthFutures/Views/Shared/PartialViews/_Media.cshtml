@@ -12,12 +12,12 @@
             {
                 if (med.Text_Type.Equals("title"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <p class="title">@med.Content_Text</p>
                         </div>
-                        <edit-link>
-                            <edit-a controller="Media" route-id="@med.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
@@ -27,12 +27,12 @@
             {
                 if (med.Text_Type.Equals("time"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class=" editArea">
                             <p class="mont_regular_22_darkgray time">@med.Content_Text</p>
                         </div>
-                        <edit-link>
-                            <edit-a controller="Media" route-id="@med.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
@@ -48,12 +48,12 @@
             {
                 if (med.Text_Type.Equals("image"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class=" editArea">
                             <img src="@med.Content_Text" class="img-responsive center-block" title="America First Check" alt="Check">
                         </div>
-                        <edit-link>
-                            <edit-a controller="Media" route-id="@med.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
@@ -66,12 +66,12 @@
             {
                 if (med.Text_Type.Equals("subTitle"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <p class="subtitle">@med.Content_Text</p>
                         </div>
-                        <edit-link>
-                            <edit-a controller="Media" route-id="@med.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
@@ -86,12 +86,12 @@
             {
                 if (med.Text_Type.Equals("para1"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <p class="mont_regular_22_darkgray">@med.Content_Text</p>
                         </div>
-                        <edit-link>
-                        <edit-a controller="Media" route-id="@med.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                        <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
@@ -101,12 +101,12 @@
             {
                 if (med.Text_Type.Equals("para2"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <p class="mont_regular_22_darkgray">@med.Content_Text</p>
                         </div>
-                        <edit-link>
-                        <edit-a controller="Media" route-id="@med.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                        <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
