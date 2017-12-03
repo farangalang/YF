@@ -32,7 +32,5 @@ namespace MyYouthFutures.Helpers
             }
             return base.ProcessAsync(context, output);
         }
-
-        
     }
 }
