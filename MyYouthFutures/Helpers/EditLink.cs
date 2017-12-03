@@ -8,11 +8,26 @@ namespace MyYouthFutures.Helpers
 {
     public class EditLink : TagHelper
     {
-        public override void Process(TagHelperContext context, TagHelperOutput output)
+        public bool IsVisible { get; set; } = true;
+
+        public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            output.TagName = "div";
-            output.TagMode = TagMode.StartTagAndEndTag;
-            output.Attributes.SetAttribute("class", "middleContainer");
+            if (!IsVisible)
+            {
+                output.TagName = "div";
+                output.TagMode = TagMode.StartTagAndEndTag;
+                output.Attributes.SetAttribute("is-visible", "User.Identity.IsAuthenticated");
+            }
+            else
+            {
+                output.TagName = "div";
+                output.TagMode = TagMode.StartTagAndEndTag;
+                output.Attributes.SetAttribute("class", "middleContainer");
+                output.Attributes.SetAttribute("is-visible", "User.Identity.IsAuthenticated");
+            }
+            return base.ProcessAsync(context, output);
         }
     }
-}
+
+        
+    }

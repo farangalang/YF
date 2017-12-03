@@ -15,14 +15,14 @@
             {
                 if (st.Director.Equals("1"))
                 {
-                <edit-container>
+                <edit-container is-visible="User.Identity.IsAuthenticated">
                     <div class=" col-md-4 ">
                         <div class="editArea">
                             <span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span>
                         </div>
 
-                        <edit-link>
-                            <edit-a controller="Staff_Panel" route-id="@st.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Staff_Panel" route-id="@st.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </div>
                 </edit-container>

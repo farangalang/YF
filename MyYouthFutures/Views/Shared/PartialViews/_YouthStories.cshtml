@@ -1,0 +1,47 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="container-fluid" id="YouthStoriesMain">
+    <div class="row YouthStory_header">
+        <div class="col-xs-6 text" id="YouthStory">
+            <h2 class="h2style1">Youth Stories</h2>
+        </div>
+    </div>
+
+    <!--Loop-->
+    @foreach (Youth_Story ys in Model.YouthStories)
+    {
+        <edit-container>
+            <article class="editArea">    
+                <!--Title-->
+                <section>
+                    <p class="title">@ys.title</p>
+                </section>
+
+                <!--Date-->
+                <section>
+                    <p>@ys.date</p>
+                </section>
+
+                <section>
+                    <!--Image-->
+                    <img src=@ys.image/>
+
+                    <!--Image Blurb-->
+                    <p>@ys.imageBlurb</p>
+                </section>
+
+                <!--Article Text-->
+                <section>
+                    <p>@ys.articleText</p>
+                </section>
+            </article>
+            <edit-link>
+                <edit-a controller="Youth_Story" route-id="@ys.id"></edit-a>
+            </edit-link>
+        </edit-container>
+    }
+    <!--End Loop-->
+</div>

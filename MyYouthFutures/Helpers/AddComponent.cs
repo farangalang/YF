@@ -8,10 +8,11 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace MyYouthFutures.Helpers
 {
-    public class EditA: TagHelper
+    public class AddComponent: TagHelper
     {
         public string Controller { get; set; }
-        public string RouteID { get; set; }
+        public string Action { get; set; }
+        public string Value { get; set; }
         public string href { get; set; }
         public bool IsVisible { get; set; } = true;
 
@@ -23,12 +24,11 @@ namespace MyYouthFutures.Helpers
             }
             else
             {
-                href = "/" + Controller + "/Edit/" + RouteID;
+                href = "/" + Controller + "/" + Action;
                 output.TagName = ("a");
                 output.TagMode = TagMode.StartTagAndEndTag;
                 output.Attributes.SetAttribute("class", "editText");
                 output.Attributes.SetAttribute("href", href);
-                output.Content.SetContent("Edit");
             }
             return base.ProcessAsync(context, output);
         }

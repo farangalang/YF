@@ -1,7 +1,7 @@
 ﻿
 <article class="container-fluid purpose-box">
     <section class="row purpose col-xs-12">
-        <edit-container>
+        <edit-container is-visible="User.Identity.IsAuthenticated">
             <div class="row purpose-title">
 
                 @*@Html.DisplayFor(Model.Purpose)*@
@@ -9,33 +9,33 @@
                 @foreach (Purpose PS in Model.Purpose)
                 {
                     <h2 class="h2-white editArea">@PS.Title</h2>
-                    <edit-link>
-                        <edit-a controller="Purposes" route-id="@PS.PurposeID"></edit-a>
+                    <edit-link is-visible="User.Identity.IsAuthenticated">
+                        <edit-a controller="Purposes" route-id="@PS.PurposeID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                     </edit-link>
                 }
             </div>
         </edit-container>
-        <edit-container>
+        <edit-container is-visible="User.Identity.IsAuthenticated">
             <div class="row purpose-detail">
                 <div class="col-xs-12 no-padding">
                     @foreach (Purpose PS in Model.Purpose)
                     {
                         <p class="montlight-dark-32 editArea">@PS.Message</p>
-                        <edit-link>
-                            <edit-a controller="Purposes" route-id="@PS.PurposeID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Purposes" route-id="@PS.PurposeID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     }
                 </div>
             </div>
         </edit-container>
-        <edit-container>
+        <edit-container is-visible="User.Identity.IsAuthenticated">
             <div class="row purpose-stats">
                 <div class="col-xs-12">
                     @foreach (Purpose PS in Model.Purpose)
                     {
                         <p class="editArea">@PS.Content</p>
-                        <edit-link>
-                            <edit-a controller="Purposes" route-id="@PS.PurposeID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Purposes" route-id="@PS.PurposeID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     }
                 </div>
@@ -65,13 +65,13 @@
     </section>
     <section class="row purpose-user">
         <div class="container text-center row">
-            <a class="editText" asp-controller="Links" asp-action="Create">Add New Link</a>
+            <add-component controller="Links" is-visible="User.Identity.IsAuthenticated">Add New Link</add-component>
         </div>
         <div class="boxes">
             @foreach (Link Lk in Model.Link)
             {
                 <div class="col-xs-3 panel ">
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <article class="editArea">
                             <section class="panel-img-container">
                                 <img src="@Lk.Image" alt="Volunteer" class="panel-img" />
@@ -88,8 +88,8 @@
                                 </p>
                             </section>
                         </article>
-                        <edit-link>
-                            <edit-a controller="Links" route-id="@Lk.LinkID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Links" route-id="@Lk.LinkID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 </div>

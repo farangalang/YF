@@ -4,14 +4,14 @@
         <div class="col-xs-12">
             @foreach (Services SV in Model.Services)
             {
-                <edit-container>
-                    <div class="editArea">
+                <edit-container is-visible="User.Identity.IsAuthenticated">
+                    <edit-area is-visible="User.Identity.IsAuthenticated">
                         <h4 class="services-heading" ng-model="ServicesTitle">@SV.Title</h4>
                         <p class="mont-light-light-22 about-services" ng-model="ServicesSubtitle">@SV.Header</p>
-                    </div>
-                    <edit-link>
-                        <edit-a controller="Services" route-id="@SV.ID"></edit-a>
-                    </edit-link>
+                    </edit-area>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Services" route-id="@SV.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
+                        </edit-link>
                 </edit-container>
             }
 
@@ -22,15 +22,15 @@
 @* Panels for Services Offered *@
 
 <section>
-    <div class="container text-center row">
-        <a class="editText" asp-controller="Services_Message" asp-action="Create">Add New Service</a>
+    <div class="container text-center row" >
+        <add-component controller="Services_Message" is-visible="User.Identity.IsAuthenticated">Add New Service</add-component>
     </div>
     <div class="row">
         <div class="boxes">
             @foreach (Services_Message SM in Model.Services_Message)
             {
                 <div class="col-xs-3 panel ">
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <article class="editArea">
                             <section class="panel-img-container">
                                 <img src="@SM.MessageImage" alt="House" class="panel-img" />
@@ -47,8 +47,8 @@
                                 </p>
                             </section>
                         </article>
-                        <edit-link>
-                            <edit-a controller="Services_Message" route-id="@SM.ID" class="editText"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Services_Message" route-id="@SM.ID" class="editText" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 </div>
