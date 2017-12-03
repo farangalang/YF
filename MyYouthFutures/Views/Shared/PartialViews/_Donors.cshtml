@@ -3,7 +3,7 @@
         <div class="col-xs-6 text" id="Donor">
             <h2 class="h2style1">Donors</h2>
         </div>
-        <a class="editText" asp-controller="Doners" asp-action="Create">Add Donor</a>
+        <add-component controller="Doners" is-visible="User.Identity.IsAuthenticated">Add Donor</add-component>
     </div>
 
 </div>
@@ -20,14 +20,14 @@
             {
                 if (d.Doner_Type.Equals("Plantinum"))
                 {
-                <edit-container>
+                <edit-container is-visible="User.Identity.IsAuthenticated">
                     <div class="col-xs-4 donor_box plat">
                         <div class="editArea">
                             <p class="donor_name">@d.Doner_Name</p>
                             <p class="year">@d.Doner_year</p>
                         </div>
-                        <edit-link>
-                            <edit-a controller="Doners" route-id="@d.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Doners" route-id="@d.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </div>
                 </edit-container>
@@ -48,14 +48,14 @@
             {
                 if (d.Doner_Type.Equals("Gold"))
                 {
-                <edit-container>
+                <edit-container is-visible="User.Identity.IsAuthenticated">
                     <div class="col-xs-4 donor_box gold">
                         <div class="editArea">
                             <p class="donor_name">@d.Doner_Name</p>
                             <p class="year">@d.Doner_year</p>
                         </div>
-                        <edit-link>
-                            <edit-a controller="Doners" route-id="@d.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Doners" route-id="@d.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </div>
                 </edit-container>
@@ -77,14 +77,14 @@
             {
                 if (d.Doner_Type.Equals("Silver"))
                 {
-                <edit-container>
+                <edit-container is-visible="User.Identity.IsAuthenticated">
                     <div class="col-xs-4 donor_box silver">
                         <div class="editArea">
                             <p class="donor_name">@d.Doner_Name</p>
                             <p class="year">@d.Doner_year</p>
                         </div>
-                        <edit-link>
-                            <edit-a controller="Doners" route-id="@d.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Doners" route-id="@d.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </div>
                 </edit-container>
@@ -104,14 +104,14 @@
             {
                 if (d.Doner_Type.Equals("Bronze"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="col-xs-4 donor_box bronze">
                             <div class="editArea">
                                 <p class="donor_name">@d.Doner_Name</p>
                                 <p class="year">@d.Doner_year</p>
                             </div>
-                            <edit-link>
-                                <edit-a controller="Doners" route-id="@d.ID"></edit-a>
+                            <edit-link is-visible="User.Identity.IsAuthenticated">
+                                <edit-a controller="Doners" route-id="@d.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                             </edit-link>
                         </div>
                     </edit-container>
