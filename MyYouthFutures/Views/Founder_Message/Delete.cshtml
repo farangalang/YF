@@ -3,31 +3,32 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<div class="sidepage delete">
+    <h2>Delete</h2>
 
-<h2>Delete</h2>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Founder_Message</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.founderImage)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.founderImage)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.founderSubTetxt)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.founderSubTetxt)
+            </dd>
+        </dl>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Founder_Message</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.founderImage)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.founderImage)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.founderSubTetxt)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.founderSubTetxt)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="ID" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="ID" />
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
 </div>

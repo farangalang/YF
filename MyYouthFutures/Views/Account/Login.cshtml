@@ -1,22 +1,27 @@
-﻿@model MyYouthFutures.ViewModel.LoginViewModel
+﻿    @model MyYouthFutures.ViewModel.LoginViewModel
 
-<div class="row">
-    <div class="col-md-4 col-md-offset-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly"></div>
-            <div class="form-group">
-                <label asp-for="Username">Username</label>
-                <input asp-for="Username" value="test@email.com"/>
-                <span asp-validation-for="Username"></span>
+    <div id="login" class="sidepage">
+        <div class="case1">
+            <div class="case2">
+                <div class="row"> <!-- class="col-md-4 col-md-offset-4">-->
+                    <form method="post" class="col-xs-12">
+                        <label id="continue" class="col-xs-12">Please Login to Continue</label>
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <div class="form-group row">
+                            <label asp-for="Username" class="col-xs-12">Username</label>
+                            <input asp-for="Username" value="test@email.com" class="col-xs-12"/>
+                            <span asp-validation-for="Username" class="col-xs-12"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="Password" class="col-xs-12">Password</label>
+                            <input asp-for="Password" value="P@ssw0rd!" class="col-xs-12"/>
+                            <span asp-validation-for="Password" class="col-xs-12"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn btn-success col-xs-12" />
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Password">Password</label>
-                <input asp-for="Password" value ="P@ssw0rd!"/>
-                <span asp-validation-for="Password"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-success"/>
-            </div>
-        </form>
+        </div>
     </div>
-</div>

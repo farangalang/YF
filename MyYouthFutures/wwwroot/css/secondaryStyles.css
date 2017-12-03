@@ -583,3 +583,116 @@
     #noPage h4 {
         padding: 0px 80px 0px 80px;
     }
+
+/*
+    Side pages (login, create, delete, etc.)
+*/
+
+.sidepage {
+    background-color: #ffffff;
+    //padding: 50px 0px 50px 0px;
+    padding: 3% 5%;
+}
+
+    .sidepage form {
+        float: none;
+        margin: 0 auto;
+    }
+
+    .sidepage h2 {
+        color: #583b13;
+    }
+
+    .sidepage input[type=text], .modal input[type=password], .modal select {
+        height: 35px;
+       // margin: 2px 2px 15px 2px;
+        padding: 2px;
+        font-size: medium;
+    }
+
+    .sidepage label {
+        font-size: large;
+        vertical-align: text-bottom;
+        margin: 5px 0 0 0;
+        padding: 0;
+        color: #86ad38;
+    }
+
+    .sidepage #continue {
+        color: #583b13;
+        text-align: center;
+        font-size: x-large;
+    }
+
+    .sidepage .row{
+        padding: 15px 0px 15px 0px;
+    }
+
+    .sidepage .btn{
+        font-size: large;
+        font-weight: bold
+    }
+
+    /*.sidepage a{
+        border: solid;
+        padding: 2px;
+        margin: 10px;
+    }*/
+
+/*
+    Login
+*/
+
+.sidepage#login {
+    background-color: gray;
+}
+
+.case1 {
+    /*border: 5px solid #583b13;
+    padding: 5px;*/
+    margin: 4% 35% 5% 35%;
+    padding: 2px;
+    background-color: white;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #583b13; /*brown*/
+    font-weight: bold;
+    color: #583b13;
+}
+
+.case2 {
+    padding: 10px 5px 10px 5px;
+    background-color: white;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    border-style: solid;
+    border-color: #86ad38; /*green*/
+}
+
+/*
+    Edit
+*/
+.edit{
+    padding: 5% 20% 5% 20%;
+}
+
+
+
+/*
+    Create
+*/
+
+/*
+    Delete 
+*/
+
+/*
+    Details
+*/
+
+/*
+    List/Index
+*/
