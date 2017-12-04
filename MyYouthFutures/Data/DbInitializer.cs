@@ -78,7 +78,7 @@ namespace MyYouthFutures.Data
             {
                 new Link{Image="/images/heart_hand.svg", Title="Apply to Volunteer", Message="Make your mark where it matters. Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse.", Hyperlink="Volunteer Now >"},
                 new Link{Image="/images/girl_icon.png", Title="Youth Stories", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="Read the Stories >"},
-                new Link{Image="/images/calendar_icon.png", Title="Events", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="View All Events >"}
+                new Link{Image="/images/calendar_icon.png", TargetControler = "Home",TargetAction = "About",TargetFragment ="Calendar", Title="Events", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="View All Events >"}
             };
             _ctx.Links.AddRange(links);
 
@@ -88,7 +88,7 @@ namespace MyYouthFutures.Data
                 {
                     Title="Our Purpose",
                     Message ="To provide unaccompanied, runaway and homeless youth with a safe and nurturing environment where they can develop the needed skills to become active, healthy, successful members of our future world.",
-                    Content ="7,085 MEALS SERVED. 511 DROP-IN SERVICES.245 STREET OUTREACH HOURS. 64 SHELTERED YOUTH."
+                    Content ="7,085 MEALS SERVED. 511 DROP-IN SERVICES.245 STREET OUTREACH HOURS. 64 SHELTERED YOUTH.",
                 }
             };
             _ctx.Purposes.AddRange(purposes);
@@ -96,9 +96,9 @@ namespace MyYouthFutures.Data
             var services_messages = new Services_Message[]
             {
                 //TODO add the alt image to the db
-                new Services_Message{MessageImage="/images/house_icon.png", MessageHeader="Overnight Shelter", Message="Located in the heart of downtown Ogden, Utah, Youth Futures provides emergency shelter, temporary residence and supportive services for runaway, homeless, unaccompanied and at-risk youth ages 12-17. The shelter is open 24 hours per day."},
+                new Services_Message{TargetControler="Home",TargetAction="About",TargetFragment="history",MessageImage="/images/house_icon.png", MessageHeader="Overnight Shelter", Message="Located in the heart of downtown Ogden, Utah, Youth Futures provides emergency shelter, temporary residence and supportive services for runaway, homeless, unaccompanied and at-risk youth ages 12-17. The shelter is open 24 hours per day."},
                 new Services_Message{MessageImage="/images/door_icon.png", MessageHeader="Drop-in Services", Message="Available to any youth ages 12-18. Drop-in services allow for the youth to access food, clothing, hygiene items, laundry facilities, computer stations, and case management. Drop-in hours are 6:30 am to 8:00 pm every day of the week."},
-                new Services_Message{MessageImage="/images/van_icon.png", MessageHeader="Street Outreach", Message="Youth Futures’ Street Outreach is conducted once per week and provides outreach and crisis services to youth in Ogden City, Utah."}
+                new Services_Message{TargetControler="Home",TargetAction="About",TargetFragment="outreachBanner",MessageImage="/images/van_icon.png", MessageHeader="Street Outreach", Message="Youth Futures’ Street Outreach is conducted once per week and provides outreach and crisis services to youth in Ogden City, Utah."}
             };
             _ctx.Services_Messages.AddRange(services_messages);
             
@@ -244,6 +244,18 @@ namespace MyYouthFutures.Data
                 new Help_Panel{Content_Type="panelText3",Content_Text="Donate your time as a volunteer to help with needs around the shelter! Sign up here."}
             };
             _ctx.Help_Panel.AddRange(Helper_Messages);
+
+            var Events_List = new Events[]
+            {
+                new Events{EventTitle="Fundrasing Event",What="TBD",When="03/12/2017",Where="TDB",Info="TBD"},
+                new Events{EventTitle="Charity Dinner",What="Weber State Youth Charity Dinner",When="03/8/2017",Where="Weber State University, Browning Center, Ballroom C",Info="Youth Futures is hosting it's 6th Annual Charity Dinner at the Meydenbauer Center in Bellevue, WA. Join us for an evening of glamor and geekery, hosted by Mike "+"Gabe"+"Krahulik and Jerry "+"Tycho"+" Holkins of Penny Arcade and Featuring auction items from every corner of the nerd (and non-nerd) universe"},
+                new Events{EventTitle="Homeless Awareness Picnic",What="TBD",When="03/3/2017",Where="TDB",Info="TBD"},
+                new Events{EventTitle="Charity Auction",What="TBD",When="04/28/2017",Where="TDB",Info="TBD"},
+                new Events{EventTitle="Film Fest",What="TBD",When="04/14/2017",Where="TDB",Info="TBD"},
+                new Events{EventTitle="Art Show Fundrasier",What="TBD",When="04/4/2017",Where="TDB",Info="TBD"}
+            };
+            _ctx.Events.AddRange(Events_List);
+
 
             _ctx.SaveChanges();
         }
