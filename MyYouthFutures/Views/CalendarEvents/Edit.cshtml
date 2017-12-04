@@ -1,5 +1,10 @@
 ﻿@model MyYouthFutures.Models.CalendarEvent
+@{
+    ViewData["Title"] = "Edit";
+}
+
 <div class="sidepage edit">
+    <h2>Edit</h2>
     <h4>CalendarEvent</h4>
     <hr />
     <div class="row sidepage-content">
@@ -44,3 +49,7 @@
         <a asp-controller="Home" asp-action="About" asp-action="Calendar" class="btn btn-default">Back to Page</a>
     </div>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

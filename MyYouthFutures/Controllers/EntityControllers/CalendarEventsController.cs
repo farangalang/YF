@@ -8,27 +8,24 @@ using Microsoft.EntityFrameworkCore;
 using MyYouthFutures.Data;
 using MyYouthFutures.Models;
 
-/// <summary>
-/// this class holds all the list items broken up by type for the various lists in the about vie
-/// </summary>
-namespace MyYouthFutures.Controllers
+namespace MyYouthFutures.Controllers.EntityControllers
 {
-    public class List_ItemController : Controller
+    public class CalendarEventsController : Controller
     {
         private readonly YouthContext _context;
 
-        public List_ItemController(YouthContext context)
+        public CalendarEventsController(YouthContext context)
         {
             _context = context;
         }
 
-        // GET: List_Item
+        // GET: CalendarEvents
         public async Task<IActionResult> Index()
         {
-            return View(await _context.List_Item.ToListAsync());
+            return View(await _context.CalendarEvent.ToListAsync());
         }
 
-        // GET: List_Item/Details/5
+        // GET: CalendarEvents/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,63 +33,62 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var list_Item = await _context.List_Item
-                .SingleOrDefaultAsync(m => m.ID == id);
-            if (list_Item == null)
+            var calendarEvent = await _context.CalendarEvent
+                .SingleOrDefaultAsync(m => m.id == id);
+            if (calendarEvent == null)
             {
                 return NotFound();
             }
 
-            return View(list_Item);
+            return View(calendarEvent);
         }
 
-        // GET: List_Item/Create
+        // GET: CalendarEvents/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: List_Item/Create
+        // POST: CalendarEvents/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,TypeOfList,LiTest")] List_Item list_Item)
+        public async Task<IActionResult> Create([Bind("id,name,eventTitle,datetime,location,info")] CalendarEvent calendarEvent)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(list_Item);
+                _context.Add(calendarEvent);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(list_Item);
+            return View(calendarEvent);
         }
 
-        // GET: List_Item/Edit/5
-        public async Task<IActionResult> Edit(string listName)
+        // GET: CalendarEvents/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
-            if (listName == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            //var list_Item = await _context.List_Item.SingleOrDefaultAsync(m => m.ID == id);
-            var listItem = await _context.List_Item.SingleOrDefaultAsync(m => m.TypeOfList == listName);
-            if (listItem == null)
+            var calendarEvent = await _context.CalendarEvent.SingleOrDefaultAsync(m => m.id == id);
+            if (calendarEvent == null)
             {
                 return NotFound();
             }
-            return View(listItem);
+            return View(calendarEvent);
         }
 
-        // POST: List_Item/Edit/5
+        // POST: CalendarEvents/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,TypeOfList,LiTest")] List_Item list_Item)
+        public async Task<IActionResult> Edit(int id, [Bind("id,name,eventTitle,datetime,location,info")] CalendarEvent calendarEvent)
         {
-            if (id != list_Item.ID)
+            if (id != calendarEvent.id)
             {
                 return NotFound();
             }
@@ -101,12 +97,12 @@ namespace MyYouthFutures.Controllers
             {
                 try
                 {
-                    _context.Update(list_Item);
+                    _context.Update(calendarEvent);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!List_ItemExists(list_Item.ID))
+                    if (!CalendarEventExists(calendarEvent.id))
                     {
                         return NotFound();
                     }
@@ -117,10 +113,10 @@ namespace MyYouthFutures.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(list_Item);
+            return View(calendarEvent);
         }
 
-        // GET: List_Item/Delete/5
+        // GET: CalendarEvents/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -128,30 +124,30 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var list_Item = await _context.List_Item
-                .SingleOrDefaultAsync(m => m.ID == id);
-            if (list_Item == null)
+            var calendarEvent = await _context.CalendarEvent
+                .SingleOrDefaultAsync(m => m.id == id);
+            if (calendarEvent == null)
             {
                 return NotFound();
             }
 
-            return View(list_Item);
+            return View(calendarEvent);
         }
 
-        // POST: List_Item/Delete/5
+        // POST: CalendarEvents/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var list_Item = await _context.List_Item.SingleOrDefaultAsync(m => m.ID == id);
-            _context.List_Item.Remove(list_Item);
+            var calendarEvent = await _context.CalendarEvent.SingleOrDefaultAsync(m => m.id == id);
+            _context.CalendarEvent.Remove(calendarEvent);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool List_ItemExists(int id)
+        private bool CalendarEventExists(int id)
         {
-            return _context.List_Item.Any(e => e.ID == id);
+            return _context.CalendarEvent.Any(e => e.id == id);
         }
     }
 }

@@ -91,5 +91,11 @@ namespace MyYouthFutures.Data
             return _ctx.Staff_Panel
                 .ToList();
         }
+
+        public IEnumerable<Events> GetAllEvents()
+        {
+            return _ctx.Events
+                .ToList();
+        }
     }
 }
