@@ -8,7 +8,7 @@ namespace MyYouthFutures.Models
     public class CalendarEvent
     {
         public int id { get; set; }
-        public int name { get; set; }
+        public string name { get; set; }
         public string eventTitle { get; set; }
         public DateTime datetime { get; set; }
         public string location { get; set; }
