@@ -88,7 +88,10 @@ namespace MyYouthFutures.Data
                 {
                     Title="Our Purpose",
                     Message ="To provide unaccompanied, runaway and homeless youth with a safe and nurturing environment where they can develop the needed skills to become active, healthy, successful members of our future world.",
-                    Content ="7,085 MEALS SERVED. 511 DROP-IN SERVICES.245 STREET OUTREACH HOURS. 64 SHELTERED YOUTH."
+                    Content ="7,085 MEALS SERVED. 511 DROP-IN SERVICES.245 STREET OUTREACH HOURS. 64 SHELTERED YOUTH.",
+                    TargetControler = "Home",
+                    TargetAction = "About",
+                    TargetFragment ="Calendar"
                 }
             };
             _ctx.Purposes.AddRange(purposes);
