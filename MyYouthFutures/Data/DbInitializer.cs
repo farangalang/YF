@@ -78,7 +78,7 @@ namespace MyYouthFutures.Data
             {
                 new Link{Image="/images/heart_hand.svg", Title="Apply to Volunteer", Message="Make your mark where it matters. Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse.", Hyperlink="Volunteer Now >"},
                 new Link{Image="/images/girl_icon.png", Title="Youth Stories", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="Read the Stories >"},
-                new Link{Image="/images/calendar_icon.png", Title="Events", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="View All Events >"}
+                new Link{Image="/images/calendar_icon.png", TargetControler = "Home",TargetAction = "About",TargetFragment ="Calendar", Title="Events", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="View All Events >"}
             };
             _ctx.Links.AddRange(links);
 
@@ -88,7 +88,7 @@ namespace MyYouthFutures.Data
                 {
                     Title="Our Purpose",
                     Message ="To provide unaccompanied, runaway and homeless youth with a safe and nurturing environment where they can develop the needed skills to become active, healthy, successful members of our future world.",
-                    Content ="7,085 MEALS SERVED. 511 DROP-IN SERVICES.245 STREET OUTREACH HOURS. 64 SHELTERED YOUTH."
+                    Content ="7,085 MEALS SERVED. 511 DROP-IN SERVICES.245 STREET OUTREACH HOURS. 64 SHELTERED YOUTH.",
                 }
             };
             _ctx.Purposes.AddRange(purposes);
@@ -96,9 +96,9 @@ namespace MyYouthFutures.Data
             var services_messages = new Services_Message[]
             {
                 //TODO add the alt image to the db
-                new Services_Message{MessageImage="/images/house_icon.png", MessageHeader="Overnight Shelter", Message="Located in the heart of downtown Ogden, Utah, Youth Futures provides emergency shelter, temporary residence and supportive services for runaway, homeless, unaccompanied and at-risk youth ages 12-17. The shelter is open 24 hours per day."},
+                new Services_Message{TargetControler="Home",TargetAction="About",TargetFragment="history",MessageImage="/images/house_icon.png", MessageHeader="Overnight Shelter", Message="Located in the heart of downtown Ogden, Utah, Youth Futures provides emergency shelter, temporary residence and supportive services for runaway, homeless, unaccompanied and at-risk youth ages 12-17. The shelter is open 24 hours per day."},
                 new Services_Message{MessageImage="/images/door_icon.png", MessageHeader="Drop-in Services", Message="Available to any youth ages 12-18. Drop-in services allow for the youth to access food, clothing, hygiene items, laundry facilities, computer stations, and case management. Drop-in hours are 6:30 am to 8:00 pm every day of the week."},
-                new Services_Message{MessageImage="/images/van_icon.png", MessageHeader="Street Outreach", Message="Youth Futures’ Street Outreach is conducted once per week and provides outreach and crisis services to youth in Ogden City, Utah."}
+                new Services_Message{TargetControler="Home",TargetAction="About",TargetFragment="outreachBanner",MessageImage="/images/van_icon.png", MessageHeader="Street Outreach", Message="Youth Futures’ Street Outreach is conducted once per week and provides outreach and crisis services to youth in Ogden City, Utah."}
             };
             _ctx.Services_Messages.AddRange(services_messages);
             

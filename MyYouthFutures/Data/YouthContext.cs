@@ -29,7 +29,6 @@ namespace MyYouthFutures.Data
         public DbSet<HomeTitle> HomeTitle { get; set; }
         public DbSet<Services> Services { get; set; }
         public DbSet<StoreUser> StoreUsers { get; set; }
-        public DbSet<MyYouthFutures.Models.CalendarEvent> CalendarEvent { get; set; }
-        public DbSet<MyYouthFutures.Models.Events> Events { get; set; } //models the events section on the About Page
+        public DbSet<Events> Events { get; set; } //models the events section on the About Page
     }
 }

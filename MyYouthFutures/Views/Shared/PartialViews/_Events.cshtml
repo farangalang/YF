@@ -1,5 +1,4 @@
-﻿
-@*
+﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
@@ -7,19 +6,19 @@
     <div class="row calendarHeader">
         <div class="col-xs-6" id="calendar">
             <h2 class="h2style1">CALENDAR</h2>
-            <a class="editText" asp-controller="CalendarEvent" asp-action="Create">Add Calendar Event</a>
+            <add-component controller="Events" is-visible="User.Identity.IsAuthenticated">Add Calendar Event</add-component>
         </div>
     </div>
+</div>
+<!--Accordian-->
+<div class="calendarEvents">
 
-    <!--Accordian-->
-    <div class="calendarEvents">
-        
-        @*Get all events per month*@
-        @{ 
-            string[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-        }
+    @*Get all events per month*@
+    @{
+        string[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+    }
 
-        @*@foreach (CalendarEvent ev in Model.CalendarEvent)
+    @*@foreach (CalendarEvent ev in Model.CalendarEvent)
         {
             for (int i = 0; i < 12; i++)
             {
@@ -64,40 +63,44 @@
         }*@
 
 
-        <!--Temporary, other one doesn't work yet-->
-        <div class="row">
-            <button class="btn btn-default col-xs-12" data-toggle="collapse" data-target="#event_1" aria-expanded="false" aria-controls="cE">
-                <span class="col-xs-1"><</span>
-                <span class="col-xs-push-1 col-xs-8">name</span>
-                <span class="col-xs-3">Date</span>
-            </button>
-            <div class="collapse col-xs-12" id="event_1">
-                <div class="row">
-                    <h5 class="col-xs-push-1 col-xs-1">What</h5>
-                    <h5 class="col-xs-push-1 col-xs-10 title">eventTitle</h5>
-                </div>
+    <!--Temporary, other one doesn't work yet-->
+    @foreach (Events ev in Model.Events)
+    {
 
-                <div class="row">
-                    <h5 class="col-xs-push-1 col-xs-1">When</h5>
-                    <h5 class="col-xs-push-1 col-xs-10">datetime</h5>
-                </div>
+        <edit-container is-visible="User.Identity.IsAuthenticated">
+            <div class="row editArea">
+                <button class="btn btn-default col-xs-12" data-toggle="collapse" data-target="#event_1" aria-expanded="false" aria-controls="cE">
+                    <span class="col-xs-1"><</span>
+                    <span class="col-xs-push-1 col-xs-8">@ev.EventTitle</span>
+                    <span class="col-xs-3">Date</span>
+                </button>
+                <div class="collapse col-xs-12" id="event_1">
+                    <div class="row">
+                        <h5 class="col-xs-push-1 col-xs-1">@ev.What</h5>
+                        <h5 class="col-xs-push-1 col-xs-10 title">@ev.EventTitle</h5>
+                    </div>
 
-                <div class="row">
-                    <h5 class="col-xs-push-1 col-xs-1">Where</h5>
-                    <h5 class="col-xs-push-1 col-xs-10">location</h5>
-                </div>
+                    <div class="row">
+                        <h5 class="col-xs-push-1 col-xs-1">@ev.When</h5>
+                        @*<h5 class="col-xs-push-1 col-xs-10">datetime</h5>*@
+                    </div>
 
-                <div class="row">
-                    <h5 class="col-xs-push-1 col-xs-1">Info</h5>
-                    <h5 class="col-xs-push-1 col-xs-10">info</h5>
+                    <div class="row">
+                        <h5 class="col-xs-push-1 col-xs-1">@ev.Where</h5>
+                        @*<h5 class="col-xs-push-1 col-xs-10">location</h5>*@
+                    </div>
+
+                    <div class="row">
+                        <h5 class="col-xs-push-1 col-xs-1">@ev.Info</h5>
+                        @*<h5 class="col-xs-push-1 col-xs-10">info</h5>*@
+                    </div>
                 </div>
+                <edit-link is-visible="User.Identity.IsAuthenticated">
+                    <edit-a controller="Events" route-id="@ev.ID" class="editText" is-visible="User.Identity.IsAuthenticated"></edit-a>
+
+                </edit-link>
+
             </div>
-            <edit-link>
-                <edit-a controller="CalendarEvent" route-id="id"></edit-a>
-            </edit-link>
-        </div>
-
-        <div>
-        </div>
-    </div>
+        </edit-container>
+    }
 </div>

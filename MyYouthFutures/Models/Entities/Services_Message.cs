@@ -19,6 +19,9 @@ namespace MyYouthFutures.Models
         public string Message { get; set; }
         [Display(Name = "Link to Page")]
         public string Link { get; set; }
+        public string TargetControler { get; set; }
+        public string TargetAction { get; set; }
+        public string TargetFragment { get; set; }
         public StoreUser User { get; set; }
     }
 }
