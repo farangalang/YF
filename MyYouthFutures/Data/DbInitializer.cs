@@ -78,7 +78,7 @@ namespace MyYouthFutures.Data
             {
                 new Link{Image="/images/heart_hand.svg", Title="Apply to Volunteer", Message="Make your mark where it matters. Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse.", Hyperlink="Volunteer Now >"},
                 new Link{Image="/images/girl_icon.png", Title="Youth Stories", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="Read the Stories >"},
-                new Link{Image="/images/calendar_icon.png", Title="Events", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="View All Events >"}
+                new Link{Image="/images/calendar_icon.png", TargetControler = "Home",TargetAction = "About",TargetFragment ="Calendar", Title="Events", Message="Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna.", Hyperlink="View All Events >"}
             };
             _ctx.Links.AddRange(links);
 
@@ -89,9 +89,6 @@ namespace MyYouthFutures.Data
                     Title="Our Purpose",
                     Message ="To provide unaccompanied, runaway and homeless youth with a safe and nurturing environment where they can develop the needed skills to become active, healthy, successful members of our future world.",
                     Content ="7,085 MEALS SERVED. 511 DROP-IN SERVICES.245 STREET OUTREACH HOURS. 64 SHELTERED YOUTH.",
-                    TargetControler = "Home",
-                    TargetAction = "About",
-                    TargetFragment ="Calendar"
                 }
             };
             _ctx.Purposes.AddRange(purposes);
