@@ -245,6 +245,18 @@ namespace MyYouthFutures.Data
             };
             _ctx.Help_Panel.AddRange(Helper_Messages);
 
+            var Events_List = new Events[]
+            {
+                new Events{EventTitle="Fundrasing Event",What="TBD",When="03/12/2017",Where="TDB",Info="TBD"},
+                new Events{EventTitle="Charity Dinner",What="Weber State Youth Charity Dinner",When="03/8/2017",Where="Weber State University, Browning Center, Ballroom C",Info="Youth Futures is hosting it's 6th Annual Charity Dinner at the Meydenbauer Center in Bellevue, WA. Join us for an evening of glamor and geekery, hosted by Mike "+"Gabe"+"Krahulik and Jerry "+"Tycho"+" Holkins of Penny Arcade and Featuring auction items from every corner of the nerd (and non-nerd) universe"},
+                new Events{EventTitle="Homeless Awareness Picnic",What="TBD",When="03/3/2017",Where="TDB",Info="TBD"},
+                new Events{EventTitle="Charity Auction",What="TBD",When="04/28/2017",Where="TDB",Info="TBD"},
+                new Events{EventTitle="Film Fest",What="TBD",When="04/14/2017",Where="TDB",Info="TBD"},
+                new Events{EventTitle="Art Show Fundrasier",What="TBD",When="04/4/2017",Where="TDB",Info="TBD"}
+            };
+            _ctx.Events.AddRange(Events_List);
+
+
             _ctx.SaveChanges();
         }
     }
