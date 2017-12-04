@@ -11,12 +11,12 @@
             {
                 if (hp.Content_Type.Equals("title"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <p>@hp.Content_Text</p>
                         </div>
-                        <edit-link>
-                            <edit-a controller="Help_Panel" route-id="@hp.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Help_Panel" route-id="@hp.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
@@ -29,12 +29,12 @@
             {
                 if (hp.Content_Type.Equals("subTitle"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <p class="mont_regular_22_darkgray">@hp.Content_Text</p>
                         </div>
-                        <edit-link>
-                            <edit-a controller="Help_Panel" route-id="@hp.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Help_Panel" route-id="@hp.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
@@ -47,23 +47,23 @@
             {
                 if (hp.Content_Type.Equals("image1"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <img src="@hp.Content_Text" title="Dollar" alt="Dollar">
                         </div>
-                        <edit-link>
-                            <edit-a controller="Help_Panel" route-id="@hp.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Help_Panel" route-id="@hp.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
                 if (hp.Content_Type.Equals("panelText1"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <p class="vol_p mont_light_18_darkgray">@hp.Content_Text</p>
                         </div>
-                        <edit-link>
-                            <edit-a controller="Help_Panel" route-id="@hp.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Help_Panel" route-id="@hp.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
@@ -74,23 +74,23 @@
             {
                 if (hp.Content_Type.Equals("image2"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <img src="@hp.Content_Text" title="Dollar" alt="Dollar">
                         </div>
-                        <edit-link>
-                            <edit-a controller="Help_Panel" route-id="@hp.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Help_Panel" route-id="@hp.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
                 if (hp.Content_Type.Equals("panelText2"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <p class="vol_p mont_light_18_darkgray">@hp.Content_Text</p>
                         </div>
-                        <edit-link>
-                            <edit-a controller="Help_Panel" route-id="@hp.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Help_Panel" route-id="@hp.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
@@ -101,23 +101,23 @@
             {
                 if (hp.Content_Type.Equals("image3"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <img src="@hp.Content_Text" title="Dollar" alt="Dollar">
                         </div>
-                        <edit-link>
-                            <edit-a controller="Help_Panel" route-id="@hp.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Help_Panel" route-id="@hp.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }
                 if (hp.Content_Type.Equals("panelText3"))
                 {
-                    <edit-container>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <p class="vol_p mont_light_18_darkgray">@hp.Content_Text</p>
                         </div>
-                        <edit-link>
-                            <edit-a controller="Help_Panel" route-id="@hp.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Help_Panel" route-id="@hp.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
                 }

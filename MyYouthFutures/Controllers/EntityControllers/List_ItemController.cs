@@ -69,19 +69,20 @@ namespace MyYouthFutures.Controllers
         }
 
         // GET: List_Item/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string listName)
         {
-            if (id == null)
+            if (listName == null)
             {
                 return NotFound();
             }
 
-            var list_Item = await _context.List_Item.SingleOrDefaultAsync(m => m.ID == id);
-            if (list_Item == null)
+            //var list_Item = await _context.List_Item.SingleOrDefaultAsync(m => m.ID == id);
+            var listItem = await _context.List_Item.SingleOrDefaultAsync(m => m.TypeOfList == listName);
+            if (listItem == null)
             {
                 return NotFound();
             }
-            return View(list_Item);
+            return View(listItem);
         }
 
         // POST: List_Item/Edit/5

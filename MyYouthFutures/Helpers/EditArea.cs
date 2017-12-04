@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace MyYouthFutures.Helpers
 {
-    public class EditContainer : TagHelper
+    public class EditArea : TagHelper
     {
         public bool IsVisible { get; set; } = true;
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -15,13 +15,14 @@ namespace MyYouthFutures.Helpers
             { 
                 output.TagName = "div";
                 output.TagMode = TagMode.StartTagAndEndTag;
+                output.Attributes.SetAttribute("is-visible", "User.Identity.IsAuthenticated");
             }
             else
             {
                 output.TagName = "div";
                 output.TagMode = TagMode.StartTagAndEndTag;
                 output.Attributes.SetAttribute("is-visible", "User.Identity.IsAuthenticated");
-                output.Attributes.SetAttribute("class", "editOutsideContainer");
+                output.Attributes.SetAttribute("class", "editArea");
             }
             return base.ProcessAsync(context, output);
         }

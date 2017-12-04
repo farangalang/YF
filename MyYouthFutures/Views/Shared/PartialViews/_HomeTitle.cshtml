@@ -1,5 +1,5 @@
 ﻿@* HOME TITLE MAIN*@
-<edit-container>
+<edit-container is-visible="User.Identity.IsAuthenticated">
     <section class="container-fluid main-header">
         <div class="row">
             <div class="col-xs-6 header-box">
@@ -8,8 +8,8 @@
                     @foreach (HomeTitle HT in Model.HomeTitle)
                     {
                         <p class="header-text-greeting editArea">@HT.Title</p>
-                        <edit-link>
-                            <edit-a controller="HomeTitles" route-id="@HT.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="HomeTitles" route-id="@HT.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     }
                 </div>

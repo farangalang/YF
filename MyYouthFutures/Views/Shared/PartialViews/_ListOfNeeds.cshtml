@@ -1,4 +1,5 @@
-﻿<div class="container-fluid needs">
+﻿@using Microsoft.EntityFrameworkCore
+<div class="container-fluid needs">
     <div class="row donate_help">
         <div class="col-xs-12">
             <p>LIST OF NEEDS</p>
@@ -11,8 +12,8 @@
                 (In order of priority)
             </p>
             <ul>
-                <edit-container>
-                    <div class=" editArea">
+                <edit-container is-visible="User.Identity.IsAuthenticated">
+                    <div class=" editArea" >
                         @foreach (List_Item outlINeeds in Model.List_item)
                         {
                             if (outlINeeds.TypeOfList.Equals("mostImportantNeeds"))
@@ -21,8 +22,8 @@
                             }
                         }
                     </div>
-                    <edit-link>
-                        <a class="editText" asp-controller="List_Item" asp-action="Index">Edit</a>
+                    <edit-link is-visible="User.Identity.IsAuthenticated">
+                        <edit-a-list controller="List_Item" is-visible="User.Identity.IsAuthenticated"></edit-a-list>
                     </edit-link>
                 </edit-container>
             </ul>
@@ -30,7 +31,7 @@
         <div class="col-xs-12 col-md-4 needs_list">
             <p class="needs_subheader">MISC. NEEDS</p>
             <ul>
-                <edit-container>
+                <edit-container is-visible="User.Identity.IsAuthenticated">
                     <div class="editArea">
                         @foreach (List_Item outLiMNeeds in Model.List_item)
                         {
@@ -40,14 +41,14 @@
                             }
                         }
                     </div>
-                    <edit-link>
-                        <a class="editText" asp-controller="List_Item" asp-action="Index">Edit</a>
+                    <edit-link is-visible="User.Identity.IsAuthenticated">
+                        <edit-a-list controller="List_Item" is-visible="User.Identity.IsAuthenticated"></edit-a-list>
                     </edit-link>
                 </edit-container>
             </ul>
             <p class="needs_subheader">GIFT CARDS FOR</p>
             <ul>
-                <edit-container>
+                <edit-container is-visible="User.Identity.IsAuthenticated">
                     <div class="editArea">
                         @foreach (List_Item outLiGCards in Model.List_item)
                         {
@@ -57,8 +58,8 @@
                             }
                         }
                     </div>
-                    <edit-link>
-                        <a class="editText" asp-controller="List_Item" asp-action="Index">Edit</a>
+                    <edit-link is-visible="User.Identity.IsAuthenticated">
+                        <edit-a-list controller="List_Item" is-visible="User.Identity.IsAuthenticated"></edit-a-list>
                     </edit-link>
                 </edit-container>
             </ul>
@@ -66,7 +67,7 @@
         <div class="col-xs-12 col-md-4 needs_list">
             <p class="needs_subheader">HOUSEHOLD FURNISHINGS NEEDS</p>
             <ul>
-                <edit-container>
+                <edit-container is-visible="User.Identity.IsAuthenticated">
                     <div class="editArea">
                         @foreach (List_Item outLiHouse in Model.List_item)
                         {
@@ -76,14 +77,14 @@
                             }
                         }
                     </div>
-                    <edit-link>
-                        <a class="editText" asp-controller="List_Item" asp-action="Index">Edit</a>
+                    <edit-link is-visible="User.Identity.IsAuthenticated">
+                        <edit-a-list controller="List_Item" is-visible="User.Identity.IsAuthenticated"></edit-a-list>
                     </edit-link>
                 </edit-container>
             </ul>
             <p class="needs_subheader">VOLUNTEERS</p>
             <ul>
-                <edit-container>
+                <edit-container is-visible="User.Identity.IsAuthenticated">
                     <div class="editArea">
                         @foreach (List_Item outLiVol in Model.List_item)
                         {
@@ -93,14 +94,14 @@
                             }
                         }
                     </div>
-                    <edit-link>
-                        <a class="editText" asp-controller="List_Item" asp-action="Index">Edit</a>
+                    <edit-link is-visible="User.Identity.IsAuthenticated">
+                        <edit-a-list controller="List_Item" is-visible="User.Identity.IsAuthenticated"></edit-a-list>
                     </edit-link>
                 </edit-container>
             </ul>
             <p class="needs_subheader">REPAIR NEEDS</p>
             <ul>
-                <edit-container>
+                <edit-container is-visible="User.Identity.IsAuthenticated">
                     <div class="editArea">
                         @foreach (List_Item outLiRep in Model.List_item)
                         {
@@ -110,8 +111,8 @@
                             }
                         }
                     </div>
-                    <edit-link>
-                        <a class="editText" asp-controller="List_Item" asp-action="Index">Edit</a>
+                    <edit-link is-visible="User.Identity.IsAuthenticated">
+                        <edit-a-list controller="List_Item" is-visible="User.Identity.IsAuthenticated"></edit-a-list>
                     </edit-link>
                 </edit-container>
             </ul>
