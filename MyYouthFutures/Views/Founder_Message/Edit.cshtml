@@ -4,10 +4,11 @@
     ViewData["Title"] = "Edit";
 }
 <div class="sidepage edit">
-    <h2>Founders Message</h2>
-
-    <div class="row">
-        <div class="col-md-4">
+    <h3>Edit</h3>
+    <h4>Founders Message</h4>
+    <hr />
+    <div class="row sidepage-content">
+        <div class="col-xs-12">
             <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="ID" />
@@ -22,14 +23,15 @@
                     <span asp-validation-for="founderSubTetxt" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-default" />
+                    <input type="submit" value="Save" class="btn btn-success" />
                 </div>
             </form>
         </div>
     </div>
 
     <div>
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index" class="btn btn-default">Back to List</a>
+        <a asp-controller="Home" asp-action="About" class="btn btn-default">Back to Page</a>
     </div>
 
     @section Scripts {

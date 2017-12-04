@@ -585,35 +585,49 @@
     }
 
 /*
-    Side pages (login, create, delete, etc.)
+    General look for Side pages 
+    (login, create, delete, etc.)
 */
 
 .sidepage {
     background-color: #ffffff;
     //padding: 50px 0px 50px 0px;
-    padding: 3% 5%;
+    padding: 3%;// 5%;
 }
+
+    .sidepage .sidepage-content{
+        margin: 3% 5%;
+        //background: gray;
+        //padding: 100px;
+        //border: solid;
+        //border-radius: 0 0 10px 10px;
+    }
 
     .sidepage form {
         float: none;
         margin: 0 auto;
     }
 
-    .sidepage h2 {
+    .sidepage h3, .sidepage h2 {
         color: #583b13;
+        margin: 0px;
     }
 
-    .sidepage input[type=text], .modal input[type=password], .modal select {
+    .sidepage input, .sidepage select, .sidepage textarea {
         height: 35px;
        // margin: 2px 2px 15px 2px;
         padding: 2px;
-        font-size: medium;
+        font-size: 14pt;
+    }
+
+    .sidepage textarea{
+        height: 200px;
     }
 
     .sidepage label {
-        font-size: large;
+        font-size: 16pt;
         vertical-align: text-bottom;
-        margin: 5px 0 0 0;
+        margin: 5px 0 0 5px;
         padding: 0;
         color: #86ad38;
     }
@@ -630,7 +644,14 @@
 
     .sidepage .btn{
         font-size: large;
-        font-weight: bold
+        font-weight: bold;
+        width: 150px;
+    }
+
+    .sidepage hr {
+        border: none;
+        height: 2px;
+        background-color: #583b13;
     }
 
     /*.sidepage a{
@@ -676,7 +697,7 @@
     Edit
 */
 .edit{
-    padding: 5% 20% 5% 20%;
+    //padding: 3% 20% 5% 20%;
 }
 
 
