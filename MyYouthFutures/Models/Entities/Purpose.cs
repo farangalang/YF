@@ -12,5 +12,8 @@ namespace MyYouthFutures.Models
         public string Message { get; set; }
         public string Content { get; set; }
         public string BackgroundImage { get; set; }
+        public string TargetControler { get; set; }
+        public string TargetAction { get; set; }
+        public string TargetFragment { get; set; }
     }
 }

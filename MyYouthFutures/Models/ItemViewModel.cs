@@ -26,5 +26,6 @@ namespace MyYouthFutures.Models
         public IEnumerable<Purpose> Purpose { get; set; }
         public IEnumerable<HomeTitle> HomeTitle { get; set; }
         public IEnumerable<Link> Link { get; set; }
+        public IEnumerable<Events> Events { get; set; }
     }
 }

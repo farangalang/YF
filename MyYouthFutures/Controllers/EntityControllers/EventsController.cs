@@ -8,27 +8,24 @@ using Microsoft.EntityFrameworkCore;
 using MyYouthFutures.Data;
 using MyYouthFutures.Models;
 
-/// <summary>
-/// this class holds all the list items broken up by type for the various lists in the about vie
-/// </summary>
-namespace MyYouthFutures.Controllers
+namespace MyYouthFutures.Controllers.EntityControllers
 {
-    public class List_ItemController : Controller
+    public class EventsController : Controller
     {
         private readonly YouthContext _context;
 
-        public List_ItemController(YouthContext context)
+        public EventsController(YouthContext context)
         {
             _context = context;
         }
 
-        // GET: List_Item
+        // GET: Events
         public async Task<IActionResult> Index()
         {
-            return View(await _context.List_Item.ToListAsync());
+            return View(await _context.Events.ToListAsync());
         }
 
-        // GET: List_Item/Details/5
+        // GET: Events/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,63 +33,62 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var list_Item = await _context.List_Item
+            var events = await _context.Events
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (list_Item == null)
+            if (events == null)
             {
                 return NotFound();
             }
 
-            return View(list_Item);
+            return View(events);
         }
 
-        // GET: List_Item/Create
+        // GET: Events/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: List_Item/Create
+        // POST: Events/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,TypeOfList,LiTest")] List_Item list_Item)
+        public async Task<IActionResult> Create([Bind("ID,EventTitle,What,When,Where,Info")] Events events)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(list_Item);
+                _context.Add(events);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(list_Item);
+            return View(events);
         }
 
-        // GET: List_Item/Edit/5
-        public async Task<IActionResult> Edit(string listName)
+        // GET: Events/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
-            if (listName == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            //var list_Item = await _context.List_Item.SingleOrDefaultAsync(m => m.ID == id);
-            var listItem = await _context.List_Item.SingleOrDefaultAsync(m => m.TypeOfList == listName);
-            if (listItem == null)
+            var events = await _context.Events.SingleOrDefaultAsync(m => m.ID == id);
+            if (events == null)
             {
                 return NotFound();
             }
-            return View(listItem);
+            return View(events);
         }
 
-        // POST: List_Item/Edit/5
+        // POST: Events/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,TypeOfList,LiTest")] List_Item list_Item)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,EventTitle,What,When,Where,Info")] Events events)
         {
-            if (id != list_Item.ID)
+            if (id != events.ID)
             {
                 return NotFound();
             }
@@ -101,12 +97,12 @@ namespace MyYouthFutures.Controllers
             {
                 try
                 {
-                    _context.Update(list_Item);
+                    _context.Update(events);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!List_ItemExists(list_Item.ID))
+                    if (!EventsExists(events.ID))
                     {
                         return NotFound();
                     }
@@ -117,10 +113,10 @@ namespace MyYouthFutures.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(list_Item);
+            return View(events);
         }
 
-        // GET: List_Item/Delete/5
+        // GET: Events/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -128,30 +124,30 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var list_Item = await _context.List_Item
+            var events = await _context.Events
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (list_Item == null)
+            if (events == null)
             {
                 return NotFound();
             }
 
-            return View(list_Item);
+            return View(events);
         }
 
-        // POST: List_Item/Delete/5
+        // POST: Events/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var list_Item = await _context.List_Item.SingleOrDefaultAsync(m => m.ID == id);
-            _context.List_Item.Remove(list_Item);
+            var events = await _context.Events.SingleOrDefaultAsync(m => m.ID == id);
+            _context.Events.Remove(events);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool List_ItemExists(int id)
+        private bool EventsExists(int id)
         {
-            return _context.List_Item.Any(e => e.ID == id);
+            return _context.Events.Any(e => e.ID == id);
         }
     }
 }

@@ -3,21 +3,16 @@
         <div class="col-xs-6 text" id="Staff">
             <h2>Our</h2>
             <h2 class="h2style1">Staff</h2>
-            <a class="editText" asp-controller="Staff_Panel" asp-action="Create">Add Staff</a>
+            <add-component controller="Staff_Panel" is-visible="User.Identity.IsAuthenticated">Add Staff</add-component>
         </div>
         <
     </div>
-
-
-    <!--Staff-->
-    @*<button type="button" data-toggle="modal" data-target="#staffPopup">Add Staff</button>*@
-
     <div class="row board_members">
         @foreach (Staff_Panel st in Model.Staff)
             {
                 if (st.Director.Equals("0"))
                 {
-                <edit-container>
+                <edit-container is-visible="User.Identity.IsAuthenticated">
                     <div class="col-md-4">
                         <div class="editArea">
                             <img src="@st.Staff_Image" class="img-responsive" title="Justine Murray" alt="Justine Murray">
@@ -25,8 +20,8 @@
                                 <span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span>
                             </p>
                         </div>
-                        <edit-link>
-                            <edit-a controller="Staff_Panel" route-id="@st.ID"></edit-a>
+                        <edit-link is-visible="User.Identity.IsAuthenticated">
+                            <edit-a controller="Staff_Panel" route-id="@st.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </div>
 
