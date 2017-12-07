@@ -6,10 +6,11 @@
 <div class="sidepage details">
     <h2>Details</h2>
 
-    <div>
+    <div class="">
+        <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-primary btn-right"><span class="glyphicon glyphicon-edit"></span>Edit</a>
         <h4>HomeTitle</h4>
         <hr />
-        <dl class="dl-horizontal">
+        <dl class="dl-horizontal sidepage-content">
             <dt>
                 @Html.DisplayNameFor(model => model.Title)
             </dt>
@@ -36,8 +37,9 @@
             </dd>
         </dl>
     </div>
+    
+    <hr />
     <div>
-        <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to List</a>
     </div>
 </div>
