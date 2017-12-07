@@ -29,5 +29,6 @@ namespace MyYouthFutures.Data
         public DbSet<HomeTitle> HomeTitle { get; set; }
         public DbSet<Services> Services { get; set; }
         public DbSet<StoreUser> StoreUsers { get; set; }
+        public DbSet<Events> Events { get; set; } //models the events section on the About Page
     }
 }

@@ -4,19 +4,28 @@
     <div class="col-md-4 col-md-offset-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly"></div>
+            <img class="col-xs-12" src="~/images/yf_logo.svg" />
             <div class="form-group">
-                <label asp-for="Username">Username</label>
-                <input asp-for="Username" value="test@email.com"/>
+                <label class="col-xs-push-1 col-xs-10" asp-for="Username">Username</label>
+                <input class="col-xs-push-1 col-xs-10" asp-for="Username" value="test@email.com" />
                 <span asp-validation-for="Username"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Password">Password</label>
-                <input asp-for="Password" value ="P@ssw0rd!"/>
+                <label class="col-xs-push-1 col-xs-10" asp-for="Password">Password</label>
+                <input class="col-xs-push-1 col-xs-10" asp-for="Password" value="P@ssw0rd!" />
                 <span asp-validation-for="Password"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-success"/>
+                <input type="submit" value="Login" class="btn-lg btn-success col-xs-push-1 col-xs-10" />
             </div>
         </form>
     </div>
 </div>
+
+
+
+
+
+
+
+

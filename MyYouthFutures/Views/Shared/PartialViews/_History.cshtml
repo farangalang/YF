@@ -1,6 +1,7 @@
 ﻿@* ------ YF HISTORY ------ *@
+
 <edit-container is-visible="User.Identity.IsAuthenticated">
-    <div class="container-fluid">
+    <div class="container-fluid" id="history">
         <div class="row history_text">
             <section class="col-xs-12">
                 @foreach (introArticle ia in Model.introArticles)

@@ -52,6 +52,7 @@ namespace MyYouthFutures.Controllers
             var media = _repository.GetAllMedia();
             var doner = _repository.GetAllDoners();
             var helper = _repository.GetAllHelpPanels();
+            var events = _repository.GetAllEvents();
 
             var vm = new ItemViewModel
             {
@@ -62,7 +63,8 @@ namespace MyYouthFutures.Controllers
                 List_item = ListItem,
                 Media = media,
                 Doners = doner,
-                Help_Panel = helper
+                Help_Panel = helper,
+                Events = events
             };
             return View(vm);
 
