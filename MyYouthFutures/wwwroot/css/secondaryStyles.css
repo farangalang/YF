@@ -583,3 +583,239 @@
     #noPage h4 {
         padding: 0px 80px 0px 80px;
     }
+
+/**********************************
+    General look for Side pages 
+    (login, create, delete, etc.)
+***********************************/
+
+.sidepage {
+    background-color: #ffffff;
+    //padding: 50px 0px 50px 0px;
+    //padding: 3%;// 5%;
+    padding: 6% 5% 10% 5%;
+}
+
+    .sidepage .sidepage-content{
+        margin: 3% 5%;
+        //background: gray;
+        //padding: 100px;
+        //border: solid;
+        //border-radius: 0 0 10px 10px;
+    }
+
+    .sidepage form {
+        float: none;
+        margin: 0 auto;
+    }
+
+    /*.sidepage h3, .sidepage h4 {
+        color: #82ad38;
+        margin: 0px;
+        text-align: center;
+    }*/
+
+    .sidepage h2 {
+        text-align: center;
+        color: #82ad38;
+    }
+
+        .sidepage h2 span {
+            //color: #583b13;
+        }
+
+    .sidepage h4, .sidepage h3 {
+        color: #583b13;
+    }
+
+    .sidepage input, .sidepage select, .sidepage textarea {
+        height: 35px;
+        // margin: 2px 2px 15px 2px;
+        padding: 2px;
+        font-size: 14pt;
+    }
+
+    .sidepage textarea{
+        height: 200px;
+    }
+
+    .sidepage label {
+        font-size: 16pt;
+        vertical-align: text-bottom;
+        margin: 5px 0 0 5px;
+        padding: 0;
+        color: #583b13;
+        //#86ad38;
+    }
+
+    .sidepage #continue {
+        color: #583b13;
+        text-align: center;
+        font-size: x-large;
+    }
+
+    .sidepage .row{
+        padding: 15px 0px 15px 0px;
+    }
+
+    .sidepage .btn{
+        font-size: large;
+        font-weight: bold;
+        width: 150px;
+        margin-top: 10px;
+    }
+
+    .sidepage hr {
+        border: none;
+        height: 2px;
+        background-color: #86ad38;
+        margin: 0px;
+    }
+
+    .sidepage .table {
+        font-size: 13pt;
+        border: solid #583b13;
+    }
+
+        .sidepage .table thead th {
+            text-align: center;
+            border: solid #583b13;
+            background-color: #583b13;
+            color: white;
+        }
+
+        .sidepage .table td {
+            border: solid #583b13;
+        }
+
+        .sidepage .table .glyphs {
+            width: 100px; //30px;
+        }
+
+    .sidepage .glyphs a{ /*.border-left {*/
+        //color: #86ad38;
+        //#583b13;
+        //border-left: solid #583b13;
+        padding-left: 5px;
+    }
+
+    .sidepage .btn {
+        //background-color: #977b2d;
+        //background-color: #86ad38;
+        padding-left: 2px;
+        padding-right: 5px;
+    }
+
+    .sidepage .btn span{
+        padding-right: 5px;
+    }
+
+    .sidepage dl{
+        font-size: 14pt;
+        color: #583b13;
+        //margin: 10px 20px 10px 20px;
+    }
+
+    .sidepage dt{
+        width: 170px;
+        margin-right: 15px;
+    }
+    .sidepage .btn-right {
+        float: right;
+    }
+
+    .sidepage .btn.back {
+        background-color: #8ebc3d;
+        color: #ffffff;
+        border-color: #71963a;
+    }
+
+        .sidepage .btn.back:hover {
+            background-color: #71963a;
+            color: #ffffff;
+            //border-color: #583b13;
+        }
+
+/*
+    Login
+*/
+
+.sidepage#login {
+    background-color: gray;
+}
+
+.case1 {
+    /*border: 5px solid #583b13;
+    padding: 5px;*/
+    margin: 4% 35% 5% 35%;
+    padding: 2px;
+    background-color: white;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #583b13; /*brown*/
+    font-weight: bold;
+    color: #583b13;
+}
+
+.case2 {
+    padding: 10px 5px 10px 5px;
+    background-color: white;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    border-style: solid;
+    border-color: #86ad38; /*green*/
+}
+
+/*
+    Edit
+*/
+.edit{
+    //padding: 3% 20% 5% 20%;
+}
+
+
+
+/*
+    Create
+*/
+
+/*
+    Delete 
+*/
+
+.sidepage.delete h3{
+    color: #1c5788;
+}
+
+.sidepage.delete input[type=submit]{
+    background: none;
+    border: none;
+}
+
+.sidepage.delete .glyphs{
+    height: 40px;
+    padding: 3px 0px 0px 0px;
+}
+
+/*
+    Details
+*/
+
+/*
+    List/Index
+*/
+
+.sidepage.index .btn-right{
+    border-radius: 5px 5px 0 0;
+}
+
+.sidepage.index {
+    //padding: 6% 5% 10% 5%;
+}
+
+.sidepage.index h3{
+    //padding-bottom: 30px;
+}
