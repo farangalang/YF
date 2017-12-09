@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 <div class="sidepage edit">
-    <h3>Edit</h3>
+    <h2>Edit</h2>
     <h4>Services Header</h4>
     <hr />
     <div class="row sidepage-content">
@@ -23,15 +23,18 @@
                     <span asp-validation-for="Header" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-success" />
+                    <input type="submit" value="Save" class="btn btn-primary" />
                 </div>
             </form>
         </div>
     </div>
 
+    <hr />
     <div>
-        <a asp-action="Index" class="btn btn-default">Back to List</a>
-        <a asp-controller="Home" asp-action="Index" asp-fragment="Services" class="btn btn-default">Back to Page</a>
+        <a asp-action="Index" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to List</a>
+    </div>
+    <div>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to Page</a>
     </div>
 
     @section Scripts {
