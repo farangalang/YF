@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 using MyYouthFutures.Models;
 using MyYouthFutures.Data;
 using Microsoft.EntityFrameworkCore;
+using SendGrid;
+using System.Net.Mail;
+
 
 namespace MyYouthFutures.Controllers
 {

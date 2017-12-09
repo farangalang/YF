@@ -82,6 +82,16 @@ namespace MyYouthFutures.Data
             };
             _ctx.Links.AddRange(links);
 
+            var email = new Email[]
+            {
+                new Email
+                {
+                    Key="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"
+                }
+            };
+
+            _ctx.Email.AddRange(email);
+
             var purposes = new Purpose[]
             {
                 new Purpose
