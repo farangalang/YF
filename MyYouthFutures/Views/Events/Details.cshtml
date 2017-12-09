@@ -3,46 +3,48 @@
 @{
     ViewData["Title"] = "Details";
 }
+<div class="sidepage Events">
+    <h2>Details</h2>
 
-<h2>Details</h2>
-
-<div>
-    <h4>Events</h4>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-primary btn-right"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+        <h4>Events</h4>
+        <hr />
+        <dl class="dl-horizontal sidepage-content">
+            <dt>
+                @Html.DisplayNameFor(model => model.EventTitle)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EventTitle)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.What)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.What)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.When)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.When)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Where)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Where)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Info)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Info)
+            </dd>
+        </dl>
+    </div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.EventTitle)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.EventTitle)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.What)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.What)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.When)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.When)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Where)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Where)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Info)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Info)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <a asp-action="Index" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to List</a>
+    </div>
 </div>
