@@ -3,28 +3,29 @@
 @{
     ViewData["Title"] = "Details";
 }
+<div class="sidepage details">
+    <h2>Details</h2>
 
-<h2>Details</h2>
-
-<div>
-    <h4>Founder_Message</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.founderImage)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.founderImage)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.founderSubTetxt)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.founderSubTetxt)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <h4>Founder_Message</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.founderImage)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.founderImage)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.founderSubTetxt)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.founderSubTetxt)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>
