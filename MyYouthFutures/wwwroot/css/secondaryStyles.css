@@ -585,6 +585,67 @@
     }
 
 /**********************************
+    Calendar
+***********************************/
+.calendar-body{
+    background-color: #ffffff;
+    padding: 50px 60px 10px 60px;
+}
+
+.calendar-body .h2style1{
+    color: #8ebc3d;
+}
+
+.calendar-body h3{
+    color: #1c5778;
+}
+
+.calendar-body .btn-calendar{
+    background-color: #6a6a6a;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: left;
+    margin: 5px;
+    border-radius: 0px;
+}
+
+.calendar-body .btn-calendar::selection{
+    background-color: #6a6a6a;
+}
+
+.calendar-body .btn-calendar .col-xs-1{
+    width: 10px;
+}
+.calendar-body .btn-calendar span{
+    //border: solid;
+}
+
+.calendar-body .btn-calendar .calendarTitle{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.calendar-body .btn-calendar .date{
+    font-size: 16px;
+    text-align: center;
+}
+
+.calendar-body .collapse h5{
+    font-size: 20px;
+    color: #6a6a6a;
+}
+
+.calendar-body .collapse h5.calendarTitle{
+    font-weight: bold;
+}
+
+.calendar-body .collapse h5.title{
+    font-size: 28px;
+    color: #174475;
+    font-weight: bolder;
+    margin-top: 0px;
+}
+/**********************************
     General look for Side pages 
     (login, create, delete, etc.)
 ***********************************/

@@ -129,3 +129,15 @@
     }
 
 }
+
+/*For Calendar collapse events to 
+flip the triangle
+TODO: this needs to work...*/
+/*function collapseClick(id) {
+    $("#calendar_" + id).click(function () {
+        $(this).find("#glyphs_" + id).
+            removeClass('glyphicon-triangle-left').addClass("glyphicon-triangle-down"),
+            //addClass("glyphicon-triangle-left").removeClass("glyphicon-triangle-down")
+        );
+    });
+}*/
