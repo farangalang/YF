@@ -86,7 +86,7 @@ namespace MyYouthFutures.Data
             {
                 new Email
                 {
-                    Key="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"
+                    Key=""
                 }
             };
 

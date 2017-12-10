@@ -10,6 +10,9 @@ namespace MyYouthFutures.Models
         public int ID { get; set; }
         public string FirstName { get; set; } //show/hide donnors
         public string LastName { get; set; } //platnum, gold, etc.
+        public string Phone { get; set; }
+        public string EmailAddress { get; set; }
+        public string Message { get; set; }
         public string Key { get; set; }
     }
 }

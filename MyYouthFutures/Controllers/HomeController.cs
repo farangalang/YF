@@ -11,17 +11,24 @@ using MyYouthFutures.Data;
 using Microsoft.EntityFrameworkCore;
 using SendGrid;
 using System.Net.Mail;
+using System.Net.Http;
+using SendGrid.Helpers.Mail;
+
+
 
 
 namespace MyYouthFutures.Controllers
 {
+
     public class HomeController : Controller
     {
         private readonly IYouthRepository _repository;
+        private readonly YouthContext youthContext;
 
-        public HomeController(IYouthRepository repository)
+        public HomeController(IYouthRepository repository, YouthContext youthContext)
         {
             _repository = repository;
+            this.youthContext = youthContext;
         }
 
         // GET: Services_Message
@@ -45,7 +52,8 @@ namespace MyYouthFutures.Controllers
             return View(im);
         }
 
-        public async Task<IActionResult> About()
+        [HttpGet]
+        public IActionResult About()
         {
             var articles = _repository.GetAllIntroArticles();
             var founders = _repository.GetAllFounderMessages();
@@ -72,11 +80,51 @@ namespace MyYouthFutures.Controllers
             return View(vm);
 
         }
+
+        [HttpPost]
+        public async Task<IActionResult> About(Email email)
+        {
+            // var apiKey = System.Environment.GetEnvironmentVariable("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");
+            //var apiKey = "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";
+            var apiKey = await (from e in youthContext.Email
+                                select e.Key).SingleAsync();
+            var client = new SendGridClient(apiKey);
+            var msg = new SendGridMessage()
+            {
+                From = new EmailAddress("ava4evr@hotmail.com", "DX Team"),
+                Subject = "Hello World from the SendGrid CSharp SDK!",
+                PlainTextContent = email.Message,
+            };
+            msg.AddTo(new EmailAddress("ava4evr@hotmail.com", "Test User"));
+            var response = await client.SendEmailAsync(msg);
+            return About();
+        }
+
         [Authorize]
         public IActionResult Contact()
         {
+            var msg = new SendGridMessage();
+
+            msg.SetFrom(new EmailAddress("dx@example.com", "SendGrid DX Team"));
+
+            var recipients = new List<EmailAddress>
+                {
+                    new EmailAddress("jeff@example.com", "Jeff Smith"),
+                    new EmailAddress("anna@example.com", "Anna Lidman"),
+                    new EmailAddress("peter@example.com", "Peter Saddow")
+                };
+            msg.AddTos(recipients);
+
+            msg.SetSubject("Testing the SendGrid C# Library");
+
+            msg.AddContent(MimeType.Text, "Hello World plain text!");
+            msg.AddContent(MimeType.Html, "<p>Hello World!</p>");
+
+
+
             return View();
         }
+
 
         public IActionResult ComingSoon()
         {
