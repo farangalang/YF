@@ -5,7 +5,17 @@
 }
 <div class="sidepage edit">
     <h2>Edit</h2>
-    <h4>Staff: Panel #@Model.ID</h4>
+
+    @{
+        if (Model.Director.Equals("1"))
+        {
+            <h4>Directors: Panel #@Model.ID</h4>
+        }
+        else
+        {
+            <h4>Staff: Panel #@Model.ID</h4>
+        } 
+    }
     <hr />
     <div class="row sidepage-content">
         <div class="col-xs-12">
@@ -54,7 +64,17 @@
         <a asp-action="Index" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to List</a>
     </div>
     <div>
-        <a asp-controller="Home" asp-action="Index" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to Page</a>
+        @{
+            if (Model.Director.Equals("1"))
+            {
+                <a asp-controller="Home" asp-action="About" asp-fragment="directorsMain" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to Page</a>
+            }
+            else
+            {
+                <a asp-controller="Home" asp-action="About" asp-fragment="staffMain" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to Page</a>
+            }
+        }
+        
     </div>
 
     @section Scripts {

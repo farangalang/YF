@@ -3,6 +3,7 @@
         <div class="col-xs-6 text" id="Board">
             <h2>Board of</h2>
             <h2 class="h2style1">Directors</h2>
+            <add-component controller="Staff_Panel" is-visible="User.Identity.IsAuthenticated" value="director">Add Directors</add-component>
         </div>
     </div>
 </div>
@@ -22,7 +23,7 @@
                         </div>
 
                         <edit-link is-visible="User.Identity.IsAuthenticated">
-                            <edit-a controller="Staff_Panel" route-id="@st.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
+                            <edit-a controller="Staff_Panel" route-id="@st.ID" is-visible="User.Identity.IsAuthenticated" value="Directors"></edit-a>
                         </edit-link>
                     </div>
                 </edit-container>

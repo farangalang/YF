@@ -7,7 +7,7 @@
     <h2>Index</h2>
 
     <a asp-action="Create" class="btn btn-primary btn-right"><span class="glyphicon glyphicon-plus"></span>Create New</a>
-    <h4>Staff: Panels</h4>
+    <h4>Staff/Directors: Panels</h4>
     <hr />
 
     <div class="sidepage-content">
@@ -37,7 +37,7 @@
             </thead>
             <tbody>
                 @foreach (var item in Model)
-            {
+                {
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.Staff_Image)
@@ -69,6 +69,6 @@
     </div>
 
     <hr />
-    <a asp-controller="Home" asp-action="Index" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to Page </a>
+    <a asp-controller="Home" asp-action="About" asp-fragment="directorsMain" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to Page </a>
 
 </div>

@@ -8,7 +8,16 @@
 
     <div>
         <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-primary btn-right"><span class="glyphicon glyphicon-edit"></span>Edit</a>
-        <h4>Staff Panel: Staff #@Model.ID</h4>
+        @{
+            if (Model.Director.Equals("1"))
+            {
+                <h4>Directors: Panel #@Model.ID</h4>
+            }
+            else
+            {
+                <h4>Staff: Panel #@Model.ID</h4>
+            }
+        }
         <hr />
         <dl class="dl-horizontal sidepage-content">
             <dt>

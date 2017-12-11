@@ -5,7 +5,7 @@
 }
 <div class="sidepage edit">
     <h2>Edit</h2>
-    <h4>Street Outreach: List Item #@Model.ID</h4>
+    <h4>List: Item #@Model.ID</h4>
     <hr />
     <div class="row sidepage-content">
         <div class="col-xs-12">
@@ -34,7 +34,7 @@
         <a asp-action="Index" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to List</a>
     </div>
     <div>
-        <a asp-controller="Home" asp-action="Index" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to Page</a>
+        <a asp-controller="Home" asp-action="About" asp-fragment="needs" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to Page</a>
     </div>
 
     @section Scripts {
