@@ -47,8 +47,9 @@
 
                             <edit-container is-visible="User.Identity.IsAuthenticated">
                                 <div>
-                                    <button class="btn btn-calendar col-xs-12" id="calendar_@ev.ID" data-toggle="collapse" data-target="#event_@ev.ID" aria-expanded="false" aria-controls="event_@ev.ID" onclick="collapseClick(@ev.ID)">
-                                        <span class="col-xs-1 glyphicon glyphicon-triangle-left glyphs" id="glyphs_@ev.ID"></span>
+                                    <!--<button class="btn btn-calendar col-xs-12" id="calendar_@ev.ID" data-toggle="collapse" data-target="#event_@ev.ID" aria-expanded="false" aria-controls="event_@ev.ID" ><!--onclick="collapseClick(@ev.ID)"-->
+                                    <button class="btn btn-calendar col-xs-12" id="calendar_@ev.ID" data-toggle="collapse" data-target="#event_@ev.ID" aria-expanded="false" aria-controls="event_@ev.ID" >
+                                        <span class="col-xs-1 glyphicon glyphicon-triangle-right glyphs" id="glyphs_@ev.ID"></span>
                                         <span class="col-xs-6 calendarTitle">@ev.EventTitle</span>
                                         <span class="col-xs-push-4 col-xs-2 date">@ev.When</span>
                                     </button>
@@ -58,20 +59,20 @@
                                            <h5 class="col-xs-push-1 col-xs-10 calendarTitle title">@ev.EventTitle</h5>
                                        </div>
                             
-                                    <div class="row">
-                                       <h5 class="col-xs-push-1 col-xs-1 calendarTitle">When</h5>
-                                       <h5 class="col-xs-push-1 col-xs-10">@ev.When</h5>
-                                    </div>
+                                        <div class="row">
+                                           <h5 class="col-xs-push-1 col-xs-1 calendarTitle">When</h5>
+                                           <h5 class="col-xs-push-1 col-xs-10">@ev.When</h5>
+                                        </div>
 
-                                    <div class="row">
-                                       <h5 class="col-xs-push-1 col-xs-1 calendarTitle">Where</h5>
-                                       <h5 class="col-xs-push-1 col-xs-10">@ev.Where</h5>
-                                    </div>
+                                        <div class="row">
+                                           <h5 class="col-xs-push-1 col-xs-1 calendarTitle">Where</h5>
+                                           <h5 class="col-xs-push-1 col-xs-10">@ev.Where</h5>
+                                        </div>
 
-                                    <div class="row">
-                                       <h5 class="col-xs-push-1 col-xs-1 calendarTitle">Info</h5>
-                                       <h5 class="col-xs-push-1 col-xs-10">@ev.Info</h5>
-                                    </div>
+                                        <div class="row">
+                                           <h5 class="col-xs-push-1 col-xs-1 calendarTitle">Info</h5>
+                                           <h5 class="col-xs-push-1 col-xs-10">@ev.Info</h5>
+                                        </div>
                                     </div>
                                     <edit-link>
                                         <edit-a controller="Events" route-id="@ev.ID"></edit-a>
