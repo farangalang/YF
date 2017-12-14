@@ -5,26 +5,27 @@
             <p class="mont_light_32_white">During the first full year of operations (February 20, 2015-March 31, 2016), our Residential Support Temporary Youth Shelter has:</p>
         </section>
     </div>
-</div>
 
-@* ------ First Year of Service ------ *@
-<div class="container editArea">
-    <section class="row more">
-        @foreach (FirstYear_Service_Messages fsm in Model.FirstYear_Service_Messages)
-        {
-            <edit-container is-visible="User.Identity.IsAuthenticated">
-                <div class="editArea">
-                    <div class="col-xs-12 col-md-4 more_volunteer">
-                        <img src="@fsm.firstYearImage" title="Meal" alt="Meal">
-                        <p class="vol_p mont_light_18_darkgray">@fsm.firstYearText</p>
-                        <edit-link is-visible="User.Identity.IsAuthenticated">
-                            <edit-a controller="FirstYear_Service_Messages" route-id="@fsm.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
-                        </edit-link>
+
+    @* ------ First Year of Service ------ *@
+    <div class="container editArea">
+        <section class="row more">
+            @foreach (FirstYear_Service_Messages fsm in Model.FirstYear_Service_Messages)
+            {
+                <edit-container is-visible="User.Identity.IsAuthenticated">
+                    <div class="editArea">
+                        <div class="col-xs-12 col-md-4 more_volunteer">
+                            <img src="@fsm.firstYearImage" title="Meal" alt="Meal">
+                            <p class="vol_p mont_light_18_darkgray">@fsm.firstYearText</p>
+                            <edit-link is-visible="User.Identity.IsAuthenticated">
+                                <edit-a controller="FirstYear_Service_Messages" route-id="@fsm.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
+                            </edit-link>
+                        </div>
                     </div>
-                </div>
-            </edit-container>
+                </edit-container>
 
-        }
-    </section>
+            }
+        </section>
+    </div>
 </div>
 @* ------ END First Year of Service ------ *@

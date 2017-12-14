@@ -4,113 +4,114 @@
             <h2 class="h2style1">Media</h2>
         </div>
     </div>
-</div>
-<div class="container-fluid">
-    <div class="row media_subheader">
-        <div class="col-xs-12 ">
-            @foreach (Media med in Model.Media)
+
+    <div class="container-fluid">
+        <div class="row media_subheader">
+            <div class="col-xs-12 ">
+                @foreach (Media med in Model.Media)
             {
                 if (med.Text_Type.Equals("title"))
                 {
-                    <edit-container is-visible="User.Identity.IsAuthenticated">
-                        <div class="editArea">
-                            <p class="title">@med.Content_Text</p>
-                        </div>
-                        <edit-link is-visible="User.Identity.IsAuthenticated">
-                            <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
-                        </edit-link>
-                    </edit-container>
-                }
+                        <edit-container is-visible="User.Identity.IsAuthenticated">
+                            <div class="editArea">
+                                <p class="title">@med.Content_Text</p>
+                            </div>
+                            <edit-link is-visible="User.Identity.IsAuthenticated">
+                                <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
+                            </edit-link>
+                        </edit-container>
+                    }
 
-            }
-            @foreach (Media med in Model.Media)
+                }
+                @foreach (Media med in Model.Media)
             {
                 if (med.Text_Type.Equals("time"))
                 {
-                    <edit-container is-visible="User.Identity.IsAuthenticated">
-                        <div class=" editArea">
-                            <p class="mont_regular_22_darkgray time">@med.Content_Text</p>
-                        </div>
-                        <edit-link is-visible="User.Identity.IsAuthenticated">
-                            <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
-                        </edit-link>
-                    </edit-container>
+                        <edit-container is-visible="User.Identity.IsAuthenticated">
+                            <div class=" editArea">
+                                <p class="mont_regular_22_darkgray time">@med.Content_Text</p>
+                            </div>
+                            <edit-link is-visible="User.Identity.IsAuthenticated">
+                                <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
+                            </edit-link>
+                        </edit-container>
+                    }
                 }
-            }
-            <a class="link" href="#">inShare</a>
+                <a class="link" href="#">inShare</a>
+            </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row media_pic">
-        <div class="col-xs-12 col-lg-7 pic">
-            @foreach (Media med in Model.Media)
+    <div class="container">
+        <div class="row media_pic">
+            <div class="col-xs-12 col-lg-7 pic">
+                @foreach (Media med in Model.Media)
             {
                 if (med.Text_Type.Equals("image"))
                 {
-                    <edit-container is-visible="User.Identity.IsAuthenticated">
-                        <div class=" editArea">
-                            <img src="@med.Content_Text" class="img-responsive center-block" title="America First Check" alt="Check">
-                        </div>
-                        <edit-link is-visible="User.Identity.IsAuthenticated">
-                            <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
-                        </edit-link>
-                    </edit-container>
+                        <edit-container is-visible="User.Identity.IsAuthenticated">
+                            <div class=" editArea">
+                                <img src="@med.Content_Text" class="img-responsive center-block" title="America First Check" alt="Check">
+                            </div>
+                            <edit-link is-visible="User.Identity.IsAuthenticated">
+                                <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
+                            </edit-link>
+                        </edit-container>
+                    }
+
                 }
 
-            }
-
-        </div>
-        <div class="col-xs-12 col-lg-5 subtext">
-            @foreach (Media med in Model.Media)
+            </div>
+            <div class="col-xs-12 col-lg-5 subtext">
+                @foreach (Media med in Model.Media)
             {
                 if (med.Text_Type.Equals("subTitle"))
                 {
-                    <edit-container is-visible="User.Identity.IsAuthenticated">
-                        <div class="editArea">
-                            <p class="subtitle">@med.Content_Text</p>
-                        </div>
-                        <edit-link is-visible="User.Identity.IsAuthenticated">
-                            <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
-                        </edit-link>
-                    </edit-container>
+                        <edit-container is-visible="User.Identity.IsAuthenticated">
+                            <div class="editArea">
+                                <p class="subtitle">@med.Content_Text</p>
+                            </div>
+                            <edit-link is-visible="User.Identity.IsAuthenticated">
+                                <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
+                            </edit-link>
+                        </edit-container>
+                    }
                 }
-            }
+            </div>
         </div>
     </div>
-</div>
-<div class="container-fluid">
-    <div class="row media_text">
-        <section class="col-xs-12">
-            @foreach (Media med in Model.Media)
+    <div class="container-fluid">
+        <div class="row media_text">
+            <section class="col-xs-12">
+                @foreach (Media med in Model.Media)
             {
                 if (med.Text_Type.Equals("para1"))
                 {
-                    <edit-container is-visible="User.Identity.IsAuthenticated">
-                        <div class="editArea">
-                            <p class="mont_regular_22_darkgray">@med.Content_Text</p>
-                        </div>
-                        <edit-link is-visible="User.Identity.IsAuthenticated">
-                        <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
-                        </edit-link>
-                    </edit-container>
-                }
+                        <edit-container is-visible="User.Identity.IsAuthenticated">
+                            <div class="editArea">
+                                <p class="mont_regular_22_darkgray">@med.Content_Text</p>
+                            </div>
+                            <edit-link is-visible="User.Identity.IsAuthenticated">
+                                <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
+                            </edit-link>
+                        </edit-container>
+                    }
 
-            }
-            @foreach (Media med in Model.Media)
+                }
+                @foreach (Media med in Model.Media)
             {
                 if (med.Text_Type.Equals("para2"))
                 {
-                    <edit-container is-visible="User.Identity.IsAuthenticated">
-                        <div class="editArea">
-                            <p class="mont_regular_22_darkgray">@med.Content_Text</p>
-                        </div>
-                        <edit-link is-visible="User.Identity.IsAuthenticated">
-                        <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
-                        </edit-link>
-                    </edit-container>
+                        <edit-container is-visible="User.Identity.IsAuthenticated">
+                            <div class="editArea">
+                                <p class="mont_regular_22_darkgray">@med.Content_Text</p>
+                            </div>
+                            <edit-link is-visible="User.Identity.IsAuthenticated">
+                                <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
+                            </edit-link>
+                        </edit-container>
+                    }
                 }
-            }
-        </section>
+            </section>
+        </div>
     </div>
 </div>

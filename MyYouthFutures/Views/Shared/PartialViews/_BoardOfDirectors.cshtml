@@ -6,32 +6,30 @@
             <add-component controller="Staff_Panel" is-visible="User.Identity.IsAuthenticated" value="director">Add Directors</add-component>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <!--Board of Directors-->
-    <div class="row board_members ">
+    <div class="container">
+        <!--Board of Directors-->
+        <div class="row board_members ">
 
-        @foreach (Staff_Panel st in Model.Staff)
+            @foreach (Staff_Panel st in Model.Staff)
             {
                 if (st.Director.Equals("1"))
                 {
-                <edit-container is-visible="User.Identity.IsAuthenticated">
-                    <div class=" col-md-4 ">
-                        <div class="editArea">
-                            <span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span>
-                        </div>
+                    <edit-container is-visible="User.Identity.IsAuthenticated">
+                        <div class=" col-md-4 ">
+                            <div class="editArea">
+                                <span class="name">@st.Name</span><br />@st.Level<br />@st.Postion<br /> <span class="email">@st.email</span>
+                            </div>
 
-                        <edit-link is-visible="User.Identity.IsAuthenticated">
-                            <edit-a controller="Staff_Panel" route-id="@st.ID" is-visible="User.Identity.IsAuthenticated" value="Directors"></edit-a>
-                        </edit-link>
-                    </div>
-                </edit-container>
+                            <edit-link is-visible="User.Identity.IsAuthenticated">
+                                <edit-a controller="Staff_Panel" route-id="@st.ID" is-visible="User.Identity.IsAuthenticated" value="Directors"></edit-a>
+                            </edit-link>
+                        </div>
+                    </edit-container>
+                }
+
             }
 
-        }
-
-
+        </div>
     </div>
-
 </div>

@@ -2,6 +2,11 @@
     background-color: #1c5788;
 }
 
+.container {
+    padding-left: 0px;
+    padding-right: 30px;
+}
+
 /**************************************
     History
 ***************************************/
@@ -98,6 +103,13 @@
     }
 
 /***********************
+    First Year Panels
+*************************/
+#firstYear .container{
+    padding-right: 0px;
+}
+
+/***********************
     More
 ************************/
 .more {
@@ -176,6 +188,10 @@
 /*******************************
     Board of Directors
 ********************************/
+#directorsMain {
+    background-color: white;
+}
+
 .board_header {
     background-color: white;
 }
@@ -199,9 +215,7 @@
     background-color: white;
     padding-left: 5%;
     padding-bottom: 5%;
-}
-
-.board_members {
+    
     font-family: "montserrat-light";
     font-size: 16px;
     line-height: 30px;
@@ -223,7 +237,8 @@
 /*********************************
     Media
 **********************************/
-.media_header {
+/*.media_header {*/
+#mediaMain{
     background-color: white;
 }
 
@@ -244,7 +259,7 @@
         }
 
 .media_subheader {
-    background-color: white;
+    //background-color: white;
     padding-left: 10%;
     padding-bottom: 2%;
 }
@@ -616,9 +631,6 @@
 .calendar-body .btn-calendar .col-xs-1{
     width: 10px;
 }
-.calendar-body .btn-calendar span{
-    //border: solid;
-}
 
 .calendar-body .btn-calendar .calendarTitle{
     font-weight: bold;
@@ -645,6 +657,46 @@
     font-weight: bolder;
     margin-top: 0px;
 }
+
+/**********************************
+    Youth Stories
+***********************************/
+#YouthStoriesMain{
+    background-color: white;
+
+    display: none;
+}
+
+#YouthStoriesMain .content{
+    padding: 40px 100px;
+}
+
+    #YouthStoriesMain h2{
+        color: #ababab;
+    }
+    #YouthStoriesMain .h2style1 {
+        color: #8ebc3d;
+    }
+
+#YouthStoriesMain .title {
+    font-family: "montserrat-regular";
+    font-size: 32px;
+    line-height: 36px;
+    color: #174475;
+}
+
+#YouthStoriesMain img {
+    background-color: white;
+    padding-bottom: 5%;
+}
+
+    #YouthStoriesMain .subtext {
+        font-family: "montserrat-light";
+        font-size: 14px;
+        line-height: 24px;
+        font-style: italic;
+        color: #1c5788;
+    }
 /**********************************
     General look for Side pages 
     (login, create, delete, etc.)
@@ -652,17 +704,11 @@
 
 .sidepage {
     background-color: #ffffff;
-    //padding: 50px 0px 50px 0px;
-    //padding: 3%;// 5%;
     padding: 6% 5% 10% 5%;
 }
 
     .sidepage .sidepage-content{
         margin: 3% 5%;
-        //background: gray;
-        //padding: 100px;
-        //border: solid;
-        //border-radius: 0 0 10px 10px;
     }
 
     .sidepage form {
@@ -670,20 +716,10 @@
         margin: 0 auto;
     }
 
-    /*.sidepage h3, .sidepage h4 {
-        color: #82ad38;
-        margin: 0px;
-        text-align: center;
-    }*/
-
     .sidepage h2 {
         text-align: center;
         color: #82ad38;
     }
-
-        .sidepage h2 span {
-            //color: #583b13;
-        }
 
     .sidepage h4, .sidepage h3 {
         color: #583b13;
@@ -691,7 +727,6 @@
 
     .sidepage input, .sidepage select, .sidepage textarea {
         height: 35px;
-        // margin: 2px 2px 15px 2px;
         padding: 2px;
         font-size: 14pt;
     }
@@ -706,7 +741,6 @@
         margin: 5px 0 0 5px;
         padding: 0;
         color: #583b13;
-        //#86ad38;
     }
 
     .sidepage #continue {
@@ -750,19 +784,14 @@
         }
 
         .sidepage .table .glyphs {
-            width: 100px; //30px;
+            width: 100px;
         }
 
-    .sidepage .glyphs a{ /*.border-left {*/
-        //color: #86ad38;
-        //#583b13;
-        //border-left: solid #583b13;
+    .sidepage .glyphs a{
         padding-left: 5px;
     }
 
     .sidepage .btn {
-        //background-color: #977b2d;
-        //background-color: #86ad38;
         padding-left: 2px;
         padding-right: 5px;
     }
@@ -833,11 +862,6 @@
 /*
     Edit
 */
-.edit{
-    //padding: 3% 20% 5% 20%;
-}
-
-
 
 /*
     Create
@@ -868,15 +892,3 @@
 /*
     List/Index
 */
-
-.sidepage.index .btn-right{
-    //border-radius: 5px 5px 0 0;
-}
-
-.sidepage.index {
-    //padding: 6% 5% 10% 5%;
-}
-
-.sidepage.index h3{
-    //padding-bottom: 30px;
-}
