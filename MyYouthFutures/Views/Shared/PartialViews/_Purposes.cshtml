@@ -1,5 +1,5 @@
 ﻿
-<article class="container-fluid purpose-box">
+<article class="container-fluid purpose-box" id="purposeMain">
     <section class="row purpose col-xs-12">
         <edit-container is-visible="User.Identity.IsAuthenticated">
             <div class="row purpose-title">
@@ -63,7 +63,7 @@
             </div>
         </div>
     </section>
-    <section class="row purpose-user">
+    <section class="row purpose-user" id="linksMain">
         <div class="container text-center row">
             <add-component controller="Links" is-visible="User.Identity.IsAuthenticated">Add New Link</add-component>
         </div>
@@ -84,7 +84,7 @@
                             </section>
                             <section class="panel-footer">
                                 <p class="quicksand-light-24-green">
-                                    <a <a asp-controller="@Lk.TargetControler" asp-action="@Lk.TargetAction" asp-fragment="@Lk.TargetFragment">>@Lk.Hyperlink ></a>
+                                    <a asp-controller="@Lk.TargetControler" asp-action="@Lk.TargetAction" asp-fragment="@Lk.TargetFragment">@Lk.Hyperlink</a>
                                 </p>
                             </section>
                         </article>
