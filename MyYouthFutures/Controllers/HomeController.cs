@@ -91,11 +91,12 @@ namespace MyYouthFutures.Controllers
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("ava4evr@hotmail.com", "DX Team"),
-                Subject = "Hello World from the SendGrid CSharp SDK!",
-                PlainTextContent = email.Message,
+                From = new EmailAddress("jaredfernelius@mail.weber.edu", "Youth Futures"),
+                Subject = "Hello from Youth Futures!",
+                PlainTextContent = "Message from " + email.FirstName + " " + email.LastName + ": \n" +
+                " " + email.Message,
             };
-            msg.AddTo(new EmailAddress("ava4evr@hotmail.com", "Test User"));
+            msg.AddTo(new EmailAddress(email.EmailAddress, "Test User"));
             var response = await client.SendEmailAsync(msg);
             return About();
         }
@@ -109,7 +110,7 @@ namespace MyYouthFutures.Controllers
 
             var recipients = new List<EmailAddress>
                 {
-                    new EmailAddress("jeff@example.com", "Jeff Smith"),
+                    new EmailAddress("jaredfernelius@mail.weber.edu", "Jeff Smith"),
                     new EmailAddress("anna@example.com", "Anna Lidman"),
                     new EmailAddress("peter@example.com", "Peter Saddow")
                 };
