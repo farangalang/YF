@@ -10,32 +10,29 @@
         <div class="col-xs-12 ">
             @foreach (Media med in Model.Media)
             {
-                if (med.Text_Type.Equals("title"))
-                {
+                
                     <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
-                            <p class="title">@med.Content_Text</p>
+                            <p class="title">@med.Title</p>
                         </div>
                         <edit-link is-visible="User.Identity.IsAuthenticated">
                             <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
-                }
+                
 
-            }
-            @foreach (Media med in Model.Media)
-            {
-                if (med.Text_Type.Equals("time"))
-                {
+            
+            
+                
                     <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class=" editArea">
-                            <p class="mont_regular_22_darkgray time">@med.Content_Text</p>
+                            <p class="mont_regular_22_darkgray time">@med.Time</p>
                         </div>
                         <edit-link is-visible="User.Identity.IsAuthenticated">
                             <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
-                }
+                
             }
             <a class="link" href="#">inShare</a>
         </div>
@@ -46,17 +43,17 @@
         <div class="col-xs-12 col-lg-7 pic">
             @foreach (Media med in Model.Media)
             {
-                if (med.Text_Type.Equals("image"))
-                {
+                
+                
                     <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class=" editArea">
-                            <img src="@med.Content_Text" class="img-responsive center-block" title="America First Check" alt="Check">
+                            <img src="@med.Image" class="img-responsive center-block" title="America First Check" alt="Check">
                         </div>
                         <edit-link is-visible="User.Identity.IsAuthenticated">
                             <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
-                }
+                
 
             }
 
@@ -64,17 +61,16 @@
         <div class="col-xs-12 col-lg-5 subtext">
             @foreach (Media med in Model.Media)
             {
-                if (med.Text_Type.Equals("subTitle"))
-                {
+                
                     <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
-                            <p class="subtitle">@med.Content_Text</p>
+                            <p class="subtitle">@med.SubTitle</p>
                         </div>
                         <edit-link is-visible="User.Identity.IsAuthenticated">
                             <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
-                }
+                
             }
         </div>
     </div>
@@ -84,8 +80,7 @@
         <section class="col-xs-12">
             @foreach (Media med in Model.Media)
             {
-                if (med.Text_Type.Equals("para1"))
-                {
+                
                     <edit-container is-visible="User.Identity.IsAuthenticated">
                         <div class="editArea">
                             <p class="mont_regular_22_darkgray">@med.Content_Text</p>
@@ -94,10 +89,10 @@
                         <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
-                }
+                
 
             }
-            @foreach (Media med in Model.Media)
+            @*@foreach (Media med in Model.Media)
             {
                 if (med.Text_Type.Equals("para2"))
                 {
@@ -110,7 +105,7 @@
                         </edit-link>
                     </edit-container>
                 }
-            }
+            }*@
         </section>
     </div>
 </div>
