@@ -3,37 +3,44 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<div class="sidepage delete">
+    <h2>Delete</h2>
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Doners</h4>
+    <h3>Are you sure you want to delete this?</h3>
+    <h4>Doners: Donor #@Model.ID</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Doner_Type)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Doner_Type)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Doner_Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Doner_Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Doner_year)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Doner_year)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="ID" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+    <div class="sidepage-content">    
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Doner_Type)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Doner_Type)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Doner_Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Doner_Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Doner_year)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Doner_year)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="ID" />
+            <div class="btn btn-default glyphs">
+                <span class="glyphicon glyphicon-trash"></span>
+                <input type="submit" value="Delete" />
+            </div>
+        </form>
+    </div>
+
+    <hr />
+    <a asp-action="Index" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to List</a>
+
 </div>

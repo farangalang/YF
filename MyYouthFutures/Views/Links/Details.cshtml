@@ -3,34 +3,36 @@
 @{
     ViewData["Title"] = "Details";
 }
+<div class="sidepage details">
+    <h2>Details</h2>
 
-<h2>Details</h2>
-
-<div>
-    <h4>Link</h4>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.LinkID" class="btn btn-primary btn-right"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+        <h4>Links: Panel #@Model.LinkID</h4>
+        <hr />
+        <dl class="dl-horizontal sidepage-content">
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Message)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Message)
+            </dd>
+        </dl>
+    </div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Message)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Message)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.LinkID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <a asp-action="Index" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to List</a>
+    </div>
 </div>

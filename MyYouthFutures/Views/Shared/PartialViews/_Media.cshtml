@@ -4,11 +4,11 @@
             <h2 class="h2style1">Media</h2>
         </div>
     </div>
-</div>
-<div class="container-fluid">
-    <div class="row media_subheader">
-        <div class="col-xs-12 ">
-            @foreach (Media med in Model.Media)
+
+    <div class="container-fluid">
+        <div class="row media_subheader">
+            <div class="col-xs-12 ">
+                @foreach (Media med in Model.Media)
             {
                 
                     <edit-container is-visible="User.Identity.IsAuthenticated">
@@ -37,11 +37,10 @@
             <a class="link" href="#">inShare</a>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row media_pic">
-        <div class="col-xs-12 col-lg-7 pic">
-            @foreach (Media med in Model.Media)
+    <div class="container">
+        <div class="row media_pic">
+            <div class="col-xs-12 col-lg-7 pic">
+                @foreach (Media med in Model.Media)
             {
                 
                 
@@ -53,13 +52,11 @@
                             <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
                         </edit-link>
                     </edit-container>
-                
+                }
 
-            }
-
-        </div>
-        <div class="col-xs-12 col-lg-5 subtext">
-            @foreach (Media med in Model.Media)
+            </div>
+            <div class="col-xs-12 col-lg-5 subtext">
+                @foreach (Media med in Model.Media)
             {
                 
                     <edit-container is-visible="User.Identity.IsAuthenticated">
@@ -74,11 +71,10 @@
             }
         </div>
     </div>
-</div>
-<div class="container-fluid">
-    <div class="row media_text">
-        <section class="col-xs-12">
-            @foreach (Media med in Model.Media)
+    <div class="container-fluid">
+        <div class="row media_text">
+            <section class="col-xs-12">
+                @foreach (Media med in Model.Media)
             {
                 
                     <edit-container is-visible="User.Identity.IsAuthenticated">
@@ -96,16 +92,18 @@
             {
                 if (med.Text_Type.Equals("para2"))
                 {
-                    <edit-container is-visible="User.Identity.IsAuthenticated">
-                        <div class="editArea">
-                            <p class="mont_regular_22_darkgray">@med.Content_Text</p>
-                        </div>
-                        <edit-link is-visible="User.Identity.IsAuthenticated">
-                        <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
-                        </edit-link>
-                    </edit-container>
+                        <edit-container is-visible="User.Identity.IsAuthenticated">
+                            <div class="editArea">
+                                <p class="mont_regular_22_darkgray">@med.Content_Text</p>
+                            </div>
+                            <edit-link is-visible="User.Identity.IsAuthenticated">
+                                <edit-a controller="Media" route-id="@med.ID" is-visible="User.Identity.IsAuthenticated"></edit-a>
+                            </edit-link>
+                        </edit-container>
+                    }
                 }
             }*@
         </section>
+
     </div>
 </div>

@@ -3,45 +3,70 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-<div class="container-fluid" id="YouthStoriesMain">
+
+<article class="container-fluid" id="YouthStoriesMain">
     <div class="row YouthStory_header">
         <div class="col-xs-6 text" id="YouthStory">
-            <h2 class="h2style1">Youth Stories</h2>
+            <h2>YOUTH</h2>
+            <h2 class="h2style1">STORIES</h2>
         </div>
     </div>
+    <div class="editArea content">
+        <!--Title-->
+        <div class="row">
+            <p class="title">Replace Title</p>
+        </div>
 
+        <!--Date-->
+        <div class="row">
+            <p class="mont_regular_22_darkgray time">Replace Date</p>
+        </div>
+
+        <div class="row">
+            <!--Image-->
+            <img src="" class="img-responsive center-block col-xs-4" title="Replace Image Title" alt="Replace Image Alt"/>
+
+            <!--Image Blurb-->
+            <p class="subtext subtitle col-xs-push-4 col-xs-4">Replace Image Blurb</p>
+        </div>
+
+        <!--Article Text-->
+        <div class="row">
+            <p class="mont_regular_22_darkgray">replace Content</p>
+        </div>
+    </div>
     <!--Loop-->
-    @foreach (Youth_Story ys in Model.YouthStories)
+   @* @foreach (Youth_Story ys in Model.YouthStories)
     {
-        <edit-container>
-            <article class="editArea">    
+        <edit-container is-visible="User.Identity.IsAuthenticated">
+            <div class="editArea content">
                 <!--Title-->
-                <section>
+                <div class="row">
                     <p class="title">@ys.title</p>
-                </section>
+                </div>
 
                 <!--Date-->
-                <section>
-                    <p>@ys.date</p>
-                </section>
+                <div class="row">
+                    <p class="mont_regular_22_darkgray time">@ys.date</p>
+                </div>
 
-                <section>
+                <div class="row">
                     <!--Image-->
-                    <img src=@ys.image/>
+                    <img src=@ys.image class="img-responsive center-block col-xs-4" title=@ys.imageTitle alt=@ys.imageAlt/>
 
                     <!--Image Blurb-->
-                    <p>@ys.imageBlurb</p>
-                </section>
+                    <p  class="subtext subtitle col-xs-push-4 col-xs-4">@ys.imageBlurb</p>
+                </div>
 
                 <!--Article Text-->
-                <section>
-                    <p>@ys.articleText</p>
-                </section>
-            </article>
+                <div class="row">
+                    <p class="mont_regular_22_darkgray">@ys.articleText</p>
+                </div>
+            </div>
             <edit-link>
                 <edit-a controller="Youth_Story" route-id="@ys.id"></edit-a>
             </edit-link>
         </edit-container>
-    }
+    }*@
     <!--End Loop-->
-</div>
+</article>

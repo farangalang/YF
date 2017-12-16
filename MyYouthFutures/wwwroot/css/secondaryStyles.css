@@ -2,6 +2,11 @@
     background-color: #1c5788;
 }
 
+.container {
+    padding-left: 0px;
+    padding-right: 30px;
+}
+
 /**************************************
     History
 ***************************************/
@@ -98,6 +103,13 @@
     }
 
 /***********************
+    First Year Panels
+*************************/
+#firstYear .container{
+    padding-right: 0px;
+}
+
+/***********************
     More
 ************************/
 .more {
@@ -176,6 +188,10 @@
 /*******************************
     Board of Directors
 ********************************/
+#directorsMain {
+    background-color: white;
+}
+
 .board_header {
     background-color: white;
 }
@@ -199,9 +215,7 @@
     background-color: white;
     padding-left: 5%;
     padding-bottom: 5%;
-}
-
-.board_members {
+    
     font-family: "montserrat-light";
     font-size: 16px;
     line-height: 30px;
@@ -223,7 +237,8 @@
 /*********************************
     Media
 **********************************/
-.media_header {
+/*.media_header {*/
+#mediaMain{
     background-color: white;
 }
 
@@ -244,7 +259,7 @@
         }
 
 .media_subheader {
-    background-color: white;
+    //background-color: white;
     padding-left: 10%;
     padding-bottom: 2%;
 }
@@ -583,3 +598,297 @@
     #noPage h4 {
         padding: 0px 80px 0px 80px;
     }
+
+/**********************************
+    Calendar
+***********************************/
+.calendar-body{
+    background-color: #ffffff;
+    padding: 50px 60px 10px 60px;
+}
+
+.calendar-body .h2style1{
+    color: #8ebc3d;
+}
+
+.calendar-body h3{
+    color: #1c5778;
+}
+
+.calendar-body .btn-calendar{
+    background-color: #6a6a6a;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: left;
+    margin: 5px;
+    border-radius: 0px;
+}
+
+.calendar-body .btn-calendar::selection{
+    background-color: #6a6a6a;
+}
+
+.calendar-body .btn-calendar .col-xs-1{
+    width: 10px;
+}
+
+.calendar-body .btn-calendar .calendarTitle{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.calendar-body .btn-calendar .date{
+    font-size: 16px;
+    text-align: center;
+}
+
+.calendar-body .collapse h5{
+    font-size: 20px;
+    color: #6a6a6a;
+}
+
+.calendar-body .collapse h5.calendarTitle{
+    font-weight: bold;
+}
+
+.calendar-body .collapse h5.title{
+    font-size: 28px;
+    color: #174475;
+    font-weight: bolder;
+    margin-top: 0px;
+}
+
+/**********************************
+    Youth Stories
+***********************************/
+#YouthStoriesMain{
+    background-color: white;
+
+    display: none;
+}
+
+#YouthStoriesMain .content{
+    padding: 40px 100px;
+}
+
+    #YouthStoriesMain h2{
+        color: #ababab;
+    }
+    #YouthStoriesMain .h2style1 {
+        color: #8ebc3d;
+    }
+
+#YouthStoriesMain .title {
+    font-family: "montserrat-regular";
+    font-size: 32px;
+    line-height: 36px;
+    color: #174475;
+}
+
+#YouthStoriesMain img {
+    background-color: white;
+    padding-bottom: 5%;
+}
+
+    #YouthStoriesMain .subtext {
+        font-family: "montserrat-light";
+        font-size: 14px;
+        line-height: 24px;
+        font-style: italic;
+        color: #1c5788;
+    }
+/**********************************
+    General look for Side pages 
+    (login, create, delete, etc.)
+***********************************/
+
+.sidepage {
+    background-color: #ffffff;
+    padding: 6% 5% 10% 5%;
+}
+
+    .sidepage .sidepage-content{
+        margin: 3% 5%;
+    }
+
+    .sidepage form {
+        float: none;
+        margin: 0 auto;
+    }
+
+    .sidepage h2 {
+        text-align: center;
+        color: #82ad38;
+    }
+
+    .sidepage h4, .sidepage h3 {
+        color: #583b13;
+    }
+
+    .sidepage input, .sidepage select, .sidepage textarea {
+        height: 35px;
+        padding: 2px;
+        font-size: 14pt;
+    }
+
+    .sidepage textarea{
+        height: 200px;
+    }
+
+    .sidepage label {
+        font-size: 16pt;
+        vertical-align: text-bottom;
+        margin: 5px 0 0 5px;
+        padding: 0;
+        color: #583b13;
+    }
+
+    .sidepage #continue {
+        color: #583b13;
+        text-align: center;
+        font-size: x-large;
+    }
+
+    .sidepage .row{
+        padding: 15px 0px 15px 0px;
+    }
+
+    .sidepage .btn{
+        font-size: large;
+        font-weight: bold;
+        width: 150px;
+        margin-top: 10px;
+    }
+
+    .sidepage hr {
+        border: none;
+        height: 2px;
+        background-color: #86ad38;
+        margin: 0px;
+    }
+
+    .sidepage .table {
+        font-size: 13pt;
+        border: solid #583b13;
+    }
+
+        .sidepage .table thead th {
+            text-align: center;
+            border: solid #583b13;
+            background-color: #583b13;
+            color: white;
+        }
+
+        .sidepage .table td {
+            border: solid #583b13;
+        }
+
+        .sidepage .table .glyphs {
+            width: 100px;
+        }
+
+    .sidepage .glyphs a{
+        padding-left: 5px;
+    }
+
+    .sidepage .btn {
+        padding-left: 2px;
+        padding-right: 5px;
+    }
+
+    .sidepage .btn span{
+        padding-right: 5px;
+    }
+
+    .sidepage dl{
+        font-size: 14pt;
+        color: #583b13;
+        //margin: 10px 20px 10px 20px;
+    }
+
+    .sidepage dt{
+        width: 170px;
+        margin-right: 15px;
+    }
+    .sidepage .btn-right {
+        float: right;
+    }
+
+    .sidepage .btn.back {
+        background-color: #8ebc3d;
+        color: #ffffff;
+        border-color: #71963a;
+    }
+
+        .sidepage .btn.back:hover {
+            background-color: #71963a;
+            color: #ffffff;
+            //border-color: #583b13;
+        }
+
+/*
+    Login
+*/
+
+.sidepage#login {
+    background-color: gray;
+}
+
+.case1 {
+    /*border: 5px solid #583b13;
+    padding: 5px;*/
+    margin: 4% 35% 5% 35%;
+    padding: 2px;
+    background-color: white;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #583b13; /*brown*/
+    font-weight: bold;
+    color: #583b13;
+}
+
+.case2 {
+    padding: 10px 5px 10px 5px;
+    background-color: white;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    border-style: solid;
+    border-color: #86ad38; /*green*/
+}
+
+/*
+    Edit
+*/
+
+/*
+    Create
+*/
+
+/*
+    Delete 
+*/
+
+.sidepage.delete h3{
+    color: #1c5788;
+}
+
+.sidepage.delete input[type=submit]{
+    background: none;
+    border: none;
+}
+
+.sidepage.delete .glyphs{
+    height: 40px;
+    padding: 3px 0px 0px 0px;
+}
+
+/*
+    Details
+*/
+
+/*
+    List/Index
+*/
