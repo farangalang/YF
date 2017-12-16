@@ -14,8 +14,16 @@
             <thead>
                 <tr>
                     <th>
-
-                        @Html.DisplayNameFor(model => model.Text_Type)
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Time)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SubTitle)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Content_Text)
@@ -28,7 +36,16 @@
             {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Text_Type)
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Time)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Image)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SubTitle)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Content_Text)
