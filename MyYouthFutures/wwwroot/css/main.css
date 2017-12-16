@@ -391,6 +391,10 @@
     padding-bottom: 2.5%
 }
 
+.servicesMessage{
+    background-color: white;
+}
+
 .services_overnight, .services_drop_in, .services_outreach {
     height: 594px;
     width: 330px;

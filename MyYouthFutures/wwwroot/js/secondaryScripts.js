@@ -129,3 +129,11 @@
     }
 
 }
+
+/*For Calendar collapse events to 
+flip the triangle*/
+$(document).ready(function () {
+    $('button[id^="calendar_"]').on('click', function () {
+        $(this).find('span[id^="glyphs_"]').toggleClass('glyphicon-triangle-right').toggleClass("glyphicon-triangle-bottom");
+    });
+});
