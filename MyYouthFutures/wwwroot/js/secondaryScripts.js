@@ -3,7 +3,7 @@
     var success = emailSuccessful('success');
     var elem = document.getElementsByClassName("input_text");
     var sub = document.getElementById("submit");
-    var fName, lName, email, message;
+    var fName, lName, message;
     //If the querystring value returns true
     if (success === "true") {
         //To something to let the user know the form sumitted successfully
@@ -38,9 +38,6 @@
                 lName = true;
             }
 
-            if (name === "email") {
-                email = true;
-            }
 
             if (name === "message") {
 
@@ -56,7 +53,7 @@
 
             }
 
-            if (fName && lName && email && message) {
+            if (fName && lName && message) {
                 sub.removeAttribute("disabled");
             }
 
@@ -83,10 +80,6 @@
                     document.getElementsByName('lastName')[0].style.borderColor = "red";
                 }
 
-                if (name === "email") {
-                    document.getElementById('email_change').style.visibility = "visible";
-                    document.getElementsByName('email')[0].style.borderColor = "red";
-                }
 
                 if (name === "message") {
                     document.getElementById('message_change').style.visibility = "visible";

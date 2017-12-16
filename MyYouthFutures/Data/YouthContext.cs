@@ -32,6 +32,5 @@ namespace MyYouthFutures.Data
         public DbSet<MyYouthFutures.Models.CalendarEvent> CalendarEvent { get; set; }
         public DbSet<MyYouthFutures.Models.Events> Events { get; set; } //models the events section on the About Page
         public DbSet<MyYouthFutures.Models.Youth_Story> Youth_Story { get; set; }
-
     }
 }

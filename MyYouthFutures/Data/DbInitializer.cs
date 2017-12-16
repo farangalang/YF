@@ -82,6 +82,16 @@ namespace MyYouthFutures.Data
             };
             _ctx.Links.AddRange(links);
 
+            var email = new Email[]
+            {
+                new Email
+                {
+                    Key=""
+                }
+            };
+
+            _ctx.Email.AddRange(email);
+
             var purposes = new Purpose[]
             {
                 new Purpose
