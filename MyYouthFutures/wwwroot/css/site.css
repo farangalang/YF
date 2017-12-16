@@ -3,22 +3,22 @@
 ***********************/
 @font-face {
     font-family: 'montserrat-light';
-    src: url('../images/montserrat-light.otf') format('opentype');
+    src: url('../images/Montserrat-Light.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'montserrat-regular';
-    src: url('../images/montserrat-regular.otf') format('opentype');
+    src: url('../images/Montserrat-Regular.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'montserrat-semibold';
-    src: url('../images/montserrat-semibold.otf') format('opentype');
+    src: url('../images/Montserrat-SemiBold.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'quicksand-bold';
-    src: url('../images/quicksand-bold.otf') format('opentype');
+    src: url('../images/Quicksand_Bold.otf') format('opentype');
 }
 
 

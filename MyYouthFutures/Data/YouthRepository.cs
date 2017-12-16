@@ -97,5 +97,11 @@ namespace MyYouthFutures.Data
             return _ctx.Events
                 .ToList();
         }
+
+        public IEnumerable<Youth_Story> GetAllYouthStories()
+        {
+            return _ctx.Youth_Story
+                .ToList();
+        }
     }
 }

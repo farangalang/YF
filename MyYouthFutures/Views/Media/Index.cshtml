@@ -6,39 +6,62 @@
 <div class="sidepage index">
     <h2>Index</h2>
 
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-
-                    @Html.DisplayNameFor(model => model.Text_Type)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Content_Text)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <a asp-action="Create" class="btn btn-primary btn-right"><span class="glyphicon glyphicon-plus"></span>Create New</a>
+    <h4>Media</h4>
+    <hr />
+    <div class="sidepage-content">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Text_Type)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Content_Text)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Time)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SubTitle)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Content_Text)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Time)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Image)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SubTitle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Content_Text)
+                        </td>
+                        <td class="glyphs">
+                            <a asp-action="Edit" asp-route-id="@item.ID" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a asp-action="Details" asp-route-id="@item.ID" data-toggle="tooltip" title="Details" class="border-left"><span class="glyphicon glyphicon-list"></span></a>
+                            <a asp-action="Delete" asp-route-id="@item.ID" data-toggle="tooltip" title="Delete" class="border-left"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <hr />
+    <a asp-controller="Home" asp-action="About" asp-fragment="mediaMain" class="btn btn-default back"><span class="glyphicon glyphicon-triangle-left"></span>Back to Page </a>
+
 </div>

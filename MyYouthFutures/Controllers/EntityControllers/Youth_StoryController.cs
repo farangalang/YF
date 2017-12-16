@@ -8,24 +8,24 @@ using Microsoft.EntityFrameworkCore;
 using MyYouthFutures.Data;
 using MyYouthFutures.Models;
 
-namespace MyYouthFutures.Controllers
+namespace MyYouthFutures.Controllers.EntityControllers
 {
-    public class MediaController : Controller
+    public class Youth_StoryController : Controller
     {
         private readonly YouthContext _context;
 
-        public MediaController(YouthContext context)
+        public Youth_StoryController(YouthContext context)
         {
             _context = context;
         }
 
-        // GET: Media
+        // GET: Youth_Story
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Media.ToListAsync());
+            return View(await _context.Youth_Story.ToListAsync());
         }
 
-        // GET: Media/Details/5
+        // GET: Youth_Story/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media
-                .SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            var youth_Story = await _context.Youth_Story
+                .SingleOrDefaultAsync(m => m.id == id);
+            if (youth_Story == null)
             {
                 return NotFound();
             }
 
-            return View(media);
+            return View(youth_Story);
         }
 
-        // GET: Media/Create
+        // GET: Youth_Story/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Media/Create
+        // POST: Youth_Story/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,Time,Image,SubTitle,Content_Text")] Media media)
+        public async Task<IActionResult> Create([Bind("id,date,title,image,imageBlurb,articleText")] Youth_Story youth_Story)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(media);
+                _context.Add(youth_Story);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(media);
+            return View(youth_Story);
         }
 
-        // GET: Media/Edit/5
+        // GET: Youth_Story/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media.SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            var youth_Story = await _context.Youth_Story.SingleOrDefaultAsync(m => m.id == id);
+            if (youth_Story == null)
             {
                 return NotFound();
             }
-            return View(media);
+            return View(youth_Story);
         }
 
-        // POST: Media/Edit/5
+        // POST: Youth_Story/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Time,Image,SubTitle,Content_Text")] Media media)
+        public async Task<IActionResult> Edit(int id, [Bind("id,date,title,image,imageBlurb,articleText")] Youth_Story youth_Story)
         {
-            if (id != media.ID)
+            if (id != youth_Story.id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace MyYouthFutures.Controllers
             {
                 try
                 {
-                    _context.Update(media);
+                    _context.Update(youth_Story);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MediaExists(media.ID))
+                    if (!Youth_StoryExists(youth_Story.id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace MyYouthFutures.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(media);
+            return View(youth_Story);
         }
 
-        // GET: Media/Delete/5
+        // GET: Youth_Story/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace MyYouthFutures.Controllers
                 return NotFound();
             }
 
-            var media = await _context.Media
-                .SingleOrDefaultAsync(m => m.ID == id);
-            if (media == null)
+            var youth_Story = await _context.Youth_Story
+                .SingleOrDefaultAsync(m => m.id == id);
+            if (youth_Story == null)
             {
                 return NotFound();
             }
 
-            return View(media);
+            return View(youth_Story);
         }
 
-        // POST: Media/Delete/5
+        // POST: Youth_Story/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var media = await _context.Media.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Media.Remove(media);
+            var youth_Story = await _context.Youth_Story.SingleOrDefaultAsync(m => m.id == id);
+            _context.Youth_Story.Remove(youth_Story);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MediaExists(int id)
+        private bool Youth_StoryExists(int id)
         {
-            return _context.Media.Any(e => e.ID == id);
+            return _context.Youth_Story.Any(e => e.id == id);
         }
     }
 }

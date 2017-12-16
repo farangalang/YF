@@ -19,5 +19,6 @@ namespace MyYouthFutures.Data
         IEnumerable<Services_Message> GetAllServiceMessages();
         IEnumerable<Staff_Panel> GetAllStaffPanels();
         IEnumerable<Events> GetAllEvents();
+        IEnumerable<Youth_Story> GetAllYouthStories();
     }
 }

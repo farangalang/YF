@@ -1,106 +1,87 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
-
-<div class="container-fluid" id="Calendar">
-    <div class="row calendarHeader">
-        <div class="col-xs-6" id="calendar">
-            <h2 class="h2style1">CALENDAR</h2>
+<div class="calendar-body content">
+    <!--Header-->
+    <div class="container-fluid" id="Calendar">
+        <div class="row calendarHeader">
+            <h2 class="h2style1 col-xs-12">CALENDAR</h2>
+            <div class="col-xs-5"></div>
             <add-component controller="Events" is-visible="User.Identity.IsAuthenticated">Add Calendar Event</add-component>
         </div>
+        
     </div>
-</div>
-<!--Accordian-->
-<div class="calendarEvents">
+    <!--Accordian-->
+    <div class="calendarEvents">
 
-    @*Get all events per month*@
-    @{
-        string[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-    }
+        @*Get all events per month*@
+        @{
+            string[] strMonths = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+            string[] intMonths = { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
+         }
 
-    @*@foreach (CalendarEvent ev in Model.CalendarEvent)
+        <!--Check if this year has an event-->
+        <!---->
+        @for (int k = DateTime.Now.Year-1; k < 2018+10; k++)
         {
-            for (int i = 0; i < 12; i++)
+            <!--Check if this month has an event-->
+            @for (int i = 0; i < 12; i++)
             {
-                <h2>@months[i]</h2> <!--add versatile year?-->
-                <edit-container>
-                    if (ev.datetime.Month.Equals(i))
+                int j = 0;
+                @foreach (Events ev in Model.Events)
+                {
+                    //organize by year
+                    if (ev.When.Substring(ev.When.Length - 4, 4).Equals(k.ToString()))
                     {
-                        <div>
-                            <button class="btn btn-default col-xs-12" data-toggle="collapse" data-target="#event_@i" aria-expanded="false" aria-controls="event_@i">
-                                <span class="col-xs-1"><</span>
-                                <span class="col-xs-push-1 col-xs-8">@ev.name</span>
-                                <span class="col-xs-3">@ev.datetime.Date</span>
-                            </button>
-                            <div class="collapse row" id="event_@i">
-                                <div class="row">
-                                    <h5 class="col-xs-push-1 col-xs-1">What</h5>
-                                    <h5 class="col-xs-push-1 col-xs-10 title">eventTitle</h5>
-                                </div>
+                        //organize by month
+                        @if (ev.When.Substring(0, 2).Equals(intMonths[i]))
+                        {
+                            
+                            if (j == 0)
+                            {
+                                <!--print month & year-->
+                                <h3>@strMonths[i] @k</h3>
+                            }
 
-                                <div class="row">
-                                    <h5 class="col-xs-push-1 col-xs-1">When</h5>
-                                    <h5 class="col-xs-push-1 col-xs-10">datetime</h5>
-                                </div>
+                            j++;
 
-                                <div class="row">
-                                    <h5 class="col-xs-push-1 col-xs-1">Where</h5>
-                                    <h5 class="col-xs-push-1 col-xs-10">location</h5>
-                                </div>
+                            <edit-container is-visible="User.Identity.IsAuthenticated">
+                                <div>
+                                    <button class="btn btn-calendar col-xs-12" id="calendar_@ev.ID" data-toggle="collapse" data-target="#event_@ev.ID" aria-expanded="false" aria-controls="event_@ev.ID" >
+                                        <span class="col-xs-1 glyphicon glyphicon-triangle-right glyphs" id="glyphs_@ev.ID"></span>
+                                        <span class="col-xs-6 calendarTitle">@ev.EventTitle</span>
+                                        <span class="col-xs-push-4 col-xs-2 date">@ev.When</span>
+                                    </button>
+                                    <div class="collapse" id="event_@ev.ID">
+                                       <div class="row">
+                                           <h5 class="col-xs-push-1 col-xs-1 calendarTitle">What</h5>
+                                           <h5 class="col-xs-push-1 col-xs-10 calendarTitle title">@ev.EventTitle</h5>
+                                       </div>
+                            
+                                        <div class="row">
+                                           <h5 class="col-xs-push-1 col-xs-1 calendarTitle">When</h5>
+                                           <h5 class="col-xs-push-1 col-xs-10">@ev.When</h5>
+                                        </div>
 
-                                <div class="row">
-                                    <h5 class="col-xs-push-1 col-xs-1">Info</h5>
-                                    <h5 class="col-xs-push-1 col-xs-10">info</h5>
+                                        <div class="row">
+                                           <h5 class="col-xs-push-1 col-xs-1 calendarTitle">Where</h5>
+                                           <h5 class="col-xs-push-1 col-xs-10">@ev.Where</h5>
+                                        </div>
+
+                                        <div class="row">
+                                           <h5 class="col-xs-push-1 col-xs-1 calendarTitle">Info</h5>
+                                           <h5 class="col-xs-push-1 col-xs-10">@ev.Info</h5>
+                                        </div>
+                                    </div>
+                                    <edit-link>
+                                        <edit-a controller="Events" route-id="@ev.ID"></edit-a>
+                                    </edit-link>
                                 </div>
-                            </div>
-                            <edit-link>
-                                <edit-a controller="CalendarEvent" route-id="@ev.id"></edit-a>
-                            </edit-link>
-                        </div>
+                            </edit-container>
+                         }
                     }
-                </edit-container>
-            }
-        }*@
-
-
-    <!--Temporary, other one doesn't work yet-->
-    @foreach (Events ev in Model.Events)
-    {
-
-        <edit-container is-visible="User.Identity.IsAuthenticated">
-            <div class="row editArea">
-                <button class="btn btn-default col-xs-12" data-toggle="collapse" data-target="#event_1" aria-expanded="false" aria-controls="cE">
-                    <span class="col-xs-1"><</span>
-                    <span class="col-xs-push-1 col-xs-8">@ev.EventTitle</span>
-                    <span class="col-xs-3">Date</span>
-                </button>
-                <div class="collapse col-xs-12" id="event_1">
-                    <div class="row">
-                        <h5 class="col-xs-push-1 col-xs-1">@ev.What</h5>
-                        <h5 class="col-xs-push-1 col-xs-10 title">@ev.EventTitle</h5>
-                    </div>
-
-                    <div class="row">
-                        <h5 class="col-xs-push-1 col-xs-1">@ev.When</h5>
-                        @*<h5 class="col-xs-push-1 col-xs-10">datetime</h5>*@
-                    </div>
-
-                    <div class="row">
-                        <h5 class="col-xs-push-1 col-xs-1">@ev.Where</h5>
-                        @*<h5 class="col-xs-push-1 col-xs-10">location</h5>*@
-                    </div>
-
-                    <div class="row">
-                        <h5 class="col-xs-push-1 col-xs-1">@ev.Info</h5>
-                        @*<h5 class="col-xs-push-1 col-xs-10">info</h5>*@
-                    </div>
-                </div>
-                <edit-link is-visible="User.Identity.IsAuthenticated">
-                    <edit-a controller="Events" route-id="@ev.ID" class="editText" is-visible="User.Identity.IsAuthenticated"></edit-a>
-
-                </edit-link>
-
-            </div>
-        </edit-container>
-    }
+                 }
+             }
+         }
+    </div>
 </div>
