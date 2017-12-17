@@ -103,5 +103,11 @@ namespace MyYouthFutures.Data
             return _ctx.Youth_Story
                 .ToList();
         }
+
+        public IEnumerable<Email> GetAllEmails()
+        {
+            return _ctx.Email
+                .ToList();
+        }
     }
 }

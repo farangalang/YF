@@ -64,6 +64,7 @@ namespace MyYouthFutures.Controllers
             var doner = _repository.GetAllDoners();
             var helper = _repository.GetAllHelpPanels();
             var events = _repository.GetAllEvents();
+            var email = _repository.GetAllEmails();
 
             var vm = new ItemViewModel
             {
@@ -75,7 +76,8 @@ namespace MyYouthFutures.Controllers
                 Media = media,
                 Doners = doner,
                 Help_Panel = helper,
-                Events = events
+                Events = events,
+                Email = email
             };
             return View(vm);
 
@@ -110,7 +112,7 @@ namespace MyYouthFutures.Controllers
 
             var recipients = new List<EmailAddress>
                 {
-                    new EmailAddress("jaredfernelius@mail.weber.edu", "Jeff Smith"),
+                    new EmailAddress("scotthadzik@.weber.edu", "Jeff Smith"), //Change the email here to receive the contact us email
                     new EmailAddress("anna@example.com", "Anna Lidman"),
                     new EmailAddress("peter@example.com", "Peter Saddow")
                 };
