@@ -93,7 +93,7 @@ namespace MyYouthFutures.Controllers
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("jaredfernelius@mail.weber.edu", "Youth Futures"),
+                From = new EmailAddress("scotthadzik@weber.edu", "Youth Futures"),
                 Subject = "Hello from Youth Futures!",
                 PlainTextContent = "Message from " + email.FirstName + " " + email.LastName + ": \n" +
                 " " + email.Message,
@@ -112,7 +112,7 @@ namespace MyYouthFutures.Controllers
 
             var recipients = new List<EmailAddress>
                 {
-                    new EmailAddress("scotthadzik@.weber.edu", "Jeff Smith"), //Change the email here to receive the contact us email
+                    new EmailAddress("scotthadzik@weber.edu", "Jeff Smith"), //Change the email here to receive the contact us email
                     new EmailAddress("anna@example.com", "Anna Lidman"),
                     new EmailAddress("peter@example.com", "Peter Saddow")
                 };
