@@ -84,8 +84,7 @@ namespace MyYouthFutures.Controllers
         [HttpPost]
         public async Task<IActionResult> About(Email email)
         {
-            // var apiKey = System.Environment.GetEnvironmentVariable("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");
-            //var apiKey = "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";
+
             var apiKey = await (from e in youthContext.Email
                                 select e.Key).SingleAsync();
             var client = new SendGridClient(apiKey);
